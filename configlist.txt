@@ -2,9 +2,13 @@ alacritty
 cava
 dunst
 fcitx5
+fontconf
+gtk-2.0
 gtk-3.0
 gtk-4.0
 i3
+Kvantum
+networkmanager-dmenu
 nvim
 paru
 picom
@@ -13,3 +17,4 @@ qt6ct
 ranger
 redshift
 rofi
+xob

@@ -1,0 +1,5 @@
+[General]
+theme=Layan
+
+[Applications]
+Default=virtualbox
