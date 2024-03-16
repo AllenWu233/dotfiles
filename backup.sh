@@ -7,4 +7,4 @@ do
 done
 git add .
 git commit -m $(date -d @$(date +%s) "+%Y/%m/%d-%H:%M_UTC+08:00")
-git push -u origin main
+git push -f origin main
