@@ -1,0 +1,15 @@
+alacritty
+cava
+dunst
+fcitx5
+gtk-3.0
+gtk-4.0
+i3
+nvim
+paru
+picom
+qt5ct
+qt6ct
+ranger
+redshift
+rofi
