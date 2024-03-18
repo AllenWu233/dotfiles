@@ -265,6 +265,9 @@ for_window [class="steamwebhelper"] floating enable
 for_window [class="wechat"] floating enable  # wechat-beta window
 for_window [class="spectacle"] floating enable
 
+for_window [class="^meteo-qt$"] floating enable
+for_window [class="^meteo-qt$" title="^天气状况$"] move window to position 1900 100
+
 set $floating_size_x 2560 
 set $floating_size_y 1560
 # upper left corner: (x,y)
@@ -334,6 +337,10 @@ exec --no-startup-id redshift
 # exec --no-startup-id i3-msg 'workspace 10; exec thunderbird; workspace 1'
 # exec --no-startup-id xrdb -merge ~/.xresources
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
+exec_always --no-startup-id nm-applet
+exec --no-startup-id meteo-qt
+exec --no-startup-id dropbox
+
 
 
 # Screen settings

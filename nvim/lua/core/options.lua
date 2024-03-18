@@ -72,5 +72,5 @@ cmd('autocmd BufEnter * set formatoptions-=cro')
 cmd('autocmd BufEnter * setlocal formatoptions-=cro')
 
 -- remember fold
-cmd('autocmd BufWinLeave * mkview')
+cmd('autocmd BufWinLeave * silent! mkview')
 cmd('autocmd BufWinEnter * silent! loadview')
