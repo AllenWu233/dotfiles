@@ -190,6 +190,7 @@ pnpm
 polkit-kde-agent
 polybar
 portaudio
+pot-translation
 pulseaudio-bluetooth
 pwgen
 pypy3

@@ -264,6 +264,7 @@ for_window [class="Tlp-UI"] floating enable
 for_window [class="steamwebhelper"] floating enable
 for_window [class="wechat"] floating enable  # wechat-beta window
 for_window [class="spectacle"] floating enable
+for_window [class="^Pot"] floating enable resize set 500 700
 for_window [class="thunderbird" title="撰写"] floating enable
 
 for_window [class="^meteo-qt$"] floating enable
@@ -343,11 +344,14 @@ exec_always --no-startup-id nm-applet
 exec --no-startup-id meteo-qt
 exec --no-startup-id dropbox
 exec --no-startup-id birdtray
+exec --no-startup-id pot
+
 
 # Screen settings
 # exec_always --no-startup-id xrandr --output HDMI-0 --mode 2560x1440 --rate 144 --dpi 96 --output eDP-1-1 --off  # only one screen
 exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1600 --dpi 144
 # exec_always --no-startup-id ~/.local/bin/xrandr-recover.sh
+
 
 
 # Other scrips
