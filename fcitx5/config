@@ -17,11 +17,11 @@ EnumerateGroupBackwardKeys=
 ActivateKeys=
 # 取消激活输入法
 DeactivateKeys=
+# 切换是否使用嵌入预编辑
+TogglePreedit=
 
 [Hotkey/TriggerKeys]
 0=Alt+Shift+Shift_L
-1=Zenkaku_Hankaku
-2=Hangul
 
 [Hotkey/PrevPage]
 0=Up
@@ -35,16 +35,13 @@ DeactivateKeys=
 [Hotkey/NextCandidate]
 0=Tab
 
-[Hotkey/TogglePreedit]
-0=Control+Alt+P
-
 [Behavior]
 # 默认状态为激活
 ActiveByDefault=False
 # 共享输入状态
 ShareInputState=No
 # 在程序中显示预编辑文本
-PreeditEnabledByDefault=True
+PreeditEnabledByDefault=False
 # 切换输入法时显示输入法信息
 ShowInputMethodInformation=True
 # 在焦点更改时显示输入法信息

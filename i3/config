@@ -116,7 +116,7 @@ bindsym $mod+Shift+a focus child
 bindsym $mod+Shift+minus move scratchpad
 
 # show the next scratchpad window or hide the focused scratchpad window
-bindsym $mod+minus scratchpad show
+bindsym $mod+minus scratchpad show, resize set $floating_size_x $floating_size_y, move window to position $floating_position_x $floating_position_y
 
 # move focused floating window to the center of all outputs
 bindsym $mod+Shift+g move absolute position center
@@ -219,7 +219,15 @@ client.placeholder      #2E3440 #2E3440 #F8F8F2 #2E3440   #2E3440
 client.background       #F8F8F2
 
 
+
 # Set specific windows to floating mode
+set $floating_size_x 2550
+set $floating_size_y 1550
+# upper left corner: (x,y)
+set $floating_position_x 5
+set $floating_position_y 45
+
+
 for_window [window_role="app"]                      floating enable
 for_window [window_role="pop-up"]                   floating enable
 for_window [window_role="task_dialog"]              floating enable
@@ -265,16 +273,14 @@ for_window [class="steamwebhelper"] floating enable
 for_window [class="wechat"] floating enable  # wechat-beta window
 for_window [class="spectacle"] floating enable
 for_window [class="^Pot"] floating enable resize set 500 700
+for_window [class="screenkey"] floating enable sticky enable border none
+for_window [class="kdeconnect"] floating enable
+
 for_window [class="thunderbird" title="撰写"] floating enable
+for_window [class="thunderbird"] move scratchpad
 
 for_window [class="^meteo-qt$"] floating enable
 for_window [class="^meteo-qt$" title="^天气状况$"] move window to position 1800 100
-
-set $floating_size_x 2560 
-set $floating_size_y 1560
-# upper left corner: (x,y)
-set $floating_position_x 0
-set $floating_position_y 40
 
 for_window [class="^feh$"] floating enable border none 
 for_window [class="^feh$"] resize set $floating_size_x $floating_size_y
@@ -311,7 +317,7 @@ for_window [class="QQ"] move window to position $floating_position_x $floating_p
 # Waylyrics
 for_window [class="waylyrics"] floating enable border none sticky enable 
 # for_window [class="waylyrics"] resize set 1600 200
-for_window [class="waylyrics"] move window to position 480 1380
+for_window [class="waylyrics"] move window to position 300 1380
 # for_window [class="waylyrics"] move window to position 480 1200
 no_focus [class="waylyrics"]
 
@@ -324,7 +330,9 @@ assign [class="dolphin"] $ws6
 assign [class="TelegramDesktop"] $ws8
 assign [class="wechat"] $ws9
 assign [class="^QQ$"] $ws9
+assign [class="firefox"] $ws2
 assign [class="jetbrains-idea-ce"] $ws7
+# assign [class="thunderbird"] $ws10
 
 # Minecraft
 assign [class="No Flesh Within Chest"] $ws5
@@ -336,15 +344,14 @@ assign [class="Minecraft"] $ws5
 # Applications
 exec --no-startup-id dunst
 exec --no-startup-id redshift
-exec --no-startup-id i3-msg 'workspace 10; exec thunderbird; workspace 1'
-# # exec --no-startup-id thunderbird
+exec --no-startup-id i3-msg 'env LANGUAGE=zh_CN exec thunderbird'
+# exec --no-startup-id thunderbir
 # exec --no-startup-id xrdb -merge ~/.xresources
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
-exec_always --no-startup-id nm-applet
-exec --no-startup-id meteo-qt
-exec --no-startup-id dropbox
-exec --no-startup-id birdtray
-exec --no-startup-id pot
+exec_always --no-startup-id env LANGUAGE=zh_CN nm-applet
+exec --no-startup-id env LANGUAGE=zh_CN meteo-qt
+exec --no-startup-id i3-msg 'env LANGUAGE=zh_CN exec dropbox'
+exec --no-startup-id env LANGUAGE=zh_CN pot
 
 
 # Screen settings
@@ -363,6 +370,7 @@ exec_always --no-startup-id bash ~/.xprofile
 exec_always --no-startup-id syndaemon -i 0.5 -t -K -R  # Avoid touching the touchpad accidentally
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy
+exec_always --no-startup-id ~/scrips/auto-laptop-keyboard-and-touchboard.sh
 
 
 # Wallpaper

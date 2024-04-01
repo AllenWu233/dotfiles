@@ -76,6 +76,9 @@ local plugins = {
         event = "VeryLazy",
     },
 
+    {
+        'mfussenegger/nvim-jdtls',
+    },
 }
 
 

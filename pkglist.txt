@@ -16,6 +16,7 @@ aria2
 ark
 asciiquarium
 audex
+audiocd-kio
 autoconf
 autojump
 automake
@@ -31,6 +32,7 @@ breeze
 breeze-gtk
 btrfs-heatmap
 btrfs-progs
+buttercup-desktop
 cava
 chromium
 cmake
@@ -117,8 +119,8 @@ jdk-openjdk
 jdk17-openjdk
 jdk8-openjdk
 jp2a
+jpegoptim
 kcalc
-kchmviewer
 kcolorchooser
 kdeconnect
 kdenlive
@@ -127,7 +129,10 @@ kfind
 kimageformats5
 krita
 kvantum
+kvantum-qt5
+lib32-libpulse
 lib32-nvidia-utils
+lib32-openal
 lib32-vulkan-intel
 libiconv
 libtool
@@ -140,6 +145,7 @@ linux-zen-headers
 linuxqq-appimage
 lolcat
 lsd
+lxappearance
 m4
 magiskboot-bin
 make
@@ -150,6 +156,7 @@ mpd
 mpv
 mtpfs
 musescore
+mutt
 ncmpcpp
 neofetch
 neovim
@@ -179,6 +186,7 @@ pacman
 pacman4console
 pandoc-cli
 paru
+pass
 patch
 patchelf
 pavucontrol
@@ -217,6 +225,7 @@ sddm
 sed
 simplicity-sddm-theme-git
 skanlite
+slop
 sox
 spectacle
 spotify
@@ -271,6 +280,7 @@ wqy-microhei-kr-patched
 wqy-microhei-lite
 wqy-zenhei
 xautolock
+xclip
 xdotool
 xf86-input-synaptics
 xf86-video-vesa

@@ -29,7 +29,7 @@ opt.cursorline = true
 opt.scrolloff = 8
 opt.sidescrolloff = 8
 
-opt.mouse:append("a")
+-- opt.mouse:append("a")
 
 opt.clipboard:append("unnamedplus")
 
@@ -68,8 +68,8 @@ vim.cmd[[colorscheme tokyonight-moon]]
 
 ---- other ----
 -- disable automatic comment wrapping and insertion of comment leaders
-cmd('autocmd BufEnter * set formatoptions-=cro')
-cmd('autocmd BufEnter * setlocal formatoptions-=cro')
+cmd('autocmd BufEnter * silent! set formatoptions-=cro')
+cmd('autocmd BufEnter * silent! setlocal formatoptions-=cro')
 
 -- remember fold
 cmd('autocmd BufWinLeave * silent! mkview')
