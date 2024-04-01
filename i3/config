@@ -344,14 +344,14 @@ assign [class="Minecraft"] $ws5
 # Applications
 exec --no-startup-id dunst
 exec --no-startup-id redshift
-exec --no-startup-id i3-msg 'env LANGUAGE=zh_CN exec thunderbird'
+exec --no-startup-id i3-msg 'exec thunderbird'
 # exec --no-startup-id thunderbir
 # exec --no-startup-id xrdb -merge ~/.xresources
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
-exec_always --no-startup-id env LANGUAGE=zh_CN nm-applet
-exec --no-startup-id env LANGUAGE=zh_CN meteo-qt
-exec --no-startup-id i3-msg 'env LANGUAGE=zh_CN exec dropbox'
-exec --no-startup-id env LANGUAGE=zh_CN pot
+exec_always --no-startup-id nm-applet
+exec --no-startup-id meteo-qt
+exec --no-startup-id i3-msg 'exec dropbox'
+exec --no-startup-id pot
 
 
 # Screen settings
