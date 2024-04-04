@@ -190,7 +190,8 @@ pass
 patch
 patchelf
 pavucontrol
-picom-ftlabs-git
+payload-dumper-go-bin
+picom
 pip-tools
 pipes.sh
 pkgconf
@@ -326,6 +327,7 @@ xorg-xwud
 xsel
 xss-lock
 you-get
+zip
 zotero-bin
 zsh
 zsh-autosuggestions

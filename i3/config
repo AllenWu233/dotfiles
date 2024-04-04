@@ -316,8 +316,8 @@ for_window [class="QQ"] move window to position $floating_position_x $floating_p
 
 # Waylyrics
 for_window [class="waylyrics"] floating enable border none sticky enable 
-# for_window [class="waylyrics"] resize set 1600 200
-for_window [class="waylyrics"] move window to position 300 1380
+for_window [class="waylyrics"] resize set 1600 200
+for_window [class="waylyrics"] move window to position 480 1380
 # for_window [class="waylyrics"] move window to position 480 1200
 no_focus [class="waylyrics"]
 
@@ -362,7 +362,8 @@ exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1600 --dpi 144
 
 
 # Other scrips
-exec_always --no-startup-id pkill picom; picom
+# exec_always --no-startup-id pkill picom; picom --config ~/.config/picom/picom-ftlabs.conf
+exec_always --no-startup-id pkill picom; picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id bash ~/scrips/rime-sync.sh
 # exec_always --no-startup-id fcitx5
 exec_always --no-startup-id bash ~/.config/polybar/launch.sh
