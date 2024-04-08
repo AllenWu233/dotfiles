@@ -2,7 +2,11 @@
 cd ~/repo/dotfiles
 
 find ./* | grep -v '\(images\|README.md\|backup.sh\|configlist.txt\|.git\|.gitignore\)' | xargs rm -rf
+
 cp -r ~/scrips ./
+cp ~/.zshrc .
+cp ~/.zimrc .
+
 cat ./configlist.txt | while read rows
 do
     cp -r ~/.config/$rows .

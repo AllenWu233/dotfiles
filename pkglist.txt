@@ -15,6 +15,7 @@ archlinuxcn-keyring
 aria2
 ark
 asciiquarium
+atuin
 audex
 audiocd-kio
 autoconf
@@ -32,7 +33,6 @@ breeze
 breeze-gtk
 btrfs-heatmap
 btrfs-progs
-buttercup-desktop
 cava
 chromium
 cmake
@@ -142,7 +142,7 @@ linux-wallpaperengine-git
 linux-wifi-hotspot
 linux-zen
 linux-zen-headers
-linuxqq-appimage
+linuxqq-nt-bwrap
 lolcat
 lsd
 lxappearance
