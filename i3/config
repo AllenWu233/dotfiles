@@ -376,9 +376,9 @@ exec_always --no-startup-id ~/scrips/auto-laptop-keyboard-and-touchboard.sh
 
 # Wallpaper
 set $wp-arch1 ~/Pictures/Archlinux/uwp36741.png
-set $wp-rumia ~/Pictures/Picture/东方/108077785_p0.png
-set $wp-mokou ~/Pictures/Picture/东方/86548110_p0.jpg
-set $wp-mystia ~/Pictures/Picture/东方/111219584_p0.png 
+set $wp-rumia ~/Pictures/Pictures/东方/108077785_p0.png
+set $wp-mokou ~/Pictures/Pictures/东方/86548110_p0.jpg
+set $wp-mystia ~/Pictures/Pictures/东方/111219584_p0.png 
 set $wp-tatara-kogasa ~/Pictures/47516247_p0_pro.jpg 
 
 exec_always --no-startup-id feh --bg-fill $wp-mystia

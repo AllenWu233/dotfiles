@@ -94,7 +94,6 @@ go
 gparted
 grep
 groff
-grub
 gst-libav
 gst-plugins-bad
 gst-plugins-good
@@ -136,8 +135,8 @@ lib32-openal
 lib32-vulkan-intel
 libiconv
 libtool
-linux
 linux-firmware
+linux-lts
 linux-wallpaperengine-git
 linux-wifi-hotspot
 linux-zen
@@ -155,7 +154,6 @@ mpc
 mpd
 mpv
 mtpfs
-musescore
 mutt
 ncmpcpp
 neofetch
@@ -176,7 +174,6 @@ obs-studio
 obsidian
 okular
 openssh
-os-prober
 osdlyrics
 osu-lazer-bin
 owmods-gui-bin
@@ -213,6 +210,7 @@ qt6ct
 ranger
 rar
 redshift
+refind
 rime-double-pinyin
 rime-ice-double-pinyin-git
 rime-pinyin-zhwiki
@@ -230,6 +228,7 @@ slop
 sox
 spectacle
 spotify
+starship
 steam
 sublime-text
 sudo
@@ -246,6 +245,7 @@ tlp
 tlp-rdw
 tlpui
 translate-shell
+trash-cli
 tree
 ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
@@ -327,6 +327,7 @@ xorg-xwud
 xsel
 xss-lock
 you-get
+zellij
 zip
 zotero-bin
 zsh

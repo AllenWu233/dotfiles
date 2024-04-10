@@ -126,14 +126,15 @@ source ${ZIM_HOME}/init.zsh
 # zsh-history-substring-search
 #
 
-# zmodload -F zsh/terminfo +p:terminfo
-# # Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
-# for key ('^[[A' '^P' ${terminfo[kcuu1]}) bindkey ${key} history-substring-search-up
-# for key ('^[[B' '^N' ${terminfo[kcud1]}) bindkey ${key} history-substring-search-down
-# for key ('k') bindkey -M vicmd ${key} history-substring-search-up
-# for key ('j') bindkey -M vicmd ${key} history-substring-search-down
-# unset key
-# }}} End configuration added by Zim install
+zmodload -F zsh/terminfo +p:terminfo
+# Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
+for key ('^[[A' '^P' ${terminfo[kcuu1]}) bindkey ${key} history-substring-search-up
+for key ('^[[B' '^N' ${terminfo[kcud1]}) bindkey ${key} history-substring-search-down
+for key ('k') bindkey -M vicmd ${key} history-substring-search-up
+for key ('j') bindkey -M vicmd ${key} history-substring-search-down
+unset key
+# }}} 
+# End configuration added by Zim install
 
 # Created by newuser for 5.
 
@@ -175,6 +176,7 @@ alias HLi='hledger is'
 alias HLp='hledger print -x'
 alias tree='lsd --tree'
 alias ranger='env LANGUAGE=zh_CN ranger'
+alias rm="echo This is not the command you are looking for. Use \'trash\' instead.; false"
 
 
 # Environment variables
@@ -187,27 +189,4 @@ export PATH=$PATH:~/.local/bin
 export EDITOR=/usr/bin/nvim
 
 
-# Functions
-# fast commit and push
-function push() {
-    LOCAL_TIME=$(date -d @$(date +%s) "+%Y/%m/%d-%H:%M")
-    WORK_PATH=$(pwd)
-    cd "$1"  # receive argument if exists
-    if [ "$(git log)" ]; then
-        if [ "$(git status -s)" ]; then
-            git add .
-            git commit -m ${LOCAL_TIME}    
-        fi
-        while ! git push -u origin main
-            do sleep 1
-            done
-        echo "Succeed!"
-    else
-        echo "Failed!"
-    fi
-    cd ${WORK_PATH}
-}
-
-
-# Plugins
-# eval "$(atuin init zsh)"
+# eval "$(zellij setup --generate-auto-start zsh)"
