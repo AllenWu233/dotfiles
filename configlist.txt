@@ -18,3 +18,4 @@ ranger
 redshift
 rofi
 xob
+zellij
