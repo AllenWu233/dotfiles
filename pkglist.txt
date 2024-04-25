@@ -141,6 +141,7 @@ konsole
 krita
 kvantum
 kvantum-qt5
+lazygit
 lib32-libpulse
 lib32-nvidia-utils
 lib32-openal

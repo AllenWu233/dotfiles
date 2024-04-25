@@ -9,11 +9,11 @@ find ${share_rime} -maxdepth 1 ! -name "rime-data" ! -name "build" ! -name "rime
 
 cd ${repo}
 git add .
-git commit -m ${LOCAL_TIME}    
+git commit -m ${LOCAL_TIME}
 git push -u origin main
 
 if [ $? -eq 0 ]; then
-    echo "Succeed!"
+	echo "Succeed!"
 else
-    echo "Failed!"
+	echo "Failed!"
 fi

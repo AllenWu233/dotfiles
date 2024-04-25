@@ -39,13 +39,10 @@ map("n", "<leader>l", "<C-w>l", { desc = "Move Right" }) -- move right
 map("n", "<leader>nh", "<cmd>nohl<cr>", { desc = "No Highlight" })
 
 -- buffer
--- map("n", "J", "<cmd>bprevious<cr>", { desc = "Next Buffer" })
--- map("n", "K", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 map("n", "X", "<cmd>bdelete<cr>", { desc = "Close Tab" })
 
 -- fold or unfold
 map("n", "<leader>a", "za", { desc = "Switch Fold" })
-
 
 -- ---------- PLUGINS ---------- --
 -- compiler.nvim
@@ -53,14 +50,16 @@ map("n", "<leader>a", "za", { desc = "Switch Fold" })
 map("n", "<C-b>", "<cmd>CompilerOpen<cr>", { desc = "Open Compiler", noremap = true, silent = true })
 
 -- Redo last selected option
-map("n", "B",
+map(
+  "n",
+  "B",
   "<cmd>CompilerStop<cr>" -- (Optional, to dispose all tasks before redo)
-  .. "<cmd>CompilerRedo<cr>",
-  { desc = "Redo Compile", noremap = true, silent = true })
+    .. "<cmd>CompilerRedo<cr>",
+  { desc = "Redo Compile", noremap = true, silent = true }
+)
 
 -- Toggle compiler results
-map("n", "<F6>", "<cmd>CompilerToggleResults<cr>", { desc = "Toggle Compiler", noremap = true, silent = true })
-
+map("n", "<M-b>", "<cmd>CompilerToggleResults<cr>", { desc = "Toggle Compiler", noremap = true, silent = true })
 
 -- outline.nvim
 map("n", "<leader>o", "<cmd>Outline<cr>", { desc = "Open Outline" })

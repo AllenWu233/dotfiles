@@ -1,5 +1,6 @@
-#!/bin/zsh
+#!/bin/bash
 cli="find . -type f \( "
+
 for arg in ${@:1:$#-1}
 do
 	cli="$cli -iname \*.$arg -o "
