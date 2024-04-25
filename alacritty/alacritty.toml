@@ -28,7 +28,8 @@ lines = 25
 [keyboard]
 # Spawn new instance in same directory
 bindings = [
-   { key = "Return", mods = "Super|Shift", action = "SpawnNewInstance" }
+{ key = "Return", mods = "Super|Shift", action = "SpawnNewInstance" },
+{ key = "B", mods = "Control|Shift", action = "None" },
 ]
 
 # TokyoNight Alacritty Colors

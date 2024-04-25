@@ -97,7 +97,7 @@ bindsym $mod+F11 fullscreen toggle
 
 # change container layout
 bindsym $mod+s layout stacking
-bindsym $mod+d layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -134,9 +134,9 @@ bindsym $mod+Shift+i fullscreen disable; floating enable; resize set 350 px 197 
 bindsym $mod+x [urgent=latest] focus
 
 # shortcut to change window border
-bindsym $mod+t border normal    0
-bindsym $mod+y border pixel     3
-bindsym $mod+u border none
+# bindsym $mod+d border normal    0
+# bindsym $mod+y border pixel     3
+# bindsym $mod+u border none
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -275,6 +275,9 @@ for_window [class="spectacle"] floating enable
 for_window [class="^Pot"] floating enable resize set 500 700
 for_window [class="screenkey"] floating enable sticky enable border none
 for_window [class="kdeconnect"] floating enable
+for_window [class="ark"] floating enable
+for_window [class="Sublime_text"] floating enable
+for_window [class="Outer-wilds-mod-manager"] floating enable
 
 for_window [class="thunderbird" title="撰写"] floating enable
 for_window [class="thunderbird"] move scratchpad
