@@ -136,9 +136,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zoxide
 
-# Locale
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US:en:C:zh_CN
 
 
 # Aliases
