@@ -12,6 +12,7 @@ appmenu-gtk-module
 archlinux-keyring
 archlinux-themes-sddm
 archlinux-wallpaper
+archlinux-xdg-menu
 archlinuxcn-keyring
 aria2
 ark
@@ -38,6 +39,7 @@ cava
 chromium
 cmake
 cmatrix
+codelldb-bin
 colorpicker
 convmv
 cowsay
@@ -65,6 +67,7 @@ envycontrol
 extra-cmake-modules
 extrace-git
 fakeroot
+fastfetch
 fbterm
 fceux
 fcitx5-anthy
@@ -96,7 +99,7 @@ github-cli
 gnome-mines
 gnome-sudoku
 gns3-gui
-gns3-server-git
+gns3-server
 gnugo
 go
 gparted
@@ -218,6 +221,7 @@ pypy3
 pyright
 python-pdm
 python-plotly
+python-pynvim
 python-pyqt5-webkit
 python-scipy
 python-virtualenv
@@ -236,6 +240,7 @@ rofi
 rofi-bluetooth-git
 rofimoji
 rp-pppoe
+rustdesk-bin
 s-nail
 screenkey
 sd

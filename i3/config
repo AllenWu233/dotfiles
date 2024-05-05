@@ -69,7 +69,8 @@ bindsym Control+Mod1+b exec --no-startup-id rofi-bluetooth -dpi 1
 bindsym Control+Mod1+n exec --no-startup-id networkmanager_dmenu -dpi 1
 bindsym Control+Mod1+l exec --no-startup-id "sh ~/.config/rofi/powermenu.sh"
 bindsym $mod+b workspace $ws6; exec --no-startup-id dolphin
-bindsym $mod+m exec --no-startup-id rofimoji -a type
+# bindsym $mod+m exec --no-startup-id rofimoji -a type
+bindsym $mod+m exec --no-startup-id rofi -modi "emoji:rofimoji" -show emoji -dpi 1
 
 # kill focused window
 bindsym $mod+q kill
@@ -278,6 +279,7 @@ for_window [class="kdeconnect"] floating enable
 for_window [class="ark"] floating enable
 for_window [class="Sublime_text"] floating enable
 for_window [class="Outer-wilds-mod-manager"] floating enable
+for_window [class="Nm-connection-editor"] floating enable
 
 for_window [class="thunderbird" title="撰写"] floating enable
 for_window [class="thunderbird"] move scratchpad

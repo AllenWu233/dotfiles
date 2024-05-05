@@ -160,11 +160,11 @@ alias HLp='hledger print -x'
 alias tree='lsd --tree'
 alias ranger='env LANGUAGE=zh_CN ranger'
 alias rm="echo This is not the command you are looking for. Use \'trash\' instead.; false"
+alias get-ip="ip -4 addr | rg -i ppp0 -i | rg -i inet"
 # bat
 alias cat="bat"
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
-
 
 
 # eval "$(zellij setup --generate-auto-start zsh)"
@@ -172,3 +172,7 @@ if [ ! -n "$DISPLAY" ]; then
     export STARSHIP_CONFIG=~/.config/starship-tty.toml
 fi
 eval "$(starship init zsh)"
+
+export ATUIN_NOBIND="true"
+eval "$(atuin init zsh)"
+bindkey '^r' atuin-search
