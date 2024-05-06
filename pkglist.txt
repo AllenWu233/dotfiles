@@ -165,6 +165,7 @@ lxappearance
 m4
 magiskboot-bin
 make
+mcpelauncher-appimage
 megasync
 meteo-qt
 mpc
@@ -263,6 +264,7 @@ telegram-desktop
 tetris-terminal-git
 texinfo
 th08
+thefuck
 thunderbird-bin
 timeshift
 timidity++

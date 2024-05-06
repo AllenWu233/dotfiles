@@ -176,3 +176,5 @@ eval "$(starship init zsh)"
 export ATUIN_NOBIND="true"
 eval "$(atuin init zsh)"
 bindkey '^r' atuin-search
+
+eval $(thefuck --alias)
