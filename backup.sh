@@ -7,6 +7,7 @@ cp -r ~/scrips ./
 cp ~/.zshrc .
 cp ~/.zshenv .
 cp ~/.zimrc .
+cp ~/.vimrc .
 
 cat ./configlist.txt | while read rows; do
 	cp -r ~/.config/$rows .

@@ -353,9 +353,9 @@ exec --no-startup-id i3-msg 'exec thunderbird'
 # exec --no-startup-id thunderbir
 # exec --no-startup-id xrdb -merge ~/.xresources
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
-exec_always --no-startup-id nm-applet
-exec --no-startup-id meteo-qt
-exec --no-startup-id i3-msg 'exec dropbox'
+# exec_always --no-startup-id nm-applet
+# exec --no-startup-id meteo-qt
+# exec --no-startup-id i3-msg 'exec dropbox'
 exec --no-startup-id pot
 
 
@@ -376,7 +376,7 @@ exec_always --no-startup-id bash ~/.xprofile
 exec_always --no-startup-id syndaemon -i 0.5 -t -K -R  # Avoid touching the touchpad accidentally
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy
-exec_always --no-startup-id ~/scrips/auto-laptop-keyboard-and-touchboard.sh
+# exec_always --no-startup-id ~/scrips/auto-laptop-keyboard-and-touchboard.sh
 
 
 # Wallpaper
