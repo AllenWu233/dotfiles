@@ -53,11 +53,11 @@ docker
 dolphin
 dos2unix
 downgrade
+drawio-desktop-bin
 dropbox
 dunst
 dust
 dynamips
-ebtables
 efibootmgr
 egl-wayland
 electron-netease-cloud-music
@@ -94,6 +94,7 @@ freepats-general-midi
 gawk
 gcc
 gdb
+genact
 gettext
 github-cli
 gnome-mines
@@ -111,13 +112,14 @@ gst-plugins-bad
 gst-plugins-good
 gst-plugins-ugly
 gutenprint
+gvim
 gwenview
 gzip
 heroic-games-launcher-bin
 hledger
 hledger-ui
 hledger-web
-htop
+htop-vim
 hugo
 i3-wm
 i3blocks
@@ -149,8 +151,9 @@ lib32-libpulse
 lib32-nvidia-utils
 lib32-openal
 lib32-vulkan-intel
-libguestfs
 libiconv
+libreoffice-extension-languagetool
+libreoffice-still-zh-cn
 libtool
 libvirt
 lightdm
@@ -158,7 +161,6 @@ lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 linux-firmware
 linux-lts
-linux-wallpaperengine-git
 linux-wifi-hotspot
 linux-zen
 linux-zen-headers
@@ -169,6 +171,7 @@ lxappearance
 m4
 magiskboot-bin
 make
+maven
 mcpelauncher-appimage
 megasync
 meteo-qt
@@ -189,13 +192,13 @@ noto-fonts-emoji
 nsnake
 ntfs-3g
 nudoku
+numlockx
 nvidia-open-dkms
 nvidia-prime
 nvidia-settings
 obs-studio
 obsidian
 okular
-openbsd-netcat
 openssh
 osdlyrics
 osu-lazer-bin
@@ -234,7 +237,6 @@ python-scipy
 python-virtualenv
 python38
 qemu-base
-qemu-full
 qt5ct
 qt6ct
 ranger
@@ -294,10 +296,7 @@ ubridge
 unarchiver
 v2ray
 v2raya
-vim
 vim-language-server
-virt-manager
-virt-viewer
 virtualbox
 virtualbox-ext-oracle
 virtualbox-guest-iso
@@ -309,7 +308,7 @@ vulkan-intel
 w3m
 waylyrics-git
 webp-pixbuf-loader
-wechat-beta-bwrap
+wechat-universal-bwrap
 wget
 which
 winetricks

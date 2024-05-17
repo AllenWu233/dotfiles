@@ -61,8 +61,9 @@ let mapleader = " "
 " ==== Normal Mode ==== "
 nnoremap <leader>n :nohlsearch<CR>
 nnoremap <C-s> <ESC>:w<CR>
-nnoremap <C-=> gg=G
-nnoremap <C-a> ggVGy
+nnoremap <leader>= gg=G
+nnoremap <leader>qq :qa<CR> 
+nnoremap <C-a> ggVG"+y
 nnoremap <C-x> ggVGc
 nnoremap j gj
 nnoremap k gk

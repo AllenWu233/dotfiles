@@ -183,6 +183,9 @@ bindsym XF86AudioMicMute        exec --no-startup-id pactl set-source-mute @DEFA
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 2
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 2
 
+# vim-anywhere
+bindsym $mod+Mod1+v exec ~/.vim-anywhere/bin/run
+
 # notification
 
 # reload the configuration file
@@ -357,6 +360,7 @@ exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 # exec --no-startup-id meteo-qt
 # exec --no-startup-id i3-msg 'exec dropbox'
 exec --no-startup-id pot
+exec --no-startup-id numlockx
 
 
 # Screen settings
