@@ -17,7 +17,6 @@ aria2
 ark
 asciinema
 asciiquarium
-atuin
 audex
 audiocd-kio
 autoconf
@@ -46,6 +45,7 @@ cowsay
 cups-pdf
 debtap
 debugedit
+deepin-wine-quarkclouddrive
 dhcpcd
 discord
 dmg2img

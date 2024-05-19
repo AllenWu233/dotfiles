@@ -53,7 +53,7 @@ WORDCHARS=${WORDCHARS//[\/]}
 #
 
 # Append `../` to your input for each `.` you type after an initial `..`
-#zstyle ':zim:input' double-dot-expand yes
+zstyle ':zim:input' double-dot-expand yes
 
 #
 # termtitle
@@ -140,7 +140,8 @@ source ~/.zoxide
 
 # Aliases
 alias TSc='sudo timeshift --create'
-alias wine='env LANG=zh_CN.UTF-8 wine'
+alias wine='env LANG=zh_CN.UTF-8 LANG=zh_CN.UTF-8 wine'
+# alias wine-forgame='WINEPREFIX=~/.local/share/wineprefixes/forgame/ wine'
 alias pkgclean='sudo pacman -Rns $(pacman -Qqdt) && yes | sudo pacman -Sc && yes | paru -Sc'
 alias vim='nvim'
 alias ls='lsd'
@@ -149,7 +150,6 @@ alias you-get='you-get -o ~/Videos -c ~/.mozilla/firefox/g1t7i3hf.default-releas
 alias prac-rs='cd ~/rust_work/rust-by-practice && git pull; mdbook serve -p 8888 -n 127.0.0.1 zh-CN/ && firefox http://127.0.0.1:8888/'
 alias imewlconverter='docker run --rm -it -v /dict:/dict imewlconverter'
 alias ncmpcpp='mpd; ncmpcpp'
-alias wine-forgame='WINEPREFIX=~/.local/share/wineprefixes/forgame/ wine'
 alias farsee='curl -F "c=@-" "https://fars.ee/"'
 alias se='sudoedit'
 alias HL='hledger'
@@ -167,7 +167,9 @@ alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
 
+# Tools
 # eval "$(zellij setup --generate-auto-start zsh)"
+
 if [ ! -n "$DISPLAY" ]; then
     export STARSHIP_CONFIG=~/.config/starship-tty.toml
 fi
