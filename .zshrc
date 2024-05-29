@@ -142,7 +142,8 @@ source ~/.zoxide
 alias TSc='sudo timeshift --create'
 alias wine='env LANG=zh_CN.UTF-8 LANG=zh_CN.UTF-8 wine'
 # alias wine-forgame='WINEPREFIX=~/.local/share/wineprefixes/forgame/ wine'
-alias pkgclean='sudo pacman -Rns $(pacman -Qqdt) && yes | sudo pacman -Sc && yes | paru -Sc'
+# alias pkgclean='sudo pacman -Rns $(pacman -Qqdt) && yes | sudo pacman -Sc && yes | paru -Sc'
+alias rmcache='yes | sudo pacman -Sc && yes | paru -Sc'
 alias vim='nvim'
 alias ls='lsd'
 # alias you-get='you-get -o ~/Videos -c ~/cookies.txt'
@@ -161,6 +162,15 @@ alias tree='lsd --tree'
 alias ranger='env LANG=zh_CN.UTF-8 LANGUAGE=zh_CN ranger'
 alias rm="echo This is not the command you are looking for. Use \'trash\' instead.; false"
 alias get-ip="ip -4 addr | rg -i ppp0 -i | rg -i inet"
+alias pac="sudo pacman -Syu"
+alias \$=' '
+alias %=' '
+alias tree1='lsd --tree --depth 1'
+alias tree2='lsd --tree --depth 2'
+alias ddg='w3m duckduckgo.com/lite'
+alias abs='w3m https://linux.die.net/abs-guide/'
+alias sshlocal='ssh vboxer@127.0.0.1 -p 2222'
+
 # bat
 alias cat="bat"
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
@@ -168,11 +178,12 @@ alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
 
 # Tools
-# eval "$(zellij setup --generate-auto-start zsh)"
-
-if [ ! -n "$DISPLAY" ]; then
+if [ ! -n "$DISPLAY" ]; then # If in TTY console
     export STARSHIP_CONFIG=~/.config/starship-tty.toml
+    export ZELLIJ_CONFIG_FILE=~/.config/zellij/config-tty.kdl
+    eval "$(zellij setup --generate-auto-start zsh)"
 fi
+
 eval "$(starship init zsh)"
 
 export ATUIN_NOBIND="true"
