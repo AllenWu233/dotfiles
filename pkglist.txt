@@ -38,6 +38,7 @@ cava
 chromium
 cmake
 cmatrix
+cmd-wrapped
 codelldb-bin
 colorpicker
 convmv

@@ -136,7 +136,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zoxide
 
-
+# setopt EXTENDED_HISTORY
 
 # Aliases
 alias TSc='sudo timeshift --create'
@@ -170,6 +170,7 @@ alias tree2='lsd --tree --depth 2'
 alias ddg='w3m duckduckgo.com/lite'
 alias abs='w3m https://linux.die.net/abs-guide/'
 alias sshlocal='ssh vboxer@127.0.0.1 -p 2222'
+alias cmd-wrapped='cmd-wrapped -s atuin'
 
 # bat
 alias cat="bat"
