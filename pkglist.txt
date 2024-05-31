@@ -29,6 +29,9 @@ bat
 binder_linux-dkms
 binutils
 bison
+bitwarden
+bitwarden-cli
+bitwarden-rofi-git
 boxes
 breeze
 breeze-gtk
@@ -98,7 +101,7 @@ gdb
 genact
 gettext
 gimp
-github-cli
+git-crypt
 gnome-mines
 gnome-sudoku
 gns3-gui-git
@@ -189,7 +192,6 @@ neovim
 nethack
 network-manager-applet
 networkmanager-dmenu-git
-nodejs
 noto-fonts-cjk
 noto-fonts-emoji
 nsnake

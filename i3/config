@@ -68,6 +68,7 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window -dpi 1  # switching wind
 bindsym Control+Mod1+b exec --no-startup-id rofi-bluetooth -dpi 1
 bindsym Control+Mod1+n exec --no-startup-id networkmanager_dmenu -dpi 1
 bindsym Control+Mod1+l exec --no-startup-id "sh ~/.config/rofi/powermenu.sh"
+bindsym $mod+z exec --no-startup-id bwmenu -- -dpi 1
 bindsym $mod+b workspace $ws6; exec --no-startup-id dolphin
 # bindsym $mod+m exec --no-startup-id rofimoji -a type
 bindsym $mod+m exec --no-startup-id rofi -modi "emoji:rofimoji" -show emoji -dpi 1
@@ -164,7 +165,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # lock
-bindsym Control+l exec --no-startup-id i3lock-fancy
+# bindsym Control+l exec --no-startup-id i3lock-fancy
 
 # Take a full screenshot store in file
 bindsym $mod+p exec --no-startup-id "spectacle -f -b"
@@ -332,7 +333,6 @@ no_focus [class="waylyrics"]
 
 
 # Assign settings - Special worksapce for applications
-# assign [class="thunderbird"] $ws10
 assign [class="steam"] $ws4
 assign [class="hmcl"] $ws5
 assign [class="dolphin"] $ws6
@@ -341,7 +341,6 @@ assign [class="wechat"] $ws9
 assign [class="^QQ$"] $ws9
 assign [class="firefox"] $ws2
 assign [class="jetbrains-idea-ce"] $ws7
-# assign [class="thunderbird"] $ws10
 
 # Minecraft
 assign [class="No Flesh Within Chest"] $ws5
@@ -354,8 +353,6 @@ assign [class="Minecraft"] $ws5
 exec --no-startup-id dunst
 exec --no-startup-id redshift
 exec --no-startup-id i3-msg 'exec thunderbird'
-# exec --no-startup-id thunderbir
-# exec --no-startup-id xrdb -merge ~/.xresources
 exec_always --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 # exec_always --no-startup-id nm-applet
 # exec --no-startup-id meteo-qt
@@ -382,6 +379,7 @@ exec_always --no-startup-id syndaemon -i 0.5 -t -K -R  # Avoid touching the touc
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy
 # exec_always --no-startup-id ~/scrips/auto-laptop-keyboard-and-touchboard.sh
+exec_always --no-startup-id bw sync
 
 
 # Wallpaper

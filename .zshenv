@@ -20,3 +20,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # export XDG_MENU_PREFIX=arch-
 
 . "$HOME/.cargo/env"
+
+
+source ~/.bitwarden-session-key

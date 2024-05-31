@@ -3,14 +3,14 @@ set -e
 set -u
 
 # All supported choices
-# all=(shutdown reboot suspend hibernate logout lockscreen)
-all=(shutdown reboot suspend hibernate logout)
+all=(shutdown reboot suspend hibernate logout lockscreen)
+# all=(shutdown reboot suspend hibernate logout)
 
 # By default, show all (i.e., just copy the array)
 show=("${all[@]}")
 
 declare -A texts
-#texts[lockscreen]="lock screen"
+texts[lockscreen]="lock screen"
 texts[logout]="logout"
 texts[suspend]="suspend"
 texts[hibernate]="hibernate"
@@ -18,17 +18,19 @@ texts[reboot]="reboot"
 texts[shutdown]="shutdown"
 
 declare -A icons
-icons[logout]="󰈆 "
+icons[lockscreen]=" "
+icons[logout]="󰍃 "
 icons[suspend]="󰒲 "
-icons[hibernate]="⏾ "
-icons[reboot]=" "
-icons[shutdown]=" "
+icons[hibernate]="󰋊 "
+icons[reboot]="󰜉 "
+icons[shutdown]="⏻ "
 icons[cancel]="󰜺 "
 
 declare -A actions
-#actions[lockscreen]="sh $HOME/.config/sway/swaylock.sh"
+# actions[lockscreen]="$HOME/.config/rofi/lock_i3.sh"
+# actions[lockscreen]="i3lock-fancy"
+actions[lockscreen]="loginctl lock-session"
 actions[logout]="i3-msg exit, mode \"default\""
-#actions[logout]="loginctl terminate-session ${XDG_SESSION_ID-}"
 actions[suspend]="systemctl suspend"
 actions[hibernate]="systemctl hibernate"
 actions[reboot]="systemctl reboot"

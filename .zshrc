@@ -153,6 +153,7 @@ alias imewlconverter='docker run --rm -it -v /dict:/dict imewlconverter'
 alias ncmpcpp='mpd; ncmpcpp'
 alias farsee='curl -F "c=@-" "https://fars.ee/"'
 alias se='sudoedit'
+alias hledger='hledger --file ~/repo/hledger/.hledger.journal'
 alias HL='hledger'
 alias HLa='hledger add'
 alias HLb='hledger bs'
@@ -171,6 +172,7 @@ alias ddg='w3m duckduckgo.com/lite'
 alias abs='w3m https://linux.die.net/abs-guide/'
 alias sshlocal='ssh vboxer@127.0.0.1 -p 2222'
 alias cmd-wrapped='cmd-wrapped -s atuin'
+alias mf='musicfox'
 
 # bat
 alias cat="bat"

@@ -1,2 +1,2 @@
-#betterlockscreen --lock
-i3lock \
+#!/usr/bin/bash
+i3lock-fancy
