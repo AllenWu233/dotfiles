@@ -131,14 +131,23 @@ unset key
 
 
 
-# Add by Allen
+
+## Added by Allen
+#
+# Source
+#
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zoxide
 
+
+# Options
+#
 # setopt EXTENDED_HISTORY
 
+
 # Aliases
+#
 alias TSc='sudo timeshift --create'
 alias wine='env LANG=zh_CN.UTF-8 LANG=zh_CN.UTF-8 wine'
 # alias wine-forgame='WINEPREFIX=~/.local/share/wineprefixes/forgame/ wine'
@@ -173,14 +182,17 @@ alias abs='w3m https://linux.die.net/abs-guide/'
 alias sshlocal='ssh vboxer@127.0.0.1 -p 2222'
 alias cmd-wrapped='cmd-wrapped -s atuin'
 alias mf='musicfox'
-
+#
 # bat
 alias cat="bat"
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
+#
+
 
 
 # Tools
+#
 if [ ! -n "$DISPLAY" ]; then # If in TTY console
     export STARSHIP_CONFIG=~/.config/starship-tty.toml
     export ZELLIJ_CONFIG_FILE=~/.config/zellij/config-tty.kdl

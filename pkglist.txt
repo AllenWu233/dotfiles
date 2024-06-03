@@ -234,7 +234,6 @@ pwgen
 pypy3
 pyright
 python-dbus
-python-pdm
 python-plotly
 python-pynvim
 python-pyqt5-webkit
