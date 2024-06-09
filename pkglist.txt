@@ -123,7 +123,6 @@ gwenview
 gzip
 heroic-games-launcher-bin
 hledger
-hledger-ui
 hledger-web
 htop-vim
 hugo
