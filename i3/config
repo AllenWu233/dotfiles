@@ -185,7 +185,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 2
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 2
 
 # vim-anywhere
-bindsym $mod+Mod1+v exec ~/.vim-anywhere/bin/run
+bindsym $mod+Mod1+v exec --no-startup-id ~/.vim-anywhere/bin/run
 
 # notification
 
@@ -352,11 +352,11 @@ assign [class="Minecraft"] $ws5
 # Applications
 exec --no-startup-id dunst
 exec --no-startup-id redshift
-exec --no-startup-id i3-msg 'exec thunderbird'
+exec --no-startup-id i3-msg 'exec --no-startup-id thunderbird'
 exec_always --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 # exec_always --no-startup-id nm-applet
 # exec --no-startup-id meteo-qt
-# exec --no-startup-id i3-msg 'exec dropbox'
+# exec --no-startup-id i3-msg 'exec --no-startup-id dropbox'
 exec --no-startup-id pot
 exec --no-startup-id numlockx
 

@@ -102,6 +102,7 @@ genact
 gettext
 gimp
 git-crypt
+github-cli
 gnome-mines
 gnome-sudoku
 gns3-gui-git
@@ -134,7 +135,7 @@ i3lock-fancy-git
 i3status
 inetutils
 intel-ucode
-intellij-idea-community-edition
+inter-font
 iwd
 jdk-openjdk
 jdk17-openjdk
@@ -295,6 +296,8 @@ ttf-lxgw-wenkai
 ttf-lxgw-wenkai-gb
 ttf-lxgw-wenkai-tc
 ttf-ms-fonts
+ttf-roboto
+ttf-sarasa-gothic
 ttf-wps-fonts
 ubridge
 unarchiver
@@ -324,10 +327,6 @@ wps-office
 wps-office-fonts
 wps-office-mime
 wps-office-mui-zh-cn
-wqy-bitmapfont
-wqy-microhei-kr-patched
-wqy-microhei-lite
-wqy-zenhei
 xautolock
 xclip
 xdotool
