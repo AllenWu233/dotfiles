@@ -1,9 +1,10 @@
 #!/bin/env bash
-cd ~/repo/dotfiles
+cd ~/repo/dotfiles || exit
 
 find ./* | grep -v '\(images\|README.md\|backup.sh\|configlist.txt\|.git\|.gitignore\)' | xargs rm -rf
 
-cp -r ~/scrips ./
+cp -r ~/scrips .
+cp -r ~/.newsboat/ .
 cp ~/.zshrc .
 cp ~/.zshenv .
 cp ~/.zimrc .

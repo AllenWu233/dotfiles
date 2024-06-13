@@ -192,6 +192,7 @@ neovim
 nethack
 network-manager-applet
 networkmanager-dmenu-git
+newsboat
 noto-fonts-cjk
 noto-fonts-emoji
 nsnake
@@ -255,6 +256,7 @@ rofi
 rofi-bluetooth-git
 rofimoji
 rp-pppoe
+rssguard
 rustdesk-bin
 s-nail
 screenkey
