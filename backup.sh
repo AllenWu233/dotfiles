@@ -5,6 +5,7 @@ find ./* | grep -v '\(images\|README.md\|backup.sh\|configlist.txt\|.git\|.gitig
 
 cp -r ~/scrips .
 cp -r ~/.newsboat/ .
+rm ./.newsboat/cookie
 cp -r ~/.w3m .
 cp ~/.zshrc .
 cp ~/.zshenv .
