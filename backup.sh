@@ -4,7 +4,6 @@ cd ~/repo/dotfiles || exit
 find ./* | grep -v '\(images\|README.md\|backup.sh\|configlist.txt\|.git\|.gitignore\)' | xargs rm -rf
 
 cp -r ~/scrips .
-cp -r ~/.newsboat/ .
 cp -r ~/.w3m .
 rm ./.w3m/cookie
 cp ~/.zshrc .
