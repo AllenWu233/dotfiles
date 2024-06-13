@@ -21,7 +21,8 @@ done
 pacman -Qqe >pkglist.txt
 
 git add .
-git commit -m $(date -d @$(date +%s) "+%Y/%m/%d-%H:%M_UTC+08:00")
+# git commit -m $(date -d @$(date +%s) "+%Y/%m/%d-%H:%M_UTC+08:00")
+git commit -m "backup.sh"
 git push -f origin main
 
 ~/repo/hledger/backup.sh
