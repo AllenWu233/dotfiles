@@ -38,4 +38,7 @@ return {
     end,
     event = { "FileReadPre", "BufReadPre", "User FileOpened" },
   },
+
+  -- For productivity metrics, goals, leaderboards, and automatic time tracking
+  { "wakatime/vim-wakatime", lazy = false },
 }

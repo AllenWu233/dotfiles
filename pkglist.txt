@@ -1,7 +1,6 @@
 2048-cli-git
 adobe-source-han-mono-cn-fonts
 adobe-source-han-sans-otc-fonts
-adobe-source-han-serif-classic-fonts
 adobe-source-han-serif-cn-fonts
 aircrack-ng
 alacritty
@@ -52,7 +51,6 @@ debugedit
 deepin-wine-quarkclouddrive
 dhcpcd
 discord
-dmg2img
 docker
 dolphin
 dos2unix
@@ -279,7 +277,6 @@ tealdeer
 telegram-desktop
 tetris-terminal-git
 texinfo
-th08
 thefuck
 thunderbird-bin
 timeshift
