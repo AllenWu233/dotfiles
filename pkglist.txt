@@ -101,6 +101,7 @@ gettext
 gimp
 git-crypt
 github-cli
+glfw
 gnome-mines
 gnome-sudoku
 gns3-gui-git
@@ -179,6 +180,7 @@ maven
 mcpelauncher-appimage
 megasync
 meteo-qt
+minetest
 mpc
 mpd
 mpv
