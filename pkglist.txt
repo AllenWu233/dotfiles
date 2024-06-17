@@ -12,6 +12,7 @@ archlinux-keyring
 archlinux-wallpaper
 archlinux-xdg-menu
 archlinuxcn-keyring
+archlinuxcn-mirrorlist-git
 aria2
 ark
 asciinema
@@ -104,8 +105,8 @@ github-cli
 glfw
 gnome-mines
 gnome-sudoku
-gns3-gui-git
-gns3-server-git
+gns3-gui
+gns3-server
 gnugo
 go
 go-musicfox-bin
@@ -180,9 +181,11 @@ maven
 mcpelauncher-appimage
 megasync
 meteo-qt
+minder
 minetest
 mpc
 mpd
+mpd-mpris
 mpv
 mtpfs
 mutt
@@ -241,6 +244,7 @@ python-pyqt5-webkit
 python-scipy
 python-virtualenv
 python38
+qbittorrent-enhanced-git
 qemu-base
 qt5ct
 qt6ct
@@ -289,6 +293,7 @@ tlpui
 tokei
 traceroute
 translate-shell
+transmission-cli
 trash-cli
 tree
 ttf-iosevka-nerd
@@ -307,6 +312,7 @@ v2raya
 vdhcoapp
 ventoy-bin
 vim-language-server
+vintagestory
 virtualbox
 virtualbox-ext-oracle
 virtualbox-guest-iso

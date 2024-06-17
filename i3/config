@@ -275,7 +275,7 @@ for_window [class="cmake-gui"] floating enable
 for_window [class="CMakeSetup"] floating enable
 for_window [class="Tlp-UI"] floating enable
 for_window [class="steamwebhelper"] floating enable
-for_window [class="wechat"] floating enable  # wechat-beta window
+for_window [class="wechat"] floating enable
 for_window [class="spectacle"] floating enable
 for_window [class="^Pot"] floating enable resize set 500 700
 for_window [class="screenkey"] floating enable sticky enable border none
@@ -285,63 +285,54 @@ for_window [class="Sublime_text"] floating enable
 for_window [class="Outer-wilds-mod-manager"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Gvim"] floating enable
-
-for_window [class="thunderbird" title="撰写"] floating enable
-for_window [class="thunderbird"] move scratchpad
-
+for_window [class="thunderbird"] floating enable 
+for_window [class="Mail" class="thunderbird"] move scratchpad
 for_window [class="^meteo-qt$"] floating enable
 for_window [class="^meteo-qt$" title="^天气状况$"] move window to position 1800 100
-
 for_window [class="^feh$"] floating enable border none 
 for_window [class="^feh$"] resize set $floating_size_x $floating_size_y
 for_window [class="^feh$"] move window to position $floating_position_x $floating_position_y
-
 for_window [class="gwenview"] floating enable border none 
 for_window [class="gwenview"] resize set $floating_size_x $floating_size_y
 for_window [class="gwenview"] move window to position $floating_position_x $floating_position_y
-
-for_window [class="okular"] floating enable border none 
-for_window [class="okular"] resize set $floating_size_x $floating_size_y
-for_window [class="okular"] move window to position $floating_position_x $floating_position_y
-
+# for_window [class="okular"] floating enable border none 
+# for_window [class="okular"] resize set $floating_size_x $floating_size_y
+# for_window [class="okular"] move window to position $floating_position_x $floating_position_y
 # WPS excel
-for_window [class="^et$"] floating enable border none
-for_window [class="^et$"] resize set $floating_size_x $floating_size_y
-for_window [class="^et$"] move window to position $floating_position_x $floating_position_y
-
+# for_window [class="^et$"] floating enable border none
+# for_window [class="^et$"] resize set $floating_size_x $floating_size_y
+# for_window [class="^et$"] move window to position $floating_position_x $floating_position_y
 # WPS ppt
-for_window [class="^wpp$"] floating enable border none
-for_window [class="^wpp$"] resize set $floating_size_x $floating_size_y
-for_window [class="^wpp$"] move window to position $floating_position_x $floating_position_y
-
+# for_window [class="^wpp$"] floating enable border none
+# for_window [class="^wpp$"] resize set $floating_size_x $floating_size_y
+# for_window [class="^wpp$"] move window to position $floating_position_x $floating_position_y
 # # WPS word
-for_window [class="^wps$"] floating enable border none
-for_window [class="^wps$"] resize set $floating_size_x $floating_size_y
-for_window [class="^wps$"] move window to position $floating_position_x $floating_position_y
-
+# for_window [class="^wps$"] floating enable border none
+# for_window [class="^wps$"] resize set $floating_size_x $floating_size_y
+# for_window [class="^wps$"] move window to position $floating_position_x $floating_position_y
 for_window [class="QQ"] floating enable border none
 for_window [class="QQ"] resize set $floating_size_x $floating_size_y
 for_window [class="QQ"] move window to position $floating_position_x $floating_position_y
-
-
 # Waylyrics
 for_window [class="waylyrics"] floating enable border none sticky enable 
 for_window [class="waylyrics"] resize set 1600 200
 for_window [class="waylyrics"] move window to position 480 1380
 # for_window [class="waylyrics"] move window to position 480 1200
 no_focus [class="waylyrics"]
+for_window [class="qBittorrent"] floating enable
+for_window [class="qBittorrent" title="qBittorrent Enhanced Edition"] move to scratchpad
 
 
 # Assign settings - Special worksapce for applications
+assign [class="firefox"] $ws2
 assign [class="steam"] $ws4
 assign [class="hmcl"] $ws5
 assign [class="dolphin"] $ws6
+assign [class="jetbrains-idea-ce"] $ws7
 assign [class="TelegramDesktop"] $ws8
 assign [class="wechat"] $ws9
 assign [class="^QQ$"] $ws9
-assign [class="firefox"] $ws2
-assign [class="jetbrains-idea-ce"] $ws7
-
+# assign [class="qBittorrent"] $ws10
 # Minecraft
 assign [class="No Flesh Within Chest"] $ws5
 assign [class="Minecraft"] $ws5
@@ -352,13 +343,15 @@ assign [class="Minecraft"] $ws5
 # Applications
 exec --no-startup-id dunst
 exec --no-startup-id redshift
-exec --no-startup-id i3-msg 'exec --no-startup-id thunderbird'
 exec_always --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 # exec_always --no-startup-id nm-applet
 # exec --no-startup-id meteo-qt
 # exec --no-startup-id i3-msg 'exec --no-startup-id dropbox'
 exec --no-startup-id pot
 exec --no-startup-id numlockx
+# exec --no-startup-id qbittorrent
+exec --no-startup-id i3-msg 'exec --no-startup-id thunderbird'
+exec --no-startup-id i3-msg 'exec --no-startup-id qbittorrent'
 
 
 # Screen settings
@@ -379,7 +372,7 @@ exec_always --no-startup-id syndaemon -i 0.5 -t -K -R  # Avoid touching the touc
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy
 # exec_always --no-startup-id ~/scrips/auto-laptop-keyboard-and-touchboard.sh
-exec_always --no-startup-id bw sync
+# exec_always --no-startup-id bw sync
 
 
 # Wallpaper
