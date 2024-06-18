@@ -349,9 +349,8 @@ exec_always --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 # exec --no-startup-id i3-msg 'exec --no-startup-id dropbox'
 exec --no-startup-id pot
 exec --no-startup-id numlockx
-# exec --no-startup-id qbittorrent
-exec --no-startup-id i3-msg 'exec --no-startup-id thunderbird'
 exec --no-startup-id i3-msg 'exec --no-startup-id qbittorrent'
+exec --no-startup-id i3-msg 'exec --no-startup-id thunderbird'
 
 
 # Screen settings

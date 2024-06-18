@@ -4,13 +4,18 @@ cd ~/repo/dotfiles || exit
 find ./* | grep -v '\(images\|README.md\|backup.sh\|configlist.txt\|.git\|.gitignore\)' | xargs rm -rf
 
 cp -r ~/scrips .
-cp -r ~/.w3m .
-rm ./.w3m/cookie
 cp ~/.zshrc .
 cp ~/.zshenv .
 cp ~/.zimrc .
 cp ~/.vimrc .
 cp ~/.gvimrc .
+mkdir newsboat
+cp ~/.config/newsboat/config ./newsboat
+mkdir w3m
+cp ~/.w3m/config ./w3m
+cp ~/.w3m/keymap ./w3m
+mkdir firefox
+cp -r ~/.config/firefox/chrome/ ./firefox
 
 cat ./configlist.txt | while read rows; do
 	cp -r ~/.config/$rows .

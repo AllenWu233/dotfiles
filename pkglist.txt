@@ -189,6 +189,7 @@ mpd-mpris
 mpv
 mtpfs
 mutt
+n2n
 ncmpcpp
 neofetch
 neovim
@@ -309,7 +310,6 @@ ubridge
 unarchiver
 v2ray
 v2raya
-vdhcoapp
 ventoy-bin
 vim-language-server
 vintagestory

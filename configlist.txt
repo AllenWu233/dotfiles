@@ -9,7 +9,6 @@ gtk-4.0
 i3
 Kvantum
 networkmanager-dmenu
-newsboat
 nvim
 paru
 picom
