@@ -2,8 +2,7 @@
 
 keymap + NULL
 keymap C-v NULL
-keymap SPC NULL
-keymap ^[[6~ NULL
+keymap SPC NULL keymap ^[[6~ NULL
 keymap - NULL
 keymap ESC-v NULL
 keymap ^[[5~ NULL
@@ -148,12 +147,12 @@ keymap C-r REDO
 keymap C-f COMMAND "NEXT_PAGE"
 #keymap C-b PREV_PAGE
 keymap C-b COMMAND "PREV_PAGE"
-keymap H BACK
+keymap J BACK
 keymap r RELOAD
 
 # Tab stuff
 keymap L NEXT_TAB
-keymap J PREV_TAB
+keymap H PREV_TAB
 keymap o GOTO
 keymap O TAB_GOTO
 

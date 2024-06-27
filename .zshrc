@@ -156,8 +156,7 @@ alias rmcache='yes | sudo pacman -Sc && yes | paru -Sc'
 alias vim='nvim'
 alias ls='lsd'
 alias you-get='you-get -o ~/Videos'
-# alias you-get-cookies='you-get -c ~/cookies.txt'
-# alias you-get-cookies='you-get -c ~/.mozilla/firefox/g1t7i3hf.default-release/cookies.sqlite'
+alias you-get-cookies='you-get -c ~/.mozilla/firefox/g1t7i3hf.default-release/cookies.sqlite'
 alias prac-rs='cd ~/rust_work/rust-by-practice && git pull; mdbook serve -p 8888 -n 127.0.0.1 zh-CN/ && firefox http://127.0.0.1:8888/'
 # alias imewlconverter='docker run --rm -it -v /dict:/dict imewlconverter'
 alias ncmpcpp='mpd; ncmpcpp'
@@ -193,6 +192,9 @@ alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 #
 alias nb="newsboat -r"
+
+alias dv="sudo dhclient -v -r vboxnet0; sudo dhclient vboxnet0"
+alias dc="sudo dhclient -v -r vboxnet0"
 
 
 

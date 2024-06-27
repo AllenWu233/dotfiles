@@ -26,6 +26,7 @@ base
 base-devel
 bashtop
 bat
+bind
 binder_linux-dkms
 binutils
 bison
@@ -50,6 +51,7 @@ cups-pdf
 debtap
 debugedit
 deepin-wine-quarkclouddrive
+dhclient
 dhcpcd
 discord
 docker
@@ -261,7 +263,6 @@ rofi
 rofi-bluetooth-git
 rofimoji
 rp-pppoe
-rssguard
 rustdesk-bin
 s-nail
 screenkey

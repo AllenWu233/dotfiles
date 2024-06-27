@@ -39,7 +39,7 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # window border settings
-default_border          pixel 3
+default_border          pixel 4
 default_floating_border none
 smart_borders on
 
@@ -175,8 +175,8 @@ bindsym $mod+Shift+p exec --no-startup-id "spectacle -r -b"
 #bindsym $mod+Shift+e exec --no-startup-id "scrot -s"
 
 # volume
-bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%
-bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
+bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioMute           exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute        exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
  
@@ -215,8 +215,10 @@ mode "  " {
 
 # client color
 # #546735 -> #81a1c1
+# #bb99ff
 # class                 border  backgr. text    indicator child_border
-client.focused          #81a1c1 #81a1c1 #F8F8F2 #81a1c1   #81a1c1
+# client.focused          #81a1c1 #81a1c1 #F8F8F2 #81a1c1   #81a1c1
+client.focused          #bb99ff #bb99ff #F8F8F2 #bb99ff   #bb99ff
 client.focused_inactive #2E3440 #2E3440 #F8F8F2 #2E3440   #2E3440
 client.unfocused        #2E3440 #2E3440 #BFBFBF #2E3440   #2E3440
 client.urgent           #2E3440 #FF5555 #F8F8F2 #FF5555   #FF5555
@@ -286,7 +288,7 @@ for_window [class="Outer-wilds-mod-manager"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Gvim"] floating enable
 for_window [class="thunderbird"] floating enable 
-for_window [class="Mail" class="thunderbird"] move scratchpad
+for_window [title="Mozilla Thunderbird"] move scratchpad
 for_window [class="^meteo-qt$"] floating enable
 for_window [class="^meteo-qt$" title="^天气状况$"] move window to position 1800 100
 for_window [class="^feh$"] floating enable border none 
@@ -325,17 +327,18 @@ for_window [class="qBittorrent" title="qBittorrent Enhanced Edition"] move to sc
 
 # Assign settings - Special worksapce for applications
 assign [class="firefox"] $ws2
+assign [class="spotify"] $ws3
 assign [class="steam"] $ws4
-assign [class="hmcl"] $ws5
+assign [class="hmcl" class="Minecraft" class="No Flesh Within Chest"] $ws5
+# assign [class="No Flesh Within Chest"] $ws5
+# assign [class="Minecraft"] $ws5
 assign [class="dolphin"] $ws6
-assign [class="jetbrains-idea-ce"] $ws7
+assign [class="obsidian"] $ws7
 assign [class="TelegramDesktop"] $ws8
+assign [class="discord"] $ws8
 assign [class="wechat"] $ws9
 assign [class="^QQ$"] $ws9
 # assign [class="qBittorrent"] $ws10
-# Minecraft
-assign [class="No Flesh Within Chest"] $ws5
-assign [class="Minecraft"] $ws5
 
 
 # Startup
@@ -349,8 +352,8 @@ exec_always --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 # exec --no-startup-id i3-msg 'exec --no-startup-id dropbox'
 exec --no-startup-id pot
 exec --no-startup-id numlockx
-exec --no-startup-id i3-msg 'exec --no-startup-id qbittorrent'
 exec --no-startup-id i3-msg 'exec --no-startup-id thunderbird'
+exec --no-startup-id i3-msg 'exec --no-startup-id qbittorrent'
 
 
 # Screen settings
@@ -364,10 +367,10 @@ exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1600 --dpi 144
 # exec_always --no-startup-id pkill picom; picom --config ~/.config/picom/picom-ftlabs.conf
 exec_always --no-startup-id pkill picom; picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id bash ~/scrips/rime-sync.sh
-# exec_always --no-startup-id fcitx5
 exec_always --no-startup-id bash ~/.config/polybar/launch.sh
 exec_always --no-startup-id bash ~/.xprofile
-exec_always --no-startup-id syndaemon -i 0.5 -t -K -R  # Avoid touching the touchpad accidentally
+# Avoid touching the touchpad accidentally
+exec_always --no-startup-id syndaemon -i 0.5 -t -K -R
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy
 # exec_always --no-startup-id ~/scrips/auto-laptop-keyboard-and-touchboard.sh
