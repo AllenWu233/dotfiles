@@ -62,7 +62,6 @@ drawio-desktop-bin
 dropbox
 dunst
 dust
-dynamips
 efibootmgr
 egl-wayland
 electron-netease-cloud-music
@@ -107,8 +106,6 @@ github-cli
 glfw
 gnome-mines
 gnome-sudoku
-gns3-gui
-gns3-server
 gnugo
 go
 go-musicfox-bin
@@ -135,7 +132,6 @@ i3blocks
 i3lock-color
 i3lock-fancy-git
 i3status
-inetutils
 intel-ucode
 inter-font
 iwd
@@ -163,7 +159,6 @@ libiconv
 libreoffice-extension-languagetool
 libreoffice-still-zh-cn
 libtool
-libvirt
 lightdm
 lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
@@ -185,6 +180,7 @@ megasync
 meteo-qt
 minder
 minetest
+mingw-w64-gcc
 mpc
 mpd
 mpd-mpris
@@ -307,7 +303,6 @@ ttf-ms-fonts
 ttf-roboto
 ttf-sarasa-gothic
 ttf-wps-fonts
-ubridge
 unarchiver
 v2ray
 v2raya
@@ -320,7 +315,6 @@ virtualbox-guest-iso
 virtualbox-host-dkms
 virtualbox-sdk
 vlc
-vpcs
 vulkan-intel
 w3m
 waylyrics-git
