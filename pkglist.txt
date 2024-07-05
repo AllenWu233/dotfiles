@@ -140,6 +140,7 @@ jdk17-openjdk
 jdk8-openjdk
 jp2a
 jpegoptim
+k3b
 kcalc
 kcolorchooser
 kdeconnect
