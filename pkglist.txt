@@ -132,6 +132,7 @@ i3blocks
 i3lock-color
 i3lock-fancy-git
 i3status
+inetutils
 intel-ucode
 inter-font
 iwd
@@ -252,7 +253,6 @@ ranger
 rar
 redshift
 refind
-rime-double-pinyin
 rime-ice-double-pinyin-git
 rime-pinyin-zhwiki
 ripgrep

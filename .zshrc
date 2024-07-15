@@ -195,6 +195,7 @@ alias nb="newsboat -r"
 
 alias dv="sudo dhclient -v -r vboxnet0; sudo dhclient vboxnet0"
 alias dc="sudo dhclient -v -r vboxnet0"
+alias chx="sudo chmod +x"
 
 
 
@@ -213,3 +214,5 @@ eval "$(atuin init zsh)"
 bindkey '^r' atuin-search
 
 eval $(thefuck --alias)
+
+
