@@ -39,6 +39,8 @@ breeze-gtk
 btrfs-heatmap
 btrfs-progs
 cava
+cdrdao
+cdrtools
 chromium
 cmake
 cmatrix
@@ -62,6 +64,7 @@ drawio-desktop-bin
 dropbox
 dunst
 dust
+dvd+rw-tools
 efibootmgr
 egl-wayland
 electron-netease-cloud-music
@@ -94,6 +97,7 @@ firefox-i18n-zh-cn
 flex
 fluent-reader
 fortune-mod-zh
+freac
 freepats-general-midi
 gawk
 gcc
@@ -289,6 +293,7 @@ timidity++
 tlp
 tlp-rdw
 tlpui
+todesk
 tokei
 traceroute
 translate-shell
@@ -299,6 +304,7 @@ ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
 ttf-lxgw-wenkai
 ttf-lxgw-wenkai-gb
+ttf-lxgw-wenkai-screen
 ttf-lxgw-wenkai-tc
 ttf-ms-fonts
 ttf-roboto

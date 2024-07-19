@@ -41,4 +41,13 @@ return {
 
   -- For productivity metrics, goals, leaderboards, and automatic time tracking
   { "wakatime/vim-wakatime", lazy = false },
+
+  {
+    "echasnovski/mini.pairs",
+    opts = {
+      mappings = {
+        ["'"] = {},
+      },
+    },
+  },
 }
