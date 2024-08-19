@@ -74,7 +74,8 @@ bindsym $mod+b workspace $ws6; exec --no-startup-id dolphin
 bindsym $mod+m exec --no-startup-id rofi -modi "emoji:rofimoji" -show emoji -dpi 1
 
 # scrips
-bindsym $mod+F12 exec --no-startup-id "sh ~/scrips/toggle_right_click.sh"
+bindsym $mod+F1 exec --no-startup-id "sh ~/scrips/toggle_left_click_hold.sh"
+bindsym $mod+F2 exec --no-startup-id "sh ~/scrips/toggle_right_click_hold.sh"
 
 
 # kill focused window
