@@ -30,9 +30,6 @@ bind
 binder_linux-dkms
 binutils
 bison
-bitwarden
-bitwarden-cli
-bitwarden-rofi-git
 boxes
 breeze
 breeze-gtk
@@ -83,6 +80,7 @@ fcitx5-configtool
 fcitx5-fbterm-git
 fcitx5-gtk
 fcitx5-material-color
+fcitx5-mozc
 fcitx5-pinyin-moegirl-rime
 fcitx5-qt
 fcitx5-rime
@@ -99,6 +97,7 @@ fluent-reader
 fortune-mod-zh
 freac
 freepats-general-midi
+freeradius
 gawk
 gcc
 gdb
@@ -182,7 +181,6 @@ magiskboot-bin
 make
 maven
 mcpelauncher-appimage
-megasync
 meteo-qt
 minder
 minetest
@@ -264,7 +262,6 @@ rofi
 rofi-bluetooth-git
 rofimoji
 rp-pppoe
-rustdesk-bin
 s-nail
 screenkey
 sd
@@ -287,7 +284,8 @@ telegram-desktop
 tetris-terminal-git
 texinfo
 thefuck
-thunderbird-bin
+thunderbird
+thunderbird-i18n-zh-cn
 timeshift
 timidity++
 tlp
@@ -317,7 +315,6 @@ ventoy-bin
 vim-language-server
 vintagestory
 virtualbox
-virtualbox-ext-oracle
 virtualbox-guest-iso
 virtualbox-host-dkms
 virtualbox-sdk
@@ -382,6 +379,7 @@ xorg-xwininfo
 xorg-xwud
 xsel
 xss-lock
+z-library-bin
 zellij
 zip
 zotero-bin

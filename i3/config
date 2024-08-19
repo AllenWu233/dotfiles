@@ -68,10 +68,14 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window -dpi 1  # switching wind
 bindsym Control+Mod1+b exec --no-startup-id rofi-bluetooth -dpi 1
 bindsym Control+Mod1+n exec --no-startup-id networkmanager_dmenu -dpi 1
 bindsym Control+Mod1+l exec --no-startup-id "sh ~/.config/rofi/powermenu.sh"
-bindsym $mod+z exec --no-startup-id bwmenu -- -dpi 1
+# bindsym $mod+z exec --no-startup-id bwmenu -- -dpi 1
 bindsym $mod+b workspace $ws6; exec --no-startup-id dolphin
 # bindsym $mod+m exec --no-startup-id rofimoji -a type
 bindsym $mod+m exec --no-startup-id rofi -modi "emoji:rofimoji" -show emoji -dpi 1
+
+# scrips
+bindsym $mod+F12 exec --no-startup-id "sh ~/scrips/toggle_right_click.sh"
+
 
 # kill focused window
 bindsym $mod+q kill
@@ -328,7 +332,7 @@ for_window [class="qBittorrent" title="qBittorrent Enhanced Edition"] move to sc
 # Assign settings - Special worksapce for applications
 assign [class="firefox"] $ws2
 assign [class="spotify"] $ws3
-assign [class="steam"] $ws4
+assign [title="Steam"] $ws4
 assign [class="hmcl" class="Minecraft" class="No Flesh Within Chest"] $ws5
 # assign [class="No Flesh Within Chest"] $ws5
 # assign [class="Minecraft"] $ws5
@@ -350,7 +354,7 @@ exec_always --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 # exec_always --no-startup-id nm-applet
 # exec --no-startup-id meteo-qt
 # exec --no-startup-id i3-msg 'exec --no-startup-id dropbox'
-exec --no-startup-id pot
+# exec --no-startup-id pot
 exec --no-startup-id numlockx
 exec --no-startup-id i3-msg 'exec --no-startup-id thunderbird'
 exec --no-startup-id i3-msg 'exec --no-startup-id qbittorrent'
