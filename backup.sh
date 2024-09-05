@@ -11,10 +11,10 @@ done
 
 find /home/Allen/repo/dotfiles/* -type d |
     grep -vE "$exclude_args" |
-    # xargs rm -rf
+    xargs rm -rf
 
-    # 复制指定的文件
-    files_to_copy=(scrips .zshrc .zshenv .zimrc .vimrc .gvimrc)
+# 复制指定的文件
+files_to_copy=(scrips .zshrc .zshenv .zimrc .vimrc .gvimrc)
 for file in "${files_to_copy[@]}"; do
     cp "/home/Allen/$file" .
 done
