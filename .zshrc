@@ -173,6 +173,7 @@ alias hledger-web='hledger-web -f ~/repo/hledger/.hledger.journal'
 alias HLw='hledger-web'
 alias tree='lsd --tree'
 alias ranger='env LANG=zh_CN.UTF-8 LANGUAGE=zh_CN ranger'
+alias yazi='env LANG=zh_CN.UTF-8 LANGUAGE=zh_CN yazi'
 alias rm="echo This is not the command you are looking for. Use \'trash\' instead.; false"
 alias get-ip="ip -4 addr | rg -i ppp0 -i | rg -i inet"
 alias pac="sudo pacman -Syu"

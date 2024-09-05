@@ -18,8 +18,8 @@ mkdir firefox
 cp -r ~/.config/firefox/chrome/ ./firefox
 
 cat ./configlist.txt | while read rows; do
-	cp -r ~/.config/$rows .
-	rm -rf ./$rows/.git ./$rows.gitignore
+    cp -r ~/.config/$rows .
+    rm -rf ./$rows/.git ./$rows.gitignore
 done
 
 pacman -Qqe >pkglist.txt
@@ -30,3 +30,6 @@ git commit -m "backup.sh"
 git push -f origin main
 
 ~/repo/hledger/backup.sh
+
+date
+echo "Backup finished!"

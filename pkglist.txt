@@ -251,7 +251,6 @@ qbittorrent-enhanced-git
 qemu-base
 qt5ct
 qt6ct
-ranger
 rar
 redshift
 refind
@@ -308,6 +307,7 @@ ttf-ms-fonts
 ttf-roboto
 ttf-sarasa-gothic
 ttf-wps-fonts
+ueberzugpp
 unarchiver
 v2ray
 v2raya
@@ -329,10 +329,6 @@ which
 winetricks
 wireshark-cli
 wireshark-qt
-wps-office
-wps-office-fonts
-wps-office-mime
-wps-office-mui-zh-cn
 xautolock
 xclip
 xdotool
@@ -379,6 +375,7 @@ xorg-xwininfo
 xorg-xwud
 xsel
 xss-lock
+yazi
 z-library-bin
 zellij
 zip
