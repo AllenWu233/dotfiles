@@ -18,9 +18,8 @@ mkdir firefox
 cp -r /home/Allen/.config/firefox/chrome/ ./firefox
 
 cat ./configlist.txt | while read rows; do
-    cp -r /home/Allen/.config/$rows .
-    # rm -rf ./$rows/.git ./$rows.gitignore
-    echo "$rows"
+    cp -r /home/Allen/.config/"$rows" .
+    rm -rf ./"$rows"/.git ./"$rows"/.gitignore
 done
 
 pacman -Qqe >pkglist.txt
