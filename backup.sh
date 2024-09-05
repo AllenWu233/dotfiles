@@ -2,17 +2,19 @@
 
 cd /home/Allen/repo/dotfiles || exit
 
-# 找到要删除的文件夹并排除不需要的文件夹
 files_to_exclude=(images README.md backup.sh configlist.txt .git .gitignore)
 
-find /home/Allen/repo/dotfiles/* -type d |
-    # grep -vE '(images|README.md|backup.sh|configlist.txt|.git|.gitignore)' |
-    grep -vE "${files_to_exclude[@]}" |
-    # xargs rm -rf
-    xargs echo
+# 使用数组中的项目来排除文件夹
+for exclude_item in "${files_to_exclude[@]}"; do
+    exclude_args+=" -e $exclude_item"
+done
 
-# 复制指定的文件
-files_to_copy=(scrips .zshrc .zshenv .zimrc .vimrc .gvimrc)
+find /home/Allen/repo/dotfiles/* -type d |
+    grep -vE "$exclude_args" |
+    # xargs rm -rf
+
+    # 复制指定的文件
+    files_to_copy=(scrips .zshrc .zshenv .zimrc .vimrc .gvimrc)
 for file in "${files_to_copy[@]}"; do
     cp "/home/Allen/$file" .
 done
