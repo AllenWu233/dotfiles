@@ -9,18 +9,26 @@ cp /home/Allen/.zshenv .
 cp /home/Allen/.zimrc .
 cp /home/Allen/.vimrc .
 cp /home/Allen/.gvimrc .
+
 mkdir newsboat
 cp /home/Allen/.config/newsboat/config ./newsboat
+
 mkdir w3m
 cp /home/Allen/.w3m/config ./w3m
 cp /home/Allen/.w3m/keymap ./w3m
+
 mkdir firefox
 cp -r /home/Allen/.config/firefox/chrome/ ./firefox
 
-cat ./configlist.txt | while read rows; do
-    cp -r /home/Allen/.config/"$rows" .
-    rm -rf ./"$rows"/.git ./"$rows"/.gitignore
-done
+while IFS= read -r row; do
+    cp -r "/home/Allen/.config/$row" .
+    rm -rf "./$row/.git" "./$row/.gitignore"
+done <./configlist.txt
+
+# cat ./configlist.txt | while read rows; do
+#     cp -r /home/Allen/.config/"$rows" .
+#     rm -rf ./"$rows"/.git ./"$rows"/.gitignore
+# done
 
 pacman -Qqe >pkglist.txt
 
