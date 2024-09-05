@@ -18,4 +18,5 @@ ranger
 redshift
 rofi
 xob
+yazi
 zellij
