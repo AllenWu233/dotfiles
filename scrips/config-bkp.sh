@@ -1,2 +1,2 @@
 #!/bin/bash
-~/repo/dotfiles/backup.sh
+/home/Allen/repo/dotfiles/backup.sh
