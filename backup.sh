@@ -16,19 +16,19 @@ find /home/Allen/repo/dotfiles/* -type d |
 # 复制指定的文件
 files_to_copy=(scrips .zshrc .zshenv .zimrc .vimrc .gvimrc)
 for file in "${files_to_copy[@]}"; do
-    cp "/home/Allen/$file" .
+    cp -r "/home/Allen/$file" .
 done
 
-# 复制newsboat配置
+# newsboat
 mkdir -p newsboat
 cp /home/Allen/.config/newsboat/config ./newsboat
 
-# 复制w3m配置
+# w3m
 mkdir -p w3m
 cp /home/Allen/.w3m/config ./w3m
 cp /home/Allen/.w3m/keymap ./w3m
 
-# 复制firefox配置
+# Firefox
 mkdir -p firefox
 cp -r /home/Allen/.config/firefox/chrome/ ./firefox
 
