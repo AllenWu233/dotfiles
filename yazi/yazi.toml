@@ -12,6 +12,20 @@ edit = [
 play = [
 	{ run = 'mpv "$@"', orphan = true, for = "unix" },
 ]
+view = [
+  { run = 'feh "$@"', orphan = true, for = "unix" },
+]
 open = [
 	{ run = 'xdg-open "$@"', desc = "Open" },
 ]
+
+# [open]
+# prepend_rules = [
+#   { name = "*.jpg", use = "view" },
+#   { name = "*.png", use = "view" },
+#   # { name = "*.gif", use = "view" },
+#   { name = "*.webp", use = "view" },
+#   { name = "*.avif", use = "view" },
+#   { name = "*.svg", use = "view" },
+# ]
+
