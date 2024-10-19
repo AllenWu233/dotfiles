@@ -1,8 +1,0 @@
-#!/bin/bash
-# random-wallpaper.sh - a script to change the wallpaper randomly
-
-wallpaper_dir="/home/Allen/Pictures/Pictures/Wallpapers"
-
-wallpapers=($(ls $wallpaper_dir))
-random_index=$(($RANDOM % ${#wallpapers[@]}))
-feh --bg-fill $wallpaper_dir/${wallpapers[$random_index]}
