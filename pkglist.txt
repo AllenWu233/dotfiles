@@ -138,7 +138,9 @@ i3blocks
 i3lock-color
 i3lock-fancy-git
 i3status
+imwheel
 inetutils
+informant
 intel-ucode
 inter-font
 iwd
@@ -171,6 +173,7 @@ libtool
 lightdm
 lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
+lightly-qt6
 linux-firmware
 linux-lts
 linux-wifi-hotspot
@@ -233,7 +236,6 @@ patch
 patchelf
 pavucontrol
 payload-dumper-go-bin
-picom
 pip-tools
 pipes.sh
 pkgconf
@@ -278,7 +280,6 @@ slirp4netns
 slop
 sox
 spectacle
-spotifox-bin
 spotify
 starship
 steam
@@ -291,6 +292,7 @@ telegram-desktop
 tetris-terminal-git
 texinfo
 thefuck
+thunar
 thunderbird
 thunderbird-i18n-zh-cn
 timeshift
@@ -391,7 +393,6 @@ yazi
 yesplaymusic
 zellij
 zip
-zotero-bin
 zoxide
 zsh
 zsh-autosuggestions

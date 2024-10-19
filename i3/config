@@ -40,8 +40,8 @@ focus_follows_mouse no
 
 # window border settings
 default_border          pixel 4
-default_floating_border none
-smart_borders on
+# default_floating_border none
+# smart_borders on
 
 # hiding borders adjacent to the screen edges
 # hide_edge_borders both
@@ -72,7 +72,8 @@ bindsym Control+Mod1+b exec --no-startup-id rofi-bluetooth -dpi 1
 bindsym Control+Mod1+n exec --no-startup-id networkmanager_dmenu -dpi 1
 bindsym Control+Mod1+l exec --no-startup-id "sh ~/.config/rofi/powermenu.sh"
 # bindsym $mod+z exec --no-startup-id bwmenu -- -dpi 1
-bindsym $mod+b workspace $ws6; exec --no-startup-id dolphin
+# bindsym $mod+b workspace $ws6; exec --no-startup-id dolphin
+bindsym $mod+b workspace $ws6; exec --no-startup-id thunar
 # bindsym $mod+m exec --no-startup-id rofimoji -a type
 bindsym $mod+m exec --no-startup-id rofi -modi "emoji:rofimoji" -show emoji -dpi 1
 
@@ -362,6 +363,7 @@ exec --no-startup-id pot
 exec --no-startup-id numlockx
 exec --no-startup-id i3-msg 'exec --no-startup-id thunderbird'
 # exec --no-startup-id i3-msg 'exec --no-startup-id qbittorrent'
+# exec --no-startup-id imwheel
 
 
 # Screen settings
@@ -372,8 +374,8 @@ exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1600 --dpi 144
 
 
 # Other scrips
-# exec_always --no-startup-id pkill picom; picom --config ~/.config/picom/picom-ftlabs-pr41.conf
-exec_always --no-startup-id pkill picom; picom --config ~/.config/picom/picom.conf
+exec_always --no-startup-id pkill picom; picom --config ~/.config/picom/picom-ftlabs-pr41.conf
+# exec_always --no-startup-id pkill picom; picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id bash ~/scrips/rime-sync.sh
 exec_always --no-startup-id bash ~/.config/polybar/launch.sh
 exec_always --no-startup-id bash ~/.xprofile
@@ -392,6 +394,7 @@ set $wp-mokou ~/Pictures/Pictures/东方/86548110_p0.jpg
 set $wp-mystia ~/Pictures/Pictures/东方/111219584_p0.png 
 set $wp-tatara-kogasa ~/Pictures/47516247_p0_pro.jpg 
 
-exec_always --no-startup-id feh --bg-fill $wp-mystia
+# exec_always --no-startup-id feh --bg-fill $wp-mystia
 # exec_always --no-startup-id linux-wallpaperengine 824586497 --silent --screen-root HDMI-0
+exec_always --no-startup-id bash ~/scrips/random-wallpaper.sh
 
