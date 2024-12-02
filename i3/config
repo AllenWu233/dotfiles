@@ -59,8 +59,8 @@ gaps outer 1
 
 # Keybingdings
 # quick start
-# bindsym $mod+Return workspace $ws1; exec --no-startup-id alacritty  # start a terminal on workspace 1
-bindsym $mod+Return workspace $ws1; exec --no-startup-id wezterm  # start a terminal on workspace 1
+bindsym $mod+Return workspace $ws1; exec --no-startup-id alacritty  # start a terminal on workspace 1
+# bindsym $mod+Return workspace $ws1; exec --no-startup-id wezterm  # start a terminal on workspace 1
 bindsym $mod+f workspace $ws2; exec --no-startup-id firefox
 bindsym $mod+Shift+f workspace $ws2; exec --no-startup-id firefox -private-window
 # bindsym $mod+n workspace $ws3; exec --no-startup-id electron-netease-cloud-music; exec --no-startup-id "killall waylyrics; waylyrics"
@@ -72,8 +72,8 @@ bindsym Control+Mod1+b exec --no-startup-id rofi-bluetooth -dpi 1
 bindsym Control+Mod1+n exec --no-startup-id networkmanager_dmenu -dpi 1
 bindsym Control+Mod1+l exec --no-startup-id "sh ~/.config/rofi/powermenu.sh"
 # bindsym $mod+z exec --no-startup-id bwmenu -- -dpi 1
-# bindsym $mod+b workspace $ws6; exec --no-startup-id dolphin
-bindsym $mod+b workspace $ws6; exec --no-startup-id thunar
+bindsym $mod+b workspace $ws6; exec --no-startup-id dolphin
+# bindsym $mod+b workspace $ws6; exec --no-startup-id thunar
 # bindsym $mod+m exec --no-startup-id rofimoji -a type
 bindsym $mod+m exec --no-startup-id rofi -modi "emoji:rofimoji" -show emoji -dpi 1
 
@@ -250,6 +250,7 @@ for_window [window_role="task_dialog"]              floating enable
 
 for_window [title="Preferences$"]                   floating enable
 for_window [title="Picture-in-Picture"]             floating enable sticky enable
+for_window [title="图片查看器"]                     floating enable sticky enable
 
 for_window [class="xdman-Main"] floating enable
 for_window [class="java-lang-Thread"] floating enable
@@ -270,7 +271,7 @@ for_window [class="Virt-manager"] floating enable
 # for_window [class="TelegramDesktop"] floating enable
 for_window [class="Quickgui"] floating enable
 for_window [class="R_x11"] floating enable
-for_window [class="Pavucontrol"] floating enable
+for_window [class="pavucontrol"] floating enable
 for_window [class="Geph"] floating enable
 for_window [class="kdeconnect-app"] floating enable
 for_window [class="KDE_Connect"] floating enabl
@@ -288,7 +289,7 @@ for_window [class="cmake-gui"] floating enable
 for_window [class="CMakeSetup"] floating enable
 for_window [class="Tlp-UI"] floating enable
 for_window [class="steamwebhelper"] floating enable
-for_window [class="wechat"] floating enable
+# for_window [class="wechat"] floating enable
 for_window [class="spectacle"] floating enable
 for_window [class="^Pot"] floating enable resize set 500 700
 for_window [class="screenkey"] floating enable sticky enable border none
@@ -299,37 +300,42 @@ for_window [class="Outer-wilds-mod-manager"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Gvim"] floating enable
 for_window [class="thunderbird"] floating enable 
+for_window [class="KeePassXC"] floating enable 
 
 for_window [class="^meteo-qt$"] floating enable
 for_window [class="^meteo-qt$" title="^天气状况$"] move window to position 1800 100
 
 for_window [class="^feh$"] floating enable
-for_window [class="^feh$"] resize set $floating_size_x $floating_size_y
-for_window [class="^feh$"] move window to position $floating_position_x $floating_position_y
+# for_window [class="^feh$"] resize set $floating_size_x $floating_size_y
+# for_window [class="^feh$"] move window to position $floating_position_x $floating_position_y
 
 for_window [class="gwenview"] floating enable
-for_window [class="gwenview"] resize set $floating_size_x $floating_size_y
-for_window [class="gwenview"] move window to position $floating_position_x $floating_position_y
+# for_window [class="gwenview"] resize set $floating_size_x $floating_size_y
+# for_window [class="gwenview"] move window to position $floating_position_x $floating_position_y
 
-# for_window [class="okular"] floating enable border none 
+for_window [class="okular"] floating enable
 # for_window [class="okular"] resize set $floating_size_x $floating_size_y
 # for_window [class="okular"] move window to position $floating_position_x $floating_position_y
 
-for_window [class="QQ"] floating enable
-for_window [class="QQ"] resize set $floating_size_x $floating_size_y
-for_window [class="QQ"] move window to position $floating_position_x $floating_position_y
+# for_window [class="QQ"] floating enable
+# for_window [class="QQ"] resize set $floating_size_x $floating_size_y
+# for_window [class="QQ"] move window to position $floating_position_x $floating_position_y
+
 # Waylyrics
 for_window [class="waylyrics"] floating enable border none sticky enable 
 for_window [class="waylyrics"] resize set 1600 200
 for_window [class="waylyrics"] move window to position 480 1380
 no_focus [class="waylyrics"]
 
-for_window [class="qBittorrent"] floating enable
+# for_window [class="qBittorrent"] floating enable
 
 # wpsoffice
-for_window [class="wpsoffice"] floating enable
-for_window [class="wpsoffice"] resize set $floating_size_x $floating_size_y
-for_window [class="wpsoffice"] move window to position $floating_position_x $floating_position_y
+# for_window [class="wpsoffice"] floating enable
+# for_window [class="wpsoffice"] resize set $floating_size_x $floating_size_y
+# for_window [class="wpsoffice"] move window to position $floating_position_x $floating_position_y
+# for_window [class="wps"] floating enable
+# for_window [class="wps"] resize set $floating_size_x $floating_size_y
+# for_window [class="wps"] move window to position $floating_position_x $floating_position_y
 
 for_window [class="kmag"] floating enable sticky enable
 
@@ -369,7 +375,7 @@ exec --no-startup-id numlockx
 # exec --no-startup-id keepassxc
 exec --no-startup-id i3-msg 'exec --no-startup-id thunderbird'
 # exec --no-startup-id i3-msg 'exec --no-startup-id qbittorrent'
-# exec --no-startup-id imwheel
+# exec_always --no-startup-id imwheel
 
 
 # Screen settings
@@ -380,17 +386,18 @@ exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1600 --dpi 144
 
 
 # Other scrips
-exec_always --no-startup-id pkill picom; picom --config ~/.config/picom/picom-ftlabs-pr41.conf
-# exec_always --no-startup-id pkill picom; picom --config ~/.config/picom/picom.conf
+# exec_always --no-startup-id pkill picom; picom --config ~/.config/picom/picom-ftlabs-pr41.conf
+exec_always --no-startup-id pkill picom; picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id bash ~/scrips/rime-sync.sh
 exec_always --no-startup-id bash ~/.config/polybar/launch.sh
 exec_always --no-startup-id bash ~/.xprofile
+
 # Avoid touching the touchpad accidentally
 exec_always --no-startup-id syndaemon -i 0.5 -t -K -R
+
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy
 # exec_always --no-startup-id ~/scrips/auto-laptop-keyboard-and-touchboard.sh
-# exec_always --no-startup-id bw sync
 
 
 # Wallpaper
@@ -402,5 +409,6 @@ set $wp-tatara-kogasa ~/Pictures/47516247_p0_pro.jpg
 
 # exec_always --no-startup-id feh --bg-fill $wp-mystia
 # exec_always --no-startup-id linux-wallpaperengine 824586497 --silent --screen-root HDMI-0
-exec_always --no-startup-id bash ~/scrips/random-wallpaper.sh
+# exec_always --no-startup-id bash ~/scrips/random-wallpaper.sh
+exec --no-startup-id bash ~/scrips/random-wallpaper.sh
 

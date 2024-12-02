@@ -2,8 +2,7 @@
 WINIT_X11_SCALE_FACTOR = "1.0"
 
 [font]
-# size = 16
-size = 24
+size = 23
 
 [font.bold]
 family = "JetBrainsMono NF"
@@ -26,10 +25,10 @@ columns = 110
 lines = 25
 
 [keyboard]
-# Spawn new instance in same directory
+
 bindings = [
-{ key = "Return", mods = "Super|Shift", action = "SpawnNewInstance" },
-{ key = "B", mods = "Control|Shift", action = "None" },
+    { key = "Return", mods = "Super|Shift", action = "SpawnNewInstance" }, # Spawn new instance in same directory
+    { key = "B", mods = "Control|Shift", action = "None" },
 ]
 
 # TokyoNight Alacritty Colors

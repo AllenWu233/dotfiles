@@ -150,12 +150,12 @@ source ~/.zoxide
 #
 alias TSc='sudo timeshift --create'
 alias wine='env LANG=zh_CN.UTF-8 LANG=zh_CN.UTF-8 wine'
-# alias wine-forgame='WINEPREFIX=~/.local/share/wineprefixes/forgame/ wine'
+# alias wine-game='WINEPREFIX=~/.local/share/wineprefixes/game/ wine'
 # alias pkgclean='sudo pacman -Rns $(pacman -Qqdt) && yes | sudo pacman -Sc && yes | paru -Sc'
 alias pkgclean='sudo pacman -Sc && yes | paru -Scc'
 alias vim='nvim'
 alias ls='lsd'
-# alias you-get='you-get -o ~/Videos'
+alias you-get='you-get -o ~/Videos'
 # alias you-get-cookies='you-get -o ~/Videos -c ~/.mozilla/firefox/g1t7i3hf.default-release/cookies.sqlite'
 alias prac-rs='cd ~/rust_work/rust-by-practice && git pull; mdbook serve -p 8888 -n 127.0.0.1 zh-CN/ && firefox http://127.0.0.1:8888/'
 # alias imewlconverter='docker run --rm -it -v /dict:/dict imewlconverter'
@@ -177,26 +177,24 @@ alias yazi='env LANG=zh_CN.UTF-8 LANGUAGE=zh_CN yazi'
 alias rm="echo This is not the command you are looking for. Use \'trash\' instead.; false"
 alias get-ip="ip -4 addr | rg -i ppp0 -i | rg -i inet"
 alias pac="sudo pacman -Syu"
-alias \$=' '
-alias %=' '
+# alias \$=' '
+# alias %=' '
 alias tree1='lsd --tree --depth 1'
 alias tree2='lsd --tree --depth 2'
-alias ddg='w3m duckduckgo.com/lite'
-alias abs='w3m https://linux.die.net/abs-guide/'
+# alias ddg='w3m duckduckgo.com/lite'
+# alias abs='w3m https://linux.die.net/abs-guide/'
 alias sshlocal='ssh vboxer@127.0.0.1 -p 2222'
 alias cmd-wrapped='cmd-wrapped -s atuin'
 alias mf='musicfox'
-#
+
 # bat
 alias cat="bat"
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
-#
-alias nb="newsboat -r"
 
-alias dv="sudo dhclient -v -r vboxnet0; sudo dhclient vboxnet0"
-alias dc="sudo dhclient -v -r vboxnet0"
+alias nb="newsboat -r"
 alias chx="sudo chmod +x"
+alias rw='random-wallpaper.sh'
 
 
 

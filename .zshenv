@@ -6,7 +6,8 @@ path=(
     ~/.local/bin
     ~/.cargo/bin
     ~/software_and_tools/plum
-    $path[@])
+    $path[@]
+)
     
 fpath=( ~/.zfunc "${fpath[@]}" )
 
@@ -22,4 +23,4 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 . "$HOME/.cargo/env"
 
 
-source ~/.bitwarden-session-key
+# source ~/.bitwarden-session-key
