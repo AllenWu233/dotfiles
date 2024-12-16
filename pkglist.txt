@@ -41,6 +41,7 @@ breeze5
 btop
 btrfs-heatmap
 btrfs-progs
+calc
 catimg
 cava
 cdrdao
@@ -88,7 +89,6 @@ fcitx5-fbterm-git
 fcitx5-gtk
 fcitx5-material-color
 fcitx5-mozc
-fcitx5-pinyin-moegirl-rime
 fcitx5-qt
 fcitx5-rime
 fd
@@ -195,6 +195,7 @@ lxappearance
 m4
 magiskboot-bin
 make
+mangohud
 maven
 mcpelauncher-appimage
 meteo-qt
@@ -205,8 +206,11 @@ mpd
 mpd-mpris
 mpv
 mtpfs
+muse-sounds-manager-bin
 musescore
 mutt
+mycli
+mysql
 n2n
 ncmpcpp
 neovim
@@ -249,12 +253,14 @@ picom
 pip-tools
 pipes.sh
 pkgconf
+pngcrush
 pnpm
 polkit-kde-agent
 polybar
 portaudio
 pot-translation
 procs
+protontricks
 pulseaudio-bluetooth
 pwgen
 pypy3
@@ -275,7 +281,9 @@ qt6ct-kde
 rar
 redshift
 refind
+refind-theme-nord
 rime-ice-double-pinyin-git
+rime-pinyin-moegirl
 rime-pinyin-zhwiki
 ripgrep
 rofi
@@ -294,6 +302,7 @@ spectacle
 spotify
 starship
 steam
+stow
 sudo
 system-config-printer
 systemd-rc-local
@@ -312,7 +321,6 @@ tlpui
 todesk
 tokei
 traceroute
-transcribe
 translate-shell
 transmission-cli
 trash-cli
@@ -328,6 +336,7 @@ ttf-ms-fonts
 ttf-roboto
 ttf-sarasa-gothic
 ttf-wps-fonts
+ttyper
 ueberzugpp
 unarchiver
 v2ray

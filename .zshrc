@@ -186,15 +186,19 @@ alias tree2='lsd --tree --depth 2'
 alias sshlocal='ssh vboxer@127.0.0.1 -p 2222'
 alias cmd-wrapped='cmd-wrapped -s atuin'
 alias mf='musicfox'
+alias nb="newsboat -r"
+alias rw="random-wallpaper.sh"
 
 # bat
 alias cat="bat"
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
-alias nb="newsboat -r"
-alias chx="sudo chmod +x"
-alias rw='random-wallpaper.sh'
+# fzf
+alias fpcache="pacman -Qq | fzf --preview 'ls /var/cache/pacman/pkg/{}-[0-9]*.pkg.tar.zst'"
+
+# config
+alias i3c='nvim ~/.config/i3/config'
 
 
 

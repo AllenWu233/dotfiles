@@ -3,6 +3,7 @@
 
 # Wallpaper directory
 WALLPAPER_DIR="$HOME/Pictures/Pictures/Wallpapers"
+DISABLED_DIR="disabled"
 
 # Check if wallpaper directory exists
 if [ ! -d "$WALLPAPER_DIR" ]; then
@@ -11,7 +12,8 @@ if [ ! -d "$WALLPAPER_DIR" ]; then
 fi
 
 # Get a random wallpaper
-WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.bmp" \) | shuf -n 1)
+# WALLPAPER=$(find "$WALLPAPER_DIR" -not -path "$WALLPAPER_DIR/$DISABLED_DIR/*" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) | shuf -n 1)
+WALLPAPER=$(fd . "$WALLPAPER_DIR" --exclude "$DISABLED_DIR" -e jpg -e jpeg -e png -e gif | shuf -n 1)
 
 # Check if a wallpaper was found
 if [ -z "$WALLPAPER" ]; then

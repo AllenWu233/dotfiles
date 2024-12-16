@@ -39,9 +39,9 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # window border settings
-default_border          pixel 4
+default_border          pixel 2
 # default_floating_border none
-# smart_borders on
+smart_borders on
 
 # hiding borders adjacent to the screen edges
 # hide_edge_borders both
@@ -53,8 +53,8 @@ popup_during_fullscreen smart
 
 # i3-gaps
 # smart_gaps off
-gaps inner 5
-gaps outer 1
+gaps inner 0
+gaps outer 0
 
 
 # Keybingdings
@@ -301,6 +301,7 @@ for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Gvim"] floating enable
 for_window [class="thunderbird"] floating enable 
 for_window [class="KeePassXC"] floating enable 
+for_window [class="PDManer"] floating disable 
 
 for_window [class="^meteo-qt$"] floating enable
 for_window [class="^meteo-qt$" title="^天气状况$"] move window to position 1800 100
@@ -374,7 +375,7 @@ exec --no-startup-id pot
 exec --no-startup-id numlockx
 # exec --no-startup-id keepassxc
 exec --no-startup-id i3-msg 'exec --no-startup-id thunderbird'
-# exec --no-startup-id i3-msg 'exec --no-startup-id qbittorrent'
+exec --no-startup-id i3-msg 'exec --no-startup-id qbittorrent'
 # exec_always --no-startup-id imwheel
 
 
