@@ -21,10 +21,10 @@ map("n", "<C-A>", "ggVGy", { desc = "Copy All" })
 -- map("n", "<leader>=", "gg=G", { desc = "Auto Indent" })
 
 -- Move cursor
--- map("n", "<leader>j", "<C-w>j", { desc = "Move Down" })
--- map("n", "<leader>k", "<C-w>k", { desc = "Move Up" })
--- map("n", "<leader>h", "<C-w>h", { desc = "Move Left" })
--- map("n", "<leader>l", "<C-w>l", { desc = "Move Right" })
+map("n", "<leader>j", "<C-w>j", { desc = "Move Down" })
+map("n", "<leader>k", "<C-w>k", { desc = "Move Up" })
+map("n", "<leader>h", "<C-w>h", { desc = "Move Left" })
+map("n", "<leader>l", "<C-w>l", { desc = "Move Right" })
 
 -- Buffers
 map("n", "X", function()

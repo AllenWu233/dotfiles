@@ -1,8 +1,7 @@
 # Allen's personal i3wm config
 
 # font for window titles and bar
-# font pango:JetBrainsMono Nerd Font Mono 12
-font pango:Sans Serif 12
+font pango:Noto Sans CJK SC 12
 
 # use super(win) key as mod key
 set $mod Mod4
@@ -375,7 +374,7 @@ exec --no-startup-id pot
 exec --no-startup-id numlockx
 # exec --no-startup-id keepassxc
 exec --no-startup-id i3-msg 'exec --no-startup-id thunderbird'
-exec --no-startup-id i3-msg 'exec --no-startup-id qbittorrent'
+# exec --no-startup-id i3-msg 'exec --no-startup-id qbittorrent'
 # exec_always --no-startup-id imwheel
 
 

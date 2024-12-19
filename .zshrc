@@ -152,14 +152,13 @@ alias TSc='sudo timeshift --create'
 alias wine='env LANG=zh_CN.UTF-8 LANG=zh_CN.UTF-8 wine'
 # alias wine-game='WINEPREFIX=~/.local/share/wineprefixes/game/ wine'
 # alias pkgclean='sudo pacman -Rns $(pacman -Qqdt) && yes | sudo pacman -Sc && yes | paru -Sc'
-alias pkgclean='sudo pacman -Sc && yes | paru -Scc'
+alias pkgclean='sudo pacman -Sc && paru -Scc'
 alias vim='nvim'
 alias ls='lsd'
 alias you-get='you-get -o ~/Videos'
 # alias you-get-cookies='you-get -o ~/Videos -c ~/.mozilla/firefox/g1t7i3hf.default-release/cookies.sqlite'
 alias prac-rs='cd ~/rust_work/rust-by-practice && git pull; mdbook serve -p 8888 -n 127.0.0.1 zh-CN/ && firefox http://127.0.0.1:8888/'
-# alias imewlconverter='docker run --rm -it -v /dict:/dict imewlconverter'
-alias ncmpcpp='mpd; ncmpcpp'
+alias nc='mpd; ncmpcpp'
 # alias ncmpcpp='mpd; waylyrics &> /dev/null &; ncmpcpp'
 alias farsee='curl -F "c=@-" "https://fars.ee/"'
 alias se='sudoedit'
@@ -210,6 +209,7 @@ if [ ! -n "$DISPLAY" ]; then # If in TTY console
     eval "$(zellij setup --generate-auto-start zsh)"
 fi
 
+# eval "$(zellij setup --generate-auto-start zsh)"
 eval "$(starship init zsh)"
 
 export ATUIN_NOBIND="true"
@@ -217,5 +217,3 @@ eval "$(atuin init zsh)"
 bindkey '^r' atuin-search
 
 eval $(thefuck --alias)
-
-

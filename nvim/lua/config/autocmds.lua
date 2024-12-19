@@ -6,6 +6,18 @@ local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 local save_fold = augroup("Persistent Folds", { clear = true })
 
+-- Autoformat setting
+local set_autoformat = function(pattern, bool_val)
+  vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = pattern,
+    callback = function()
+      vim.b.autoformat = bool_val
+    end,
+  })
+end
+
+set_autoformat({ "html" }, false)
+
 -- disable automatic comment wrapping and insertion of comment leaders
 -- cmd("autocmd BufEnter * silent! set formatoptions-=cro")
 -- cmd("autocmd BufEnter * silent! setlocal formatoptions-=cro")
@@ -51,11 +63,20 @@ autocmd("FileType", {
   end,
 })
 
+-- autocmd("FileType", {
+--   pattern = "cpp",
+--   callback = function()
+--     vim.opt.shiftwidth = 4
+--     vim.opt.tabstop = 4
+--   end,
+-- })
+
 autocmd("FileType", {
-  pattern = "cpp",
+  pattern = "html",
   callback = function()
-    vim.opt.shiftwidth = 4
-    vim.opt.tabstop = 4
+    vim.opt.shiftwidth = 2
+    vim.opt.tabstop = 2
+    vim.opt.expandtab = false
   end,
 })
 
