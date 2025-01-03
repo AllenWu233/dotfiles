@@ -1,4 +1,5 @@
 2048-cli-git
+7zip
 adobe-source-han-mono-cn-fonts
 adobe-source-han-sans-otc-fonts
 adobe-source-han-serif-cn-fonts
@@ -47,6 +48,7 @@ cava
 cdrdao
 cdrtools
 chromium
+clipboard-bin
 cmake
 cmatrix
 cmd-wrapped
@@ -118,7 +120,6 @@ gnome-mines
 gnome-sudoku
 gnugo
 go
-go-musicfox-bin
 gparted
 grep
 grex
@@ -144,7 +145,6 @@ i3lock-fancy-git
 i3status
 imwheel
 inetutils
-informant
 intel-ucode
 inter-font
 iwd
@@ -180,7 +180,6 @@ libtool
 lightdm
 lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
-lightly-qt6
 linux-firmware
 linux-lts
 linux-wifi-hotspot
@@ -193,12 +192,11 @@ lsd
 luanti
 lxappearance
 m4
-magiskboot-bin
 make
 mangohud
 maven
 mcpelauncher-appimage
-meteo-qt
+mdcat
 minder
 mingw-w64-gcc
 mpc
@@ -236,8 +234,8 @@ onefetch
 openssh
 opus-tools
 osu-lazer-bin
+ouch
 owmods-gui-bin
-p7zip
 packagekit-qt5
 packagekit-qt6
 pacman
@@ -248,7 +246,6 @@ pass
 patch
 patchelf
 pavucontrol
-payload-dumper-go-bin
 picom
 pip-tools
 pipes.sh
@@ -274,10 +271,11 @@ python-pyqt5-webkit
 python-scipy
 python-virtualenv
 qbittorrent-enhanced-git
-qemu-base
 qogir-gtk-theme
 qt5ct
 qt6ct-kde
+qtcreator
+ranger
 rar
 redshift
 refind
@@ -318,7 +316,6 @@ timidity++
 tlp
 tlp-rdw
 tlpui
-todesk
 tokei
 traceroute
 translate-shell

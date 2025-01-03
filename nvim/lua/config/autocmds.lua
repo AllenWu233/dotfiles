@@ -15,8 +15,10 @@ local set_autoformat = function(pattern, bool_val)
     end,
   })
 end
+-- set_autoformat({ "html" }, false)
 
-set_autoformat({ "html" }, false)
+-- Disable spelling check
+vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
 -- disable automatic comment wrapping and insertion of comment leaders
 -- cmd("autocmd BufEnter * silent! set formatoptions-=cro")

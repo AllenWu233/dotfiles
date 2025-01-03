@@ -1,11 +1,5 @@
 -- ----- Add Plugins ----- --
-
 return {
-  {
-    "h-hg/fcitx.nvim", -- better input method
-    event = { "FileReadPre", "BufReadPre", "User FileOpened" },
-  },
-
   -- {
   --   "norcalli/nvim-colorizer.lua", -- color highlight
   --   keys = {

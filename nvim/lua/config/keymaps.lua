@@ -17,7 +17,7 @@ map("i", "kj", "<ESC>")
 -- ---------- NORMAL mode ---------- --
 -- Select all
 map("n", "<C-A>", "ggVGy", { desc = "Copy All" })
--- map("n", "<C-X>", "ggdG", { desc = "Delete All" })
+map("n", "<C-X>", "ggdG", { desc = "Delete All" })
 -- map("n", "<leader>=", "gg=G", { desc = "Auto Indent" })
 
 -- Move cursor
@@ -33,6 +33,9 @@ end, { desc = "Delete Buffer" })
 
 -- Fold or unfold
 -- map("n", "<leader>a", "za", { desc = "Switch Fold" })
+
+-- ---------- DISABLED ---------- --
+-- map("n", "<C-y>", "")
 
 -- ---------- PLUGINS ---------- --
 -- compiler.nvim
@@ -50,6 +53,3 @@ map(
 
 -- Toggle compiler results
 map("n", "<M-b>", "<cmd>CompilerToggleResults<cr>", { desc = "Toggle Compiler", noremap = true, silent = true })
-
--- nvim-colorizer.lua
--- map("n", "<leader>ch", "<cmd>ColorizerAttachToBuffer<cr>", { desc = "Highlight Color", noremap = true, silent = true })
