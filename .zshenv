@@ -2,14 +2,14 @@
 typeset -U path
 path=(
     ~/bin
-    ~/scrips
+    ~/scripts
     ~/.local/bin
     ~/.cargo/bin
     ~/software_and_tools/plum
     $path[@]
 )
     
-fpath=( ~/.zfunc "${fpath[@]}" )
+# fpath=( ~/.zfunc "${fpath[@]}" )
 
 # Locale
 export LANG=en_US.UTF-8
@@ -21,6 +21,3 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # export XDG_MENU_PREFIX=arch-
 
 . "$HOME/.cargo/env"
-
-
-# source ~/.bitwarden-session-key

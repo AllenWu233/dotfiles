@@ -144,7 +144,9 @@ source ~/.zoxide
 # Options
 #
 # setopt EXTENDED_HISTORY
-
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M viins '^v' edit-command-line
 
 # Aliases
 #
@@ -195,20 +197,33 @@ alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
 # fzf
 alias fpcache="pacman -Qq | fzf --preview 'ls /var/cache/pacman/pkg/{}-[0-9]*.pkg.tar.zst'"
+alias fpact="pacman -Qq | fzf --preview 'pactree -d1 {}'"
+alias fpactr="pacman -Qq | fzf --preview 'pactree -rd1 {}'"
+alias ffont="fc-list | fzf"
+
+# chezmoi
+alias chr="chezmoi re-add"
+alias cha="chezmoi add"
+alias chg="chezmoi git --"
 
 # config
 alias i3c='nvim ~/.config/i3/config'
 
+# Suffix aliases
+alias -s gz='tar -xzvf'
+alias -s tgz='tar -xzvf'
+alias -s zip='unzip'
+alias -s bz2='tar -xjvf'
 
 
 # Tools
 #
 if [ ! -n "$DISPLAY" ]; then # If in TTY console
-    export STARSHIP_CONFIG=~/.config/starship-tty.toml
+    export STARSHIP_CONFIG=~/.config/starship/starship-tty.toml
     export ZELLIJ_CONFIG_FILE=~/.config/zellij/config-tty.kdl
     eval "$(zellij setup --generate-auto-start zsh)"
-# else
-#     export STARSHIP_CONFIG=~/.config/starship-jetpack.toml
+else
+    export STARSHIP_CONFIG=~/.config/starship/starship-nerd-font-symbols.toml
 fi
 
 # eval "$(zellij setup --generate-auto-start zsh)"
@@ -237,4 +252,13 @@ function y() {
 		builtin cd -- "$cwd"
 	fi
 	\rm -f -- "$tmp"
+}
+
+# Create a Zellij instance with a useful session name
+# either uses the current directory name, 
+# or a parameter as the session_name variable. 
+# It then tries to join an existing zellij session with that name, or creates a new one
+function za() {
+  local session_name=${1:-${PWD:t}}
+  zellij attach "$session_name" || zellij -s "$session_name"
 }

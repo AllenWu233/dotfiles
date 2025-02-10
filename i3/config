@@ -7,16 +7,16 @@ font pango:Noto Sans CJK SC 11.5
 set $mod Mod4
 
 # define names for workspaces
-set $ws1    "1"
-set $ws2    "2" 
-set $ws3    "3"
-set $ws4    "4" 
-set $ws5    "5"
-set $ws6    "6"
-set $ws7    "7"
-set $ws8    "8"
-set $ws9    "9"
-set $ws10   "10"
+set $ws1    "1: "
+set $ws2    "2: " 
+set $ws3    "3:󰝚 "
+set $ws4    "4:󰓓 " 
+set $ws5    "5:󰍳 "
+set $ws6    "6: "
+set $ws7    "7:󱓩 "
+set $ws8    "8: "
+set $ws9    "9:󰭹 "
+set $ws10   "10: "
 
 
 # Special workspace settings for multiple monitors
@@ -38,7 +38,7 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # window border settings
-default_border          pixel 2
+default_border pixel 2
 # default_floating_border none
 smart_borders on
 
@@ -62,10 +62,11 @@ bindsym $mod+Return workspace $ws1; exec --no-startup-id alacritty  # start a te
 # bindsym $mod+Return workspace $ws1; exec --no-startup-id wezterm  # start a terminal on workspace 1
 bindsym $mod+f workspace $ws2; exec --no-startup-id firefox
 bindsym $mod+Shift+f workspace $ws2; exec --no-startup-id firefox -private-window
-# bindsym $mod+n workspace $ws3; exec --no-startup-id electron-netease-cloud-music; exec --no-startup-id "killall waylyrics; waylyrics"
+bindsym $mod+n workspace $ws3; exec --no-startup-id electron-netease-cloud-music; exec --no-startup-id "killall waylyrics; waylyrics"
 # bindsym $mod+n workspace $ws3; exec --no-startup-id /opt/YesPlayMusic/yesplaymusic; exec --no-startup-id "killall waylyrics; waylyrics"
-bindsym $mod+n workspace $ws3; exec --no-startup-id spotify; exec --no-startup-id "killall waylyrics; waylyrics"
+# bindsym $mod+n workspace $ws3; exec --no-startup-id spotify; exec --no-startup-id "killall waylyrics; waylyrics"
 bindsym $mod+w exec --no-startup-id rofi -show drun -dpi 1
+bindsym $mod+Shift+w exec --no-startup-id ~/scripts/random-wallpaper.sh
 bindsym $mod+Tab exec --no-startup-id rofi -show window -dpi 1  # switching window with win+tab
 bindsym Control+Mod1+b exec --no-startup-id rofi-bluetooth -dpi 1
 bindsym Control+Mod1+n exec --no-startup-id networkmanager_dmenu -dpi 1
@@ -76,9 +77,9 @@ bindsym $mod+b workspace $ws6; exec --no-startup-id dolphin
 # bindsym $mod+m exec --no-startup-id rofimoji -a type
 bindsym $mod+m exec --no-startup-id rofi -modi "emoji:rofimoji" -show emoji -dpi 1
 
-# scrips
-bindsym $mod+F1 exec --no-startup-id "sh ~/scrips/toggle_left_click_hold.sh"
-bindsym $mod+F2 exec --no-startup-id "sh ~/scrips/toggle_right_click_hold.sh"
+# scripts
+bindsym $mod+F1 exec --no-startup-id "sh ~/scripts/toggle_left_click_hold.sh"
+bindsym $mod+F2 exec --no-startup-id "sh ~/scripts/toggle_right_click_hold.sh"
 
 
 # kill focused window
@@ -187,10 +188,14 @@ bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume @DEFA
 bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioMute           exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute        exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym $mod+Down    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym $mod+Up    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
  
 # light
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 2
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 2
+# bindsym XF86MonBrightnessUp exec --no-startup-id light -A 2
+# bindsym XF86MonBrightnessDown exec --no-startup-id light -U 2
+bindsym $mod+Right exec --no-startup-id brightnessctl -c backlight set +5%
+bindsym $mod+Left exec --no-startup-id brightnessctl -c backlight set 5%-
 
 # vim-anywhere
 bindsym $mod+Mod1+v exec --no-startup-id ~/.vim-anywhere/bin/run
@@ -269,23 +274,27 @@ client.background        $base
 # client.background       #F8F8F2
 
 # bar
-# bar {
-#     font pango:Noto Sans CJK SC 13
-#     status_command i3status
-#     position top
-#     colors {
-#         background         $base
-#         statusline         $text
-#         focused_statusline $text
-#         focused_separator  $base
-#
-#         # target           border bg        text
-#         focused_workspace  $base  $mauve    $crust
-#         active_workspace   $base  $surface2 $text
-#         inactive_workspace $base  $base     $text
-#         urgent_workspace   $base  $red      $crust
-#     }
-# }
+bar {
+    # font pango:Sarasa Term SC 13
+    font pango:Iosevka Nerd Font 13
+    status_command i3status-rs
+    # tray_output none
+    strip_workspace_numbers yes
+
+    position top
+    colors {
+        background         $base
+        statusline         $text
+        focused_statusline $text
+        focused_separator  $base
+
+        # target           border bg        text
+        focused_workspace  $base  $mauve    $crust
+        active_workspace   $base  $surface2 $text
+        inactive_workspace $base  $base     $text
+        urgent_workspace   $base  $red      $crust
+    }
+}
 
 # Set specific windows to floating mode
 set $floating_size_x 2550
@@ -354,8 +363,8 @@ for_window [class="thunderbird"] floating enable
 for_window [class="KeePassXC"] floating enable 
 for_window [class="PDManer"] floating disable 
 
-for_window [class="^meteo-qt$"] floating enable
-for_window [class="^meteo-qt$" title="^天气状况$"] move window to position 1800 100
+# for_window [class="^meteo-qt$"] floating enable
+# for_window [class="^meteo-qt$" title="^天气状况$"] move window to position 1800 100
 
 for_window [class="^feh$"] floating enable
 # for_window [class="^feh$"] resize set $floating_size_x $floating_size_y
@@ -428,6 +437,8 @@ exec --no-startup-id numlockx
 exec --no-startup-id i3-msg 'exec --no-startup-id thunderbird'
 # exec --no-startup-id i3-msg 'exec --no-startup-id qbittorrent'
 # exec_always --no-startup-id imwheel
+# exec --no-startup-id anacron -s -t "${HOME}/.local/etc/anacrontab" -S "${HOME}/.local/var/spool/anacron"
+exec --no-startup-id fcitx5
 
 
 # Screen settings
@@ -437,19 +448,19 @@ exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1600 --dpi 144
 
 
 
-# Other scrips
+# Other scripts
 # exec_always --no-startup-id pkill picom; picom --config ~/.config/picom/picom-ftlabs-pr41.conf
 exec_always --no-startup-id pkill picom; picom --config ~/.config/picom/picom.conf
-exec --no-startup-id bash ~/scrips/rime-sync.sh
-exec_always --no-startup-id bash ~/.config/polybar/launch.sh
+# exec --no-startup-id bash ~/scripts/rime-sync.sh
+# exec_always --no-startup-id bash ~/.config/polybar/launch.sh
 exec_always --no-startup-id bash ~/.xprofile
 
 # Avoid touching the touchpad accidentally
 exec_always --no-startup-id syndaemon -i 0.5 -t -K -R
 
-exec_always --no-startup-id xmodmap ~/.Xmodmap
+exec_always --no-startup-id sleep 1 && xmodmap ~/.Xmodmap
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy
-# exec_always --no-startup-id ~/scrips/auto-laptop-keyboard-and-touchboard.sh
+# exec_always --no-startup-id ~/scripts/auto-laptop-keyboard-and-touchboard.sh
 
 
 # Wallpaper
@@ -461,5 +472,5 @@ set $wp-tatara-kogasa ~/Pictures/47516247_p0_pro.jpg
 
 # exec_always --no-startup-id feh --bg-fill $wp-mystia
 # exec_always --no-startup-id linux-wallpaperengine 824586497 --silent --screen-root HDMI-0
-exec --no-startup-id bash ~/scrips/random-wallpaper.sh
+exec --no-startup-id bash ~/scripts/random-wallpaper.sh
 

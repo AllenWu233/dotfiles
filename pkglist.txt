@@ -39,14 +39,17 @@ boxes
 breeze
 breeze-gtk
 breeze5
+brightnessctl
 btop
 btrfs-heatmap
 btrfs-progs
 calc
+calcurse
 catimg
 cava
 cdrdao
 cdrtools
+chezmoi
 chromium
 clipboard-bin
 cmake
@@ -59,7 +62,6 @@ cowsay
 cups-pdf
 debtap
 debugedit
-deepin-wine-quarkclouddrive
 dhclient
 dhcpcd
 discord
@@ -105,6 +107,7 @@ flex
 fluent-reader
 fortune-mod-zh
 freepats-general-midi
+gamescope-plus
 gawk
 gcc
 gdb
@@ -143,6 +146,7 @@ i3blocks
 i3lock-color
 i3lock-fancy-git
 i3status
+i3status-rust
 imwheel
 inetutils
 intel-ucode
@@ -164,9 +168,7 @@ kfind
 kimageformats
 kimageformats5
 kmag
-krita
 lazygit
-ledger2beancount
 lib32-gnutls
 lib32-libpulse
 lib32-libxcomposite
@@ -204,7 +206,6 @@ mpd
 mpd-mpris
 mpv
 mtpfs
-muse-sounds-manager-bin
 musescore
 mutt
 mycli
@@ -222,7 +223,8 @@ nsnake
 ntfs-3g
 nudoku
 numlockx
-nvidia-open-dkms
+nvidia-container-toolkit
+nvidia-open-zen
 nvidia-prime
 nvidia-settings
 nvtop
@@ -234,6 +236,7 @@ onefetch
 openssh
 opus-tools
 osu-lazer-bin
+otf-departure-mono
 ouch
 owmods-gui-bin
 packagekit-qt5
@@ -330,6 +333,7 @@ ttf-lxgw-wenkai-gb
 ttf-lxgw-wenkai-screen
 ttf-lxgw-wenkai-tc
 ttf-ms-fonts
+ttf-noto-nerd
 ttf-roboto
 ttf-sarasa-gothic
 ttf-wps-fonts
@@ -408,7 +412,6 @@ xournalpp
 xsel
 xss-lock
 yazi
-zed
 zellij
 zip
 zoxide
