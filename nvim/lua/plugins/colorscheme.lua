@@ -1,5 +1,6 @@
 return {
   -- { "ellisonleao/gruvbox.nvim" },
+  { "sainnhe/gruvbox-material" },
   -- { "AlexvZyl/nordic.nvim" },
   -- { "tanvirtin/monokai.nvim" },
   -- { "marko-cerovac/material.nvim" },
@@ -11,7 +12,8 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "tokyonight-storm",
-      colorscheme = "catppuccin-mocha",
+      -- colorscheme = "catppuccin-mocha",
+      colorscheme = "gruvbox-material",
     },
   },
 }

@@ -51,6 +51,7 @@ cdrdao
 cdrtools
 chezmoi
 chromium
+clash-verge
 clipboard-bin
 cmake
 cmatrix
@@ -62,6 +63,7 @@ cowsay
 cups-pdf
 debtap
 debugedit
+deepin-wine-quarkclouddrive
 dhclient
 dhcpcd
 discord
@@ -77,7 +79,6 @@ efibootmgr
 egl-wayland
 electron-netease-cloud-music
 element-desktop
-emacs
 enca
 envycontrol
 extra-cmake-modules
@@ -101,19 +102,18 @@ figlet
 file
 filelight
 findutils
-firefox
-firefox-i18n-zh-cn
 flex
 fluent-reader
 fortune-mod-zh
 freepats-general-midi
-gamescope-plus
+gamescope
 gawk
 gcc
 gdb
 genact
 geogebra
 gettext
+ghostty
 gimp
 git-crypt
 github-cli
@@ -127,6 +127,9 @@ gparted
 grep
 grex
 groff
+gruvbox-material-gtk-theme-git
+gruvbox-material-icon-theme-git
+gruvbox-wallpaper
 gst-libav
 gst-plugins-bad
 gst-plugins-good
@@ -178,6 +181,7 @@ lib32-vulkan-intel
 libiconv
 libinput
 libopusenc
+librewolf
 libtool
 lightdm
 lightdm-gtk-greeter
@@ -199,6 +203,7 @@ mangohud
 maven
 mcpelauncher-appimage
 mdcat
+mermaid-cli
 minder
 mingw-w64-gcc
 mpc
@@ -209,7 +214,6 @@ mtpfs
 musescore
 mutt
 mycli
-mysql
 n2n
 ncmpcpp
 neovim
@@ -269,6 +273,7 @@ python-dbus
 python-pdm
 python-pipx
 python-plotly
+python-pylatexenc
 python-pynvim
 python-pyqt5-webkit
 python-scipy
@@ -283,12 +288,15 @@ rar
 redshift
 refind
 refind-theme-nord
+rhvoice-language-english
 rime-ice-double-pinyin-git
 rime-pinyin-moegirl
 rime-pinyin-zhwiki
 ripgrep
 rofi
 rofi-bluetooth-git
+rofi-calc
+rofi-greenclip
 rofimoji
 rp-pppoe
 s-nail
@@ -308,7 +316,11 @@ sudo
 system-config-printer
 systemd-rc-local
 tealdeer
+tectonic
 telegram-desktop
+tesseract-data-chi_sim
+tesseract-data-eng
+tesseract-data-jpn
 tetris-terminal-git
 texinfo
 thefuck
@@ -342,7 +354,6 @@ ueberzugpp
 unarchiver
 v2ray
 v2raya
-ventoy-bin
 vim-language-server
 vintagestory
 virtualbox
@@ -352,9 +363,11 @@ virtualbox-sdk
 vlc
 vorbis-tools
 vulkan-intel
+vulkan-tools
 waylyrics-git
 webp-pixbuf-loader
 wechat-bin
+wemeet-bin
 wget
 which
 winetricks
