@@ -4,5 +4,6 @@
 
 ^/screenshots
 ^/pkglist.txt
+^/backup.sh
 ^/README.*
 ^/LICENSE.*
