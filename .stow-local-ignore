@@ -7,3 +7,4 @@
 ^/backup.sh
 ^/README.*
 ^/LICENSE.*
+^/*.log
