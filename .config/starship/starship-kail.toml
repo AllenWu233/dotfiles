@@ -1,0 +1,46 @@
+format = """\
+[╭──\\($username$hostname\\)-\\[$directory\\]$git_branch$git_status](#0168ed)\
+$nodejs\
+$terraform\
+$python\
+$golang
+[╰─[\\$ ](bold #18bea6)](#0168ed)
+"""
+
+[username]
+show_always = true
+style_user = "fg:#18bea6"
+style_root = "fg:#18bea6"
+format = '[$user@]($style)'
+disabled = false
+
+[hostname]
+ssh_only = false
+style = "fg:#18bea6"
+format = '[$ssh_symbol$hostname]($style)'
+
+[directory]
+format = "[$path](white)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+format = ' \[[ $symbol $branch](fg:#c37d28)'
+
+[git_status]
+format = '[($all_status$ahead_behind)](fg:#c37d28) \]'
+
+[nodejs]
+format = '[ $symbol]($style)'
+
+[golang]
+format = '[ ]($style)'
+
+[terraform]
+symbol = "󱁢 "
+format = '[ $symbol[$workspace](white)](fg:#5e42e9)'
+
+[python]
+symbol = " "
+format = '[ $symbol[($version)](white) ](fg:#fed242)'

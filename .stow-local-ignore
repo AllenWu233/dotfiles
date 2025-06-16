@@ -1,0 +1,8 @@
+\.git
+\.gitignore
+\.gitmodules
+
+^/screenshots
+^/pkglist.txt
+^/README.*
+^/LICENSE.*

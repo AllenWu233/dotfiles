@@ -1,0 +1,7 @@
+**/*.session
+**/*.dat
+
+.config/newsboat/cache.db
+.config/waylyrics/ncm-cookie
+.config/ncmpcpp/error.log
+.config/yazi/bookmark
