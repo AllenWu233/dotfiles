@@ -1,9 +1,9 @@
-sw_volume: 40
+sw_volume: 68
 audio_device_state:1:pulse audio
 audio_device_state:1:Visualizer feed
 state: pause
-current: 5
-time: 480.986
+current: 12
+time: 8.006
 random: 0
 repeat: 0
 single: 0
@@ -19,4 +19,16 @@ playlist_begin
 3:piano/Arthur Rubinstein - Sonata No. 14 in C-Sharp Minor, Op. 27 No. 2 "Moonlight": III. Presto agitato.mp3
 4:piano/Pascal Rogé - Suite bergamasque, L.75 - 3. Clair de lune.mp3
 5:Music/【オリジナル Vocal／Nu-Disco】 SUPERNOVA Full EP 「twinkletwinkle」.m4a
+6:Music/ElectronNCM/oiko - 彼岸の园.mp3
+7:musicfox/揺惑天子 (feat. SYO)-SYO.mp3
+8:Music/平沢進/救済の技法 [COCP-30019]/01 TOWN-0 PHASE-5.flac
+9:Music/平沢進/救済の技法 [COCP-30019]/02 MOON TIME.flac
+10:Music/平沢進/救済の技法 [COCP-30019]/03 庭師KING.flac
+11:Music/平沢進/救済の技法 [COCP-30019]/04 GHOST BRIDGE.flac
+12:Music/平沢進/救済の技法 [COCP-30019]/05 ナーシサス次元から来た人.flac
+13:Music/平沢進/救済の技法 [COCP-30019]/06 万象の奇夜.flac
+14:Music/平沢進/救済の技法 [COCP-30019]/07 MOTHER.flac
+15:Music/平沢進/救済の技法 [COCP-30019]/08 橋大工.flac
+16:Music/平沢進/救済の技法 [COCP-30019]/09 救済の技法.flac
+17:Music/平沢進/救済の技法 [COCP-30019]/10 WORLD CELL.flac
 playlist_end
