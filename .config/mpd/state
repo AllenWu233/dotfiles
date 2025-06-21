@@ -1,9 +1,9 @@
-sw_volume: 68
+sw_volume: 70
 audio_device_state:1:pulse audio
 audio_device_state:1:Visualizer feed
 state: pause
-current: 12
-time: 8.006
+current: 18
+time: 1.847
 random: 0
 repeat: 0
 single: 0
@@ -31,4 +31,5 @@ playlist_begin
 15:Music/平沢進/救済の技法 [COCP-30019]/08 橋大工.flac
 16:Music/平沢進/救済の技法 [COCP-30019]/09 救済の技法.flac
 17:Music/平沢進/救済の技法 [COCP-30019]/10 WORLD CELL.flac
+18:ElectronNCM/綾倉盟 - 月影少女 - Poplica* Remix.mp3
 playlist_end

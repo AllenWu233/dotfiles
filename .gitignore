@@ -1,6 +1,7 @@
 **/*.session
 **/*.dat
 **/*.log
+**/log
 
 .config/newsboat/cache.db
 .config/waylyrics/ncm-cookie
