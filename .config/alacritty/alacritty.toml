@@ -25,7 +25,7 @@ size = 15
 # [font.normal]
 # family = "JetBrainsMono NF"
 # style = "Regular"
-
+#
 # [font.normal]
 # family = "FiraCode Nerd Font Mono"
 # style = "Regular"
@@ -34,6 +34,13 @@ size = 15
 # family = "FiraCode Nerd Font Mono"
 # style = "bold"
 
+# [cursor.style]
+# shape = "Beam"
+# blinking = "On"
+
+# [cursor.vi_mode_style]
+# shape = "Block"
+# blinking = "On"
 
 [keyboard]
 bindings = [

@@ -1,9 +1,9 @@
-sw_volume: 58
+sw_volume: 72
 audio_device_state:1:pulse audio
 audio_device_state:1:Visualizer feed
 state: pause
-current: 6
-time: 327.486
+current: 12
+time: 4.311
 random: 0
 repeat: 0
 single: 0
@@ -1291,4 +1291,16 @@ Date: 2021.12.31
 mtime: 1644838520
 added: 1644838520
 song_end
+138:Music/Touhou/专辑/实体CD/TUMENECO/現夢 -genmu- (盘片 1)/01 - 現夢-genmu-.wav
+139:Music/Touhou/专辑/实体CD/TUMENECO/現夢 -genmu- (盘片 1)/02 - オーバードリーム.wav
+140:Music/Touhou/专辑/实体CD/TUMENECO/現夢 -genmu- (盘片 1)/03 - If you're my destiny, end this fated determination..wav
+141:Music/Touhou/专辑/实体CD/TUMENECO/現夢 -genmu- (盘片 1)/04 - 夢結び.wav
+142:Music/Touhou/专辑/实体CD/TUMENECO/現夢 -genmu- (盘片 1)/05 - アルファルド.wav
+143:Music/Touhou/专辑/实体CD/TUMENECO/現夢 -genmu- (盘片 1)/06 - G.U.G.wav
+144:Music/Touhou/专辑/实体CD/TUMENECO/現夢 -genmu- (盘片 1)/07 - 風祝夢想曲.wav
+145:Music/Touhou/专辑/实体CD/TUMENECO/現夢 -genmu- (盘片 1)/08 - 感情と忘却の咆哮.wav
+146:Music/Touhou/专辑/实体CD/TUMENECO/現夢 -genmu- (盘片 1)/09 - このゆびとまれ.wav
+147:Music/Touhou/专辑/实体CD/TUMENECO/現夢 -genmu- (盘片 1)/10 - 境界線のプロトコル.wav
+148:Music/Touhou/专辑/实体CD/TUMENECO/現夢 -genmu- (盘片 1)/11 - 希望の閃光.wav
+149:Music/Touhou/专辑/实体CD/TUMENECO/現夢 -genmu- (盘片 1)/12 - うつつのゆめ.wav
 playlist_end
