@@ -7,9 +7,6 @@ general.import = [
     "~/.config/alacritty/themes/themes/gruvbox_material_medium_dark.toml",
 ]
 
-# [env]
-# WINIT_X11_SCALE_FACTOR = "1.0"
-
 [font]
 size = 15
 
@@ -29,9 +26,14 @@ size = 15
 # family = "JetBrainsMono NF"
 # style = "Regular"
 
-# [window.dimensions]
-# columns = 110
-# lines = 25
+# [font.normal]
+# family = "FiraCode Nerd Font Mono"
+# style = "Regular"
+#
+# [font.bold]
+# family = "FiraCode Nerd Font Mono"
+# style = "bold"
+
 
 [keyboard]
 bindings = [

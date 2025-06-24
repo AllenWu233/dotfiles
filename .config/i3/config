@@ -16,7 +16,7 @@ font pango:Noto Sans CJK SC 11.5
 set $mod Mod4
 
 # Default applications
-set $terminal kitty
+set $terminal alacritty
 set $browser firefox
 set $cloud-music electron-netease-cloud-music
 

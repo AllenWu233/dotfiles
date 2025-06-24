@@ -220,7 +220,7 @@ alias chg="chezmoi git --"
 alias chf="chezmoi status | awk '{print $2}' | xargs -r chezmoi forget --force"
 
 # config
-alias i3c='nvim ~/.local/share/chezmoi/private_dot_config/i3/'
+alias i3c='nvim ~/.config/i3/'
 
 # Suffix aliases
 alias -s gz='tar -xzvf'
