@@ -1,9 +1,9 @@
-sw_volume: 66
+sw_volume: 64
 audio_device_state:1:pulse audio
 audio_device_state:1:Visualizer feed
 state: pause
-current: 34
-time: 2.44
+current: 29
+time: 12.683
 random: 0
 repeat: 0
 single: 0
@@ -11,68 +11,60 @@ consume: 0
 crossfade: 0
 mixrampdb: 0
 mixrampdelay: -1
-lastloadedplaylist: 
+lastloadedplaylist: Minecraft - Volume Beta
 playlist_begin
-0:Music/平沢進/救済の技法 [COCP-30019]/01 TOWN-0 PHASE-5.flac
-1:Music/平沢進/救済の技法 [COCP-30019]/02 MOON TIME.flac
-2:Music/平沢進/救済の技法 [COCP-30019]/03 庭師KING.flac
-3:Music/平沢進/救済の技法 [COCP-30019]/04 GHOST BRIDGE.flac
-4:Music/平沢進/救済の技法 [COCP-30019]/05 ナーシサス次元から来た人.flac
-5:Music/平沢進/救済の技法 [COCP-30019]/06 万象の奇夜.flac
-6:Music/平沢進/救済の技法 [COCP-30019]/07 MOTHER.flac
-7:Music/平沢進/救済の技法 [COCP-30019]/08 橋大工.flac
-8:Music/平沢進/救済の技法 [COCP-30019]/09 救済の技法.flac
-9:Music/平沢進/救済の技法 [COCP-30019]/10 WORLD CELL.flac
-10:Music/MC/MC音乐/C418 - Axolotl.mp3
-11:Music/MC/MC音乐/C418 - Dragon Fish.mp3
-12:Music/MC/MC音乐/C418 - Shuniji.mp3
-13:Music/MC/MC音乐/calm2.mp3
-14:Music/MC/MC音乐/calm3.mp3
-15:Music/MC/MC音乐/Chrysopoeia.mp3
-16:Music/MC/MC音乐/hal1.mp3
-17:Music/MC/MC音乐/hal2.mp3
-18:Music/MC/MC音乐/hal3.mp3
-19:Music/MC/MC音乐/hal4.mp3
-20:Music/MC/MC音乐/nuance1.mp3
-21:Music/MC/MC音乐/nuance2.mp3
-22:Music/MC/MC音乐/piano1.mp3
-23:Music/MC/MC音乐/piano2.mp3
-24:Music/MC/MC音乐/Pigstep.mp3
-25:Music/MC/MC音乐/Rubedo.mp3
-26:Music/MC/MC音乐/So Below.mp3
-27:Music/MC/MC音乐/C418 - Chris.mp3
-28:Music/MC/MC音乐/piano3.mp3
-29:Music/MC/MC音乐/C418 - Beginning.mp3
-30:Music/MC/MC音乐/C418 - Dry Hands.mp3
-31:Music/MC/MC音乐/C418 - Équinoxe.mp3
-32:Music/MC/MC音乐/C418 - Moog City.mp3
-33:Music/MC/MC音乐/calm1.mp3
-34:Music/MC/MC音乐/C418 - Alpha.mp3
-35:Music/MC/MC音乐/C418 - Dead Voxel.mp3
-36:Music/MC/MC音乐/C418 - Blind Spots.mp3
-37:Music/MC/MC音乐/C418 - Moog City 2.mp3
-38:Music/MC/MC音乐/C418 - Biome Fest.mp3
-39:Music/MC/MC音乐/C418 - Mutation.mp3
-40:Music/MC/MC音乐/C418 - Haunt Muskie.mp3
-41:Music/MC/MC音乐/C418 - Warmth.mp3
-42:Music/MC/MC音乐/C418 - Floating Trees.mp3
-43:Music/MC/MC音乐/C418 - Aria Math.mp3
-44:Music/MC/MC音乐/C418 - Kyoto.mp3
-45:Music/MC/MC音乐/C418 - Taswell.mp3
-46:Music/MC/MC音乐/C418 - Dreiton.mp3
-47:Music/MC/MC音乐/C418 - The End.mp3
-48:Music/MC/MC音乐/C418 - Intro.mp3
-49:Music/MC/MC音乐/黑胶/A1 Subwoofer Lullaby.wav
-50:Music/MC/MC音乐/黑胶/A2 Living Mice.wav
-51:Music/MC/MC音乐/黑胶/A3 Moog City.wav
-52:Music/MC/MC音乐/黑胶/A4 Haggstrom.wav
-53:Music/MC/MC音乐/黑胶/A5 Minecraft.wav
-54:Music/MC/MC音乐/黑胶/A6 Clark.wav
-55:Music/MC/MC音乐/黑胶/B1 Mice on Venus.wav
-56:Music/MC/MC音乐/黑胶/B2 Dry Hands.wav
-57:Music/MC/MC音乐/黑胶/B3 Wet Hands.wav
-58:Music/MC/MC音乐/黑胶/B4 Sweden.wav
-59:Music/MC/MC音乐/黑胶/B5 Cat.wav
-60:Music/MC/MC音乐/黑胶/B6 Danny.wav
-61:Music/MC/MC音乐/黑胶/Minecraft - Volume Alpha.wav
+0:Music/MC/Minecraft - Volume Alpha/C418 - Oxygène.mp3
+1:Music/MC/Minecraft - Volume Alpha/C418 - Cat.mp3
+2:Music/MC/Minecraft - Volume Alpha/C418 - Chris.mp3
+3:Music/MC/Minecraft - Volume Alpha/C418 - Clark.mp3
+4:Music/MC/Minecraft - Volume Alpha/C418 - Death.mp3
+5:Music/MC/Minecraft - Volume Alpha/C418 - Droopy likes ricochet.mp3
+6:Music/MC/Minecraft - Volume Alpha/C418 - Haggstrom.mp3
+7:Music/MC/Minecraft - Volume Alpha/C418 - Key.mp3
+8:Music/MC/Minecraft - Volume Alpha/C418 - Mice on Venus.mp3
+9:Music/MC/Minecraft - Volume Alpha/C418 - Minecraft.mp3
+10:Music/MC/Minecraft - Volume Alpha/C418 - Subwoofer Lullaby.mp3
+11:Music/MC/Minecraft - Volume Alpha/C418 - Sweden.mp3
+12:Music/MC/Minecraft - Volume Alpha/C418 - Beginning.mp3
+13:Music/MC/Minecraft - Volume Alpha/C418 - Danny.mp3
+14:Music/MC/Minecraft - Volume Alpha/C418 - Dog.mp3
+15:Music/MC/Minecraft - Volume Alpha/C418 - Door.mp3
+16:Music/MC/Minecraft - Volume Alpha/C418 - Droopy likes your face.mp3
+17:Music/MC/Minecraft - Volume Alpha/C418 - Dry Hands.mp3
+18:Music/MC/Minecraft - Volume Alpha/C418 - Équinoxe.mp3
+19:Music/MC/Minecraft - Volume Alpha/C418 - Excuse.mp3
+20:Music/MC/Minecraft - Volume Alpha/C418 - Living Mice.mp3
+21:Music/MC/Minecraft - Volume Alpha/C418 - Moog City.mp3
+22:Music/MC/Minecraft - Volume Alpha/C418 - Wet Hands.mp3
+23:Music/MC/Minecraft - Volume Alpha/C418 - Thirteen.mp3
+24:Music/MC/Minecraft - Volume Beta/C418 - Mellohi.mp3
+25:Music/MC/Minecraft - Volume Beta/C418 - Ki.mp3
+26:Music/MC/Minecraft - Volume Beta/C418 - Alpha.mp3
+27:Music/MC/Minecraft - Volume Beta/C418 - Dead Voxel.mp3
+28:Music/MC/Minecraft - Volume Beta/C418 - Blind Spots.mp3
+29:Music/MC/Minecraft - Volume Beta/C418 - Flake.mp3
+30:Music/MC/Minecraft - Volume Beta/C418 - Moog City 2.mp3
+31:Music/MC/Minecraft - Volume Beta/C418 - Concrete Halls.mp3
+32:Music/MC/Minecraft - Volume Beta/C418 - Biome Fest.mp3
+33:Music/MC/Minecraft - Volume Beta/C418 - Mutation.mp3
+34:Music/MC/Minecraft - Volume Beta/C418 - Haunt Muskie.mp3
+35:Music/MC/Minecraft - Volume Beta/C418 - Warmth.mp3
+36:Music/MC/Minecraft - Volume Beta/C418 - Floating Trees.mp3
+37:Music/MC/Minecraft - Volume Beta/C418 - Aria Math.mp3
+38:Music/MC/Minecraft - Volume Beta/C418 - Kyoto.mp3
+39:Music/MC/Minecraft - Volume Beta/C418 - Ballad of the Cats.mp3
+40:Music/MC/Minecraft - Volume Beta/C418 - Taswell.mp3
+41:Music/MC/Minecraft - Volume Beta/C418 - Beginning 2.mp3
+42:Music/MC/Minecraft - Volume Beta/C418 - Dreiton.mp3
+43:Music/MC/Minecraft - Volume Beta/C418 - The End.mp3
+44:Music/MC/Minecraft - Volume Beta/C418 - Chirp.mp3
+45:Music/MC/Minecraft - Volume Beta/C418 - Wait.mp3
+46:Music/MC/Minecraft - Volume Beta/C418 - Stal.mp3
+47:Music/MC/Minecraft - Volume Beta/C418 - Strad.mp3
+48:Music/MC/Minecraft - Volume Beta/C418 - Eleven.mp3
+49:Music/MC/Minecraft - Volume Beta/C418 - Ward.mp3
+50:Music/MC/Minecraft - Volume Beta/C418 - Mall.mp3
+51:Music/MC/Minecraft - Volume Beta/C418 - Blocks.mp3
+52:Music/MC/Minecraft - Volume Beta/C418 - Far.mp3
+53:Music/MC/Minecraft - Volume Beta/C418 - Intro.mp3
 playlist_end
