@@ -1,9 +1,9 @@
-sw_volume: 60
+sw_volume: 58
 audio_device_state:1:pulse audio
 audio_device_state:1:Visualizer feed
-state: pause
-current: 15
-time: 420.307
+state: play
+current: 24
+time: 315.692
 random: 0
 repeat: 0
 single: 0
@@ -13,28 +13,41 @@ mixrampdb: 0
 mixrampdelay: -1
 lastloadedplaylist: 
 playlist_begin
-0:Music/平沢進/救済の技法 [COCP-30019]/01 TOWN-0 PHASE-5.flac
-1:Music/平沢進/救済の技法 [COCP-30019]/02 MOON TIME.flac
-2:Music/平沢進/救済の技法 [COCP-30019]/03 庭師KING.flac
-3:Music/平沢進/救済の技法 [COCP-30019]/04 GHOST BRIDGE.flac
-4:Music/OST/Lo-Phi - Vintage Story OST/Lo-Phi - Vintage Story OST - 31 V I N T A G e W A V e.flac
-5:Music/MC/148/01. C418 - Semantic Satiation.mp3
-6:Music/MC/148/02. C418 - Septic Shock.mp3
-7:Music/MC/148/03. C418 - Seismic Stratigraphy.mp3
-8:Music/MC/148/04. C418 - Droopy Remembers.mp3
-9:Music/MC/148/05. C418、Disasterpeace - Kompass.mp3
-10:Music/MC/148/06. C418、Baiyon - 185.mp3
-11:Music/MC/148/07. C418、Big Giant Circles - Jimtention.mp3
-12:Music/MC/148/08. C418、Laura Shigihara - Tsuki No Koibumi 2.mp3
-13:Music/MC/148/09. C418 - Friend.mp3
-14:Music/MC/148/10. C418 - Vierton.mp3
-15:Music/MC/148/11. C418 - Aria Economy.mp3
-16:Music/MC/148/12. C418 - Biome Party.mp3
-17:Music/MC/148/13. C418 - 481772.mp3
-18:Music/MC/148/14. C418 - Ample Time.mp3
-19:Music/MC/148/15. C418 - Habitual Crush.mp3
-20:Music/MC/148/16. C418 - Divide By Four Add Seven.mp3
-21:Music/MC/148/17. C418 - Round Up to the Inevitable End.mp3
-22:Music/MC/148/18. C418 - Beta.mp3
-23:Music/MC/148/19. C418 - 841.mp3
+0:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/1.赤より紅い夢.mp3
+1:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/2.ほおずきみたいに紅い魂.mp3
+2:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/3.妖魔夜行.mp3
+3:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/4.ルーネイトエルフ.mp3
+4:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/5.おてんば恋娘.mp3
+5:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/6.上海紅茶館　～ Chinese Tea.mp3
+6:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/7.明治十七年の上海アリス.mp3
+7:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/8.ヴワル魔法図書館.mp3
+8:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/9.ラクトガール　～ 少女密室.mp3
+9:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/10.メイドと血の懐中時計.mp3
+10:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/11.月時計　～ ルナ・ダイアル.mp3
+11:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/12.ツェペシュの幼き末裔.mp3
+12:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/13.亡き王女の為のセプテット.mp3
+13:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/14.魔法少女達の百年祭.mp3
+14:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/15.U.N.オーエンは彼女なのか？.mp3
+15:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/16.紅より儚い永遠.mp3
+16:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/17.紅楼　～ Eastern Dream....mp3
+17:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/1.妖々夢　～ Snow or Cherry Petal.mp3
+18:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/2.無何有の郷　～ Deep Mountain.mp3
+19:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/3.クリスタライズシルバー.mp3
+20:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/4.遠野幻想物語.mp3
+21:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/5.ティアオイエツォン(withered leaf).mp3
+22:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/6.ブクレシュティの人形師.mp3
+23:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/7.人形裁判　～ 人の形弄びし少女.mp3
+24:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/8.天空の花の都.mp3
+25:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/9.幽霊楽団　～ Phantom Ensemble.mp3
+26:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/10.東方妖々夢　～ Ancient Temple.mp3
+27:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/11.広有射怪鳥事　～ Till When_.mp3
+28:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/12.アルティメットトゥルース.mp3
+29:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/13.幽雅に咲かせ、墨染の桜　～ Border of Life.mp3
+30:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/14.ボーダーオブライフ.mp3
+31:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/15.妖々跋扈.mp3
+32:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/16.少女幻葬　～ Necro-Fantasy.mp3
+33:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/17.妖々跋扈　～ Who done it!.mp3
+34:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/18.ネクロファンタジア.mp3
+35:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/19.春風の夢.mp3
+36:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/20.さくらさくら　～ Japanize Dream....mp3
 playlist_end
