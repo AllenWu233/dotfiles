@@ -1,9 +1,9 @@
-sw_volume: 58
+sw_volume: 50
 audio_device_state:1:pulse audio
 audio_device_state:1:Visualizer feed
 state: pause
-current: 24
-time: 315.692
+current: 161
+time: 1.939
 random: 0
 repeat: 0
 single: 0
@@ -11,43 +11,348 @@ consume: 0
 crossfade: 0
 mixrampdb: 0
 mixrampdelay: -1
-lastloadedplaylist: 
+lastloadedplaylist: 彁
 playlist_begin
-0:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/1.赤より紅い夢.mp3
-1:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/2.ほおずきみたいに紅い魂.mp3
-2:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/3.妖魔夜行.mp3
-3:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/4.ルーネイトエルフ.mp3
-4:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/5.おてんば恋娘.mp3
-5:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/6.上海紅茶館　～ Chinese Tea.mp3
-6:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/7.明治十七年の上海アリス.mp3
-7:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/8.ヴワル魔法図書館.mp3
-8:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/9.ラクトガール　～ 少女密室.mp3
-9:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/10.メイドと血の懐中時計.mp3
-10:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/11.月時計　～ ルナ・ダイアル.mp3
-11:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/12.ツェペシュの幼き末裔.mp3
-12:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/13.亡き王女の為のセプテット.mp3
-13:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/14.魔法少女達の百年祭.mp3
-14:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/15.U.N.オーエンは彼女なのか？.mp3
-15:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/16.紅より儚い永遠.mp3
-16:Music/Touhou/官曲/TH06 东方红魔乡 ～ the Embodiment of Scarlet Devil (320k+cover)/17.紅楼　～ Eastern Dream....mp3
-17:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/1.妖々夢　～ Snow or Cherry Petal.mp3
-18:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/2.無何有の郷　～ Deep Mountain.mp3
-19:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/3.クリスタライズシルバー.mp3
-20:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/4.遠野幻想物語.mp3
-21:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/5.ティアオイエツォン(withered leaf).mp3
-22:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/6.ブクレシュティの人形師.mp3
-23:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/7.人形裁判　～ 人の形弄びし少女.mp3
-24:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/8.天空の花の都.mp3
-25:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/9.幽霊楽団　～ Phantom Ensemble.mp3
-26:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/10.東方妖々夢　～ Ancient Temple.mp3
-27:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/11.広有射怪鳥事　～ Till When_.mp3
-28:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/12.アルティメットトゥルース.mp3
-29:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/13.幽雅に咲かせ、墨染の桜　～ Border of Life.mp3
-30:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/14.ボーダーオブライフ.mp3
-31:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/15.妖々跋扈.mp3
-32:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/16.少女幻葬　～ Necro-Fantasy.mp3
-33:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/17.妖々跋扈　～ Who done it!.mp3
-34:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/18.ネクロファンタジア.mp3
-35:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/19.春風の夢.mp3
-36:Music/Touhou/官曲/TH07 东方妖妖梦 ～ Perfect Cherry Blossom (320k+cover)/20.さくらさくら　～ Japanize Dream....mp3
+0:ElectronNCM/綾倉盟 - 月影少女 - Poplica* Remix.mp3
+1:Music/Touhou/专辑/实体CD/凋叶棕/彁/01 - ALL EVIL MISCHIEF.wav
+2:Music/Touhou/专辑/实体CD/凋叶棕/彁/02 - ホーカス・ポーカス.wav
+3:Music/Touhou/专辑/实体CD/凋叶棕/彁/03 - Marks of Sin.wav
+4:Music/Touhou/专辑/实体CD/凋叶棕/彁/04 - trill_Moonshine.wav
+5:Music/Touhou/专辑/实体CD/凋叶棕/彁/05 - 幻想少女物語.wav
+6:Music/Touhou/专辑/实体CD/凋叶棕/彁/06 - Dolls into Pitiful Pretenders.wav
+7:Music/Touhou/专辑/实体CD/凋叶棕/彁/07 - little_Metamorphoses.wav
+8:Music/Touhou/专辑/实体CD/凋叶棕/彁/08 - 幻想星神信仰.wav
+9:Music/Touhou/专辑/实体CD/凋叶棕/彁/09 - 懐かしき道.wav
+10:Music/Touhou/专辑/实体CD/凋叶棕/彁/10 - くすぶるなにか.wav
+11:Music/Touhou/专辑/实体CD/凋叶棕/彁/11 - ／彁.wav
+12:steam/DELTARUNESoundtrack/001 ANOTHER HIM.flac
+13:steam/DELTARUNESoundtrack/002 Beginning.flac
+14:steam/DELTARUNESoundtrack/003 School.flac
+15:steam/DELTARUNESoundtrack/004 Susie.flac
+16:steam/DELTARUNESoundtrack/005 The Door.flac
+17:steam/DELTARUNESoundtrack/006 Cliffs.flac
+18:steam/DELTARUNESoundtrack/007 The Chase.flac
+19:steam/DELTARUNESoundtrack/008 The Legend.flac
+20:steam/DELTARUNESoundtrack/009 Lancer.flac
+21:steam/DELTARUNESoundtrack/010 Rude Buster.flac
+22:steam/DELTARUNESoundtrack/011 Empty Town.flac
+23:steam/DELTARUNESoundtrack/012 Weird Birds.flac
+24:steam/DELTARUNESoundtrack/013 Field of Hopes and Dreams.flac
+25:steam/DELTARUNESoundtrack/014 Fanfare (from Rose of Winter).flac
+26:steam/DELTARUNESoundtrack/015 Lantern.flac
+27:steam/DELTARUNESoundtrack/016 I'm Very Bad.flac
+28:steam/DELTARUNESoundtrack/017 Checker Dance.flac
+29:steam/DELTARUNESoundtrack/018 Quiet Autumn.flac
+30:steam/DELTARUNESoundtrack/019 Scarlet Forest.flac
+31:steam/DELTARUNESoundtrack/020 Thrash Machine.flac
+32:steam/DELTARUNESoundtrack/021 Vs. Lancer.flac
+33:steam/DELTARUNESoundtrack/022 Basement.flac
+34:steam/DELTARUNESoundtrack/023 Imminent Death.flac
+35:steam/DELTARUNESoundtrack/024 Vs. Susie.flac
+36:steam/DELTARUNESoundtrack/025 Card Castle.flac
+37:steam/DELTARUNESoundtrack/026 Rouxls Kaard.flac
+38:steam/DELTARUNESoundtrack/027 April 2012.flac
+39:steam/DELTARUNESoundtrack/028 Hip Shop.flac
+40:steam/DELTARUNESoundtrack/029 Gallery.flac
+41:steam/DELTARUNESoundtrack/030 Chaos King.flac
+42:steam/DELTARUNESoundtrack/031 Darkness Falls.flac
+43:steam/DELTARUNESoundtrack/032 The Circus.flac
+44:steam/DELTARUNESoundtrack/033 THE WORLD REVOLVING.flac
+45:steam/DELTARUNESoundtrack/034 Friendship.flac
+46:steam/DELTARUNESoundtrack/035 THE HOLY.flac
+47:steam/DELTARUNESoundtrack/036 Your Power.flac
+48:steam/DELTARUNESoundtrack/037 A Town Called Hometown.flac
+49:steam/DELTARUNESoundtrack/038 You Can Always Come Home.flac
+50:steam/DELTARUNESoundtrack/039 Don't Forget.flac
+51:steam/DELTARUNESoundtrack/040 Before the Story.flac
+52:steam/DELTARUNESoundtrack/041 Faint Glow.flac
+53:steam/DELTARUNESoundtrack/042 Girl Next Door.flac
+54:steam/DELTARUNESoundtrack/043 My Castle Town.flac
+55:steam/DELTARUNESoundtrack/044 Ohhhhohohoho!.flac
+56:steam/DELTARUNESoundtrack/045 Queen.flac
+57:steam/DELTARUNESoundtrack/046 A CYBER'S WORLD-.flac
+58:steam/DELTARUNESoundtrack/047 A Simple Diversion.flac
+59:steam/DELTARUNESoundtrack/048 Almost To The Guys!.flac
+60:steam/DELTARUNESoundtrack/049 Cool Beat.flac
+61:steam/DELTARUNESoundtrack/050 When I Get Mad I Dance Like This.flac
+62:steam/DELTARUNESoundtrack/051 Cyber Battle (Solo).flac
+63:steam/DELTARUNESoundtrack/052 When I Get Happy I Dance Like This.flac
+64:steam/DELTARUNESoundtrack/053 Sound Studio.flac
+65:steam/DELTARUNESoundtrack/054 Berdly.flac
+66:steam/DELTARUNESoundtrack/055 Smart Race.flac
+67:steam/DELTARUNESoundtrack/056 Faint Courage (Game Over).flac
+68:steam/DELTARUNESoundtrack/057 WELCOME TO THE CITY.flac
+69:steam/DELTARUNESoundtrack/058 Mini Studio.flac
+70:steam/DELTARUNESoundtrack/059 Holiday Studio.flac
+71:steam/DELTARUNESoundtrack/060 Cool Mixtape.flac
+72:steam/DELTARUNESoundtrack/061 HEY EVERY !.flac
+73:steam/DELTARUNESoundtrack/062 Spamton.flac
+74:steam/DELTARUNESoundtrack/063 NOW'S YOUR CHANCE TO BE A.flac
+75:steam/DELTARUNESoundtrack/064 Elegant Entrance.flac
+76:steam/DELTARUNESoundtrack/065 Bluebird of Misfortune.flac
+77:steam/DELTARUNESoundtrack/066 Pandora Palace.flac
+78:steam/DELTARUNESoundtrack/067 KEYGEN.flac
+79:steam/DELTARUNESoundtrack/068 Acid Tunnel of Love.flac
+80:steam/DELTARUNESoundtrack/069 It's Pronounced -Rules-.flac
+81:steam/DELTARUNESoundtrack/070 Lost Girl.flac
+82:steam/DELTARUNESoundtrack/071 Ferris Wheel.flac
+83:steam/DELTARUNESoundtrack/072 Attack of the Killer Queen.flac
+84:steam/DELTARUNESoundtrack/073 Giga Size.flac
+85:steam/DELTARUNESoundtrack/074 Powers Combined.flac
+86:steam/DELTARUNESoundtrack/075 Knock You Down !!.flac
+87:steam/DELTARUNESoundtrack/076 The Dark Truth.flac
+88:steam/DELTARUNESoundtrack/077 Digital Roots.flac
+89:steam/DELTARUNESoundtrack/078 Deal Gone Wrong.flac
+90:steam/DELTARUNESoundtrack/079 BIG SHOT.flac
+91:steam/DELTARUNESoundtrack/080 A Real Boy!.flac
+92:steam/DELTARUNESoundtrack/081 Dialtone.flac
+93:steam/DELTARUNESoundtrack/082 sans..flac
+94:steam/DELTARUNESoundtrack/083 Chill Jailbreak Alarm To Study And Relax To.flac
+95:steam/DELTARUNESoundtrack/084 You Can Always Come Home.flac
+96:steam/DELTARUNESoundtrack/085 Until Next Time.flac
+97:steam/DELTARUNESoundtrack/086 Before The Story.flac
+98:steam/DELTARUNESoundtrack/087 Berdly (Rejected Concept).flac
+99:steam/DELTARUNESoundtrack/088 Flashback (Excerpt).flac
+100:steam/DELTARUNESoundtrack/089 Feature Presentation.flac
+101:steam/DELTARUNESoundtrack/090 And Now For Today’s Sponsors…!.flac
+102:steam/DELTARUNESoundtrack/091 MIKE, the BOARD, please!.flac
+103:steam/DELTARUNESoundtrack/092 Sandy Board.flac
+104:steam/DELTARUNESoundtrack/093 Adventure Board.flac
+105:steam/DELTARUNESoundtrack/094 Query-.flac
+106:steam/DELTARUNESoundtrack/095 Quiz!.flac
+107:steam/DELTARUNESoundtrack/096 Dig! Dig! To The Center of the Earth!.flac
+108:steam/DELTARUNESoundtrack/097 Pushing Buddies.flac
+109:steam/DELTARUNESoundtrack/098 Ruder Buster.flac
+110:steam/DELTARUNESoundtrack/099 Physical Challenge.flac
+111:steam/DELTARUNESoundtrack/100 Board Clear!.flac
+112:steam/DELTARUNESoundtrack/101 Welcome to the Green Room.flac
+113:steam/DELTARUNESoundtrack/102 Vapor Buster.flac
+114:steam/DELTARUNESoundtrack/103 Paradise, Paradise.flac
+115:steam/DELTARUNESoundtrack/104 Raft Ride.flac
+116:steam/DELTARUNESoundtrack/105 SOUTH OF THE BORDER!!.flac
+117:steam/DELTARUNESoundtrack/106 Sound Check.flac
+118:steam/DELTARUNESoundtrack/107 Raise Up Your Bat.flac
+119:steam/DELTARUNESoundtrack/108 KING OF ROLYPOLY.flac
+120:steam/DELTARUNESoundtrack/109 Glowing Snow.flac
+121:steam/DELTARUNESoundtrack/110 Big City Board.flac
+122:steam/DELTARUNESoundtrack/111 Doom Board.flac
+123:steam/DELTARUNESoundtrack/112 Metaphysical Challenge.flac
+124:steam/DELTARUNESoundtrack/113 TV WORLD.flac
+125:steam/DELTARUNESoundtrack/114 It’s TV Time!.flac
+126:steam/DELTARUNESoundtrack/115 Hall of Fame.flac
+127:steam/DELTARUNESoundtrack/116 Breath.flac
+128:steam/DELTARUNESoundtrack/117 Black Knife.flac
+129:steam/DELTARUNESoundtrack/118 Crickets.flac
+130:steam/DELTARUNESoundtrack/119 Dump.flac
+131:steam/DELTARUNESoundtrack/120 SWORD.flac
+132:steam/DELTARUNESoundtrack/121 NORTHERNLIGHT.flac
+133:steam/DELTARUNESoundtrack/122 GLACEIR.flac
+134:steam/DELTARUNESoundtrack/123 BIT ROOTS.flac
+135:steam/DELTARUNESoundtrack/124 ERAM.flac
+136:steam/DELTARUNESoundtrack/125 BURNING EYES.flac
+137:steam/DELTARUNESoundtrack/126 Old wooden rafters.flac
+138:steam/DELTARUNESoundtrack/127 Hymn.flac
+139:steam/DELTARUNESoundtrack/128 Another day in hometown.flac
+140:steam/DELTARUNESoundtrack/129 Friends.flac
+141:steam/DELTARUNESoundtrack/130 Castle Funk.flac
+142:steam/DELTARUNESoundtrack/131 Knock You Down!! (Rhythm Ver.).flac
+143:steam/DELTARUNESoundtrack/132 Gingerbread House.flac
+144:steam/DELTARUNESoundtrack/133 The distance between two.flac
+145:steam/DELTARUNESoundtrack/134 C.flac
+146:steam/DELTARUNESoundtrack/135 ATRIUM.flac
+147:steam/DELTARUNESoundtrack/136 Dark Sanctuary.flac
+148:steam/DELTARUNESoundtrack/137 From Now On (Battle 2).flac
+149:steam/DELTARUNESoundtrack/138 Gyaa Ha ha!.flac
+150:steam/DELTARUNESoundtrack/139 Fireplace.flac
+151:steam/DELTARUNESoundtrack/140 A DARK ZONE.flac
+152:steam/DELTARUNESoundtrack/141 Mysterious Ringing.flac
+153:steam/DELTARUNESoundtrack/142 Ever Higher.flac
+154:steam/DELTARUNESoundtrack/143 Wise words.flac
+155:steam/DELTARUNESoundtrack/144 Piano that may not be played that well.flac
+156:steam/DELTARUNESoundtrack/145 Hammer of Justice.flac
+157:steam/DELTARUNESoundtrack/146 12am.flac
+158:steam/DELTARUNESoundtrack/147 The Second Sanctuary.flac
+159:steam/DELTARUNESoundtrack/148 Ripple.flac
+160:steam/DELTARUNESoundtrack/149 13am.flac
+161:steam/DELTARUNESoundtrack/150 The Third Sanctuary.flac
+162:steam/DELTARUNESoundtrack/151 Dark Place.flac
+163:steam/DELTARUNESoundtrack/152 Heavy Footsteps.flac
+164:steam/DELTARUNESoundtrack/153 Crumbling Tower.flac
+165:steam/DELTARUNESoundtrack/154 SPAWN.flac
+166:steam/DELTARUNESoundtrack/155 GUARDIAN.flac
+167:steam/DELTARUNESoundtrack/156 Need a hand!-.flac
+168:steam/DELTARUNESoundtrack/157 The place where it rained.flac
+169:steam/DELTARUNESoundtrack/158 The Ol’ Jitterbug.flac
+170:steam/DELTARUNESoundtrack/159 Neverending Night.flac
+171:steam/DELTARUNESoundtrack/160 The LEGEND...-.flac
+172:steam/DELTARUNESoundtrack/161 With Hope Crossed On Our Hearts.flac
+173:steam/DELTARUNESoundtrack/162 Volume Adjustment.flac
+174:steam/DELTARUNESoundtrack/163 Catswing.flac
+175:steam/DELTARUNESoundtrack/164 AIRWAVES.flac
+176:steam/DELTARUNESoundtrack/165 Concert for you.flac
+177:steam/DELTARUNESoundtrack/1/001 ANOTHER HIM.mp3
+178:steam/DELTARUNESoundtrack/1/002 Beginning.mp3
+179:steam/DELTARUNESoundtrack/1/003 School.mp3
+180:steam/DELTARUNESoundtrack/1/004 Susie.mp3
+181:steam/DELTARUNESoundtrack/1/005 The Door.mp3
+182:steam/DELTARUNESoundtrack/1/006 Cliffs.mp3
+183:steam/DELTARUNESoundtrack/1/007 The Chase.mp3
+184:steam/DELTARUNESoundtrack/1/008 The Legend.mp3
+185:steam/DELTARUNESoundtrack/1/009 Lancer.mp3
+186:steam/DELTARUNESoundtrack/1/010 Rude Buster.mp3
+187:steam/DELTARUNESoundtrack/1/011 Empty Town.mp3
+188:steam/DELTARUNESoundtrack/1/012 Weird Birds.mp3
+189:steam/DELTARUNESoundtrack/1/013 Field of Hopes and Dreams.mp3
+190:steam/DELTARUNESoundtrack/1/014 Fanfare (from Rose of Winter).mp3
+191:steam/DELTARUNESoundtrack/1/015 Lantern.mp3
+192:steam/DELTARUNESoundtrack/1/016 I'm Very Bad.mp3
+193:steam/DELTARUNESoundtrack/1/017 Checker Dance.mp3
+194:steam/DELTARUNESoundtrack/1/018 Quiet Autumn.mp3
+195:steam/DELTARUNESoundtrack/1/019 Scarlet Forest.mp3
+196:steam/DELTARUNESoundtrack/1/020 Thrash Machine.mp3
+197:steam/DELTARUNESoundtrack/1/021 Vs. Lancer.mp3
+198:steam/DELTARUNESoundtrack/1/022 Basement.mp3
+199:steam/DELTARUNESoundtrack/1/023 Imminent Death.mp3
+200:steam/DELTARUNESoundtrack/1/024 Vs. Susie.mp3
+201:steam/DELTARUNESoundtrack/1/025 Card Castle.mp3
+202:steam/DELTARUNESoundtrack/1/026 Rouxls Kaard.mp3
+203:steam/DELTARUNESoundtrack/1/027 April 2012.mp3
+204:steam/DELTARUNESoundtrack/1/028 Hip Shop.mp3
+205:steam/DELTARUNESoundtrack/1/029 Gallery.mp3
+206:steam/DELTARUNESoundtrack/1/030 Chaos King.mp3
+207:steam/DELTARUNESoundtrack/1/031 Darkness Falls.mp3
+208:steam/DELTARUNESoundtrack/1/032 The Circus.mp3
+209:steam/DELTARUNESoundtrack/1/033 THE WORLD REVOLVING.mp3
+210:steam/DELTARUNESoundtrack/1/034 Friendship.mp3
+211:steam/DELTARUNESoundtrack/1/035 THE HOLY.mp3
+212:steam/DELTARUNESoundtrack/1/036 Your Power.mp3
+213:steam/DELTARUNESoundtrack/1/037 A Town Called Hometown.mp3
+214:steam/DELTARUNESoundtrack/1/038 You Can Always Come Home.mp3
+215:steam/DELTARUNESoundtrack/1/039 Don't Forget.mp3
+216:steam/DELTARUNESoundtrack/1/040 Before the Story.mp3
+217:steam/DELTARUNESoundtrack/2/041 Faint Glow.mp3
+218:steam/DELTARUNESoundtrack/2/042 Girl Next Door.mp3
+219:steam/DELTARUNESoundtrack/2/043 My Castle Town.mp3
+220:steam/DELTARUNESoundtrack/2/044 Ohhhhohohoho!.mp3
+221:steam/DELTARUNESoundtrack/2/045 Queen.mp3
+222:steam/DELTARUNESoundtrack/2/046 A CYBER'S WORLD-.mp3
+223:steam/DELTARUNESoundtrack/2/047 A Simple Diversion.mp3
+224:steam/DELTARUNESoundtrack/2/048 Almost To The Guys!.mp3
+225:steam/DELTARUNESoundtrack/2/049 Cool Beat.mp3
+226:steam/DELTARUNESoundtrack/2/050 When I Get Mad I Dance Like This.mp3
+227:steam/DELTARUNESoundtrack/2/051 Cyber Battle (Solo).mp3
+228:steam/DELTARUNESoundtrack/2/052 When I Get Happy I Dance Like This.mp3
+229:steam/DELTARUNESoundtrack/2/053 Sound Studio.mp3
+230:steam/DELTARUNESoundtrack/2/054 Berdly.mp3
+231:steam/DELTARUNESoundtrack/2/055 Smart Race.mp3
+232:steam/DELTARUNESoundtrack/2/056 Faint Courage (Game Over).mp3
+233:steam/DELTARUNESoundtrack/2/057 WELCOME TO THE CITY.mp3
+234:steam/DELTARUNESoundtrack/2/058 Mini Studio.mp3
+235:steam/DELTARUNESoundtrack/2/059 Holiday Studio.mp3
+236:steam/DELTARUNESoundtrack/2/060 Cool Mixtape.mp3
+237:steam/DELTARUNESoundtrack/2/061 HEY EVERY !.mp3
+238:steam/DELTARUNESoundtrack/2/062 Spamton.mp3
+239:steam/DELTARUNESoundtrack/2/063 NOW'S YOUR CHANCE TO BE A.mp3
+240:steam/DELTARUNESoundtrack/2/064 Elegant Entrance.mp3
+241:steam/DELTARUNESoundtrack/2/065 Bluebird of Misfortune.mp3
+242:steam/DELTARUNESoundtrack/2/066 Pandora Palace.mp3
+243:steam/DELTARUNESoundtrack/2/067 KEYGEN.mp3
+244:steam/DELTARUNESoundtrack/2/068 Acid Tunnel of Love.mp3
+245:steam/DELTARUNESoundtrack/2/069 It's Pronounced -Rules-.mp3
+246:steam/DELTARUNESoundtrack/2/070 Lost Girl.mp3
+247:steam/DELTARUNESoundtrack/2/071 Ferris Wheel.mp3
+248:steam/DELTARUNESoundtrack/2/072 Attack of the Killer Queen.mp3
+249:steam/DELTARUNESoundtrack/2/073 Giga Size.mp3
+250:steam/DELTARUNESoundtrack/2/074 Powers Combined.mp3
+251:steam/DELTARUNESoundtrack/2/075 Knock You Down !!.mp3
+252:steam/DELTARUNESoundtrack/2/076 The Dark Truth.mp3
+253:steam/DELTARUNESoundtrack/2/077 Digital Roots.mp3
+254:steam/DELTARUNESoundtrack/2/078 Deal Gone Wrong.mp3
+255:steam/DELTARUNESoundtrack/2/079 BIG SHOT.mp3
+256:steam/DELTARUNESoundtrack/2/080 A Real Boy!.mp3
+257:steam/DELTARUNESoundtrack/2/081 Dialtone.mp3
+258:steam/DELTARUNESoundtrack/2/082 sans..mp3
+259:steam/DELTARUNESoundtrack/2/083 Chill Jailbreak Alarm To Study And Relax To.mp3
+260:steam/DELTARUNESoundtrack/2/084 You Can Always Come Home.mp3
+261:steam/DELTARUNESoundtrack/2/085 Until Next Time.mp3
+262:steam/DELTARUNESoundtrack/2/086 Before The Story.mp3
+263:steam/DELTARUNESoundtrack/2/087 Berdly (Rejected Concept).mp3
+264:steam/DELTARUNESoundtrack/3+4/088 Flashback (Excerpt).mp3
+265:steam/DELTARUNESoundtrack/3+4/089 Feature Presentation.mp3
+266:steam/DELTARUNESoundtrack/3+4/090 And Now For Today’s Sponsors…!.mp3
+267:steam/DELTARUNESoundtrack/3+4/091 MIKE, the BOARD, please!.mp3
+268:steam/DELTARUNESoundtrack/3+4/092 Sandy Board.mp3
+269:steam/DELTARUNESoundtrack/3+4/093 Adventure Board.mp3
+270:steam/DELTARUNESoundtrack/3+4/094 Query-.mp3
+271:steam/DELTARUNESoundtrack/3+4/095 Quiz!.mp3
+272:steam/DELTARUNESoundtrack/3+4/096 Dig! Dig! To The Center of the Earth!.mp3
+273:steam/DELTARUNESoundtrack/3+4/097 Pushing Buddies.mp3
+274:steam/DELTARUNESoundtrack/3+4/098 Ruder Buster.mp3
+275:steam/DELTARUNESoundtrack/3+4/099 Physical Challenge.mp3
+276:steam/DELTARUNESoundtrack/3+4/100 Board Clear!.mp3
+277:steam/DELTARUNESoundtrack/3+4/101 Welcome to the Green Room.mp3
+278:steam/DELTARUNESoundtrack/3+4/102 Vapor Buster.mp3
+279:steam/DELTARUNESoundtrack/3+4/103 Paradise, Paradise.mp3
+280:steam/DELTARUNESoundtrack/3+4/104 Raft Ride.mp3
+281:steam/DELTARUNESoundtrack/3+4/105 SOUTH OF THE BORDER!!.mp3
+282:steam/DELTARUNESoundtrack/3+4/106 Sound Check.mp3
+283:steam/DELTARUNESoundtrack/3+4/107 Raise Up Your Bat.mp3
+284:steam/DELTARUNESoundtrack/3+4/108 KING OF ROLYPOLY.mp3
+285:steam/DELTARUNESoundtrack/3+4/109 Glowing Snow.mp3
+286:steam/DELTARUNESoundtrack/3+4/110 Big City Board.mp3
+287:steam/DELTARUNESoundtrack/3+4/111 Doom Board.mp3
+288:steam/DELTARUNESoundtrack/3+4/112 Metaphysical Challenge.mp3
+289:steam/DELTARUNESoundtrack/3+4/113 TV WORLD.mp3
+290:steam/DELTARUNESoundtrack/3+4/114 It’s TV Time!.mp3
+291:steam/DELTARUNESoundtrack/3+4/115 Hall of Fame.mp3
+292:steam/DELTARUNESoundtrack/3+4/116 Breath.mp3
+293:steam/DELTARUNESoundtrack/3+4/117 Black Knife.mp3
+294:steam/DELTARUNESoundtrack/3+4/118 Crickets.mp3
+295:steam/DELTARUNESoundtrack/3+4/119 Dump.mp3
+296:steam/DELTARUNESoundtrack/3+4/120 SWORD.mp3
+297:steam/DELTARUNESoundtrack/3+4/121 NORTHERNLIGHT.mp3
+298:steam/DELTARUNESoundtrack/3+4/122 GLACEIR.mp3
+299:steam/DELTARUNESoundtrack/3+4/123 BIT ROOTS.mp3
+300:steam/DELTARUNESoundtrack/3+4/124 ERAM.mp3
+301:steam/DELTARUNESoundtrack/3+4/125 BURNING EYES.mp3
+302:steam/DELTARUNESoundtrack/3+4/126 Old wooden rafters.mp3
+303:steam/DELTARUNESoundtrack/3+4/127 Hymn.mp3
+304:steam/DELTARUNESoundtrack/3+4/128 Another day in hometown.mp3
+305:steam/DELTARUNESoundtrack/3+4/129 Friends.mp3
+306:steam/DELTARUNESoundtrack/3+4/130 Castle Funk.mp3
+307:steam/DELTARUNESoundtrack/3+4/131 Knock You Down!! (Rhythm Ver.).mp3
+308:steam/DELTARUNESoundtrack/3+4/132 Gingerbread House.mp3
+309:steam/DELTARUNESoundtrack/3+4/133 The distance between two.mp3
+310:steam/DELTARUNESoundtrack/3+4/134 C.mp3
+311:steam/DELTARUNESoundtrack/3+4/135 ATRIUM.mp3
+312:steam/DELTARUNESoundtrack/3+4/136 Dark Sanctuary.mp3
+313:steam/DELTARUNESoundtrack/3+4/137 From Now On (Battle 2).mp3
+314:steam/DELTARUNESoundtrack/3+4/138 Gyaa Ha ha!.mp3
+315:steam/DELTARUNESoundtrack/3+4/139 Fireplace.mp3
+316:steam/DELTARUNESoundtrack/3+4/140 A DARK ZONE.mp3
+317:steam/DELTARUNESoundtrack/3+4/141 Mysterious Ringing.mp3
+318:steam/DELTARUNESoundtrack/3+4/142 Ever Higher.mp3
+319:steam/DELTARUNESoundtrack/3+4/143 Wise words.mp3
+320:steam/DELTARUNESoundtrack/3+4/144 Piano that may not be played that well.mp3
+321:steam/DELTARUNESoundtrack/3+4/145 Hammer of Justice.mp3
+322:steam/DELTARUNESoundtrack/3+4/146 12am.mp3
+323:steam/DELTARUNESoundtrack/3+4/147 The Second Sanctuary.mp3
+324:steam/DELTARUNESoundtrack/3+4/148 Ripple.mp3
+325:steam/DELTARUNESoundtrack/3+4/149 13am.mp3
+326:steam/DELTARUNESoundtrack/3+4/150 The Third Sanctuary.mp3
+327:steam/DELTARUNESoundtrack/3+4/151 Dark Place.mp3
+328:steam/DELTARUNESoundtrack/3+4/152 Heavy Footsteps.mp3
+329:steam/DELTARUNESoundtrack/3+4/153 Crumbling Tower.mp3
+330:steam/DELTARUNESoundtrack/3+4/154 SPAWN.mp3
+331:steam/DELTARUNESoundtrack/3+4/155 GUARDIAN.mp3
+332:steam/DELTARUNESoundtrack/3+4/156 Need a hand!-.mp3
+333:steam/DELTARUNESoundtrack/3+4/157 The place where it rained.mp3
+334:steam/DELTARUNESoundtrack/3+4/158 The Ol’ Jitterbug.mp3
+335:steam/DELTARUNESoundtrack/3+4/159 Neverending Night.mp3
+336:steam/DELTARUNESoundtrack/3+4/160 The LEGEND...-.mp3
+337:steam/DELTARUNESoundtrack/3+4/161 With Hope Crossed On Our Hearts.mp3
+338:steam/DELTARUNESoundtrack/3+4/162 Volume Adjustment.mp3
+339:steam/DELTARUNESoundtrack/3+4/163 Catswing.mp3
+340:steam/DELTARUNESoundtrack/3+4/164 AIRWAVES.mp3
+341:steam/DELTARUNESoundtrack/3+4/165 Concert for you.mp3
 playlist_end
