@@ -1,4 +1,7 @@
 
+# auto connect to a player if last was disconnected/waylyrics was idle
+auto-connect = true
+
 # the interval waylyrics updates position/metadata from player
 player-sync-interval = "2s"
 
