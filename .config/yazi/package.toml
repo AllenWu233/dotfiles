@@ -14,11 +14,6 @@ rev = "efb8f03"
 hash = "9b8f2573da54334b04747e51556040cc"
 
 [[plugin.deps]]
-use = "GrzegorzKozub/mdcat"
-rev = "7b7380a"
-hash = "40c20e6c1085d1f45309b9f148bf4f6e"
-
-[[plugin.deps]]
 use = "DreamMaoMao/searchjump"
 rev = "fe884f4"
 hash = "b4c00ef6899a9563af8d577d0bb46998"

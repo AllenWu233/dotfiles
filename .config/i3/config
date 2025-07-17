@@ -1,6 +1,6 @@
-#######################################
-# Allen's personal i3wm configuration #
-#######################################
+##############################
+# Allen's i3wm configuration #
+##############################
 
 include ~/.config/i3/appearence.conf
 include ~/.config/i3/window_rules.conf

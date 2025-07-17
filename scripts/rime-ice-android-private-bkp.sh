@@ -1,7 +1,7 @@
 #!/bin/bash
-local_rime=~/.local/share/fcitx5/rime/
+local_rime=$HOME/.local/share/fcitx5/rime/
 share_rime=/usr/share/rime-data/
-repo=~/repo/rime-ice-android-private/
+repo=$HOME/repos/rime-ice-android-private/
 LOCAL_TIME=$(date -d @$(date +%s) "+%Y/%m/%d-%H:%M_UTC+08:00")
 
 cd ${repo} || exit
