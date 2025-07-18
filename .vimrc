@@ -8,8 +8,8 @@ set timeoutlen=300
 " ----- Appearance ----- "
 syntax on
 set number
-set relativenumber
-set cursorline
+" set relativenumber
+" set cursorline
 set showmode
 set showcmd
 set textwidth=80
