@@ -211,13 +211,13 @@ alias fpactr="pacman -Qq | fzf --preview 'pactree -rd1 {}'"
 alias ffont="fc-list | fzf"
 
 # chezmoi
-alias chc="chezmoi cd"
-alias che="chezmoi edit"
-alias chr="chezmoi re-add"
-alias cha="chezmoi add"
-alias chd="chezmoi diff"
-alias chg="chezmoi git --"
-alias chf="chezmoi status | awk '{print $2}' | xargs -r chezmoi forget --force"
+# alias chc="chezmoi cd"
+# alias che="chezmoi edit"
+# alias chr="chezmoi re-add"
+# alias cha="chezmoi add"
+# alias chd="chezmoi diff"
+# alias chg="chezmoi git --"
+# alias chf="chezmoi status | awk '{print $2}' | xargs -r chezmoi forget --force"
 
 # config
 alias i3c='nvim ~/.config/i3/'
@@ -248,7 +248,7 @@ fi
 # eval "$(zellij setup --generate-auto-start zsh)"
 # eval "$(starship init zsh)"
 eval $(thefuck --alias)
-eval "$(chezmoi completion zsh)"
+# eval "$(chezmoi completion zsh)"
 source <(fzf --zsh)
 
 export ATUIN_NOBIND="true"
