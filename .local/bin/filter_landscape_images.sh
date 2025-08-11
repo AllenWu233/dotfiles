@@ -5,6 +5,8 @@ output_dir="$folder/horizontal_images"
 mkdir -p "$output_dir"
 found=0
 
+notify-send "🖼️ 筛选横向图片" "开始筛选"
+
 shopt -s nullglob
 for img in "$folder"/*.{jpg,jpeg,png,bmp,gif,webp,PNG,JPG,JPEG}; do
     [ -e "$img" ] || continue
