@@ -1,204 +1,90 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# @author: Allen Wu
+# @since: 2025.08
+# My personal zsh configuration
 
-# Start configuration added by Zim install {{{
-#
-# User configuration sourced by interactive shells
-#
 
-# -----------------
-# Zsh configuration
-# -----------------
-
+# Settings ##################
 #
-# History
-#
+# Auto completion
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select
+# Case insensitive path-completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
-# Remove older command from the history if a duplicate is to be added.
-setopt HIST_IGNORE_ALL_DUPS
 
-#
-# Input/output
-#
+# prompt theme
+autoload -Uz promptinit
+promptinit
+# prompt suse
 
-# Set editor default keymap to emacs (`-e`) or vi (`-v`)
+# Custom prompt
+PROMPT='[%F{green}%n%f@%F{magenta}%m%f %F{yellow}%B%~%b%f][%F{cyan}%*%f][%F{yellow}%?%f]
+$ '
+# RPROMPT='[%F{yellow}%?%f]'
+
+
+# Vim-like keybindings
 bindkey -v
+export KEYTIMEOUT=5 # delay 0.05s
 
-# Prompt for spelling correction of commands.
-#setopt CORRECT
 
-# Customize spelling correction prompt.
-#SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
-
-# Remove path separator from WORDCHARS.
-WORDCHARS=${WORDCHARS//[\/]}
-
-# -----------------
-# Zim configuration
-# -----------------
-
-# Use degit instead of git as the default tool to install and update modules.
-#zstyle ':zim:zmodule' use 'degit'
-
-# --------------------
-# Module configuration
-# --------------------
-
+# History searching
+# autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+# zle -N up-line-or-beginning-search
+# zle -N down-line-or-beginning-search
 #
-# git
-#
-
-# Set a custom prefix for the generated aliases. The default prefix is 'G'.
-#zstyle ':zim:git' aliases-prefix 'g'
-
-#
-# input
-#
-
-# Append `../` to your input for each `.` you type after an initial `..`
-zstyle ':zim:input' double-dot-expand yes
-
-#
-# termtitle
-#
-
-# Set a custom terminal title format using prompt expansion escape sequences.
-# See http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Simple-Prompt-Escapes
-# If none is provided, the default '%n@%m: %~' is used.
-#zstyle ':zim:termtitle' format '%1~'
-
-#
-# zsh-autosuggestions
-#
-
-# Disable automatic widget re-binding on each precmd. This can be set when
-# zsh-users/zsh-autosuggestions is the last module in your ~/.zimrc.
-ZSH_AUTOSUGGEST_MANUAL_REBIND=1
-
-# Customize the style that the suggestions are shown with.
-# See https://github.com/zsh-users/zsh-autosuggestions/blob/master/README.md#suggestion-highlight-style
-#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
-
-#
-# zsh-syntax-highlighting
-#
-
-# Set what highlighters will be used.
-# See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-
-# Customize the main highlighter styles.
-# See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md#how-to-tweak-it
-#typeset -A ZSH_HIGHLIGHT_STYLES
-#ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
-
-# ------------------
-# Initialize modules
-# ------------------
-
-ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
-# Download zimfw plugin manager if missing.
-if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
-  if (( ${+commands[curl]} )); then
-    curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
-        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
-  else
-    mkdir -p ${ZIM_HOME} && wget -nv -O ${ZIM_HOME}/zimfw.zsh \
-        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
-  fi
-fi
-# Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
-if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
-  source ${ZIM_HOME}/zimfw.zsh init -q
-fi
-# Initialize modules.
-source ${ZIM_HOME}/init.zsh
-
-# ------------------------------
-# Post-init module configuration
-# ------------------------------
-
-#
-# zsh-history-substring-search
-#
-
-zmodload -F zsh/terminfo +p:terminfo
-# Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
-for key ('^[[A' '^P' ${terminfo[kcuu1]}) bindkey ${key} history-substring-search-up
-for key ('^[[B' '^N' ${terminfo[kcud1]}) bindkey ${key} history-substring-search-down
-for key ('k') bindkey -M vicmd ${key} history-substring-search-up
-for key ('j') bindkey -M vicmd ${key} history-substring-search-down
-unset key
-# }}} 
-# End configuration added by Zim install
+# [[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
+# [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
 
 
 
 
-## Added by Allen
-#
-# Source
-#
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zoxide
-
-
-# Options
-#
-# setopt EXTENDED_HISTORY
+# Edit command lines in editor
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M viins '^v' edit-command-line
 
-# Aliases
+
+
+# Plugins #####################
 #
-alias tsc='sudo timeshift --create'
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+
+# Aliases ###################
+#
 alias wine='env LANG=zh_CN.UTF-8 LANG=zh_CN.UTF-8 wine'
 # alias wine-game='WINEPREFIX=~/.local/share/wineprefixes/game/ wine'
 # alias pkgclean='sudo pacman -Rns $(pacman -Qqdt) && yes | sudo pacman -Sc && yes | paru -Sc'
 alias pkgclean='sudo pacman -Sc && paru -Scc'
 alias vim='nvim'
 alias ls='lsd'
-alias yg='you-get --playlist -o ~/Videos'
-alias ygc='you-get --playlist -o ~/Videos -c ~/.librewolf/wqbtt3vg.default-release/cookies.sqlite'
-alias prac-rs='cd ~/rust_work/rust-by-practice && git pull; mdbook serve -p 8888 -n 127.0.0.1 zh-CN/ && firefox http://127.0.0.1:8888/'
+# alias yg='you-get --playlist -o ~/Videos'
+# alias ygc='you-get --playlist -o ~/Videos -c ~/.librewolf/wqbtt3vg.default-release/cookies.sqlite'
 alias nc='mpd 2> /dev/null; ncmpcpp 2> /dev/null'
 alias farsee='curl -F "c=@-" "https://fars.ee/"'
 alias se='sudoedit'
-# alias HL='hledger'
-# alias HLe='nvim $LEDGER_FILE'
-# alias HLa='hledger add'
-# alias HLb='hledger bs'
-# alias HLi='hledger is'
-# alias HLp='hledger print -x'
-# alias HLw='hledger-web'
-alias bc='nvim $BEANCOUNT_FILE'
-alias fava='fava $BEANCOUNT_FILE'
+
 alias tree='lsd --tree'
 alias tree1='lsd --tree --depth 1'
 alias tree2='lsd --tree --depth 2'
+
 alias yazi='env LANG=zh_CN.UTF-8 LANGUAGE=zh_CN yazi'
 # alias rm="echo This is not the command you are looking for. Use \'trash\' instead.; false"
 alias rm="rm -i"
 alias get-ip="ip -4 addr | rg -i ppp0 -i | rg -i inet"
 alias pac="sudo pacman -Syu"
-# alias \$=' '
-# alias %=' '
 # alias ddg='w3m duckduckgo.com/lite'
 # alias abs='w3m https://linux.die.net/abs-guide/'
-alias sshlocal='ssh vboxer@127.0.0.1 -p 2222'
 alias cmd-wrapped='cmd-wrapped -s atuin'
 alias mf='musicfox'
 alias nb="newsboat -r"
 alias rw="random-wallpaper.sh"
 alias rofi="rofi -dpi 1"
 alias py="pdm run python"
-alias s="kitten ssh"
 
 # bat
 # alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
@@ -210,15 +96,6 @@ alias fpact="pacman -Qq | fzf --preview 'pactree -d1 {}'"
 alias fpactr="pacman -Qq | fzf --preview 'pactree -rd1 {}'"
 alias ffont="fc-list | fzf"
 
-# chezmoi
-# alias chc="chezmoi cd"
-# alias che="chezmoi edit"
-# alias chr="chezmoi re-add"
-# alias cha="chezmoi add"
-# alias chd="chezmoi diff"
-# alias chg="chezmoi git --"
-# alias chf="chezmoi status | awk '{print $2}' | xargs -r chezmoi forget --force"
-
 # config
 alias i3c='nvim ~/.config/i3/'
 
@@ -228,38 +105,50 @@ alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
 
-
-# Tools
+# hledger & beancount
 #
-if [ ! -n "$DISPLAY" ]; then # If in TTY console
-    export STARSHIP_CONFIG=~/.config/starship/starship-tty.toml
-    eval "$(starship init zsh)"
+# alias HL='hledger'
+# alias HLe='nvim $LEDGER_FILE'
+# alias HLa='hledger add'
+# alias HLb='hledger bs'
+# alias HLi='hledger is'
+# alias HLp='hledger print -x'
+# alias HLw='hledger-web'
+# alias bc='nvim $BEANCOUNT_FILE'
+# alias fava='fava $BEANCOUNT_FILE'
 
-    export ZELLIJ_CONFIG_FILE=~/.config/zellij/config-tty.kdl
-    eval "$(zellij setup --generate-auto-start zsh)"
-else
-    # export STARSHIP_CONFIG=~/.config/starship/starship-nerd-font-symbols.toml
 
-    source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-    # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-fi
 
-# eval "$(zellij setup --generate-auto-start zsh)"
-# eval "$(starship init zsh)"
-eval $(thefuck --alias)
-# eval "$(chezmoi completion zsh)"
-source <(fzf --zsh)
+# Environment ####################
+#
+# Set terminal language to English
+# This is not system locale. Refer to '~/.xprofile'
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US
 
+export EDITOR='nvim'
+
+# Clash-verge
+export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897
+
+# Path
+typeset -U path PATH
+path=(
+    ~/.local/bin
+$path)
+export PATH
+
+
+# Tools ##################
+#
 export ATUIN_NOBIND="true"
 eval "$(atuin init zsh)"
 bindkey '^r' atuin-search
 
-eval "$(uv generate-shell-completion zsh)"
-eval "$(uvx --generate-shell-completion zsh)"
 
 
-# Functions
+
+# Functions #################
 # 
 # Change the current working directory when exiting Yazi.
 # Use y instead of yazi to start, and press q to quit, 

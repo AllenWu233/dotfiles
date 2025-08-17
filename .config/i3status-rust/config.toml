@@ -42,7 +42,8 @@ format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
 
 [[block]]
 block = "backlight"
-device = "acpi_video"
+# device = "acpi_video"
+device = "intel_backlight"
 format = " $icon $brightness "
 minimum = 0
 
