@@ -30,6 +30,13 @@ export KEYTIMEOUT=5 # delay 0.05s
 
 
 # History searching
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+
+
 # autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 # zle -N up-line-or-beginning-search
 # zle -N down-line-or-beginning-search
@@ -56,6 +63,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Aliases ###################
 #
+alias cd='z'
 alias wine='env LANG=zh_CN.UTF-8 LANG=zh_CN.UTF-8 wine'
 # alias wine-game='WINEPREFIX=~/.local/share/wineprefixes/game/ wine'
 # alias pkgclean='sudo pacman -Rns $(pacman -Qqdt) && yes | sudo pacman -Sc && yes | paru -Sc'
@@ -144,6 +152,11 @@ export PATH
 export ATUIN_NOBIND="true"
 eval "$(atuin init zsh)"
 bindkey '^r' atuin-search
+# bind to the up key, which depends on terminal mode
+# bindkey '^[[A' atuin-up-search
+# bindkey '^[OA' atuin-up-search
+
+eval "$(zoxide init zsh)"
 
 
 

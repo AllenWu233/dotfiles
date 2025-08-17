@@ -4,6 +4,7 @@
 
 ^/screenshots
 ^/old
+^/themes
 ^/pkglist.txt
 ^/backup.sh
 ^/README.*
