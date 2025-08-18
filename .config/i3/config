@@ -7,20 +7,21 @@ include ~/.config/i3/window_rules.conf
 include ~/.config/i3/startup.conf
 include ~/.config/i3/keybindings.conf
 
-# Basic settings
+### Basic settings
 #
-# font for window titles and bar
+## font for window titles and bar
 font pango:Noto Sans CJK SC 11.5
 
-# use super(win) key as mod key
+## use super(win) key as mod key
 set $mod Mod4
 
-# Default applications
+## Default applications
 set $terminal alacritty
 set $browser firefox
 set $cloud-music electron-netease-cloud-music
+set $file-manager thunar
 
-# define names for workspaces
+## define names for workspaces
 #
 set $ws1    "1"
 set $ws2    "2" 
@@ -44,8 +45,7 @@ set $ws10   "10"
 # set $ws9    "9:󰭹 "
 # set $ws10   "10: "
 
-
-# Special workspace settings for multiple monitors
+## Special workspace settings for multiple monitors
 # workspace 1 output HDMI-A-0
 # workspace 2 output HDMI-A-0
 # workspace 3 output HDMI-A-0
@@ -56,27 +56,32 @@ set $ws10   "10"
 # workspace 8 output eDp
 
 
-# Screen, border and gaps
-# use $mod+Mouse to drag floating windows to their wanted position
+
+### Screen, border and gaps
+#
+## use $mod+Mouse to drag floating windows to their wanted position
 floating_modifier $mod
 
-# control focused window when follows the mouse movements
+## control focused window when follows the mouse movements
 focus_follows_mouse no
 
-# window border settings
+## window border settings
 default_border pixel 2
-# default_floating_border none
+## default_floating_border none
 smart_borders on
 
-# hiding borders adjacent to the screen edges
+## hiding borders adjacent to the screen edges
 # hide_edge_borders both
 # new_window normal 0
 # new_float normal 0
 
-# set popups during fullscreen mode
-popup_during_fullscreen all
+## set popups during fullscreen mode
+# popup_during_fullscreen all
 
-# i3-gaps
+
+
+### i3-gaps
+#
 # smart_gaps off
 gaps inner 0
 gaps outer 0

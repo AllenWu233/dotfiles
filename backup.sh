@@ -6,6 +6,8 @@ cd "$HOME/dotfiles" || {
     exit 1
 }
 
+pacman -Qqe >pkglist.txt
+
 git add --all
 
 if git diff --cached --quiet; then

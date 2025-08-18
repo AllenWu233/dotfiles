@@ -28,6 +28,9 @@ $ '
 bindkey -v
 export KEYTIMEOUT=5 # delay 0.05s
 
+bindkey '^P' up-line-or-history
+bindkey '^N' down-line-or-history
+
 
 # History searching
 export HISTFILE="$HOME/.zsh_history"
@@ -72,7 +75,8 @@ alias vim='nvim'
 alias ls='lsd'
 # alias yg='you-get --playlist -o ~/Videos'
 # alias ygc='you-get --playlist -o ~/Videos -c ~/.librewolf/wqbtt3vg.default-release/cookies.sqlite'
-alias nc='mpd 2> /dev/null; ncmpcpp 2> /dev/null'
+# alias nc='mpd 2> /dev/null; ncmpcpp 2> /dev/null'
+alias nc='ncmpcpp'
 alias farsee='curl -F "c=@-" "https://fars.ee/"'
 alias se='sudoedit'
 
@@ -137,7 +141,7 @@ export LANGUAGE=en_US
 export EDITOR='nvim'
 
 # Clash-verge
-export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897
+alias proxy='https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897'
 
 # Path
 typeset -U path PATH
