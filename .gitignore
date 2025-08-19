@@ -8,6 +8,7 @@
 .config/ncmpcpp/error.log
 .config/yazi/bookmark
 .config/zsh/.zsh_history
+.config/zsh/.zcompdump
 
 .config/mpd/database
 .config/mpd/log
