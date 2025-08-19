@@ -2,10 +2,6 @@
 # Allen's i3wm configuration #
 ##############################
 
-include ~/.config/i3/appearence.conf
-include ~/.config/i3/window_rules.conf
-include ~/.config/i3/startup.conf
-include ~/.config/i3/keybindings.conf
 
 ### Basic settings
 #
@@ -54,6 +50,14 @@ set $ws10   "10"
 # workspace 6 output eDp
 # workspace 7 output eDp
 # workspace 8 output eDp
+
+
+
+### Include
+include ~/.config/i3/appearence.conf
+include ~/.config/i3/window_rules.conf
+include ~/.config/i3/startup.conf
+include ~/.config/i3/keybindings.conf
 
 
 

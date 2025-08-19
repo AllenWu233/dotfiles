@@ -1,4 +1,6 @@
 7zip
+adobe-source-han-sans-cn-fonts
+adobe-source-han-serif-cn-fonts
 alacritty
 archlinux-artwork
 archlinux-wallpaper
@@ -8,10 +10,13 @@ atuin
 base
 base-devel
 bat
+breeze
+breeze-gtk
 brightnessctl
 btrbk
 btrfs-progs
 cava
+chrony
 clash-verge-rev
 cronie
 dunst
@@ -59,6 +64,7 @@ linux-zen-headers
 lsd
 luarocks
 lxappearance-gtk3
+lxsession-gtk3
 ly
 man-db
 mpc
@@ -85,6 +91,7 @@ pavucontrol
 picom
 pipewire-pulse
 pot-translation
+protontricks
 qt5ct
 qt6ct
 redshift
@@ -100,6 +107,7 @@ thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
 tldr
+tlp
 trash-cli
 ttf-fira-code
 ttf-fira-mono
@@ -107,6 +115,7 @@ ttf-firacode-nerd
 ttf-iosevka-nerd
 ttf-jetbrains-mono
 ttf-jetbrains-mono-nerd
+ttf-liberation
 ttf-lxgw-wenkai
 ttf-lxgw-wenkai-gb
 ttf-lxgw-wenkai-screen
@@ -126,7 +135,10 @@ xorg-server
 xorg-xinit
 xorg-xrandr
 xsel
+xss-lock
 yazi
+zathura
+zathura-pdf-mupdf
 zellij
 zoxide
 zsh

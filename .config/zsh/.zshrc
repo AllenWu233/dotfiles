@@ -8,9 +8,8 @@
 # Auto completion
 autoload -Uz compinit
 compinit
-zstyle ':completion:*' menu select
-# Case insensitive path-completion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select # arrow-key driven
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case insensitive
 
 
 # prompt theme
@@ -33,20 +32,10 @@ bindkey '^N' down-line-or-history
 
 
 # History searching
-export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=10000
 export SAVEHIST=10000
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
-
-
-# autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-# zle -N up-line-or-beginning-search
-# zle -N down-line-or-beginning-search
-#
-# [[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
-# [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
-
 
 
 
@@ -69,13 +58,10 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias cd='z'
 alias wine='env LANG=zh_CN.UTF-8 LANG=zh_CN.UTF-8 wine'
 # alias wine-game='WINEPREFIX=~/.local/share/wineprefixes/game/ wine'
-# alias pkgclean='sudo pacman -Rns $(pacman -Qqdt) && yes | sudo pacman -Sc && yes | paru -Sc'
-alias pkgclean='sudo pacman -Sc && paru -Scc'
 alias vim='nvim'
 alias ls='lsd'
 # alias yg='you-get --playlist -o ~/Videos'
 # alias ygc='you-get --playlist -o ~/Videos -c ~/.librewolf/wqbtt3vg.default-release/cookies.sqlite'
-# alias nc='mpd 2> /dev/null; ncmpcpp 2> /dev/null'
 alias nc='ncmpcpp'
 alias farsee='curl -F "c=@-" "https://fars.ee/"'
 alias se='sudoedit'
@@ -117,38 +103,15 @@ alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
 
-# hledger & beancount
-#
-# alias HL='hledger'
-# alias HLe='nvim $LEDGER_FILE'
-# alias HLa='hledger add'
-# alias HLb='hledger bs'
-# alias HLi='hledger is'
-# alias HLp='hledger print -x'
-# alias HLw='hledger-web'
-# alias bc='nvim $BEANCOUNT_FILE'
-# alias fava='fava $BEANCOUNT_FILE'
+# Clash-verge
+alias proxy='https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897'
 
 
-
-# Environment ####################
-#
 # Set terminal language to English
 # This is not system locale. Refer to '~/.xprofile'
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US
 
-export EDITOR='nvim'
-
-# Clash-verge
-alias proxy='https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897'
-
-# Path
-typeset -U path PATH
-path=(
-    ~/.local/bin
-$path)
-export PATH
 
 
 # Tools ##################

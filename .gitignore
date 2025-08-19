@@ -7,6 +7,7 @@
 .config/waylyrics/ncm-cookie
 .config/ncmpcpp/error.log
 .config/yazi/bookmark
+.config/zsh/.zsh_history
 
 .config/mpd/database
 .config/mpd/log
