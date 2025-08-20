@@ -1,4 +1,6 @@
 /** Basic config file **/
+// @since: 2025
+//
 // configuration {
 //   show-icons: true;
 //   font: "JetBrainsMono Nerd Font Mono 20";
@@ -21,10 +23,13 @@ configuration {
     show-icons:     true;
 }
 
-@theme "gruvbox-material.rasi"
+// @theme "gruvbox-material.rasi"
+// @theme "catppuccin-mocha.rasi"
+@import "catppuccin-mocha"
 
 //@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
-//
-//element-icon {
-//    size: 1.85ch;
-//}
+// @theme "/usr/share/rofi/themes/DarkBlue.rasi"
+
+// element-icon {
+//     size: 1.85ch;
+// }

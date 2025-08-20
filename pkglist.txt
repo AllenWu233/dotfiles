@@ -19,6 +19,7 @@ cava
 chrony
 clash-verge-rev
 cronie
+digikam
 dunst
 efibootmgr
 electron-netease-cloud-music
@@ -91,6 +92,7 @@ pavucontrol
 picom
 pipewire-pulse
 pot-translation
+prismlauncher
 protontricks
 qt5ct
 qt6ct
@@ -100,6 +102,7 @@ rime-pinyin-moegirl
 rime-pinyin-zhwiki
 ripgrep
 rofi
+spectacle
 steam
 stow
 thunar
