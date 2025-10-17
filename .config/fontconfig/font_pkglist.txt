@@ -1,0 +1,2 @@
+inter-font noto-fonts n
+oto-fonts-emoji ttf-fira-mono ttf-firacode-nerd ttf-lxgw-wenkai ttf-lxgw-wenkai-mono ttf-noto-nerd 

@@ -43,8 +43,9 @@ alias fpactr="pacman -Qq | fzf --preview 'pactree -rd1 {}'"
 alias ffont="fc-list | fzf"
 
 # config
-alias ci3='nvim ~/.config/i3/'
+# alias ci3='nvim ~/.config/i3/'
 alias czsh='nvim ~/.config/zsh/ ~/.zshenv'
+alias cniri='nvim ~/.config/niri/config.kdl'
 
 # Clash-verge
 alias proxy='https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897'

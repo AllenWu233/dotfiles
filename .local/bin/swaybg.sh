@@ -1,0 +1,27 @@
+#!/bin/bash
+# @author Allen
+# @since 2025.10
+# Set single background image with swaybg
+
+arch1="$HOME/Pictures/Archlinux/uwp36741.png"
+gruvbox1="/usr/share/backgrounds/gruvbox/gruvbox-dark-archlinux2-scalable.svg"
+gruvbox2="$HOME/Pictures/Wallpapers/gruvbox-wallpaper.jpg"
+sunset="$HOME/Pictures/backgrounds/archlinux/sunset.jpg"
+
+mystia="$HOME/Pictures/东方/111219584_p0.png"
+rumia="$HOME/Pictures/东方/108077785_p0.png"
+rumia2="$HOME/Pictures/Wallpapers/45393944_p0_dark_high.png"
+mokou="$HOME/Pictures/东方/86548110_p0.jpg"
+tatara_kogasa="$HOME/Pictures/东方/47516247_p0_pro.jpg"
+aya="$HOME/Pictures/东方/65893742(6342480)_無題_p0.jpg"
+renko_and_mary1="$HOME/Pictures/东方/679939(10674)_蓮台野_p0.jpg"
+
+IMAGE="$renko_and_mary1"
+
+if [[ -f "$IMAGE" ]]; then
+    killall swaybg
+    sleep 0.1
+    swaybg --mode fill --image "$IMAGE" &
+else
+    echo "Image not found: $IMAGE"
+fi

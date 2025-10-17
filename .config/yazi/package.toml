@@ -10,8 +10,8 @@ hash = "2bd799b42b8e42b8ef100310be71f8d1"
 
 [[plugin.deps]]
 use = "orhnk/system-clipboard"
-rev = "4f6942d"
-hash = "8e81a147e8ddfd992b10dd957d51a199"
+rev = "888026c"
+hash = "9f82a544335a53d79e87ea315746caaa"
 
 [[plugin.deps]]
 use = "DreamMaoMao/searchjump"
@@ -20,13 +20,13 @@ hash = "5337bf545993d8c4dec2c229031f49d"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "9cd2ac4"
-hash = "f54b45bdd33f607ddde47f0afad96142"
+rev = "2d73b79"
+hash = "d4c41d713b325710a9dd5ae86c3f8a5f"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-latte"
-rev = "9cd2ac4"
-hash = "e03f3cc1dc61e84a501134784ca4ba57"
+rev = "2d73b79"
+hash = "9e789c612c34f941a2afd42e7ded39f"
 
 [[flavor.deps]]
 use = "bennyyip/gruvbox-dark"

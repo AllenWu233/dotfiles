@@ -1,2 +1,5 @@
 set selection-clipboard clipboard
 set font "monospace normal 14"
+
+map h navigate previous
+map l navigate next
