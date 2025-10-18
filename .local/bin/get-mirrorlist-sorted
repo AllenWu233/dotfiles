@@ -1,12 +1,34 @@
 #!/bin/bash
-mv /etc/pacman.d/mirrorlist{,.bak}
+# @author Allen
+# @since 2025
+# Get top 5 mirrorlist
+# Usage: sudo $(which get-mirrorlist-sorted)
 
-if [ ! $? -eq 0 ]; then
-	echo "Failed! Try to use 'sudo' prefix."
-	exit 1
+# --- 1. Check if 'rankmirrors' command exists ---
+if ! command -v rankmirrors &>/dev/null; then
+    echo "Error: 'rankmirrors' command not found."
+    echo "Install 'pacman-contrib': sudo pacman -S pacman-contrib"
+    exit 1
 fi
+# ---------------------------------------------
 
-curl -s "https://archlinux.org/mirrorlist/?country=CN&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - >/etc/pacman.d/mirrorlist
+# --- 2. Backup and check for root permission ---
+mv -i /etc/pacman.d/mirrorlist{,.bak}
 
-echo "Done!"
-bat /etc/pacman.d/mirrorlist
+# Check if the previous 'mv' command failed
+if [ $? -ne 0 ]; then
+    echo "Error: Failed to backup mirrorlist. Ensure script is run with 'sudo'."
+    exit 1
+fi
+# ----------------------------------------------------
+
+# --- 3. Fetch and update mirrorlist ---
+echo "Fetching and ranking HTTPS mirrors for China..."
+
+# Fetch list, uncomment Servers, rank top 5, and write to file
+curl -s "https://archlinux.org/mirrorlist/?country=CN&protocol=https&use_mirror_status=on" |
+    sed -e 's/^#Server/Server/' -e '/^#/d' |
+    rankmirrors -n 5 - >/etc/pacman.d/mirrorlist
+
+echo "New mirrorlist content:"
+cat /etc/pacman.d/mirrorlist

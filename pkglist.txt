@@ -85,12 +85,14 @@ nvidia-prime
 nvtop
 nwg-look
 obsidian
+pacman-contrib
 paru
 pavucontrol
 pipewire-pulse
 polkit-kde-agent
 pot-translation
 ppp
+protontricks
 qt5ct
 qt6ct
 redshift
