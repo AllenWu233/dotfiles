@@ -1,0 +1,35 @@
+#!/bin/bash
+# @author Allen, Gemini
+# @since 2025
+#
+# Required dependencies: jq, wofi (or fuzzel/dmenu), xorg-xlsclients
+#
+# This script retrieves the list of open windows from the Niri compositor,
+# passes the list to wofi (in dmenu mode) for user selection,
+# and then focuses the selected window using the Niri IPC command.
+
+# Get the raw window list in JSON format from Niri IPC.
+WINDOW_LIST_RAW=$(niri msg --json windows)
+
+# Check if the Niri command was successful
+if [ $? -ne 0 ]; then
+    echo "Failed to get Niri window list. Ensure Niri is running."
+    exit 1
+fi
+
+echo $WINDOW_LIST_RAW
+
+# Use jq to parse the JSON and format the output for wofi.
+# Format: <Workspace id> <Display Title/App ID> <Window ID>
+# The Window ID is placed at the end for easy extraction later.
+WINDOW_ID=$(echo "$WINDOW_LIST_RAW" | jq -r '
+    # sort_by([.workspace_id, (.title // .app_id), .id]) |
+    sort_by([.workspace_id], .title) |
+    .[] | 
+    "\(if .is_focused then "*" else "" end)[\(.workspace_id)] \(.title) (\(.app_id)) [\(.id)]"
+' | wofi --show dmenu \
+    --prompt "Switch Window" \
+    --dmenu | awk '{print $NF}' | tr -d '[]') # Print only the last field (the Window ID)
+
+# Focus the selected window if a selection was made.
+[ -n "$WINDOW_ID" ] && niri msg action focus-window --id "$WINDOW_ID"

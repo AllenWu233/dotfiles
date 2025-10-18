@@ -15,6 +15,7 @@ btrbk
 cava
 clash-verge-rev
 digikam
+downgrade
 dunst
 efibootmgr
 electron-netease-cloud-music
@@ -43,6 +44,7 @@ git-crypt
 grub
 grub-btrfs
 gvfs-mtp
+i3bar-river
 i3blocks
 imv
 intel-ucode

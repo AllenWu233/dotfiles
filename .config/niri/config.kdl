@@ -362,6 +362,7 @@ binds {
     Super+N hotkey-overlay-title="Open cloud music" { spawn "/opt/SPlayer/splayer"; }
     Super+E hotkey-overlay-title="Open File Manager: thunar" { spawn "thunar"; }
     Super+Shift+E hotkey-overlay-title="Open Terminal File Manager: yazi" { spawn "footclient" "-e" "yazi"; }
+    Super+Tab hotkey-overlay-title="Swicth Window" { spawn "~/.config/niri/scripts/niri-window-switcher"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
