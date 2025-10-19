@@ -371,24 +371,54 @@ binds {
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
     // Using spawn-sh allows to pass multiple arguments together with the command.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    // XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
+    // XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
+    // XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    // XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    //
+    // Super+Up hotkey-overlay-title="Volume +" allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
+    // Super+Down hotkey-overlay-title="Volume -" allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
+    // Super+M hotkey-overlay-title="Headphone Mute" allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    // Super+Shift+M hotkey-overlay-title="Microphone Mute" allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    //
+    // // Example brightness key mappings for brightnessctl.
+    // // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
+    // // but you need to manually put each argument in separate "" quotes.
+    // XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    // XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    //
+    // Super+Right hotkey-overlay-title="Brightness +" allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+1%"; }
+    // Super+Left hotkey-overlay-title="Brightness -" allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "1%-"; }
 
-    Super+Up hotkey-overlay-title="Volume +" allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
-    Super+Down hotkey-overlay-title="Volume -" allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
-    Super+M hotkey-overlay-title="Headphone Mute" allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    Super+Shift+M hotkey-overlay-title="Microphone Mute" allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
-    // Example brightness key mappings for brightnessctl.
-    // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
-    // but you need to manually put each argument in separate "" quotes.
-    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    Super+Up hotkey-overlay-title="Volume +" allow-when-locked=true { 
+        spawn-sh "~/.local/bin/volume-wob up"; 
+    }
+    Super+Down hotkey-overlay-title="Volume -" allow-when-locked=true { 
+        spawn-sh "~/.local/bin/volume-wob down"; 
+    }
+    Super+M hotkey-overlay-title="Volume Mute" allow-when-locked=true { 
+        spawn-sh "~/.local/bin/volume-wob toggle"; 
+    }
+    Super+Shift+M hotkey-overlay-title="Microphone Mute" allow-when-locked=true { 
+        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; 
+    }
 
-    Super+Right hotkey-overlay-title="Brightness +" allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+1%"; }
-    Super+Left hotkey-overlay-title="Brightness -" allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "1%-"; }
+    XF86MonBrightnessUp allow-when-locked=true { 
+        spawn-sh "~/.local/bin/brightnessctl-wob +10%"; 
+    }
+    XF86MonBrightnessDown allow-when-locked=true { 
+        spawn-sh "~/.local/bin/brightnessctl-wob 10%-"; 
+    }
+    Super+Right hotkey-overlay-title="Brightness +" allow-when-locked=true { 
+        spawn-sh "~/.local/bin/brightnessctl-wob +1%"; 
+    }
+    Super+Left hotkey-overlay-title="Brightness -" allow-when-locked=true { 
+        spawn-sh "~/.local/bin/brightnessctl-wob 1%-"; 
+    }
+
+
+
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
