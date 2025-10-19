@@ -242,8 +242,9 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "~/.local/bin/swaybg-set-wallpaper" // Set $IMAGE variable in the script to change background 
 spawn-at-startup "mako"
-spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
-spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "swaylock -f" "before-sleep" "swaylock -f"
+// spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "~/.local/bin/swaylock-fancy" "before-sleep" "~/.local/bin/swaylock-fancy"
 
 spawn-at-startup "keepassxc"
 spawn-at-startup "clash-verge"
@@ -349,7 +350,7 @@ binds {
     // Super+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Super+Return hotkey-overlay-title="Open a Terminal: footclient" { spawn "footclient"; }
     Super+W hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "~/.local/bin/swaylock-fancy"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -635,16 +636,11 @@ environment {
     LANG "zh_CN.UTF-8"
     LANGUAGE "zh_CN:en_US"
 
-    // Nvidia GBM backend
-    GBM_BACKEND "nvidia-drm"
-    __GLX_VENDOR_LIBRARY_NAME "nvidia"
-
     QT_QPA_PLATFORMTHEME "qt6ct"
-    WLR_XWAYLAND_SCALE "1.5"
 
     XMODIFIERS "@im=fcitx"
-    QT_IM_MODULE "fcitx"
-    // QT_IM_MODULES "wayland;fcitx"
+    // QT_IM_MODULE "fcitx"
+    QT_IM_MODULES "wayland;fcitx"
 }
 
 cursor {
@@ -686,10 +682,10 @@ window-rule {
     open-maximized false
 }
 
-window-rule {
-    match app-id="KeepassXC"
-    open-on-workspace "3"
-}
+// window-rule {
+//     match app-id="KeepassXC"
+//     open-on-workspace "1"
+// }
 
 window-rule {
     match app-id="waylyrics"

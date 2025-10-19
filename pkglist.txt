@@ -41,6 +41,7 @@ gimp
 gimp-help-zh_cn
 git
 git-crypt
+grim
 grub
 grub-btrfs
 gvfs-gphoto2
@@ -93,7 +94,7 @@ pacman-contrib
 paru
 pavucontrol
 pipewire-pulse
-polkit-kde-agent
+polkit-gnome
 pot-translation
 ppp
 protontricks
@@ -141,6 +142,7 @@ wofi
 xdg-desktop-portal-gnome
 xdg-desktop-portal-gtk
 xorg-xlsclients
+xorg-xrdb
 xorg-xwininfo
 xwayland-satellite
 yazi

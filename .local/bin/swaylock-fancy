@@ -1,0 +1,31 @@
+#!/bin/bash
+# @author Allen, Gemini 2.5 Flash
+# @sice 2025
+# Capture the screen, blur it using ImageMagick, and lock the screen with swaylock.
+# Inspired by i3lock-fancy-git
+
+IMG_PATH="/tmp/swaylock_background.jpeg"
+BLUR_SIGMA="0x3"
+SCALE_DOWN="10%"
+SCALE_UP="1000%"
+
+command_exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+if ! command_exists grim || ! command_exists magick || ! command_exists swaylock; then
+    echo "Error: Required commands (grim, magick, swaylock) are not installed or not in PATH." >&2
+    exit 1
+fi
+
+grim -t jpeg "$IMG_PATH"
+
+magick "$IMG_PATH" \
+    -filter Gaussian \
+    -scale "$SCALE_DOWN" \
+    -blur "$BLUR_SIGMA" \
+    -resize "$SCALE_UP" \
+    "$IMG_PATH"
+
+swaylock -f -i "$IMG_PATH"
+rm "$IMG_PATH"
