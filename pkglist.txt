@@ -123,11 +123,13 @@ trash-cli
 tree-sitter-cli
 ttf-fira-mono
 ttf-firacode-nerd
+ttf-iosevka-nerd
 ttf-lxgw-wenkai
 ttf-lxgw-wenkai-gb
 ttf-lxgw-wenkai-mono
 ttf-lxgw-wenkai-screen
 ttf-noto-nerd
+ttf-roboto
 tumbler
 tumbler-folder-thumbnailer
 udiskie

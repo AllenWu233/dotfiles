@@ -16,7 +16,7 @@ tag_inactive_fg = "#d79921ff"
 tag_inactive_bg = "#282828ff"
 
 # The font and various sizes
-font = "sans-serif 13"
+font = "Iosevka Nerd Font 13"
 height = 26
 margin_top = 0
 margin_bottom = 0
