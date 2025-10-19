@@ -43,6 +43,7 @@ git
 git-crypt
 grub
 grub-btrfs
+gvfs-gphoto2
 gvfs-mtp
 i3bar-river
 i3blocks
@@ -59,6 +60,7 @@ linux-firmware
 linux-lts
 linux-zen
 linux-zen-headers
+linuxqq
 lsd
 lua51
 luarocks
@@ -126,7 +128,7 @@ ttf-lxgw-wenkai-mono
 ttf-lxgw-wenkai-screen
 ttf-noto-nerd
 tumbler
-tumbler-extra-thumbnailers
+tumbler-folder-thumbnailer
 udiskie
 vim
 vintagestory

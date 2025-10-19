@@ -358,8 +358,8 @@ binds {
 
     Super+B hotkey-overlay-title="Open Browser: firefox" { spawn "firefox"; }
     // Super+N hotkey-overlay-title="Open cloud music" { spawn-sh "pkill waylyrics; electron-netease-cloud-music; waylyrics"; }
-    // Super+N hotkey-overlay-title="Open cloud music" { spawn-sh "pkill waylyrics; /opt/SPlayer/splayer; sleep 1; waylyrics"; }
-    Super+N hotkey-overlay-title="Open cloud music" { spawn "/opt/SPlayer/splayer"; }
+    // Super+N hotkey-overlay-title="Open cloud music" { spawn-sh "pkill waylyrics; /opt/SPlayer/Splayer; sleep 1; waylyrics"; }
+    Super+N hotkey-overlay-title="Open cloud music" { spawn "/opt/SPlayer/Splayer"; }
     Super+E hotkey-overlay-title="Open File Manager: thunar" { spawn "thunar"; }
     Super+Shift+E hotkey-overlay-title="Open Terminal File Manager: yazi" { spawn "footclient" "-e" "yazi"; }
     Super+Tab hotkey-overlay-title="Swicth Window" { spawn "~/.config/niri/scripts/niri-window-switcher"; }
