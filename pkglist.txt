@@ -81,6 +81,7 @@ newsboat
 niri
 niri-float-sticky
 nodejs
+noise-suppression-for-voice
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -141,6 +142,7 @@ waylyrics
 wget
 wl-clipboard
 wlr-randr
+wob
 xdg-desktop-portal-gnome
 xdg-desktop-portal-gtk
 xorg-xlsclients

@@ -1,0 +1,9 @@
+#!/bin/bash
+# wobpipe
+# @author Allen
+# @since 2025
+# Create and connect a named pipe for wob to use
+# Usage: echo 42 > /tmp/wobpipe
+
+mkfifo /tmp/wobpipe
+tail -f /tmp/wobpipe | wob &

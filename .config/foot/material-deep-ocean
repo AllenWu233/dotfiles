@@ -1,0 +1,38 @@
+# _*_ conf _*_
+# Material Deep Ocean
+
+[colors]
+foreground=A6ACCD
+background=0F111A
+
+regular0=464B5D
+regular1=FF5370
+regular2=C3E88D
+regular3=FFCB6B
+regular4=82AAFF
+regular5=C792EA
+regular6=89DDFF
+regular7=717CB4
+
+bright0=545971
+bright1=FF5370
+bright2=C3E88D
+bright3=FFCB6B
+bright4=82AAFF
+bright5=C792EA
+bright6=84FFFF
+bright7=A6ACCD
+
+cursor=0F111A 84FFFF
+
+16=FF9E64
+17=FF5370
+
+selection-foreground=A6ACCD
+selection-background=1F2233
+
+search-box-no-match=0F111A FF5370
+search-box-match=A6ACCD 1F2233
+
+jump-labels=0F111A 84FFFF
+urls=89DDFF

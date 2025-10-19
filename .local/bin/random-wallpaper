@@ -2,7 +2,7 @@
 # random-wallpaper.sh - Set a random wallpaper from a directory
 
 # Wallpaper directory
-WALLPAPER_DIR="$HOME/Pictures/Pictures/Wallpapers"
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
 DISABLED_DIR="disabled"
 
 # Check if wallpaper directory exists

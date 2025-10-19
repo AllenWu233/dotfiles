@@ -79,7 +79,7 @@ input {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 8 
+    gaps 8
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -130,7 +130,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 3
+        width 2
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -139,7 +139,9 @@ layout {
 
         // Color of the ring on the active monitor.
         // active-color "#7fc8ff"
-        active-color "#20A162"
+        // active-color "#b4befe"
+        // active-color "#20A162"
+        active-color "#bb99ff"
 
         // Color of the ring on inactive monitors.
         //
@@ -242,6 +244,7 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "~/.local/bin/swaybg-set-wallpaper" // Set $IMAGE variable in the script to change background 
 spawn-at-startup "mako"
+spawn-at-startup "~/.config/wob/wobpipe"
 // spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "~/.local/bin/swaylock-fancy" "before-sleep" "~/.local/bin/swaylock-fancy"
