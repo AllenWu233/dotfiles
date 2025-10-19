@@ -90,6 +90,7 @@ nvidia-prime
 nvtop
 nwg-look
 obsidian
+olympus
 pacman-contrib
 paru
 pavucontrol
@@ -140,7 +141,6 @@ waylyrics
 wget
 wl-clipboard
 wlr-randr
-wofi
 xdg-desktop-portal-gnome
 xdg-desktop-portal-gtk
 xorg-xlsclients

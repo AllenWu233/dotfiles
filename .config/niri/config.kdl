@@ -349,7 +349,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     // Super+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Super+Return hotkey-overlay-title="Open a Terminal: footclient" { spawn "footclient"; }
-    Super+W hotkey-overlay-title="Run an Application: wofi" { spawn-sh "wofi --show drun"; }
+    Super+W hotkey-overlay-title="Run an Application: fuzzel" { spawn-sh "fuzzel --show drun"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "~/.local/bin/swaylock-fancy"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
@@ -676,11 +676,11 @@ window-rule {
     opacity 1.0
 }
 
-window-rule {
-    match app-id="foot"
-    // Then, for foot, set open-maximized back to false.
-    open-maximized false
-}
+// window-rule {
+//     match app-id="foot"
+//     // Then, for foot, set open-maximized back to false.
+//     open-maximized false
+// }
 
 // window-rule {
 //     match app-id="KeepassXC"
