@@ -242,7 +242,7 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "~/.local/bin/swaybg-set-wallpaper" // Set $IMAGE variable in the script to change background 
 spawn-at-startup "mako"
-// spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "swaylock -f" "before-sleep" "swaylock -f"
 
 spawn-at-startup "keepassxc"
@@ -635,6 +635,10 @@ environment {
     LANG "zh_CN.UTF-8"
     LANGUAGE "zh_CN:en_US"
 
+    // Nvidia GBM backend
+    GBM_BACKEND "nvidia-drm"
+    __GLX_VENDOR_LIBRARY_NAME "nvidia"
+
     QT_QPA_PLATFORMTHEME "qt6ct"
     WLR_XWAYLAND_SCALE "1.5"
 
@@ -671,6 +675,7 @@ window-rule {
     match app-id="gimp"
     match app-id="^imv$"
     match app-id="libreoffice"
+    match app-id="digikam"
 
     opacity 1.0
 }
