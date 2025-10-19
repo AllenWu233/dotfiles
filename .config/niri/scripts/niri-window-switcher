@@ -23,8 +23,7 @@ echo $WINDOW_LIST_RAW
 # Format: <Workspace id> <Display Title/App ID> <Window ID>
 # The Window ID is placed at the end for easy extraction later.
 WINDOW_ID=$(echo "$WINDOW_LIST_RAW" | jq -r '
-    # sort_by([.workspace_id, (.title // .app_id), .id]) |
-    sort_by([.workspace_id], .title) |
+    sort_by(.workspace_id, (.title // .app_id), .id) |
     .[] | 
     "\(if .is_focused then "*" else "" end)[\(.workspace_id)] \(.title) (\(.app_id)) [\(.id)]"
 ' | wofi --show dmenu \

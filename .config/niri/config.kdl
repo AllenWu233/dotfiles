@@ -636,6 +636,7 @@ environment {
     LANGUAGE "zh_CN:en_US"
 
     QT_QPA_PLATFORMTHEME "qt6ct"
+    WLR_XWAYLAND_SCALE "1.5"
 
     XMODIFIERS "@im=fcitx"
     QT_IM_MODULE "fcitx"
