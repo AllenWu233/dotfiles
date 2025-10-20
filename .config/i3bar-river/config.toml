@@ -2,29 +2,30 @@
 # Optional: with no status generator the bar will display only tags and layout name.
 command = "i3blocks"
 
-# Colors
-background = "#282828ff"
-color = "#ffffffff"
-separator = "#9a8a62ff"
-tag_fg = "#d79921ff"
-tag_bg = "#282828ff"
-tag_focused_fg = "#1d2021ff"
-tag_focused_bg = "#689d68ff"
-tag_urgent_fg = "#282828ff"
-tag_urgent_bg = "#cc241dff"
-tag_inactive_fg = "#d79921ff"
-tag_inactive_bg = "#282828ff"
+# Colors: Catppuccin Macchiato/Mocha Style
+background = "#11111be6"
+color = "#cdd6f4ff"
+separator = "#bac2deff"
+tag_fg = "#cdd6f4ff"
+tag_bg = "#11111bff"
+tag_focused_fg = "#11111bff"
+tag_focused_bg = "#cba6f7ff"
+tag_urgent_fg = "#cdd6f4ff"
+tag_urgent_bg = "#f38ba8ff"
+tag_inactive_fg = "#45475aff"
+tag_inactive_bg = "#11111bff"
+
 
 # The font and various sizes
-font = "Iosevka Nerd Font 13"
-height = 26
+font = "Iosevka Nerd Font 13.5"
+height = 30
 margin_top = 0
 margin_bottom = 0
 margin_left = 0
 margin_right = 0
 separator_width = 2.0
 tags_r = 0.0
-tags_padding = 25.0
+tags_padding = 5.0
 tags_margin = 0.0
 blocks_r = 0.0
 blocks_overlap = 0.0

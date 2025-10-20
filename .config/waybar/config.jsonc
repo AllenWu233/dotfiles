@@ -9,7 +9,7 @@
   "modules-left": ["niri/workspaces", "custom/media"],
   // "modules-center": ["niri/window"],
   "modules-right": [
-    "mpd",
+    // "mpd",
     "idle_inhibitor",
     "pulseaudio",
     "network",

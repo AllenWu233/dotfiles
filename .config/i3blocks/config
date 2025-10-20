@@ -1,0 +1,43 @@
+# i3blocks configuration file
+# @author Allen
+# @since 2025
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=false
+# separator_block_width=15
+
+[weather]
+
+
+[notice]
+
+
+[update]
+
+
+[filesystem]
+
+
+[hardware]
+
+
+[network]
+
+
+[light_and_volume]
+command=scripts/light-volume-status.sh
+# command=echo "[󱩐 $(brightnessctl -m | awk -F, '{print $4}')  $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk -F: '{print $2}' | awk '{print int($1 * 100)}') ]"
+interval=1
+
+[power_and_bluetooth]
+
+
+[time]
+command=echo "[󰥔 $(date '+%Y-%m-%d %a %H:%M')]"
+interval=1
