@@ -12,6 +12,11 @@
 separator=false
 # separator_block_width=15
 
+
+[test]
+full_text=foot
+command=obsidian > /dev/null
+
 [weather]
 
 
@@ -31,7 +36,7 @@ separator=false
 
 
 [light_and_volume]
-command=scripts/light-volume-status.sh
+command=echo "[$(scripts/brightness) $(scripts/volume) $(scripts/mic)]"
 # command=echo "[󱩐 $(brightnessctl -m | awk -F, '{print $4}')  $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk -F: '{print $2}' | awk '{print int($1 * 100)}') ]"
 interval=1
 
@@ -41,3 +46,8 @@ interval=1
 [time]
 command=echo "[󰥔 $(date '+%Y-%m-%d %a %H:%M')]"
 interval=1
+
+[hibernate]
+full_text="⏻ "
+command=systemctl hibernate
+
