@@ -1,6 +1,7 @@
 # The status generator command.
 # Optional: with no status generator the bar will display only tags and layout name.
 command = "i3blocks"
+# command = "i3status-rs"
 
 # Colors: Catppuccin Macchiato/Mocha Style
 background = "#11111be6"

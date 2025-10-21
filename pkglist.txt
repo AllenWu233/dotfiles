@@ -49,6 +49,7 @@ gvfs-gphoto2
 gvfs-mtp
 i3bar-river
 i3blocks
+i3status-rust
 imv
 intel-ucode
 inter-font
