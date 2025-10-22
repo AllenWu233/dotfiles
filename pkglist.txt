@@ -55,6 +55,7 @@ intel-ucode
 inter-font
 jdk21-openjdk
 jq
+kcolorchooser
 keepassxc
 lazygit
 libnotify
@@ -94,6 +95,7 @@ nvtop
 nwg-look
 obsidian
 olympus
+osu-lazer-bin
 pacman-contrib
 paru
 pavucontrol
