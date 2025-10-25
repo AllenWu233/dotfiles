@@ -701,6 +701,7 @@ window-rule {
 // Disable opacity
 window-rule {
     match app-id="firefox"
+    match app-id="chromium"
     match app-id="gimp"
     match app-id="^imv$"
     match app-id="libreoffice"

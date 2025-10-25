@@ -14,6 +14,7 @@ brightnessctl
 btop
 btrbk
 cava
+chromium
 clash-verge-rev
 digikam
 downgrade
