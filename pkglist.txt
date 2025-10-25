@@ -55,6 +55,7 @@ imv
 intel-ucode
 inter-font
 jdk21-openjdk
+jmtpfs
 jq
 kcolorchooser
 keepassxc
@@ -112,6 +113,7 @@ rime-ice-double-pinyin-git
 rime-pinyin-moegirl
 rime-pinyin-zhwiki
 ripgrep
+rsync
 splayer
 steam
 stow
