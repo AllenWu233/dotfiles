@@ -151,6 +151,7 @@ vim
 vintagestory
 virt-install
 virt-manager
+virtio-win
 waybar
 waylyrics
 wget
