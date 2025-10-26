@@ -8,9 +8,22 @@
 
 # List of source paths on the phone (relative to mount point)
 SOURCE_PATHS=(
+    "Pictures/bili"
+    "Pictures/OuterWilds"
+    "Pictures/QQ"
+    "Pictures/Twitter"
+    "Pictures/WeiXin"
+    "Pictures/漫画"
+    "Pictures/海虎武神"
+    "Pictures/pixez_old"
+    "Pictures/NSFW-pixiv"
+    "Pictures/meme"
+    "Pictures/Screenshots"
+    "Pictures/搓"
+    "Pictures/烹饪"
     "DCIM/Camera"
-    # "Pictures/Screenshots"
-    # "Pictures/WeChat"
+    "Pictures/NSFW-Touhou"
+    "Pictures/Touhou"
 )
 SOURCE_MOUNT_POINT="$HOME/mnt"
 SOURCE_DIR="$SOURCE_MOUNT_POINT/内部共享存储空间"
@@ -46,7 +59,7 @@ perform_backup() {
     mkdir -p "$DEST_DIR"
 
     for PATH_ON_PHONE in "${SOURCE_PATHS[@]}"; do
-        FULL_SOURCE_PATH="${SOURCE_MOUNT_POINT}/${PATH_ON_PHONE}/"
+        FULL_SOURCE_PATH="${SOURCE_MOUNT_POINT}/${PATH_ON_PHONE}"
 
         echo "-> Backing up source: $FULL_SOURCE_PATH"
 
@@ -58,8 +71,7 @@ perform_backup() {
 
         # rsync command: Archive mode, verbose, show progress, DO NOT OVERWRITE existing files
         # The trailing / on source path copies contents, not the folder itself.
-        # rsync -av --progress --ignore-existing "$FULL_SOURCE_PATH" "$DEST_DIR"
-        echo $FULL_SOURCE_PATH
+        rsync -av --progress --ignore-existing "$FULL_SOURCE_PATH" "$DEST_DIR"
 
         if [ $? -ne 0 ]; then
             echo "      [ERROR] Backup of $PATH_ON_PHONE FAILED. Check connection/permissions."
