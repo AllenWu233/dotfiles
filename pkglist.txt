@@ -10,6 +10,7 @@ base-devel
 bc
 breeze
 breeze-gtk
+bridge-utils
 brightnessctl
 btop
 btrbk
@@ -17,6 +18,7 @@ cava
 chromium
 clash-verge-rev
 digikam
+dnsmasq
 downgrade
 dunst
 efibootmgr
@@ -62,6 +64,7 @@ keepassxc
 lazygit
 libnotify
 libreoffice-still-zh-cn
+libvirt
 linux-firmware
 linux-lts
 linux-zen
@@ -97,6 +100,7 @@ nvtop
 nwg-look
 obsidian
 olympus
+openbsd-netcat
 osu-lazer-bin
 pacman-contrib
 paru
@@ -106,6 +110,7 @@ polkit-gnome
 pot-translation
 ppp
 protontricks
+qemu-full
 qt5ct
 qt6ct
 redshift
@@ -144,6 +149,8 @@ tumbler-folder-thumbnailer
 udiskie
 vim
 vintagestory
+virt-install
+virt-manager
 waybar
 waylyrics
 wget
