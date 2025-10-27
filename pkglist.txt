@@ -102,6 +102,7 @@ obsidian
 olympus
 openbsd-netcat
 osu-lazer-bin
+owmods-gui-bin
 pacman-contrib
 paru
 pavucontrol
