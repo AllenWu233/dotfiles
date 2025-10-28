@@ -82,6 +82,7 @@ mpc
 mpd
 mpv
 ncmpcpp
+neomutt
 neovide
 neovim
 networkmanager
@@ -148,6 +149,7 @@ ttf-roboto
 tumbler
 tumbler-folder-thumbnailer
 udiskie
+unarchiver
 vim
 vintagestory
 virt-install
