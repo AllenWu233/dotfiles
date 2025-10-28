@@ -115,6 +115,7 @@ protontricks
 qemu-full
 qt5ct
 qt6ct
+quickemu-git
 redshift
 rime-ice-double-pinyin-git
 rime-pinyin-moegirl
@@ -157,7 +158,7 @@ virt-manager
 virtio-win
 waybar
 waylyrics
-wechat
+wechat-bin
 wemeet-bin
 wget
 wl-clipboard
