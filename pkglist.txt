@@ -157,6 +157,8 @@ virt-manager
 virtio-win
 waybar
 waylyrics
+wechat
+wemeet-bin
 wget
 wl-clipboard
 wlr-randr
