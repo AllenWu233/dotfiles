@@ -5,6 +5,7 @@ alacritty
 archlinuxcn-keyring
 aria2
 atuin
+baidunetdisk-bin
 base
 base-devel
 bc
@@ -99,6 +100,7 @@ nvidia-open-dkms
 nvidia-prime
 nvtop
 nwg-look
+obs-studio
 obsidian
 olympus
 openbsd-netcat
