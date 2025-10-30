@@ -1,0 +1,88 @@
+#!/bin/bash
+# @author Allen, Gemini 2.5 flash
+# Backup photos form phone
+
+# ====================================================================
+# CONFIGURATION - MODIFY THESE VARIABLES
+# ====================================================================
+
+# List of source paths on the phone (relative to mount point)
+SOURCE_PATHS=(
+    "bili"
+    "OuterWilds"
+    "QQ"
+    "Twitter"
+    "WeiXin"
+    "漫画"
+    "海虎武神"
+    "pixez_old"
+    "NSFW-pixiv"
+    "meme"
+    "Screenshots"
+    "搓"
+    "烹饪"
+    "Camera"
+    "NSFW-Touhou"
+    "Touhou"
+)
+SOURCE_DIR="$HOME/Pictures"
+
+# Local backup destination directory
+DEST_MOUNT_POINT="/run/media/Allen/井鼃语海"
+DEST_DIR="$DEST_MOUNT_POINT/Pictures"
+
+# ====================================================================
+# FUNCTIONS
+# ====================================================================
+
+# Check necessary commands (rsync, udiskie-info)
+check_dependencies() {
+    if ! command -v rsync &>/dev/null; then
+        echo "Error: rsync not installed. Install it first."
+        exit 1
+    fi
+    if ! command -v udiskie-info &>/dev/null; then
+        echo "Error: udiskie-info not found. Ensure udiskie is installed."
+        exit 1
+    fi
+}
+
+# Perform backup using rsync for all configured source paths
+perform_backup() {
+    echo "--- Starting backup to: $DEST_DIR ---"
+    mkdir -p "$DEST_DIR"
+
+    for PATH_ON_HOME in "${SOURCE_PATHS[@]}"; do
+        FULL_SOURCE_PATH="${SOURCE_DIR}/${PATH_ON_HOME}"
+
+        echo "-> Backing up source: $FULL_SOURCE_PATH"
+
+        # Skip if source directory is not accessible
+        if [ ! -d "$FULL_SOURCE_PATH" ]; then
+            echo "   Warning: Source path '$FULL_SOURCE_PATH' not found. Skipping."
+            continue
+        fi
+
+        # rsync command: Archive mode, verbose, show progress, DO NOT OVERWRITE existing files
+        # The trailing / on source path copies contents, not the folder itself.
+        rsync -av --progress --ignore-existing "$FULL_SOURCE_PATH" "$DEST_DIR"
+
+        if [ $? -ne 0 ]; then
+            echo "      [ERROR] Backup of $PATH_ON_HOME FAILED. Check connection/permissions."
+        else
+            echo "      [OK] Backup of $PATH_ON_HOME completed."
+        fi
+
+        echo ""
+    done
+
+    echo "--- All specified directories backed up. ---"
+}
+
+# ====================================================================
+# MAIN
+# ====================================================================
+check_dependencies
+# Mount phone
+perform_backup "$SOURCE_DIR"
+udiskie-mount "$DEST_MOUNT_POINT"
