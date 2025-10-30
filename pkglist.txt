@@ -36,6 +36,7 @@ fcitx5-rime
 fcron
 fd
 ffmpegthumbnailer
+filelight
 firefox
 firefox-i18n-zh-cn
 foot
