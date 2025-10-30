@@ -19,6 +19,7 @@ export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_pr
 typeset -U path PATH
 path=(
     ~/.local/bin
+    ~/.cargo/env
     $path
 )
 export PATH

@@ -14,8 +14,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case insensitive
 
 
 # prompt theme
-autoload -Uz promptinit
-promptinit
+# autoload -Uz promptinit
+# promptinit
 # prompt suse
 
 # Custom prompt
@@ -25,8 +25,9 @@ $ '
 
 
 # Keybindings #########################
-bindkey -v
-export KEYTIMEOUT=5 # delay 0.05s
+# bindkey -v
+bindkey -e
+# export KEYTIMEOUT=5 # delay 0.05s
 
 bindkey '^P' up-line-or-history
 bindkey '^N' down-line-or-history
