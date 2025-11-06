@@ -34,16 +34,18 @@ input {
     // All commented-out settings here are examples, not defaults.
     touchpad {
         // off
-        // tap
-        // dwt
+        tap
+        dwt
         // dwtp
         // drag false
         // drag-lock
         // natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
-        // scroll-method "two-finger"
-        // disabled-on-external-mouse
+        scroll-method "two-finger"
+        // scroll-method "edge"
+        tap-button-map "left-right-middle"
+        disabled-on-external-mouse
     }
 
     mouse {
