@@ -154,6 +154,8 @@ tumbler
 tumbler-folder-thumbnailer
 udiskie
 unarchiver
+v2ray
+v2raya
 vim
 vintagestory
 virt-install
