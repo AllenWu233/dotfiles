@@ -170,6 +170,7 @@ wget
 wl-clipboard
 wlr-randr
 wob
+wps-office-cn
 xdg-desktop-portal-gnome
 xdg-desktop-portal-gtk
 xorg-xlsclients
