@@ -171,6 +171,7 @@ wl-clipboard
 wlr-randr
 wob
 wps-office-cn
+wps-office-mui-zh-cn
 xdg-desktop-portal-gnome
 xdg-desktop-portal-gtk
 xorg-xlsclients
