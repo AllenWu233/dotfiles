@@ -80,6 +80,7 @@ mako
 man-db
 mcpelauncher-linux-git
 mcpelauncher-ui
+minder
 mpc
 mpd
 mpv
