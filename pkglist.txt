@@ -2,6 +2,8 @@
 adobe-source-han-sans-cn-fonts
 adobe-source-han-serif-cn-fonts
 alacritty
+arch-wiki-docs
+arch-wiki-docs-zh-cn
 archlinuxcn-keyring
 aria2
 atuin
@@ -18,6 +20,8 @@ btrbk
 cava
 chromium
 clash-verge-rev
+cups
+cups-pdf
 digikam
 dnsmasq
 downgrade
@@ -117,6 +121,7 @@ pipewire-pulse
 polkit-gnome
 pot-translation
 ppp
+print-manager
 protontricks
 qemu-full
 qt5ct
