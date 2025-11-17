@@ -43,6 +43,7 @@ ffmpegthumbnailer
 filelight
 firefox
 firefox-i18n-zh-cn
+foomatic-db-gutenprint-ppds
 foot
 fuzzel
 fzf
@@ -54,6 +55,7 @@ git-crypt
 grim
 grub
 grub-btrfs
+gutenprint
 gvfs-gphoto2
 gvfs-mtp
 hyphen-en
@@ -140,6 +142,7 @@ sudo
 swaybg
 swayidle
 swaylock
+system-config-printer
 thunar
 thunar-archive-plugin
 thunar-volman
