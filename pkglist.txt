@@ -52,6 +52,7 @@ grub
 grub-btrfs
 gvfs-gphoto2
 gvfs-mtp
+hyphen-en
 i3bar-river
 i3blocks
 i3status-rust
@@ -62,6 +63,7 @@ jdk21-openjdk
 jmtpfs
 jq
 kcolorchooser
+kdeconnect
 keepassxc
 lazygit
 libnotify
