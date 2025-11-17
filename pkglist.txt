@@ -104,6 +104,7 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 npm
+nss-mdns
 nvidia-open-dkms
 nvidia-prime
 nvtop
@@ -121,7 +122,6 @@ pipewire-pulse
 polkit-gnome
 pot-translation
 ppp
-print-manager
 protontricks
 qemu-full
 qt5ct
