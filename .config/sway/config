@@ -1,0 +1,59 @@
+# @author Allen
+# @since 2025.11
+#
+# Sway configuration
+# Read `man 5 sway` for a complete reference.
+
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Default applications
+set $terminal foot
+set $menu fuzzel
+set $browser firefox
+set $file-manager thunar
+set $cloud-music /opt/SPlayer/SPlayer
+
+## define names for workspaces
+#
+set $ws1    "1"
+set $ws2    "2" 
+set $ws3    "3"
+set $ws4    "4" 
+set $ws5    "5"
+set $ws6    "6"
+set $ws7    "7"
+set $ws8    "8"
+set $ws9    "9"
+set $ws10   "10"
+#
+# set $ws1    "1: "
+# set $ws2    "2: " 
+# set $ws3    "3:󰝚 "
+# set $ws4    "4:󰓓 " 
+# set $ws5    "5:󰍳 "
+# set $ws6    "6: "
+# set $ws7    "7:󱓩 "
+# set $ws8    "8: "
+# set $ws9    "9:󰭹 "
+# set $ws10   "10: "
+
+
+
+### Including
+#
+include /etc/sway/config.d/*
+include ~/.config/sway/appearence.conf
+include ~/.config/sway/input.conf
+include ~/.config/sway/keybindings.conf
+include ~/.config/sway/window_rules.conf
+include ~/.config/sway/startup.conf

@@ -1,0 +1,27 @@
+#!/usr/bin/bash
+# @author Allen, Gemini 2.5 Flash
+# @since 2025
+#
+# Get list of all window titles from all workspaces
+# Note: Fuzzel expects the input list from standard input (stdin)
+# The format is typically: <title> | <title> | ...
+
+window_list=$(
+    swaymsg -t get_tree | jq -r '
+    .nodes[] 
+    | recurse(.nodes[], .floating_nodes[])
+    | select(.type == "con" or .type == "floating_con" and .app_id != "fuzzel" and .name)
+    | "\(.id) \(.name)"
+    '
+)
+
+# Pipe the list through Fuzzel and get the selected line
+selected=$(
+    echo -e "$window_list" | fuzzel --dmenu -P "Window Switch:"
+)
+
+# If a window was selected, extract the ID and focus it
+if [ -n "$selected" ]; then
+    window_id=$(echo "$selected" | awk '{print $1}')
+    swaymsg [con_id="$window_id"] focus
+fi

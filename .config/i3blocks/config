@@ -32,14 +32,13 @@ separator=false
 
 [light_and_volume]
 command=echo "[$(scripts/brightness) $(scripts/volume) $(scripts/mic)]"
-# command=echo "[󱩐 $(brightnessctl -m | awk -F, '{print $4}')  $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk -F: '{print $2}' | awk '{print int($1 * 100)}') ]"
 interval=1
 
 [power_and_bluetooth]
 
 
 [time]
-command=echo "[󰥔 $(date '+%Y-%m-%d %a %H:%M')]"
+command=echo "[󰥔 $(LC_TIME=C date '+%Y-%m-%d %a %H:%M')]"
 interval=1
 
 [hibernate]
