@@ -17,8 +17,6 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo $WINDOW_LIST_RAW
-
 # Use jq to parse the JSON and format the output for wofi.
 # Format: <Workspace id> <Display Title/App ID> <Window ID>
 # The Window ID is placed at the end for easy extraction later.

@@ -1,0 +1,33 @@
+#!/usr/bin/bash
+# @author Allen, Gemini 2.5 Flash
+# @since 2025
+#
+# Use 'jq' to recursively traverse the Sway tree and extract all window nodes
+# It looks for nodes that are 'con' (tiled) or 'floating_con', and ensures they have a 'name' (title).
+# It specifically excludes the Fuzzel window itself to avoid infinite loop.
+
+window_list=$(
+    swaymsg -t get_tree | jq -r '
+    .nodes[] 
+    | recurse(.nodes[], .floating_nodes[]) 
+    | select(.type == "con" or .type == "floating_con") 
+    | select(.name != null and .app_id != "fuzzel") 
+    | "[\(.id)] \(.name)"
+    '
+)
+
+# Pipe the list through Fuzzel (dmenu mode) and get the selected line
+selected=$(
+    echo -e "$window_list" | fuzzel --dmenu
+)
+
+# If a window was selected, extract the ID (enclosed in brackets) and focus it
+if [ -n "$selected" ]; then
+    # Extract the window ID which is enclosed in [...]
+    window_id=$(echo "$selected" | sed -n 's/\[\([0-9]*\)\] .*/\1/p')
+
+    # Send the focus command to Sway
+    if [ -n "$window_id" ]; then
+        swaymsg "[con_id=$window_id]" focus
+    fi
+fi
