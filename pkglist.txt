@@ -127,7 +127,9 @@ pot-translation
 ppp
 protontricks
 qemu-full
+qt5-wayland
 qt5ct
+qt6-wayland
 qt6ct
 quickemu-git
 redshift
