@@ -12,10 +12,6 @@
 separator=false
 # separator_block_width=15
 
-[test]
-full_text=foot
-command=foot
-
 [weather]
 
 
@@ -46,6 +42,6 @@ interval=1
 command=echo "[󰥔 $(date '+%Y-%m-%d %a %H:%M')]"
 interval=1
 
-# [hibernate]
-# full_text="⏻ "
-# command=systemctl hibernate
+[hibernate]
+full_text="⏻ "
+command=systemctl hibernate
