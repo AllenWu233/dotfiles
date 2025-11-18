@@ -114,6 +114,7 @@ nwg-look
 obs-studio
 obsidian
 olympus
+onefetch
 openbsd-netcat
 osu-lazer-bin
 owmods-gui-bin
