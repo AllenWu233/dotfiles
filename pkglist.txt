@@ -140,6 +140,7 @@ splayer
 steam
 stow
 sudo
+sway
 swaybg
 swayidle
 swaylock
