@@ -10,7 +10,15 @@
 
 # Global properties
 separator=false
-# separator_block_width=15
+separator_block_width=0
+
+# Print click data
+# [clickme]
+# align=center
+# full_text=[Click me!]
+# min_width=Button=? x=? y=?
+# command=echo "[Button=$button x=$x y=$y] "
+
 
 [weather]
 
@@ -29,18 +37,32 @@ separator=false
 
 [network]
 
+[light]
+# 💡 设置一个信号，通常是 SIGUSR1 (10) 或 SIGUSR2 (12)，这里我们用 10
+signal=10 
+# command=echo "[$(scripts/brightness) " # 原来的配置
+command=scripts/brightness-control
 
-[light_and_volume]
-command=echo "[$(scripts/brightness) $(scripts/volume) $(scripts/mic)]"
 interval=1
+[volume]
+command=echo "$(scripts/volume) "
+interval=1
+
+[mic]
+command=echo "$(scripts/mic)] "
+interval=1
+
+# [light_and_volume]
+# command=echo "[$(scripts/brightness) $(scripts/volume) $(scripts/mic)]"
+# interval=1
 
 [power_and_bluetooth]
 
 
 [time]
-command=echo "[󰥔 $(LC_TIME=C date '+%Y-%m-%d %a %H:%M')]"
+command=echo "[󰥔 $(LC_TIME=C date '+%Y-%m-%d %a %H:%M')] "
 interval=1
 
 [hibernate]
-full_text="⏻ "
+full_text="⏻  "
 command=systemctl hibernate

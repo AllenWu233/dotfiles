@@ -1,0 +1,26 @@
+#!/bin/bash
+# @author Allen, Gemini 2.5 Flash
+# @since 2025
+# Generates microphone status for i3blocks.
+# WARN: Dependencies: wpctl, bc
+
+SOURCE_STATUS=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@)
+
+if echo "$SOURCE_STATUS" | grep -q 'MUTED'; then
+    SOURCE_VOLUME="MUTE"
+    SOURCE_ICON=" "
+else
+    SOURCE_VOLUME_FACTOR=$(echo "$SOURCE_STATUS" | grep -oE '[0-9]+\.[0-9]+')
+    SOURCE_VOLUME_INT=$(echo "$SOURCE_VOLUME_FACTOR * 100" | bc | awk '{print int($1)}')
+    SOURCE_VOLUME="$SOURCE_VOLUME_INT"
+    SOURCE_ICON=""
+fi
+
+SOURCE_DISPLAY="${SOURCE_VOLUME}%"
+
+if [ "$SOURCE_VOLUME" == "MUTE" ]; then
+    # SOURCE_DISPLAY="MUTE"
+    SOURCE_DISPLAY=""
+fi
+
+echo "$SOURCE_ICON$SOURCE_DISPLAY"
