@@ -38,18 +38,18 @@ separator_block_width=0
 [network]
 
 [light]
-# 💡 设置一个信号，通常是 SIGUSR1 (10) 或 SIGUSR2 (12)，这里我们用 10
-signal=10 
-# command=echo "[$(scripts/brightness) " # 原来的配置
-command=scripts/brightness-control
+# signal=10 
+command=echo "[$(scripts/brightness-control) "
+# command=scripts/brightness-control
+interval=1
 
 interval=1
 [volume]
-command=echo "$(scripts/volume) "
+command=echo "$(scripts/volume-control) "
 interval=1
 
 [mic]
-command=echo "$(scripts/mic)] "
+command=echo "$(scripts/mic-control)] "
 interval=1
 
 # [light_and_volume]

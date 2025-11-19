@@ -1,12 +1,24 @@
 #!/bin/bash
-# @author Allen, Gemini 2.5 Flash
+# @author Allen
 # @since 2025
 # Generates brightness status for i3blocks and controls it with the mouse wheel.
 # WARN: Dependencies: brightnessctl, wob
 
-STEP=1
 WOB_PIPE=/tmp/wobpipe
+STEP=1
 # BACKLIGHT_CLASS=backlight
+
+# Catching i3blocks click
+if [ -n "$BLOCK_BUTTON" ]; then
+    case $BLOCK_BUTTON in
+    4)
+        brightnessctl set +$STEP% >/dev/null 2>&1
+        ;;
+    5)
+        brightnessctl set $STEP%- >/dev/null 2>&1
+        ;;
+    esac
+fi
 
 get_light_icon() {
     BRIGHTNESS_INT=$1
@@ -21,22 +33,12 @@ get_light_icon() {
     fi
 }
 
-if [ -n "$BLOCK_BUTTON" ]; then
-    case $BLOCK_BUTTON in
-    4)
-        brightnessctl set +$STEP% >/dev/null 2>&1
-        ;;
-    5)
-        brightnessctl set $STEP%- >/dev/null 2>&1
-        ;;
-    esac
-fi
-
 BRIGHTNESS_PERCENT=$(brightnessctl -m | awk -F, '{print $4}' | tr -d '%')
 BRIGHTNESS_ICON=$(get_light_icon "$BRIGHTNESS_PERCENT")
 
+# wob
 if [ -n "$BLOCK_BUTTON" ]; then
     echo "${BRIGHTNESS_PERCENT%\%}" >"$WOB_PIPE"
 fi
 
-echo "[$BRIGHTNESS_ICON $BRIGHTNESS_PERCENT% "
+echo "$BRIGHTNESS_ICON $BRIGHTNESS_PERCENT%"

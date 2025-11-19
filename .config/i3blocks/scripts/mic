@@ -1,5 +1,5 @@
 #!/bin/bash
-# @author Allen, Gemini 2.5 Flash
+# @author Allen
 # @since 2025
 # Generates microphone status for i3blocks.
 # WARN: Dependencies: wpctl, bc

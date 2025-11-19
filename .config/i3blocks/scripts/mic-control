@@ -1,10 +1,22 @@
 #!/bin/bash
-# @author Allen, Gemini 2.5 Flash
+# @author Allen
 # @since 2025
 # Generates microphone status for i3blocks.
 # WARN: Dependencies: wpctl, bc
 
-SOURCE_STATUS=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@)
+WOB_PIPE=/tmp/wobpipe
+SOURCE=@DEFAULT_AUDIO_SOURCE@
+SOURCE_STATUS=$(wpctl get-volume "$SOURCE")
+
+# Catching i3blocks click
+if [ -n "$BLOCK_BUTTON" ]; then
+    case $BLOCK_BUTTON in
+    1) pavucontrol ;;
+    2) pavucontrol ;;
+    4) wpctl set-volume "$SOURCE" 0.01+ >/dev/null 2>&1 ;;
+    5) wpctl set-volume "$SOURCE" 0.01- >/dev/null 2>&1 ;;
+    esac
+fi
 
 if echo "$SOURCE_STATUS" | grep -q 'MUTED'; then
     SOURCE_VOLUME="MUTE"
@@ -16,8 +28,17 @@ else
     SOURCE_ICON=""
 fi
 
-SOURCE_DISPLAY="${SOURCE_VOLUME}%"
+# wob
+# if [ -n "$BLOCK_BUTTON" ]; then
+if [ "$BLOCK_BUTTON" == 3 ] || [ "$BLOCK_BUTTON" == 4 ]; then
+    if [ "$SOURCE_VOLUME" == "MUTE" ]; then
+        echo "0" >"$WOB_PIPE"
+    else
+        echo "$SOURCE_VOLUME" >"$WOB_PIPE"
+    fi
+fi
 
+SOURCE_DISPLAY="${SOURCE_VOLUME}%"
 if [ "$SOURCE_VOLUME" == "MUTE" ]; then
     # SOURCE_DISPLAY="MUTE"
     SOURCE_DISPLAY=""

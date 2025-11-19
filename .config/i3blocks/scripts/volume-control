@@ -1,8 +1,23 @@
 #!/bin/bash
-# @author Allen, Gemini 2.5 Flash
+# @author Allen
 # @since 2025
 # Generates speaker status for i3blocks.
 # WARN: Dependencies: wpctl, bc
+
+WOB_PIPE=/tmp/wobpipe
+SINK=@DEFAULT_SINK@
+SINK_STATUS=$(wpctl get-volume "$SINK")
+
+# Catching i3blocks click
+if [ -n "$BLOCK_BUTTON" ]; then
+    case $BLOCK_BUTTON in
+    1) pavucontrol ;;
+    2) pavucontrol ;;
+    4) wpctl set-volume "$SINK" 0.01+ >/dev/null 2>&1 ;;
+    5) wpctl set-volume "$SINK" 0.01- >/dev/null 2>&1 ;;
+    esac
+fi
+
 get_sink_icon() {
     VOLUME=$1
     if [ "$VOLUME" -le 33 ]; then
@@ -14,8 +29,6 @@ get_sink_icon() {
     fi
 }
 
-SINK_STATUS=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
-
 if echo "$SINK_STATUS" | grep -q 'MUTED'; then
     SINK_VOLUME="MUTE"
     SINK_ICON="󰝟"
@@ -26,8 +39,16 @@ else
     SINK_ICON=$(get_sink_icon "$SINK_VOLUME_INT")
 fi
 
-SINK_DISPLAY="${SINK_VOLUME}%"
+# wob
+if [ -n "$BLOCK_BUTTON" ]; then
+    if [ "$SINK_VOLUME" == "MUTE" ]; then
+        echo "0" >"$WOB_PIPE"
+    else
+        echo "$SINK_VOLUME" >"$WOB_PIPE"
+    fi
+fi
 
+SINK_DISPLAY="${SINK_VOLUME}%"
 if [ "$SINK_VOLUME" == "MUTE" ]; then
     # SINK_DISPLAY="MUTE"
     SINK_DISPLAY=""
