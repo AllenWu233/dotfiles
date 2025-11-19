@@ -1,5 +1,5 @@
 #!/bin/bash
-# @author Allen, Gemini 2.5 Flash
+# @author Allen
 # @since 2025
 # Handle brightness change and update wob bar.
 # Usage: brightness-wob +10%, brightness-wob 1%-
@@ -7,11 +7,10 @@
 VALUE=$1
 WOB_PIPE=/tmp/wobpipe
 BACKLIGHT_CLASS=backlight
-SCRIPT_NAME=$(basename "$0")
 
 # Show help message if -z "$VALUE", -h, or --help is passed
 if [[ -z "$VALUE" || "$VALUE" == "-h" || "$VALUE" == "--help" ]]; then
-    echo "Usage: $SCRIPT_NAME <PERCENT_VALUE>"
+    echo "Usage: $(basename "$0") <PERCENT_VALUE>"
     echo ""
     echo "Changes screen brightness using 'brightnessctl' and updates the 'wob' overlay bar."
     echo "The value must be a relative change command for brightnessctl."

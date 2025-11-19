@@ -19,6 +19,12 @@ separator_block_width=0
 # min_width=Button=? x=? y=?
 # command=echo "[Button=$button x=$x y=$y] "
 
+# [Test]
+# command=echo "Urgent" && exit 33
+# full_text="[Click me!] "
+# command=echo "Urgent" && exit 33
+# command=echo "Urgent" && echo "#FF8000"
+
 
 [weather]
 
@@ -56,12 +62,14 @@ interval=1
 # command=echo "[$(scripts/brightness) $(scripts/volume) $(scripts/mic)]"
 # interval=1
 
-[power_and_bluetooth]
-
 
 [time]
 command=echo "[󰥔 $(LC_TIME=C date '+%Y-%m-%d %a %H:%M')] "
 interval=1
+
+[power_and_bluetooth]
+command=echo "[$(scripts/battery)] "
+interval=5
 
 [hibernate]
 full_text="⏻  "

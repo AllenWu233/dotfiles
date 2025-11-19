@@ -40,7 +40,8 @@ else
 fi
 
 # wob
-if [ -n "$BLOCK_BUTTON" ]; then
+# if [ -n "$BLOCK_BUTTON" ]; then
+if [ "$BLOCK_BUTTON" == 3 ] || [ "$BLOCK_BUTTON" == 4 ]; then
     if [ "$SINK_VOLUME" == "MUTE" ]; then
         echo "0" >"$WOB_PIPE"
     else

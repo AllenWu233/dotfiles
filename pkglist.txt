@@ -1,4 +1,5 @@
 7zip
+acpi
 adobe-source-han-sans-cn-fonts
 adobe-source-han-serif-cn-fonts
 alacritty
