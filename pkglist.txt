@@ -10,6 +10,7 @@ atuin
 baidunetdisk-bin
 base
 base-devel
+bat
 bc
 breeze
 breeze-gtk
