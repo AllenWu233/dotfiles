@@ -62,14 +62,14 @@ interval=1
 # command=echo "[$(scripts/brightness) $(scripts/volume) $(scripts/mic)]"
 # interval=1
 
+[power_and_bluetooth]
+command=echo "[$(scripts/battery) $(scripts/bluetooth)] "
+interval=10
 
 [time]
 command=echo "[󰥔 $(LC_TIME=C date '+%Y-%m-%d %a %H:%M')] "
 interval=1
 
-[power_and_bluetooth]
-command=echo "[$(scripts/battery)] "
-interval=5
 
 [hibernate]
 full_text="⏻  "
