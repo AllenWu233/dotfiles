@@ -25,49 +25,101 @@ separator_block_width=0
 # command=echo "Urgent" && exit 33
 # command=echo "Urgent" && echo "#FF8000"
 
+# [simple]
+# full_text=This is a looong white on red text
+# short_text=Short white on red text
+# background=#FF0000
+# color=#FFFFFF
 
 [weather]
+
 
 
 [notice]
 
 
+
 [update]
+
 
 
 [filesystem]
 
 
+
 [hardware]
 
 
+
+[separator]
+full_text="["
+
 [wireless-network]
-command=echo "[$(scripts/wireless-network) "
+command=scripts/wireless-network
 interval=1
+
+[space]
+full_text=" "
 
 [wired-network]
-command=echo "$(scripts/wired-network)] "
+command=scripts/wired-network
 interval=1
+
+[separator]
+full_text="] "
+
+
+
+[separator]
+full_text="["
 
 [light]
-command=echo "[$(scripts/brightness-control) "
+command=scripts/brightness-control
 interval=1
+
+[space]
+full_text=" "
 
 [volume]
-command=echo "$(scripts/volume-control) "
+command=scripts/volume-control
 interval=1
+
+[space]
+full_text=" "
 
 [mic]
-command=echo "$(scripts/mic-control)] "
+command=scripts/mic-control
 interval=1
 
-[power_and_bluetooth]
-command=echo "[$(scripts/battery) $(scripts/bluetooth)] "
+[separator]
+full_text="] "
+
+
+
+[separator]
+full_text="["
+
+[battery]
+command=scripts/battery
 interval=10
+
+[space]
+full_text=" "
+
+[bluetooth]
+command=scripts/bluetooth
+interval=10
+
+[separator]
+full_text="] "
+
+
 
 [time]
 command=echo "[󰥔 $(LC_TIME=C date '+%Y-%m-%d %a %H:%M')] "
 interval=1
+
+
 
 [hibernate]
 full_text="⏻  "
