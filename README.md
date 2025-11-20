@@ -2,7 +2,7 @@
 
 ## Overview
 
-I use Arch Linux + Niri and the repo is my configuration.
+My Arch Linux dotfiles.
 There is a list of the packages I have installed: ![pkglist.txt](pkglist.txt)
 
 ![fastfetch](screenshots/1.png)
@@ -11,4 +11,4 @@ There is a list of the packages I have installed: ![pkglist.txt](pkglist.txt)
 
 ## Introduction
 
-- WM: Niri
+- WM: Sway
