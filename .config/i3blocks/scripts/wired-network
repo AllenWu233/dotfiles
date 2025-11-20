@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Dependencies: nmcli
+
+# Wired interface name (e.g., eth0, enpXsX)
+WIRED_IFACE="enp0s25"
+
+# Check Wi-Fi status using nmcli
+SSID=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | awk -F ':' '{print $2}')
+
+# Check wired status
+# Check if interface is UP and has an IP address
+if ip a show dev "$WIRED_IFACE" | grep -q "state UP" && ip a show dev "$WIRED_IFACE" | grep -q "inet "; then
+    IP=$(ip a show dev "$WIRED_IFACE" | grep -oP 'inet \K[\d.]+' | head -n 1)
+    echo "󰲝 "
+    echo "󰲝  $IP"
+else
+    echo "󰲛 "
+fi

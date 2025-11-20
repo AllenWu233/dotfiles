@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Dependencies: nmcli
+
+get_wireless_icon() {
+    signal=$1
+    if [ "$signal" -le 20 ]; then
+        echo "󰤯"
+    elif [ "$signal" -le 40 ]; then
+        echo "󰤟"
+    elif [ "$signal" -le 60 ]; then
+        echo "󰤢"
+    elif [ "$signal" -le 80 ]; then
+        echo "󰤥"
+    else
+        echo "󰤨"
+    fi
+}
+
+# Check Wi-Fi status using nmcli
+SSID=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | awk -F ':' '{print $2}')
+
+if [ ! -z "$SSID" ]; then
+    # Get signal strength (0-100)
+    SIGNAL=$(nmcli -t -f active,signal dev wifi | grep '^yes' | awk -F ':' '{print $2}' | tail -n 1)
+    echo "$(get_wireless_icon "$SIGNAL") "
+    echo "$(get_wireless_icon "$SIGNAL") $SSID ($SIGNAL%)"
+else
+    echo "󰤮 "
+fi

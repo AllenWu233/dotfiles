@@ -41,10 +41,13 @@ separator_block_width=0
 [hardware]
 
 
-[network]
-command=echo "[$(scripts/network)] "
+[wireless-network]
+command=echo "[$(scripts/wireless-network) "
 interval=1
 
+[wired-network]
+command=echo "$(scripts/wired-network)] "
+interval=1
 
 [light]
 command=echo "[$(scripts/brightness-control) "
