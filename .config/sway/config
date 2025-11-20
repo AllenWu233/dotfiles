@@ -7,7 +7,7 @@
 
 ### Variables
 #
-# Logo key. Use Mod1 for Alt.
+# Logo key. Use Mod1 for Alt, Mod4 for Super
 set $mod Mod4
 
 # Home row direction keys, like vim

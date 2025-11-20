@@ -27,6 +27,7 @@ cups-pdf
 digikam
 dnsmasq
 downgrade
+drawio-bin
 dunst
 efibootmgr
 electron-netease-cloud-music
@@ -45,6 +46,7 @@ ffmpegthumbnailer
 filelight
 firefox
 firefox-i18n-zh-cn
+flameshot
 foomatic-db-gutenprint-ppds
 foot
 fuzzel
@@ -140,6 +142,7 @@ rime-pinyin-moegirl
 rime-pinyin-zhwiki
 ripgrep
 rsync
+screengrab
 splayer
 steam
 stow
