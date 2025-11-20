@@ -17,7 +17,9 @@ set $up k
 set $right l
 
 # Default applications
-set $terminal foot
+#
+# systemctl --user enable foot-server.service
+set $terminal footclient
 set $menu fuzzel
 set $browser firefox
 set $file-manager thunar

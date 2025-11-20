@@ -29,4 +29,7 @@ else
     echo "󰤮 "
 fi
 
+# [[ "$BLOCK_BUTTON" == 1 || "$BLOCK_BUTTON" == 3 ]] && footclient -e nmtui
+
+[ "$SIGNAL" -le 20 ] && exit 33
 exit 0

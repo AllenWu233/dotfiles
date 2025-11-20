@@ -42,3 +42,5 @@ if [ -n "$BLOCK_BUTTON" ]; then
 fi
 
 echo "$BRIGHTNESS_ICON $BRIGHTNESS_PERCENT%"
+
+exit 0

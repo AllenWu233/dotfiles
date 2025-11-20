@@ -104,6 +104,7 @@ networkmanager
 newsboat
 niri
 niri-float-sticky
+nm-connection-editor
 nodejs
 noise-suppression-for-voice
 noto-fonts

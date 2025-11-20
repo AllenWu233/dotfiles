@@ -8,14 +8,15 @@ exists() {
     return $?
 }
 
-wayland=$(loginctl show-session $(awk '/tty/ {print $1}' <(loginctl)) -p Type | awk -F= '{print $2}')
-if [[ $wayland = wayland ]]; then
-    exists fuzzel && dmenu="fuzzel -d"
-else
-    exists rofi && dmenu="rofi -dmenu"
-    exists dmenu && dmenu="dmenu"
-fi
+# wayland=$(loginctl show-session $(awk '/tty/ {print $1}' <(loginctl)) -p Type | awk -F= '{print $2}')
+# if [[ $wayland = wayland ]]; then
+#     exists fuzzel && dmenu="fuzzel -d"
+# else
+#     exists rofi && dmenu="rofi -dmenu"
+#     exists dmenu && dmenu="dmenu"
+# fi
 
+exists fuzzel && dmenu="fuzzel -d"
 [[ -z $dmenu ]] && echo No dmenu-like program is installed. Install dmenu or rofi for X, fuzzel for wayland
 
 opener=xdg-open

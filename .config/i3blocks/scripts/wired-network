@@ -13,3 +13,7 @@ if echo "$WIRED_STATUS" | grep -q "state UP" && echo "$WIRED_STATUS" | grep -q "
 else
     echo "󰲛 "
 fi
+
+# [[ "$BLOCK_BUTTON" == 1 || "$BLOCK_BUTTON" == 3 ]] && footclient -e nmtui
+
+exit 0

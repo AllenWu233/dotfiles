@@ -45,3 +45,5 @@ if [ "$SOURCE_VOLUME" == "MUTE" ]; then
 fi
 
 echo "$SOURCE_ICON$SOURCE_DISPLAY"
+
+exit 0

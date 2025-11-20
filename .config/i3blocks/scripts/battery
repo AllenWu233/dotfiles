@@ -67,3 +67,6 @@ else
     BATTERY_ICON="$(get_battery_charging_icon "$BATTERY_LEVEL")"
     echo "$BATTERY_ICON $BATTERY_LEVEL%"
 fi
+
+[ "$BATTERY_LEVEL" -le 20 ] && exit 33
+exit 0

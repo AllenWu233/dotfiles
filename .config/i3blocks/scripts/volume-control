@@ -56,3 +56,5 @@ if [ "$SINK_VOLUME" == "MUTE" ]; then
 fi
 
 echo "$SINK_ICON $SINK_DISPLAY"
+
+exit 0
