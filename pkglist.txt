@@ -27,7 +27,6 @@ cups-pdf
 digikam
 dnsmasq
 downgrade
-drawio-bin
 dunst
 efibootmgr
 electron-netease-cloud-music
