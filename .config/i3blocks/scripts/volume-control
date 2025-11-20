@@ -7,22 +7,23 @@
 WOB_PIPE=/tmp/wobpipe
 SINK=@DEFAULT_SINK@
 SINK_STATUS=$(wpctl get-volume "$SINK")
+STEP=0.01
 
 # Catching i3blocks click
 if [ -n "$BLOCK_BUTTON" ]; then
     case $BLOCK_BUTTON in
-    1) pavucontrol ;;
-    2) pavucontrol ;;
-    4) wpctl set-volume "$SINK" 0.01+ >/dev/null 2>&1 ;;
-    5) wpctl set-volume "$SINK" 0.01- >/dev/null 2>&1 ;;
+    1) LANGUAGE=zh_CN pavucontrol ;;
+    3) LANGUAGE=zh_CN pavucontrol ;;
+    4) wpctl set-volume "$SINK" "$STEP"+ >/dev/null 2>&1 ;;
+    5) wpctl set-volume "$SINK" "$STEP"- >/dev/null 2>&1 ;;
     esac
 fi
 
 get_sink_icon() {
-    VOLUME=$1
-    if [ "$VOLUME" -le 33 ]; then
+    volume=$1
+    if [ "$volume" -le 33 ]; then
         echo ""
-    elif [ "$VOLUME" -le 66 ]; then
+    elif [ "$volume" -le 66 ]; then
         echo ""
     else
         echo ""
@@ -34,9 +35,8 @@ if echo "$SINK_STATUS" | grep -q 'MUTED'; then
     SINK_ICON="󰝟"
 else
     SINK_VOLUME_FACTOR=$(echo "$SINK_STATUS" | grep -oE '[0-9]+\.[0-9]+')
-    SINK_VOLUME_INT=$(echo "$SINK_VOLUME_FACTOR * 100" | bc | awk '{print int($1)}')
-    SINK_VOLUME="$SINK_VOLUME_INT"
-    SINK_ICON=$(get_sink_icon "$SINK_VOLUME_INT")
+    SINK_VOLUME=$(echo "$SINK_VOLUME_FACTOR * 100" | bc | awk '{print int($1)}')
+    SINK_ICON=$(get_sink_icon "$SINK_VOLUME")
 fi
 
 # wob
@@ -49,12 +49,10 @@ if [ "$BLOCK_BUTTON" == 3 ] || [ "$BLOCK_BUTTON" == 4 ]; then
     fi
 fi
 
-SINK_DISPLAY="${SINK_VOLUME}%"
 if [ "$SINK_VOLUME" == "MUTE" ]; then
-    # SINK_DISPLAY="MUTE"
-    SINK_DISPLAY=""
+    echo "$SINK_ICON "
+else
+    echo "$SINK_ICON $SINK_VOLUME%"
 fi
-
-echo "$SINK_ICON $SINK_DISPLAY"
 
 exit 0

@@ -29,7 +29,8 @@ else
     echo "󰤮 "
 fi
 
-# [[ "$BLOCK_BUTTON" == 1 || "$BLOCK_BUTTON" == 3 ]] && footclient -e nmtui
+[[ "$BLOCK_BUTTON" == 1 || "$BLOCK_BUTTON" == 3 ]] && LANGUAGE=zh_CN nm-connection-editor
 
 [ "$SIGNAL" -le 20 ] && exit 33
+
 exit 0

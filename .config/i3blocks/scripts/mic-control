@@ -7,14 +7,15 @@
 WOB_PIPE=/tmp/wobpipe
 SOURCE=@DEFAULT_AUDIO_SOURCE@
 SOURCE_STATUS=$(wpctl get-volume "$SOURCE")
+STEP=0.01
 
 # Catching i3blocks click
 if [ -n "$BLOCK_BUTTON" ]; then
     case $BLOCK_BUTTON in
-    1) pavucontrol ;;
-    2) pavucontrol ;;
-    4) wpctl set-volume "$SOURCE" 0.01+ >/dev/null 2>&1 ;;
-    5) wpctl set-volume "$SOURCE" 0.01- >/dev/null 2>&1 ;;
+    1) LANGUAGE=zh_CN pavucontrol ;;
+    3) LANGUAGE=zh_CN pavucontrol ;;
+    4) wpctl set-volume "$SOURCE" "$STEP"+ >/dev/null 2>&1 ;;
+    5) wpctl set-volume "$SOURCE" "$STEP"- >/dev/null 2>&1 ;;
     esac
 fi
 
@@ -23,13 +24,11 @@ if echo "$SOURCE_STATUS" | grep -q 'MUTED'; then
     SOURCE_ICON=" "
 else
     SOURCE_VOLUME_FACTOR=$(echo "$SOURCE_STATUS" | grep -oE '[0-9]+\.[0-9]+')
-    SOURCE_VOLUME_INT=$(echo "$SOURCE_VOLUME_FACTOR * 100" | bc | awk '{print int($1)}')
-    SOURCE_VOLUME="$SOURCE_VOLUME_INT"
+    SOURCE_VOLUME=$(echo "$SOURCE_VOLUME_FACTOR * 100" | bc | awk '{print int($1)}')
     SOURCE_ICON=""
 fi
 
 # wob
-# if [ -n "$BLOCK_BUTTON" ]; then
 if [ "$BLOCK_BUTTON" == 3 ] || [ "$BLOCK_BUTTON" == 4 ]; then
     if [ "$SOURCE_VOLUME" == "MUTE" ]; then
         echo "0" >"$WOB_PIPE"
@@ -38,12 +37,10 @@ if [ "$BLOCK_BUTTON" == 3 ] || [ "$BLOCK_BUTTON" == 4 ]; then
     fi
 fi
 
-SOURCE_DISPLAY="${SOURCE_VOLUME}%"
 if [ "$SOURCE_VOLUME" == "MUTE" ]; then
-    # SOURCE_DISPLAY="MUTE"
-    SOURCE_DISPLAY=""
+    echo "$SOURCE_ICON"
+else
+    echo "$SOURCE_ICON$SOURCE_VOLUME%"
 fi
-
-echo "$SOURCE_ICON$SOURCE_DISPLAY"
 
 exit 0
