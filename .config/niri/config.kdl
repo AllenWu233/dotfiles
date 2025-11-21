@@ -243,17 +243,18 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-spawn-at-startup "waybar"
+// spawn-at-startup "waybar"
+spawn-at-startup "i3bar-river"
 spawn-at-startup "~/.local/bin/swaybg-set-wallpaper" // Set $IMAGE variable in the script to change background 
 spawn-at-startup "mako"
 spawn-at-startup "udiskie"
 spawn-at-startup "~/.config/wob/wobpipe"
 // spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "~/.local/bin/swaylock-fancy" "before-sleep" "~/.local/bin/swaylock-fancy"
+spawn-at-startup "swayidle" "-w" "timeout" "301" "niri msg action power-off-monitors" "timeout" "300" "~/.local/bin/swaylock-fancy" "before-sleep" "~/.local/bin/swaylock-fancy"
 
-spawn-at-startup "keepassxc"
-spawn-at-startup "thunderbird"
+// spawn-at-startup "keepassxc"
+// spawn-at-startup "thunderbird"
 // spawn-at-startup "clash-verge"
 
 // Extensions
@@ -262,6 +263,7 @@ spawn-at-startup "thunderbird"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
+spawn-sh-at-startup "foot --server"
 spawn-sh-at-startup "fcitx5 -d"
 
 hotkey-overlay {
