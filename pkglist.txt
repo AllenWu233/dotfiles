@@ -76,6 +76,7 @@ kcolorchooser
 kdeconnect
 keepassxc
 lazygit
+libappindicator
 libnotify
 libreoffice-still-zh-cn
 libvirt
