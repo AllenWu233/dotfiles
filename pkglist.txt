@@ -61,6 +61,7 @@ grub-btrfs
 gutenprint
 gvfs-gphoto2
 gvfs-mtp
+hugo
 hyphen-en
 i3bar-river
 i3blocks
