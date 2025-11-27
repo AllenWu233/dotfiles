@@ -44,6 +44,7 @@ setopt HIST_FIND_NO_DUPS
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M viins '^v' edit-command-line
+bindkey -M emacs '^v' edit-command-line
 
 
 # Set terminal language to English
