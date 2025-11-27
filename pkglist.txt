@@ -72,7 +72,6 @@ inter-font
 jdk21-openjdk
 jmtpfs
 jq
-kcolorchooser
 kdeconnect
 keepassxc
 lazygit
@@ -189,6 +188,7 @@ wechat-bin
 wemeet-bin
 wget
 wl-clipboard
+wl-color-picker
 wlr-randr
 wob
 xdg-desktop-portal-gnome

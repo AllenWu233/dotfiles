@@ -1,5 +1,68 @@
-set selection-clipboard clipboard
-set font "monospace normal 14"
+# ~/zathura/zathurarc
+# @author Allen
+# @since 2025
 
+# Keybindings
+#
 map h navigate previous
 map l navigate next
+map d scroll half-down
+map u scroll half-up
+
+
+# Basic Settings
+#
+set selection-clipboard clipboard
+set font "monospace normal 14"
+set window-title-basename "true"
+set adjust-open width
+set recolor false
+
+
+# Tokyo Night Storm color theme for Zathura
+# Swaps Foreground for Background to get a light version if you prefers
+# To switch between backgrounds, use <C-r>
+
+#
+# Tokyo Night Storm color theme
+#
+set notification-error-bg       rgba(247,118,142,1)   # Red
+set notification-error-fg       rgba(192,202,245,1)   # Foreground
+set notification-warning-bg     rgba(255,158,100,1)   # Orange
+set notification-warning-fg     rgba(36,40,59,1)      # Background
+set notification-bg             rgba(36,40,59,1)      # Background
+set notification-fg             rgba(192,202,245,1)   # Foreground
+
+set completion-bg               rgba(36,40,59,1)      # Background
+set completion-fg               rgba(86,95,137,1)     # Comment
+set completion-group-bg         rgba(36,40,59,1)      # Background
+set completion-group-fg         rgba(86,95,137,1)     # Comment
+set completion-highlight-bg     rgba(41,46,66,1)      # Background highlight
+set completion-highlight-fg     rgba(192,202,245,1)   # Foreground
+
+set index-bg                    rgba(36,40,59,1)      # Background
+set index-fg                    rgba(192,202,245,1)   # Foreground
+set index-active-bg             rgba(41,46,66,1)      # Background highlight
+set index-active-fg             rgba(192,202,245,1)   # Foreground
+
+set inputbar-bg                 rgba(36,40,59,1)      # Background
+set inputbar-fg                 rgba(192,202,245,1)   # Foreground
+set statusbar-bg                rgba(36,40,59,1)      # Background
+set statusbar-fg                rgba(192,202,245,1)   # Foreground
+
+set highlight-color             rgba(255,158,100,0.5) # Orange
+set highlight-active-color      rgba(187,154,247,0.5) # Magenta
+
+set default-bg                  rgba(36,40,59,1)      # Background
+set default-fg                  rgba(192,202,245,1)   # Foreground
+
+set render-loading              true
+set render-loading-fg           rgba(36,40,59,1)      # Background
+set render-loading-bg           rgba(192,202,245,1)   # Foreground
+
+#
+# Recolor mode settings
+#
+
+set recolor-lightcolor          rgba(36,40,59,1)      # Background
+set recolor-darkcolor           rgba(192,202,245,1)   # Foreground
