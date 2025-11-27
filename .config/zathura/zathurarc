@@ -12,11 +12,17 @@ map u scroll half-up
 
 # Basic Settings
 #
-set selection-clipboard clipboard
 set font "monospace normal 14"
+set selection-clipboard clipboard
 set window-title-basename "true"
-set adjust-open width
+set window-title-page true
+set statusbar-page-percent true
+set statusbar-home-tilde true
+# set adjust-open width
 set recolor false
+# set recolor-reverse-video true
+# set show-recent 20
+# set show-hidden true
 
 
 # Tokyo Night Storm color theme for Zathura
@@ -29,25 +35,25 @@ set recolor false
 set notification-error-bg       rgba(247,118,142,1)   # Red
 set notification-error-fg       rgba(192,202,245,1)   # Foreground
 set notification-warning-bg     rgba(255,158,100,1)   # Orange
-set notification-warning-fg     rgba(36,40,59,1)      # Background
-set notification-bg             rgba(36,40,59,1)      # Background
+set notification-warning-fg     rgba(18,19,28,1)      # Background
+set notification-bg             rgba(18,19,28,1)      # Background
 set notification-fg             rgba(192,202,245,1)   # Foreground
 
-set completion-bg               rgba(36,40,59,1)      # Background
+set completion-bg               rgba(18,19,28,1)      # Background
 set completion-fg               rgba(86,95,137,1)     # Comment
-set completion-group-bg         rgba(36,40,59,1)      # Background
+set completion-group-bg         rgba(18,19,28,1)      # Background
 set completion-group-fg         rgba(86,95,137,1)     # Comment
 set completion-highlight-bg     rgba(41,46,66,1)      # Background highlight
 set completion-highlight-fg     rgba(192,202,245,1)   # Foreground
 
-set index-bg                    rgba(36,40,59,1)      # Background
+set index-bg                    rgba(18,19,28,1)      # Background
 set index-fg                    rgba(192,202,245,1)   # Foreground
 set index-active-bg             rgba(41,46,66,1)      # Background highlight
 set index-active-fg             rgba(192,202,245,1)   # Foreground
 
-set inputbar-bg                 rgba(36,40,59,1)      # Background
+set inputbar-bg                 rgba(18,19,28,1)      # Background
 set inputbar-fg                 rgba(192,202,245,1)   # Foreground
-set statusbar-bg                rgba(36,40,59,1)      # Background
+set statusbar-bg                rgba(18,19,28,1)      # Background
 set statusbar-fg                rgba(192,202,245,1)   # Foreground
 
 set highlight-color             rgba(255,158,100,0.5) # Orange
@@ -64,5 +70,12 @@ set render-loading-bg           rgba(192,202,245,1)   # Foreground
 # Recolor mode settings
 #
 
-set recolor-lightcolor          rgba(36,40,59,1)      # Background
+set recolor-lightcolor          rgba(23,24,34,1)      # Background
 set recolor-darkcolor           rgba(192,202,245,1)   # Foreground
+
+#
+# Loading animation
+#
+set render-loading true
+set render-loading-fg "#c0caf5"
+set render-loading-bg "#171822"
