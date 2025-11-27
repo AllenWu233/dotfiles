@@ -1,14 +1,14 @@
 #!/bin/bash
-# ~/.config/sway/scripts/screenshot - Screenshot tool
 # @author Allen
 # @since 2025
+# Take screenshot and copy to clipboard
 # Usage: screenshot [full|area]
 
 # Config
 SAVE_DIR="$HOME/Pictures/Screenshots"
 FILENAME="Screenshot_$(date +%Y-%m-%d_%H-%M-%S).png"
 FULL_PATH="$SAVE_DIR/$FILENAME"
-REQUIRED_DEPS=("grim" "slurp" "notify-send")
+REQUIRED_DEPS=("grim" "slurp" "notify-send" "wl-copy")
 
 # Check command exists
 exists() {
@@ -30,21 +30,27 @@ check_deps() {
 }
 
 full_screenshot() {
-    mkdir -p "$SAVE_DIR" && grim "$FULL_PATH"
-    if [ $? -eq 0 ]; then
+    if mkdir -p "$SAVE_DIR" && grim "$FULL_PATH"; then
         notify-send "Screenshot saved" "Fullscreen: $FILENAME" -i "$FULL_PATH"
-    else
-        notify-send "Screenshot failed" "Cannot save fullscreen" -u critical
+        wl-copy <"$FULL_PATH"
     fi
+    # if [ $? -eq 0 ]; then
+    #     notify-send "Screenshot saved" "Fullscreen: $FILENAME" -i "$FULL_PATH"
+    # else
+    #     notify-send "Screenshot failed" "Cannot save fullscreen" -u critical
+    # fi
 }
 
 area_screenshot() {
-    mkdir -p "$SAVE_DIR" && grim -g "$(slurp)" "$FULL_PATH"
-    if [ $? -eq 0 ]; then
+    if mkdir -p "$SAVE_DIR" && grim -g "$(slurp)" "$FULL_PATH"; then
         notify-send "Screenshot saved" "Area: $FILENAME" -i "$FULL_PATH"
-    else
-        notify-send "Screenshot failed" "No area selected or save error" -u critical
+        wl-copy <"$FULL_PATH"
     fi
+    # if [ $? -eq 0 ]; then
+    #     notify-send "Screenshot saved" "Area: $FILENAME" -i "$FULL_PATH"
+    # else
+    #     notify-send "Screenshot failed" "No area selected or save error" -u critical
+    # fi
 }
 
 # Main logic

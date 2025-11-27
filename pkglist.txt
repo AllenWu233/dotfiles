@@ -153,6 +153,7 @@ swaybg
 swayidle
 swaylock
 system-config-printer
+taskwarrior-tui
 thunar
 thunar-archive-plugin
 thunar-volman
