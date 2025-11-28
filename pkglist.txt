@@ -96,6 +96,7 @@ mcpelauncher-ui
 minder
 mpc
 mpd
+mpd-mpris
 mpv
 ncmpcpp
 neomutt
