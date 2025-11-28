@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Print the number of pending updates (official repos + AUR) for i3blocks.
+# Dependencies: paru, coreutils
+
+set -euo pipefail
+
+CACHE="$HOME/.cache/paru-updates.cnt"
+CACHE_AGE=3600 # seconds
+
+# Initialize cache if missing, empty, or non-numeric
+init_cache() {
+    if [[ ! -s "$CACHE" ]] || ! grep -qE '^[0-9]+$' "$CACHE"; then
+        update_count
+    fi
+}
+
+# Fetch update count and write to cache; fallback to 0 on error
+update_count() {
+    count=$(paru -Qua 2>/dev/null | awk 'NF' | wc -l) || count=0
+    printf "%d\n" "$count" >"$CACHE"
+}
+
+# ---- main ----
+init_cache
+# Refresh cache if older than CACHE_AGE
+if (($(stat -c %Y "$CACHE") + CACHE_AGE < $(date +%s))); then
+    update_count
+fi
+
+echo "󰮯 $(cat "$CACHE")"
