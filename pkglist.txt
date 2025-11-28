@@ -21,6 +21,7 @@ btop
 btrbk
 cava
 chromium
+clashtui
 clipboard-bin
 cups
 cups-pdf
