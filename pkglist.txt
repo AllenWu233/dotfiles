@@ -22,6 +22,7 @@ btrbk
 cava
 chromium
 clash-verge-rev
+clipboard-bin
 cups
 cups-pdf
 digikam
@@ -98,7 +99,6 @@ mpd
 mpv
 ncmpcpp
 neomutt
-neovide
 neovim
 networkmanager
 newsboat
@@ -122,6 +122,7 @@ olympus
 onefetch
 openbsd-netcat
 osu-lazer-bin
+ouch
 owmods-gui-bin
 pacman-contrib
 paru
@@ -131,6 +132,7 @@ polkit-gnome
 pot-translation
 ppp
 protontricks
+qbittorrent-enhanced-git
 qemu-full
 qt5-wayland
 qt5ct
@@ -161,6 +163,7 @@ thunderbird
 thunderbird-i18n-zh-cn
 tldr
 tlp
+transmission-cli
 trash-cli
 tree-sitter-cli
 ttf-fira-mono

@@ -5,8 +5,8 @@ hash = "7cc42012a7c2099f80064d228feb8d44"
 
 [[plugin.deps]]
 use = "ndtoan96/ouch"
-rev = "0742fff"
-hash = "2bd799b42b8e42b8ef100310be71f8d1"
+rev = "cfb9140"
+hash = "b5067143415bd2d46c0dfa57319ddcef"
 
 [[plugin.deps]]
 use = "orhnk/system-clipboard"
@@ -18,17 +18,15 @@ use = "DreamMaoMao/searchjump"
 rev = "7fafec3"
 hash = "5337bf545993d8c4dec2c229031f49d"
 
-[[flavor.deps]]
-use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "2d73b79"
-hash = "d4c41d713b325710a9dd5ae86c3f8a5f"
+[[plugin.deps]]
+use = "kirasok/torrent-preview"
+rev = "f465282"
+hash = "b89b46a15035a51d010a254858ba9741"
 
-[[flavor.deps]]
-use = "yazi-rs/flavors:catppuccin-latte"
-rev = "2d73b79"
-hash = "9e789c612c34f941a2afd42e7ded39f"
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "eaf6920"
+hash = "5b2eb0cc2050cec1e4de83cfa51a5b90"
 
-[[flavor.deps]]
-use = "bennyyip/gruvbox-dark"
-rev = "e5e1aef"
-hash = "eb88137cf13a796225254344bf6def2c"
+[flavor]
+deps = []

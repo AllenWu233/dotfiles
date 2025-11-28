@@ -35,4 +35,5 @@ prepend_previewers = [
     { mime = "application/x-xz", run = "ouch" },
     # mdcat.yazi
     { name = "*.md", run = "mdcat" },
+    { mime = "application/bittorrent", run = "torrent-preview" },
 ]

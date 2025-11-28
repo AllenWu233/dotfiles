@@ -63,3 +63,9 @@ on = ["i"]
 run = "plugin searchjump"
 # run = "plugin searchjump -- autocd"
 desc = "searchjump mode"
+
+# chmod.yazi
+[[mgr.prepend_keymap]]
+on = ["c", "m"]
+run = "plugin chmod"
+desc = "Chmod on selected files"
