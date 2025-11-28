@@ -22,6 +22,7 @@ btrbk
 cava
 chromium
 clash-verge-rev
+clashtui
 clipboard-bin
 cups
 cups-pdf
