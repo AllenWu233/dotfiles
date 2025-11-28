@@ -152,6 +152,7 @@
             ),
         ],
     ),
+
     browser_song_format: [
         (
             kind: Group([
@@ -186,8 +187,7 @@
 
         // Possible values are "Top", "Bottom" and "Horizontal". Top makes the bars go from top to
         // bottom, "Bottom" is from bottom up, and "Horizontal" is split in the middle with bars going
-        // both down and up from there.
-        // Using non-default symbols with "Top" and "Horizontal" may produce undesired output.
+        // both down and up from there. Using non-default symbols with "Top" and "Horizontal" may produce undesired output.
         orientation: Bottom,
 
         // Colors can be configured in three different ways: a single color, different colors
@@ -195,18 +195,23 @@
         // one of these:
 
         // Every bar symbol will be red
-        // bar_color: Single("red"),
+        // bar_color: Single("white"),
 
         // The first two rows(two lowest amplitudes) will be red, after that two green rows
         // and the rest will be blue. You can have as many as you want here. The last value
         // will be used if the height exceeds the length of this array.
-        // bar_color: Rows([
-        //     "red",
-        //     "red",
-        //     "green",
-        //     "green",
-        //     "blue",
-        // ])
+        bar_color: Rows([
+            "green",
+            "green",
+            "green",
+            "blue",
+            "blue",
+            "blue",
+            "yellow",
+            "yellow",
+            "yellow",
+            "red",
+        ])
 
         // A simple color gradient. This is a map where keys are percent values of the height
         // where the color starts. After that it is linearly interpolated towards the next value.
@@ -215,10 +220,10 @@
         // 0 and 100 and if the first or last key are not 0 and 100 respectively, the lowest and highest
         // value will be used as 0 and 100. Only hex and RGB colors are supported here and your terminal
         // must support them as well!
-        bar_color: Gradient({
-            0: "rgb(  0, 255,   0)",
-            50: "rgb(  0,   0, 255)",
-            100: "rgb(255,   0,   0)",
-        })
+        // bar_color: Gradient({
+        //     0: "rgb(  0, 255,   0)",
+        //     50: "rgb(  0,   0, 255)",
+        //     100: "rgb(255,   0,   0)",
+        // })
     ),
 )
