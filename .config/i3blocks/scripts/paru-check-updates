@@ -16,7 +16,7 @@ init_cache() {
 
 # Fetch update count and write to cache; fallback to 0 on error
 update_count() {
-    count=$(paru -Qua 2>/dev/null | awk 'NF' | wc -l) || count=0
+    count=$(paru -Qu 2>/dev/null | awk 'NF' | wc -l) || count=0
     printf "%d\n" "$count" >"$CACHE"
 }
 
@@ -28,3 +28,7 @@ if (($(stat -c %Y "$CACHE") + CACHE_AGE < $(date +%s))); then
 fi
 
 echo "󰮯 $(cat "$CACHE")"
+
+[[ "$BLOCK_BUTTON" == 1 || "$BLOCK_BUTTON" == 3 ]] && footclient -e paru
+
+exit 0
