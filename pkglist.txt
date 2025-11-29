@@ -132,6 +132,7 @@ pipewire-pulse
 polkit-gnome
 pot-translation
 ppp
+prismlauncher
 protontricks
 qbittorrent-enhanced-git
 qemu-full
