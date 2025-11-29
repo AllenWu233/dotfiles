@@ -1,33 +1,41 @@
 #!/usr/bin/env bash
+# @author Allen
+# @since 2025
 # Print the number of pending updates (official repos + AUR) for i3blocks.
-# Dependencies: paru, coreutils
-
-set -euo pipefail
+# Dependencies: paru
 
 CACHE="$HOME/.cache/paru-updates.cnt"
+FLAG="$HOME/.cache/paru-updates.err"
 CACHE_AGE=3600 # seconds
 
-# Initialize cache if missing, empty, or non-numeric
-init_cache() {
-    if [[ ! -s "$CACHE" ]] || ! grep -qE '^[0-9]+$' "$CACHE"; then
-        update_count
-    fi
-}
+# Initialize
+[[ -f $CACHE ]] || echo 0 >"$CACHE"
+[[ -f $FLAG ]] || echo 0 >"$FLAG"
 
-# Fetch update count and write to cache; fallback to 0 on error
-update_count() {
-    count=$(paru -Qu 2>/dev/null | awk 'NF' | wc -l) || count=0
-    printf "%d\n" "$count" >"$CACHE"
-}
+read -r ERR <"$FLAG"
 
-# ---- main ----
-init_cache
+CACHE_MTIME=$(stat -c %Y "$CACHE")
+NOW=$(date +%s)
+CACHE_OUT_OF_DATE=$((CACHE_MTIME + CACHE_AGE < NOW))
+
 # Refresh cache if older than CACHE_AGE
-if (($(stat -c %Y "$CACHE") + CACHE_AGE < $(date +%s))); then
-    update_count
+if ((ERR)) || ((CACHE_OUT_OF_DATE)); then
+    # Fetch update count and write to cache
+    if cnt=$(paru -Qu 2>/dev/null | awk 'NF' | wc -l); then
+        printf "%d\n" "$cnt" >"$CACHE"
+        echo 0 >"$FLAG"
+    else
+        echo 1 >"$FLAG"
+    fi
 fi
 
-echo "󰮯 $(cat "$CACHE")"
+read -r ERR <"$FLAG"
+if ((ERR)); then
+    ICON="⚠"
+else
+    ICON="󰮯"
+fi
+echo "$ICON $(cat "$CACHE")"
 
 [[ "$BLOCK_BUTTON" == 1 || "$BLOCK_BUTTON" == 3 ]] && footclient -e paru
 
