@@ -6,7 +6,7 @@
 
 WOB_PIPE=/tmp/wobpipe
 SOURCE=@DEFAULT_AUDIO_SOURCE@
-SOURCE_STATUS=$(wpctl get-volume "$SOURCE")
+source_status=$(wpctl get-volume "$SOURCE")
 STEP=0.01
 
 # Catching i3blocks click
@@ -19,28 +19,28 @@ if [ -n "$BLOCK_BUTTON" ]; then
     esac
 fi
 
-if echo "$SOURCE_STATUS" | grep -q 'MUTED'; then
-    SOURCE_VOLUME="MUTE"
-    SOURCE_ICON=" "
+if echo "$source_status" | grep -q 'MUTED'; then
+    source_volume="MUTE"
+    source_icon=" "
 else
-    SOURCE_VOLUME_FACTOR=$(echo "$SOURCE_STATUS" | grep -oE '[0-9]+\.[0-9]+')
-    SOURCE_VOLUME=$(echo "$SOURCE_VOLUME_FACTOR * 100" | bc | awk '{print int($1)}')
-    SOURCE_ICON=""
+    source_volume_factor=$(echo "$source_status" | grep -oE '[0-9]+\.[0-9]+')
+    source_volume=$(echo "$source_volume_factor * 100" | bc | awk '{print int($1)}')
+    source_icon=""
 fi
 
 # wob
 if [ "$BLOCK_BUTTON" == 3 ] || [ "$BLOCK_BUTTON" == 4 ]; then
-    if [ "$SOURCE_VOLUME" == "MUTE" ]; then
+    if [ "$source_volume" == "MUTE" ]; then
         echo "0" >"$WOB_PIPE"
     else
-        echo "$SOURCE_VOLUME" >"$WOB_PIPE"
+        echo "$source_volume" >"$WOB_PIPE"
     fi
 fi
 
-if [ "$SOURCE_VOLUME" == "MUTE" ]; then
-    echo "$SOURCE_ICON"
+if [ "$source_volume" == "MUTE" ]; then
+    echo "$source_icon"
 else
-    echo "$SOURCE_ICON$SOURCE_VOLUME%"
+    echo "$source_icon$source_volume%"
 fi
 
 exit 0

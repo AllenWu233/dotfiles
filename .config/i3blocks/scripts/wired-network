@@ -4,11 +4,11 @@
 
 # Wired interface name (e.g., eth0, enpXsX)
 WIRED_IFACE="enp52s0"
-WIRED_STATUS="$(ip a show dev "$WIRED_IFACE")"
+wired_status="$(ip a show dev "$WIRED_IFACE")"
 
-if echo "$WIRED_STATUS" | grep -q "state UP" && echo "$WIRED_STATUS" | grep -q "inet "; then
-    IP=$(echo "$WIRED_STATUS" | grep -oP 'inet \K[\d.]+' | head -n 1)
-    echo "󰲝  $IP"
+if echo "$wired_status" | grep -q "state UP" && echo "$wired_status" | grep -q "inet "; then
+    ip=$(echo "$wired_status" | grep -oP 'inet \K[\d.]+' | head -n 1)
+    echo "󰲝  $ip"
     echo "󰲝 "
 else
     echo "󰲛 "

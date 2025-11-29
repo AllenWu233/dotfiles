@@ -18,19 +18,19 @@ get_wireless_icon() {
 }
 
 # Check Wi-Fi status using nmcli
-SSID=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | awk -F ':' '{print $2}')
+ssid=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | awk -F ':' '{print $2}')
 
-if [ ! -z "$SSID" ]; then
+if [ ! -z "$ssid" ]; then
     # Get signal strength (0-100)
-    SIGNAL=$(nmcli -t -f active,signal dev wifi | grep '^yes' | awk -F ':' '{print $2}' | tail -n 1)
-    echo "$(get_wireless_icon "$SIGNAL") $SSID($SIGNAL%) "
-    echo "$(get_wireless_icon "$SIGNAL") "
+    signal=$(nmcli -t -f active,signal dev wifi | grep '^yes' | awk -F ':' '{print $2}' | tail -n 1)
+    echo "$(get_wireless_icon "$signal") $ssid($signal%) "
+    echo "$(get_wireless_icon "$signal") "
 else
     echo "󰤮 "
 fi
 
 [[ "$BLOCK_BUTTON" == 1 || "$BLOCK_BUTTON" == 3 ]] && LANGUAGE=zh_CN nm-connection-editor
 
-[ "$SIGNAL" -le 20 ] && exit 33
+[ "$signal" -le 20 ] && exit 33
 
 exit 0

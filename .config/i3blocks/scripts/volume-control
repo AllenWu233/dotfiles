@@ -6,7 +6,7 @@
 
 WOB_PIPE=/tmp/wobpipe
 SINK=@DEFAULT_SINK@
-SINK_STATUS=$(wpctl get-volume "$SINK")
+sink_status=$(wpctl get-volume "$SINK")
 STEP=0.01
 
 # Catching i3blocks click
@@ -30,29 +30,29 @@ get_sink_icon() {
     fi
 }
 
-if echo "$SINK_STATUS" | grep -q 'MUTED'; then
-    SINK_VOLUME="MUTE"
-    SINK_ICON="󰝟"
+if echo "$sink_status" | grep -q 'MUTED'; then
+    sink_volume="MUTE"
+    sink_icon="󰝟"
 else
-    SINK_VOLUME_FACTOR=$(echo "$SINK_STATUS" | grep -oE '[0-9]+\.[0-9]+')
-    SINK_VOLUME=$(echo "$SINK_VOLUME_FACTOR * 100" | bc | awk '{print int($1)}')
-    SINK_ICON=$(get_sink_icon "$SINK_VOLUME")
+    sink_volume_factor=$(echo "$sink_status" | grep -oE '[0-9]+\.[0-9]+')
+    sink_volume=$(echo "$sink_volume_factor * 100" | bc | awk '{print int($1)}')
+    sink_icon=$(get_sink_icon "$sink_volume")
 fi
 
 # wob
 # if [ -n "$BLOCK_BUTTON" ]; then
 if [ "$BLOCK_BUTTON" == 3 ] || [ "$BLOCK_BUTTON" == 4 ]; then
-    if [ "$SINK_VOLUME" == "MUTE" ]; then
+    if [ "$sink_volume" == "MUTE" ]; then
         echo "0" >"$WOB_PIPE"
     else
-        echo "$SINK_VOLUME" >"$WOB_PIPE"
+        echo "$sink_volume" >"$WOB_PIPE"
     fi
 fi
 
-if [ "$SINK_VOLUME" == "MUTE" ]; then
-    echo "$SINK_ICON "
+if [ "$sink_volume" == "MUTE" ]; then
+    echo "$sink_icon "
 else
-    echo "$SINK_ICON $SINK_VOLUME%"
+    echo "$sink_icon $sink_volume%"
 fi
 
 exit 0

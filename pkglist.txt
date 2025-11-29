@@ -21,10 +21,10 @@ btop
 btrbk
 cava
 chromium
-clashtui
 clipboard-bin
 cups
 cups-pdf
+daed
 digikam
 dnsmasq
 downgrade

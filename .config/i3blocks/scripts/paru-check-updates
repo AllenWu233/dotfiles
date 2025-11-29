@@ -8,35 +8,47 @@ CACHE="$HOME/.cache/paru-updates.cnt"
 FLAG="$HOME/.cache/paru-updates.err"
 CACHE_AGE=3600 # seconds
 
+# Forcing updating flag
+force=0
+[[ "${1:-}" == "--force" ]] && force=1
+
 # Initialize
+mkdir -p "$(dirname "$CACHE")"
+mkdir -p "$(dirname "$FLAG")"
 [[ -f $CACHE ]] || echo 0 >"$CACHE"
 [[ -f $FLAG ]] || echo 0 >"$FLAG"
 
-read -r ERR <"$FLAG"
+read -r err <"$FLAG"
 
-CACHE_MTIME=$(stat -c %Y "$CACHE")
-NOW=$(date +%s)
-CACHE_OUT_OF_DATE=$((CACHE_MTIME + CACHE_AGE < NOW))
+cache_mtime=$(stat -c %Y "$CACHE")
+now=$(date +%s)
+cache_out_of_date=$((cache_mtime + CACHE_AGE < now))
 
-# Refresh cache if older than CACHE_AGE
-if ((ERR)) || ((CACHE_OUT_OF_DATE)); then
-    # Fetch update count and write to cache
+# Fetch update count and write to cache
+update_cnt() {
     if cnt=$(paru -Qu 2>/dev/null | awk 'NF' | wc -l); then
         printf "%d\n" "$cnt" >"$CACHE"
         echo 0 >"$FLAG"
     else
         echo 1 >"$FLAG"
     fi
+}
+
+if ((force || err || cache_out_of_date)); then
+    update_cnt
 fi
 
-read -r ERR <"$FLAG"
-if ((ERR)); then
-    ICON="⚠"
+read -r err <"$FLAG"
+if ((err)); then
+    icon="⚠"
 else
-    ICON="󰮯"
+    icon="󰮯"
 fi
-echo "$ICON $(cat "$CACHE")"
+echo "$icon $(cat "$CACHE")"
 
-[[ "$BLOCK_BUTTON" == 1 || "$BLOCK_BUTTON" == 3 ]] && footclient -e paru
+if [[ "$BLOCK_BUTTON" == 1 || "$BLOCK_BUTTON" == 3 ]]; then
+    footclient -e paru
+    update_cnt
+fi
 
 exit 0
