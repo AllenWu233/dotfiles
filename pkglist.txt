@@ -21,7 +21,6 @@ btop
 btrbk
 cava
 chromium
-clashtui
 clipboard-bin
 cups
 cups-pdf
@@ -94,7 +93,6 @@ mako
 man-db
 mcpelauncher-linux-git
 mcpelauncher-ui
-mihomo
 minder
 mpc
 mpd
@@ -206,6 +204,7 @@ xdg-desktop-portal-wlr
 xorg-xlsclients
 xorg-xrdb
 xorg-xwininfo
+xray
 xwayland-satellite
 yazi
 zathura
