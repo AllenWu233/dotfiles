@@ -24,6 +24,8 @@ cache_mtime=$(stat -c %Y "$CACHE")
 now=$(date +%s)
 cache_out_of_date=$((cache_mtime + CACHE_AGE < now))
 
+# echo $cache_mtime $now $cache_out_of_date
+
 # Fetch update count and write to cache
 update_cnt() {
     if cnt=$(paru -Qu 2>/dev/null | awk 'NF' | wc -l); then
