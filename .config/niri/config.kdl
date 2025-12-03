@@ -366,12 +366,12 @@ binds {
     // For example, this is a standard bind to toggle the screen reader (orca).
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
-    Super+B hotkey-overlay-title="Open Browser: firefox" { spawn "firefox"; }
+    Super+F hotkey-overlay-title="Open Browser: firefox" { spawn "firefox"; }
     // Super+N hotkey-overlay-title="Open cloud music" { spawn-sh "pkill waylyrics; electron-netease-cloud-music; waylyrics"; }
     // Super+N hotkey-overlay-title="Open cloud music" { spawn-sh "pkill waylyrics; /opt/SPlayer/Splayer; sleep 1; waylyrics"; }
     Super+N hotkey-overlay-title="Open cloud music" { spawn "/opt/SPlayer/Splayer"; }
-    Super+E hotkey-overlay-title="Open File Manager: thunar" { spawn "thunar"; }
-    Super+Shift+E hotkey-overlay-title="Open Terminal File Manager: yazi" { spawn "footclient" "-e" "yazi"; }
+    Super+B hotkey-overlay-title="Open File Manager: thunar" { spawn "thunar"; }
+    Super+Shift+B hotkey-overlay-title="Open Terminal File Manager: yazi" { spawn "footclient" "-e" "yazi"; }
     Super+Tab hotkey-overlay-title="Swicth Window" { spawn "~/.config/niri/scripts/niri-window-switcher"; }
 
     Super+Shift+V { spawn "~/.local/bin/vim-everywhere"; }
@@ -597,7 +597,7 @@ binds {
     // Super+R { switch-preset-column-width-back; }
     Super+Shift+R { switch-preset-window-height; }
     Super+Ctrl+R { reset-window-height; }
-    Super+F { maximize-column; }
+    Super+E { maximize-column; }
     Super+Shift+F { fullscreen-window; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
