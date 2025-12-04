@@ -28,6 +28,7 @@ daed
 digikam
 dnsmasq
 downgrade
+drawio-desktop-bin
 dunst
 efibootmgr
 electron-netease-cloud-music
@@ -63,6 +64,7 @@ grub-btrfs
 gutenprint
 gvfs-gphoto2
 gvfs-mtp
+htop
 hugo
 hyphen-en
 i3bar-river
@@ -139,7 +141,6 @@ qt5-wayland
 qt5ct
 qt6-wayland
 qt6ct
-quickemu-git
 redshift
 rime-ice-double-pinyin-git
 rime-pinyin-moegirl
@@ -190,7 +191,6 @@ virtio-win
 waybar
 waylyrics
 wechat-bin
-wemeet-bin
 wget
 wl-clipboard
 wl-color-picker
