@@ -92,8 +92,6 @@ luarocks
 ly
 mako
 man-db
-mcpelauncher-linux-git
-mcpelauncher-ui
 minder
 mpc
 mpd
@@ -106,7 +104,6 @@ networkmanager
 newsboat
 newsflash
 niri
-niri-float-sticky
 nm-connection-editor
 nodejs
 noise-suppression-for-voice
