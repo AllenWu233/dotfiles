@@ -58,6 +58,7 @@ gimp
 gimp-help-zh_cn
 git
 git-crypt
+github-cli
 grim
 grub
 grub-btrfs
