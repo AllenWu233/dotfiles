@@ -3,6 +3,7 @@ acpi
 adobe-source-han-sans-cn-fonts
 adobe-source-han-serif-cn-fonts
 alacritty
+android-tools
 arch-wiki-docs
 arch-wiki-docs-zh-cn
 archlinuxcn-keyring
