@@ -2,33 +2,31 @@
 # @author Allen
 # @since 2025
 # Get top 5 mirrorlist
-# Usage: sudo $(which get-mirrorlist-sorted)
+# Usage: get-mirrorlist-sorted
 
-# --- 1. Check if 'rankmirrors' command exists ---
 if ! command -v rankmirrors &>/dev/null; then
     echo "Error: 'rankmirrors' command not found."
     echo "Install 'pacman-contrib': sudo pacman -S pacman-contrib"
     exit 1
 fi
-# ---------------------------------------------
 
-# --- 2. Backup and check for root permission ---
-mv -i /etc/pacman.d/mirrorlist{,.bak}
-
-# Check if the previous 'mv' command failed
-if [ $? -ne 0 ]; then
-    echo "Error: Failed to backup mirrorlist. Ensure script is run with 'sudo'."
+if ! sudo mv -i /etc/pacman.d/mirrorlist{,.bak}; then
+    echo "Error: Failed to backup mirrorlist."
     exit 1
 fi
-# ----------------------------------------------------
 
-# --- 3. Fetch and update mirrorlist ---
+tmp_mirror=$(mktemp)
+
 echo "Fetching and ranking HTTPS mirrors for China..."
-
-# Fetch list, uncomment Servers, rank top 5, and write to file
 curl -s "https://archlinux.org/mirrorlist/?country=CN&protocol=https&use_mirror_status=on" |
     sed -e 's/^#Server/Server/' -e '/^#/d' |
-    rankmirrors -n 5 - >/etc/pacman.d/mirrorlist
+    rankmirrors -n 5 - >"$tmp_mirror"
+sudo cp "$tmp_mirror" /etc/pacman.d/mirrorlist
+sudo chmod 644 /etc/pacman.d/mirrorlist
 
 echo "New mirrorlist content:"
-cat /etc/pacman.d/mirrorlist
+if command -v bat; then
+    bat /etc/pacman.d/mirrorlist
+else
+    cat /etc/pacman.d/mirrorlist
+fi
