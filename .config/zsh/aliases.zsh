@@ -25,6 +25,7 @@ alias rw="random-wallpaper.sh"
 alias rofi="rofi -dpi 1"
 # alias py="pdm run python"
 alias hibernate="systemctl hibernate"
+alias yutto="yutto --config ~/private/.config/yutto/yutto.toml"
 
 # lsd
 alias ls='lsd'
@@ -50,3 +51,6 @@ alias csway='nvim ~/.config/sway'
 
 # Clash-verge
 alias proxy='https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897'
+
+# SSH
+alias ssh-termux='ssh -p 8022 root@192.168.1.12'
