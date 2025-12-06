@@ -53,4 +53,4 @@ alias csway='nvim ~/.config/sway'
 alias proxy='https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897'
 
 # SSH
-alias ssh-termux='ssh -p 8022 root@192.168.1.12'
+alias ssh-termux='ssh -p 8022 root@termux'
