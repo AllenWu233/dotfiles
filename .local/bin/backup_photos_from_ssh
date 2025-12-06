@@ -1,0 +1,83 @@
+#!/bin/bash
+# @Author: Allen
+# Backup photos from Android via Termux SSH
+# Dependencies: rsync (Both PC and Termux)
+
+# ==================== CONFIGURATION ====================
+# Source paths on Android (relative to Termux home)
+SOURCE_PATHS=(
+    # "Pictures/bili"
+    # "Pictures/OuterWilds"
+    # "Pictures/QQ"
+    # "Pictures/Twitter"
+    # "Pictures/WeiXin"
+    # "Pictures/漫画"
+    # "Pictures/海虎武神"
+    # "Pictures/pixez_old"
+    # "Pictures/NSFW-pixiv"
+    # "Pictures/Screenshots"
+    # "DCIM/Screenshots"
+    # "Pictures/搓"
+    # "Pictures/烹饪"
+    "Pictures/meme"
+    # "DCIM/Camera"
+    # "Pictures/NSFW-Touhou"
+    # "Pictures/Touhou"
+)
+
+# SSH configuration for Termux
+SSH_USER="root"
+SSH_HOST="192.168.1.12" # Replace with Android IP
+SSH_PORT="8022"         # Default Termux SSH port
+SSH_REMOTE_BASE="/data/data/com.termux/files/home/storage/shared"
+
+# Local backup destination
+DEST_DIR="$HOME/Pictures"
+
+# ==================== FUNCTIONS ====================
+# Check required commands
+check_dependencies() {
+    local req_cmds=("rsync" "ssh")
+    for cmd in "${req_cmds[@]}"; do
+        if ! command -v "$cmd" &>/dev/null; then
+            echo "Error: $cmd is not installed"
+            exit 1
+        fi
+    done
+}
+
+# Perform backup via SSH/rsync
+perform_backup() {
+    echo "=== Starting backup to: $DEST_DIR ==="
+    mkdir -p "$DEST_DIR"
+
+    for rel_path in "${SOURCE_PATHS[@]}"; do
+        # Build full remote path
+        remote_path="${SSH_REMOTE_BASE}/${rel_path}"
+        ssh_remote="${SSH_USER}@${SSH_HOST}:${remote_path}"
+        echo "-> Backing up: $remote_path"
+
+        # Skip if remote path doesn't exist
+        if ! ssh -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" "[ -d '$remote_path' ]"; then
+            echo "   Warning: Remote path not found - skipping"
+            continue
+        fi
+
+        rsync -av --progress --ignore-existing -e "ssh -p $SSH_PORT" \
+            "$ssh_remote/" "$DEST_DIR/$rel_path/"
+
+        # Check rsync exit status
+        if [ $? -eq 0 ]; then
+            echo "   [OK] Backup completed: $rel_path"
+        else
+            echo "   [ERROR] Backup failed: $rel_path"
+        fi
+        echo
+    done
+
+    echo "=== Backup process finished ==="
+}
+
+# ==================== MAIN ====================
+check_dependencies
+perform_backup
