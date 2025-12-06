@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # random-wallpaper.sh - Set a random wallpaper from a directory
 
 # Wallpaper directory

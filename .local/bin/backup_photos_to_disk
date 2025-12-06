@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # @author Allen, Gemini 2.5 flash
 # Backup photos form phone
 

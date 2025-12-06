@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Toggle Left Click Hold
 
 STATE_FILE="/tmp/left_click_state"

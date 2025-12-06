@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 cd ~/rust_work/rust-by-practice
 git pull
 firefox 'http://localhost:3000' &

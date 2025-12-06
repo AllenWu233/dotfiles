@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Check if sufficient arguments are provided
 if [ $# -lt 2 ]; then

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # config-bkp - Backup dotfiles and configuration
 
 home_dir="/home/Allen"

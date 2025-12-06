@@ -1,0 +1,129 @@
+#!/bin/env bash
+# @author Allen
+# @since 2025
+# color_utils.sh - Terminal color utility functions (reusable)
+# Import method: . "$HOME/.local/bin/color_utils"
+
+# ==================== Core Style Reset ====================
+readonly COLOR_RESET="\033[0m"
+
+# ==================== Text Style Modifiers ====================
+readonly STYLE_BOLD="\033[1m"          # Bold text
+readonly STYLE_DIM="\033[2m"           # Dim/faint text
+readonly STYLE_ITALIC="\033[3m"        # Italic text (not supported by all terminals)
+readonly STYLE_UNDERLINE="\033[4m"     # Underlined text
+readonly STYLE_BLINK="\033[5m"         # Blinking text (rarely supported)
+readonly STYLE_REVERSE="\033[7m"       # Reverse (swap fg/bg color)
+readonly STYLE_HIDDEN="\033[8m"        # Hidden text
+readonly STYLE_STRIKETHROUGH="\033[9m" # Strikethrough text
+
+# ==================== Standard Foreground Colors (8/16-bit) ====================
+readonly FG_BLACK="\033[30m"
+readonly FG_RED="\033[31m"
+readonly FG_GREEN="\033[32m"
+readonly FG_YELLOW="\033[33m"
+readonly FG_BLUE="\033[34m"
+readonly FG_MAGENTA="\033[35m"
+readonly FG_CYAN="\033[36m"
+readonly FG_WHITE="\033[37m"
+
+readonly FG_BRIGHT_BLACK="\033[90m" # Gray
+readonly FG_BRIGHT_RED="\033[91m"
+readonly FG_BRIGHT_GREEN="\033[92m"
+readonly FG_BRIGHT_YELLOW="\033[93m"
+readonly FG_BRIGHT_BLUE="\033[94m"
+readonly FG_BRIGHT_MAGENTA="\033[95m"
+readonly FG_BRIGHT_CYAN="\033[96m"
+readonly FG_BRIGHT_WHITE="\033[97m"
+
+# ==================== Standard Background Colors (8/16-bit) ====================
+readonly BG_BLACK="\033[40m"
+readonly BG_RED="\033[41m"
+readonly BG_GREEN="\033[42m"
+readonly BG_YELLOW="\033[43m"
+readonly BG_BLUE="\033[44m"
+readonly BG_MAGENTA="\033[45m"
+readonly BG_CYAN="\033[46m"
+readonly BG_WHITE="\033[47m"
+
+readonly BG_BRIGHT_BLACK="\033[100m"
+readonly BG_BRIGHT_RED="\033[101m"
+readonly BG_BRIGHT_GREEN="\033[102m"
+readonly BG_BRIGHT_YELLOW="\033[103m"
+readonly BG_BRIGHT_BLUE="\033[104m"
+readonly BG_BRIGHT_MAGENTA="\033[105m"
+readonly BG_BRIGHT_CYAN="\033[106m"
+readonly BG_BRIGHT_WHITE="\033[107m"
+
+# ==================== Predefined Common Styles (Ready-to-Use) ====================
+readonly STYLE_SUCCESS="${STYLE_BOLD}${FG_BRIGHT_GREEN}"
+readonly STYLE_ERROR="${STYLE_BOLD}${FG_BRIGHT_RED}"
+readonly STYLE_WARNING="${STYLE_BOLD}${FG_BRIGHT_YELLOW}"
+readonly STYLE_INFO="${STYLE_BOLD}${FG_BRIGHT_WHITE}"
+readonly STYLE_DEBUG="${STYLE_BOLD}${FG_BRIGHT_CYAN}"
+readonly STYLE_CRITICAL="${BG_RED}${FG_WHITE}${STYLE_BOLD}"
+
+# ==================== Utility Output Functions ====================
+echo_title() {
+    echo -e "${STYLE_INFO}=== $1 ===${COLOR_RESET}"
+}
+
+echo_success() {
+    echo -e "${STYLE_SUCCESS}[OK]${COLOR_RESET} $1"
+}
+
+echo_error() {
+    echo -e "${STYLE_ERROR}[ERROR]${COLOR_RESET} $1"
+}
+
+echo_warning() {
+    echo -e "${STYLE_WARNING}[WARN]${COLOR_RESET} $1"
+}
+
+echo_info() {
+    echo -e "${STYLE_INFO}[INFO]${COLOR_RESET} $1"
+}
+
+echo_debug() {
+    if [[ "$DEBUG_MODE" == "true" ]]; then
+        echo -e "${STYLE_DEBUG}[DEBUG]${COLOR_RESET} $1"
+    fi
+}
+
+echo_critical() {
+    echo -e "\n${STYLE_CRITICAL}[CRITICAL]${COLOR_RESET} $1\n"
+    exit 1
+}
+
+# ==================== Demo Function (Test All Colors) ====================
+print_all_colors() {
+    echo -e "${STYLE_INFO}=== Terminal Color Test ===${COLOR_RESET}"
+
+    # Test foreground colors
+    echo -e "\n${STYLE_BOLD}Foreground Colors:${COLOR_RESET}"
+    echo -e "${FG_BLACK}Black${COLOR_RESET} | ${FG_RED}Red${COLOR_RESET} | ${FG_GREEN}Green${COLOR_RESET} | ${FG_YELLOW}Yellow${COLOR_RESET}"
+    echo -e "${FG_BLUE}Blue${COLOR_RESET} | ${FG_MAGENTA}Magenta${COLOR_RESET} | ${FG_CYAN}Cyan${COLOR_RESET} | ${FG_WHITE}White${COLOR_RESET}"
+
+    # Test bright foreground colors
+    echo -e "\n${STYLE_BOLD}Bright Foreground Colors:${COLOR_RESET}"
+    echo -e "${FG_BRIGHT_BLACK}Bright Black (Gray)${COLOR_RESET} | ${FG_BRIGHT_RED}Bright Red${COLOR_RESET} | ${FG_BRIGHT_GREEN}Bright Green${COLOR_RESET}"
+    echo -e "${FG_BRIGHT_YELLOW}Bright Yellow${COLOR_RESET} | ${FG_BRIGHT_BLUE}Bright Blue${COLOR_RESET} | ${FG_BRIGHT_MAGENTA}Bright Magenta${COLOR_RESET}"
+    echo -e "${FG_BRIGHT_CYAN}Bright Cyan${COLOR_RESET} | ${FG_BRIGHT_WHITE}Bright White${COLOR_RESET}"
+
+    # Test background colors
+    echo -e "\n${STYLE_BOLD}Background Colors:${COLOR_RESET}"
+    echo -e "${BG_BLACK} Black BG ${COLOR_RESET} | ${BG_RED} Red BG ${COLOR_RESET} | ${BG_GREEN} Green BG ${COLOR_RESET} | ${BG_YELLOW} Yellow BG ${COLOR_RESET}"
+    echo -e "${BG_BLUE} Blue BG ${COLOR_RESET} | ${BG_MAGENTA} Magenta BG ${COLOR_RESET} | ${BG_CYAN} Cyan BG ${COLOR_RESET} | ${BG_WHITE} White BG ${COLOR_RESET}"
+
+    # Test styles
+    echo -e "\n${STYLE_BOLD}Text Styles:${COLOR_RESET}"
+    echo -e "${STYLE_BOLD}Bold${COLOR_RESET} | ${STYLE_ITALIC}Italic${COLOR_RESET} | ${STYLE_UNDERLINE}Underline${COLOR_RESET}"
+    echo -e "${STYLE_REVERSE}Reverse${COLOR_RESET} | ${STYLE_STRIKETHROUGH}Strikethrough${COLOR_RESET} | ${STYLE_DIM}Dim${COLOR_RESET}"
+
+    echo -e "\n${COLOR_RESET}" # Reset at end
+}
+
+# Main
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+    print_all_colors
+fi

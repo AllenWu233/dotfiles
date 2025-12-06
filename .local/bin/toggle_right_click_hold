@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Toggle Right Click Hold
 
 STATE_FILE="/tmp/right_click_state"

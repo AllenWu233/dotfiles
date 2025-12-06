@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 local_rime=$HOME/.local/share/fcitx5/rime/
 share_rime=/usr/share/rime-data/
 repo=$HOME/repos/rime-ice-android-private/

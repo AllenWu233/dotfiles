@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 xinput list | grep 'USB Keyboard' > /dev/null
 if [ $? -eq 0 ]; then   # has 'USB Keyboard'
     ~/scrips/disable-laptop-keyboard.sh

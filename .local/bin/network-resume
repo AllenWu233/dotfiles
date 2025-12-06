@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Fix network connection after resuming from hibernate
 
 MOD="r8169"
