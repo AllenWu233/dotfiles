@@ -22,11 +22,11 @@ btop
 btrbk
 cava
 chromium
-clipboard-bin
 cups
 cups-pdf
 daed
 digikam
+discord
 dnsmasq
 downgrade
 drawio-desktop-bin
@@ -161,6 +161,7 @@ swayidle
 swaylock
 system-config-printer
 taskwarrior-tui
+telegram-desktop
 thunar
 thunar-archive-plugin
 thunar-volman
