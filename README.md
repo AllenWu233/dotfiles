@@ -48,19 +48,19 @@ stow -t ~ . --adopt -R
 - Fuzzy Finder: [fzf](https://github.com/junegunn/fzf)
 - Notification Daemon: [mako](https://github.com/emersion/mako)
 - Editor: [Neovim](https://neovim.io/)
-- Email: neomutt, Thunderbird
-- File Manager: yazi, thunar
-- Music Player: mpd + rmpc / ncmpcpp
-- Video Player: mpv
-- Image Viewer: imv
-- E-book Reader / PDF Viewer: zathura (with zathura-pdf-mupdf)
-- RSS Reader: newsboat, newsflash
-- Calendar/Todo: taskwarrior-tui
-- Virtualization: libvirt + qemu-full + virt-manager
-- Web Browser: Firefox
-- Downloader: aria2, qBittorrent Enhanced
-- File Sync/Share: rsync, ssh, KDE Connect
-- Snapshot/Backup: btrbk, grub-btrfs
-- AUR Helper: paru
-- System Monitors: btop / nvtop / htop
-- Dotfiles Manager: stow + git
+- Email: [neomutt](https://neomutt.org/), [Thunderbird](https://www.thunderbird.net/)
+- File Manager: [yazi](https://github.com/sxyazi/yazi), [thunar](https://docs.xfce.org/xfce/thunar/start)
+- Music Player: [mpd](https://www.musicpd.org/), [rmpc](https://github.com/sako/pympc), [ncmpcpp](https://github.com/ncmpcpp/ncmpcpp)
+- Video Player: [mpv](https://mpv.io/)
+- Image Viewer: [imv](https://github.com/eXeC64/imv)
+- E-book Reader / PDF Viewer: [zathura](https://pwmt.org/projects/zathura/), [zathura-pdf-mupdf](https://github.com/pwmt/zathura-pdf-mupdf)
+- RSS Reader: [newsboat](https://newsboat.org/), [newsflash](https://newsflash.org/)
+- Calendar/Todo: [taskwarrior-tui](https://github.com/kdheepak/taskwarrior-tui)
+- Virtualization: [libvirt](https://libvirt.org/), [QEMU](https://www.qemu.org/), [virt-manager](https://virt-manager.org/)
+- Web Browser: [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+- Downloader: [aria2](https://aria2.github.io/), [qBittorrent Enhanced](https://github.com/c0re100/qBittorrent-Enhanced-Edition)
+- File Sync/Share: [rsync](https://rsync.samba.org/), [OpenSSH](https://www.openssh.com/), [KDE Connect](https://kdeconnect.kde.org/)
+- Snapshot/Backup: [btrbk](https://digint.ch/btrbk/), [grub-btrfs](https://github.com/Antynea/grub-btrfs)
+- AUR Helper: [paru](https://github.com/Morganamilo/paru)
+- System Monitors: [btop](https://github.com/aristocratos/btop), [nvtop](https://github.com/Syllo/nvtop), [htop](https://htop.dev/)
+- Dotfiles Manager: [GNU Stow](https://www.gnu.org/software/stow/), [git](https://git-scm.com/)
