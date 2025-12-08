@@ -1,4 +1,4 @@
-# Allen's personal dotfiles
+# Allen's Dotfiles
 
 ## Overview
 
