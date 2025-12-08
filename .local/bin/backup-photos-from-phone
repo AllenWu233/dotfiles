@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+# @author Allen, Gemini 2.5 flash
+# Backup photos form phone
+
+# ====================================================================
+# CONFIGURATION - MODIFY THESE VARIABLES
+# ====================================================================
+
+# List of source paths on the phone (relative to mount point)
+SOURCE_PATHS=(
+    "Pictures/bili"
+    "Pictures/OuterWilds"
+    "Pictures/QQ"
+    "Pictures/Twitter"
+    "Pictures/WeiXin"
+    "Pictures/漫画"
+    "Pictures/海虎武神"
+    "Pictures/pixez_old"
+    "Pictures/NSFW-pixiv"
+    "Pictures/meme"
+    "Pictures/Screenshots"
+    "Pictures/搓"
+    "Pictures/烹饪"
+    "DCIM/Camera"
+    "Pictures/NSFW-Touhou"
+    "Pictures/Touhou"
+)
+SOURCE_MOUNT_POINT="$HOME/mnt"
+SOURCE_DIR="$SOURCE_MOUNT_POINT/内部共享存储空间"
+
+# Local backup destination directory
+DEST_DIR="$HOME/Pictures"
+
+# ====================================================================
+# FUNCTIONS
+# ====================================================================
+
+# Check necessary commands (rsync, udiskie-info)
+check_dependencies() {
+    if ! command -v rsync &>/dev/null; then
+        echo "Error: rsync not installed. Install it first."
+        exit 1
+    fi
+    if ! command -v udiskie-info &>/dev/null; then
+        echo "Error: udiskie-info not found. Ensure udiskie is installed."
+        exit 1
+    fi
+    if ! command -v jmtpfs &>/dev/null; then
+        echo "Error: jmtpfs not found. Ensure jmtpfs is installed."
+        exit 1
+    fi
+}
+
+# Perform backup using rsync for all configured source paths
+perform_backup() {
+    local SOURCE_MOUNT_POINT="$1"
+
+    echo "--- Starting backup to: $DEST_DIR ---"
+    mkdir -p "$DEST_DIR"
+
+    for PATH_ON_PHONE in "${SOURCE_PATHS[@]}"; do
+        FULL_SOURCE_PATH="${SOURCE_MOUNT_POINT}/${PATH_ON_PHONE}"
+
+        echo "-> Backing up source: $FULL_SOURCE_PATH"
+
+        # Skip if source directory is not accessible
+        if [ ! -d "$FULL_SOURCE_PATH" ]; then
+            echo "   Warning: Source path '$FULL_SOURCE_PATH' not found. Skipping."
+            continue
+        fi
+
+        # rsync command: Archive mode, verbose, show progress, DO NOT OVERWRITE existing files
+        # The trailing / on source path copies contents, not the folder itself.
+        rsync -av --progress --ignore-existing "$FULL_SOURCE_PATH" "$DEST_DIR"
+
+        if [ $? -ne 0 ]; then
+            echo "      [ERROR] Backup of $PATH_ON_PHONE FAILED. Check connection/permissions."
+        else
+            echo "      [OK] Backup of $PATH_ON_PHONE completed."
+        fi
+
+        echo ""
+    done
+
+    echo "--- All specified directories backed up. ---"
+}
+
+# ====================================================================
+# MAIN
+# ====================================================================
+check_dependencies
+# Mount phone
+jmtpfs "$SOURCE_MOUNT_POINT"
+perform_backup "$SOURCE_DIR"

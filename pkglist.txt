@@ -6,6 +6,7 @@ alacritty
 android-tools
 arch-wiki-docs
 arch-wiki-docs-zh-cn
+archlinux-artwork
 archlinuxcn-keyring
 aria2
 atuin
@@ -81,6 +82,7 @@ jq
 kdeconnect
 keepassxc
 lazygit
+lenovolegionlinux-dkms-git
 libappindicator
 libnotify
 libreoffice-still-zh-cn
@@ -137,6 +139,7 @@ pot-translation
 ppp
 prismlauncher
 protontricks
+psensor
 qbittorrent-enhanced-git
 qemu-full
 qt5-wayland
@@ -208,6 +211,7 @@ xorg-xwininfo
 xray
 xwayland-satellite
 yazi
+ydotool
 zathura
 zathura-pdf-mupdf
 zellij

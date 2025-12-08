@@ -1,0 +1,99 @@
+#!/usr/bin/env bash
+# @Author: Allen
+# Backup photos from Android via Termux SSH
+# Dependencies: rsync (Both PC and Termux)
+
+. "$HOME/.local/bin/color_utils"
+
+# ==================== CONFIGURATION ====================
+# Source paths on Android (relative to Termux home)
+SOURCE_PATHS=(
+    "Pictures/bili"
+    "Pictures/OuterWilds"
+    "Pictures/QQ"
+    "Pictures/Twitter"
+    "Pictures/WeiXin"
+    "Pictures/漫画"
+    "Pictures/海虎武神"
+    "Pictures/pixez_old"
+    "Pictures/NSFW-pixiv"
+    "Pictures/Screenshots"
+    "DCIM/Screenshots"
+    "Pictures/搓"
+    "Pictures/烹饪"
+    "Pictures/meme"
+    "DCIM/Camera"
+    "Pictures/NSFW-Touhou"
+    "Pictures/Touhou"
+)
+
+# SSH configuration for Termux
+SSH_USER="root"
+SSH_HOST="192.168.1.12" # Replace with Android IP
+SSH_PORT="8022"         # Default Termux SSH port
+SSH_REMOTE_BASE="/data/data/com.termux/files/home/storage/shared"
+
+# Local backup destination
+DEST_DIR="$HOME/Pictures"
+
+# ==================== GLOBAL COUNTERS (for statistics) ====================
+total_dirs=${#SOURCE_PATHS[@]} # Total number of directories
+success_cnt=0                  # Successful backups
+failed_cnt=0                   # Failed backups
+skipped_cnt=0                  # Skipped (path not found)
+
+# ==================== FUNCTIONS ====================
+# Check required commands
+check_dependencies() {
+    local req_cmds=("rsync" "ssh")
+    for cmd in "${req_cmds[@]}"; do
+        if ! command -v "$cmd" &>/dev/null; then
+            echo_error "$cmd is not installed"
+            exit 1
+        fi
+    done
+}
+
+# Perform backup via SSH/rsync
+perform_backup() {
+    echo_title "Starting backup to: $DEST_DIR"
+    mkdir -p "$DEST_DIR"
+
+    for rel_path in "${SOURCE_PATHS[@]}"; do
+        # Build full remote path
+        remote_path="${SSH_REMOTE_BASE}/${rel_path}"
+        ssh_remote="${SSH_USER}@${SSH_HOST}:${remote_path}"
+        echo -e "$FG_GREEN\n\n-> Backing up: $remote_path$COLOR_RESET"
+
+        # Skip if remote path doesn't exist
+        if ! ssh -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" "[ -d '$remote_path' ]"; then
+            echo_warning "Remote path not found - skipping: $rel_path"
+            ((skipped_cnt++))
+            continue
+        fi
+
+        # Execute rsync backup
+        rsync -av --progress --ignore-existing -e "ssh -p $SSH_PORT" "$ssh_remote" "$DEST_DIR"
+
+        # Check rsync exit status and update counters
+        if [ $? -eq 0 ]; then
+            echo_success "Backup completed: $rel_path"
+            ((success_cnt++))
+        else
+            echo_error "Backup failed: $rel_path"
+            ((failed_cnt++))
+        fi
+    done
+
+    # Print final statistics
+    echo -e "\n${STYLE_INFO}--- Backup Statistics ---${COLOR_RESET}"
+    echo -e "${STYLE_INFO}Total directories:${COLOR_RESET} $total_dirs"
+    echo -e "${STYLE_SUCCESS}Successful backups:${COLOR_RESET} $success_cnt"
+    echo -e "${STYLE_ERROR}Failed backups:${COLOR_RESET} $failed_cnt"
+    echo -e "${STYLE_WARNING}Skipped directories:${COLOR_RESET} $skipped_cnt\n"
+    echo_title "Backup process finished"
+}
+
+# ==================== MAIN ====================
+check_dependencies
+perform_backup

@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# @author Allen
+# @since 2025
+# Toggle mouse-button hold for Wayland (ydotool)
+# Usage: $0 [left|right]  (default: left)
+
+STATE_FILE="${XDG_RUNTIME_DIR:-/tmp}/hold_${1:-left}_state"
+
+systemctl --user is-active ydotoold || {
+    notify-send -u critical "ydotoold not running"
+    exit 1
+}
+
+down=${1:-left} up=$down
+case $down in
+left)
+    down=0x40
+    up=0x80
+    ;;
+right)
+    down=0x41
+    up=0x81
+    ;;
+*) notify-send "Usage: $0 [left|right]" && exit 1 ;;
+esac
+
+if [[ -f $STATE_FILE ]]; then
+    ydotool click "$up"
+    rm "$STATE_FILE"
+    notify-send "Sway" "${1:-left} hold OFF"
+else
+    ydotool click "$down"
+    touch "$STATE_FILE"
+    notify-send "Sway" "${1:-left} hold ON"
+    while [[ -f $STATE_FILE ]]; do sleep 0.1; done
+    ydotool click "$up"
+fi
