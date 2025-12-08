@@ -8,6 +8,7 @@ gruvbox1="/usr/share/backgrounds/gruvbox/gruvbox-dark-archlinux2-scalable.svg"
 gruvbox2="$HOME/Pictures/Wallpapers/gruvbox-wallpaper.jpg"
 sunset="$HOME/Pictures/backgrounds/archlinux/sunset.jpg"
 
+# Touhou
 mystia="$HOME/Pictures/Touhou/111219584_p0.png"
 rumia="$HOME/Pictures/Touhou/108077785_p0.png"
 rumia2="$HOME/Pictures/Wallpapers/45393944_p0_dark_high.png"
@@ -16,8 +17,10 @@ tatara_kogasa="$HOME/Pictures/Touhou/47516247_p0_pro.jpg"
 aya="$HOME/Pictures/Touhou/65893742(6342480)_無題_p0.jpg"
 flandre_space="$HOME/Pictures/Touhou/120065984_p1.jpg"
 renko_and_mary1="$HOME/Pictures/Touhou/679939(10674)_蓮台野_p0.jpg"
+shou="$HOME/Pictures/Touhou/60684150(1508165)_東方星蓮船まとめ_p3.jpg"
+clownpiece="$HOME/Pictures/Touhou/60684541(1508165)_東方紺珠伝まとめ_p3.jpg"
 
-IMAGE="$flandre_space"
+IMAGE="$clownpiece"
 
 if [[ -f "$IMAGE" ]]; then
     killall swaybg
