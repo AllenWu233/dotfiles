@@ -1,56 +1,45 @@
 #!/usr/bin/env bash
-# @author Allen
-# @since 2025
-# Print the number of pending updates (official repos + AUR) for i3blocks.
-# Dependencies: paru
+# i3blocks: pending updates (official + AUR)
+# deps: checkupdates, paru
 
 CACHE="$HOME/.cache/paru-updates.cnt"
 FLAG="$HOME/.cache/paru-updates.err"
-CACHE_AGE=3600 # seconds
+AGE=3600
 
-# Forcing updating flag
 force=0
-[[ "${1:-}" == "--force" ]] && force=1
+[[ $1 == "--force" ]] && force=1
 
 # Initialize
 mkdir -p "$(dirname "$CACHE")"
-mkdir -p "$(dirname "$FLAG")"
-[[ -f $CACHE ]] || echo 0 >"$CACHE"
-[[ -f $FLAG ]] || echo 0 >"$FLAG"
+if [ ! -f "$CACHE" ] || [ ! -f "$FLAG" ]; then
+    echo 0 >"$CACHE"
+    echo 0 >"$FLAG"
+    force=1
+fi
 
 read -r err <"$FLAG"
 
-cache_mtime=$(stat -c %Y "$CACHE")
-now=$(date +%s)
-cache_out_of_date=$((cache_mtime + CACHE_AGE < now))
+stale=$((($(stat -c %Y "$CACHE") + AGE) < $(date +%s)))
 
-# echo $cache_mtime $now $cache_out_of_date
-
-# Fetch update count and write to cache
 update_cnt() {
-    if cnt=$(paru -Qu 2>/dev/null | awk 'NF' | wc -l); then
-        printf "%d\n" "$cnt" >"$CACHE"
-        echo 0 >"$FLAG"
-    else
+    if ! command -v paru &>/dev/null; then
         echo 1 >"$FLAG"
+        return 1
     fi
+    off=$(checkupdates 2>/dev/null | wc -l)
+    aur=$(paru -Qua 2>/dev/null | wc -l)
+    tot=$((off + aur))
+    printf "%d\n" "$tot" >"$CACHE"
+    echo 0 >"$FLAG"
 }
 
-if ((force || err || cache_out_of_date)); then
-    update_cnt
-fi
+((force || err || stale)) && update_cnt
 
 read -r err <"$FLAG"
-if ((err)); then
-    icon="⚠"
-else
-    icon="󰮯"
-fi
+icon=$([ "$err" -eq 0 ] && echo "󰮯" || echo "⚠")
 echo "$icon $(cat "$CACHE")"
 
-if [[ "$BLOCK_BUTTON" == 1 || "$BLOCK_BUTTON" == 3 ]]; then
-    footclient -e paru
-    update_cnt
-fi
+# left/right click: upgrade interactively
+[[ "$BLOCK_BUTTON" =~ ^1|3$ ]] && footclient -e paru -Syu && update_cnt
 
 exit 0
