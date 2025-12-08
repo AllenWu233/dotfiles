@@ -63,4 +63,4 @@ stow -t ~ . --adopt -R
 - Snapshot/Backup: [btrbk](https://digint.ch/btrbk/), [grub-btrfs](https://github.com/Antynea/grub-btrfs)
 - AUR Helper: [paru](https://github.com/Morganamilo/paru)
 - System Monitors: [btop](https://github.com/aristocratos/btop), [nvtop](https://github.com/Syllo/nvtop), [htop](https://htop.dev/)
-- Dotfiles Manager: [GNU Stow](https://www.gnu.org/software/stow/), [git](https://git-scm.com/)
+- Dotfiles Manager: [GNU Stow](https://www.gnu.org/software/stow/) + [git](https://git-scm.com/)
