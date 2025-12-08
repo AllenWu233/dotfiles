@@ -50,7 +50,7 @@ stow -t ~ . --adopt -R
 - Editor: [Neovim](https://neovim.io/)
 - Email: [neomutt](https://neomutt.org/), [Thunderbird](https://www.thunderbird.net/)
 - File Manager: [yazi](https://github.com/sxyazi/yazi), [thunar](https://docs.xfce.org/xfce/thunar/start)
-- Music Player: [mpd](https://www.musicpd.org/), [rmpc](https://github.com/sako/pympc), [ncmpcpp](https://github.com/ncmpcpp/ncmpcpp)
+- Music Player: [mpd](https://www.musicpd.org/), [rmpc](https://github.com/mierak/rmpc), [ncmpcpp](https://github.com/ncmpcpp/ncmpcpp)
 - Video Player: [mpv](https://mpv.io/)
 - Image Viewer: [imv](https://github.com/eXeC64/imv)
 - E-book Reader / PDF Viewer: [zathura](https://pwmt.org/projects/zathura/), [zathura-pdf-mupdf](https://github.com/pwmt/zathura-pdf-mupdf)
