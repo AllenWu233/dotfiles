@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 # @author Allen
 # @since 2025
-# Toggle mouse-button hold for Wayland (ydotool)
-# Usage: $0 [left|right]  (default: left)
+# Toggle mouse-button click hold for Wayland (ydotool)
+# Usage: $0 [left|right]
 
-STATE_FILE="${XDG_RUNTIME_DIR:-/tmp}/hold_${1:-left}_state"
+STATE_FILE="${XDG_RUNTIME_DIR:-/tmp}/hold_${1}_state"
 
-systemctl --user is-active ydotoold || {
-    notify-send -u critical "ydotoold not running"
+systemctl --user is-active ydotool &>/dev/null || {
+    notify-send -u critical "Sway" "ydotool not running. Use 'systemctl --user enable --now ydotool.service'"
+    echo "ydotool not running. Use 'systemctl --user enable --now ydotool.service'"
     exit 1
 }
 
-down=${1:-left} up=$down
-case $down in
+case ${1} in
 left)
     down=0x40
     up=0x80
@@ -21,17 +21,17 @@ right)
     down=0x41
     up=0x81
     ;;
-*) notify-send "Usage: $0 [left|right]" && exit 1 ;;
+*) echo "Usage: $0 [left|right]" && exit 1 ;;
 esac
 
 if [[ -f $STATE_FILE ]]; then
     ydotool click "$up"
     rm "$STATE_FILE"
-    notify-send "Sway" "${1:-left} hold OFF"
+    notify-send "Sway" "Left button click hold OFF"
 else
     ydotool click "$down"
     touch "$STATE_FILE"
-    notify-send "Sway" "${1:-left} hold ON"
+    notify-send "Sway" "Right button click hold ON"
     while [[ -f $STATE_FILE ]]; do sleep 0.1; done
     ydotool click "$up"
 fi

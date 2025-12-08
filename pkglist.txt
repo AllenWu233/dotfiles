@@ -67,6 +67,7 @@ grub-btrfs
 gutenprint
 gvfs-gphoto2
 gvfs-mtp
+heroic-games-launcher-bin
 htop
 hugo
 hyphen-en
