@@ -31,7 +31,7 @@ stow -t ~ . --adopt -R
 # Dry Run
 # stow -t ~ . --override='*' -v -n
 #
-# Warning: This command will recover local file with dotfiles
+# Warning: This command will recover local files with dotfiles
 # stow -t ~ . --override='*' -v
 ```
 
