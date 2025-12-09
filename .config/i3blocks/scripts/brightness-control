@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # @author Allen
 # @since 2025
 # Generates brightness status for i3blocks and controls it with the mouse wheel.
