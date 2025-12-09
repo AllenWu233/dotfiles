@@ -61,16 +61,20 @@ interval=3601
 [separator]
 full_text="["
 
-[wireless-network]
-command=scripts/wireless-network
+[network]
+command=scripts/network
 interval=1
 
-[space]
-full_text=" "
-
-[wired-network]
-command=scripts/wired-network
-interval=1
+# [wireless-network]
+# command=scripts/wireless-network
+# interval=1
+#
+# [space]
+# full_text=" "
+#
+# [wired-network]
+# command=scripts/wired-network
+# interval=1
 
 [separator]
 full_text="] "

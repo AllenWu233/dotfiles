@@ -1,0 +1,95 @@
+#!/usr/bin/env bash
+# @author Allen
+# @since 2025
+# Network block for i3blocks: wired preferred; if absent, Wi-Fi; if neither, show both disconnect icons.
+# Dependencies: iproute2, nmcli, awk
+
+# ----------- user config -----------
+WIRED_PREFIXES=(enp eth) # preferred wired prefixes
+# -----------------------------------
+
+# Left / right click opens connection editor
+[[ "$BLOCK_BUTTON" == 1 || "$BLOCK_BUTTON" == 3 ]] && LANGUAGE=zh_CN nm-connection-editor
+
+human_rate() {
+    awk -v b="$1" '
+  BEGIN {
+      if (b == 0)              printf "0KiB/s"
+      else if (b < 1048576)    printf "%.1fKiB/s", b/1024
+      else if (b < 1073741824) printf "%.1fMiB/s", b/1048576
+      else                     printf "%.1fGiB/s", b/1073741824
+  }'
+}
+
+get_wireless_icon() {
+    local s=$1
+    if [ "$s" -le 20 ]; then
+        echo "󰤯"
+    elif [ "$s" -le 40 ]; then
+        echo "󰤟"
+    elif [ "$s" -le 60 ]; then
+        echo "󰤢"
+    elif [ "$s" -le 80 ]; then
+        echo "󰤥"
+    else
+        echo "󰤨"
+    fi
+}
+
+# ---- detect wired interface with default route ----
+wired_iface=""
+for pref in "${WIRED_PREFIXES[@]}"; do
+    for iface in /sys/class/net/"$pref"*; do
+        [ -e "$iface" ] || continue
+        nic=${iface##*/}
+        ip route | grep -q "default.*$nic" && {
+            wired_iface=$nic
+            break 2
+        }
+    done
+done
+
+# ---- wired online ----
+if [ -n "$wired_iface" ] &&
+    ip link show "$wired_iface" | grep -q "state UP"; then
+
+    rx1=$(cat "/sys/class/net/$wired_iface/statistics/rx_bytes")
+    tx1=$(cat "/sys/class/net/$wired_iface/statistics/tx_bytes")
+    sleep 1
+    rx2=$(cat "/sys/class/net/$wired_iface/statistics/rx_bytes")
+    tx2=$(cat "/sys/class/net/$wired_iface/statistics/tx_bytes")
+
+    rx_str=$(human_rate $((rx2 - rx1)))
+    tx_str=$(human_rate $((tx2 - tx1)))
+    ip=$(ip addr show "$wired_iface" | grep -oP 'inet \K[\d.]+' | head -n1)
+
+    echo "󰲝 ($ip) $rx_str↓ $tx_str↑"
+    echo "󰲝 "
+    exit 0
+fi
+
+# ---- no wired: check Wi-Fi ----
+iface=$(nmcli -t -f DEVICE,TYPE dev | awk -F: '$2=="wifi"{print $1; exit}')
+ssid=$(nmcli -t -f ACTIVE,SSID dev wifi | grep '^yes' | cut -d: -f2)
+
+if [ -n "$ssid" ]; then
+    rx1=$(cat "/sys/class/net/$iface/statistics/rx_bytes")
+    tx1=$(cat "/sys/class/net/$iface/statistics/tx_bytes")
+    sleep 1
+    rx2=$(cat "/sys/class/net/$iface/statistics/rx_bytes")
+    tx2=$(cat "/sys/class/net/$iface/statistics/tx_bytes")
+
+    rx_str=$(human_rate $((rx2 - rx1)))
+    tx_str=$(human_rate $((tx2 - tx1)))
+
+    signal=$(nmcli -t -f ACTIVE,SIGNAL dev wifi | grep '^yes' | cut -d: -f2 | tail -n1)
+    icon=$(get_wireless_icon "$signal")
+
+    echo "$icon $ssid($signal%) $rx_str↓ $tx_str↑"
+    echo "$icon"
+    [ "${signal}" -le 20 ] && exit 33
+    exit 0
+fi
+
+# ---- neither wired nor Wi-Fi: show both disconnect icons ----
+echo "󰤮  󰲛 "
