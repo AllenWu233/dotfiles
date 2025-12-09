@@ -4,17 +4,18 @@
 # Dependencies: awk, /proc/stat, /proc/meminfo, /sys/class/thermal or /sys/class/hwmon
 
 THERMAL_DIRS="/sys/class/thermal /sys/class/hwmon"
+URGENT_VALUE=75
 
 # -----------  Nerd-Font temp icon  -----------
 get_temp_icon() {
     local t=$1 # °C
-    if [ "$t" -le 10 ]; then
+    if [ "$t" -le 20 ]; then
         echo ""
-    elif [ "$t" -le 10 ]; then
+    elif [ "$t" -le 40 ]; then
         echo ""
-    elif [ "$t" -le 10 ]; then
+    elif [ "$t" -le 60 ]; then
         echo ""
-    elif [ "$t" -le 10 ]; then
+    elif [ "$t" -le 80 ]; then
         echo ""
     else
         echo ""
@@ -90,5 +91,9 @@ mem_perc=$((mem_used * 100 / mem_total))
 
 # ---- output ----
 echo " ${cpu_load}% $temp_icon${cpu_temp}°C  ${mem_perc}%"
+
+[ "${cpu_load:-0}" -ge "$URGENT_VALUE" ] ||
+    [ "${cpu_temp:-0}" -ge "$URGENT_VALUE" ] ||
+    [ "${mem_perc:-0}" -ge "$URGENT_VALUE" ] && exit 33
 
 exit 0

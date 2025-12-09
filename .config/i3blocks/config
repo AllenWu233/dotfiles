@@ -32,6 +32,8 @@ separator_block_width=0
 # color=#FFFFFF
 
 
+
+
 [paru]
 command=echo "["$(scripts/paru-check-updates)"] "
 interval=3601
@@ -43,10 +45,6 @@ interval=3601
 
 
 [notice]
-
-
-
-[update]
 
 
 
@@ -82,7 +80,7 @@ full_text="["
 
 [hardware]
 command=scripts/hardware
-interval=1
+interval=10
 
 [separator]
 full_text="] "
