@@ -1,11 +1,10 @@
 #!/bin/bash
 # Dependencies: nmcli (speed read from kernel sysfs, no extra packages)
 
-# Convert kB/s to human-readable dynamic units (KiB / MiB / GiB)
+# Convert B/s to human-readable dynamic units (KiB / MiB / GiB)
 human_rate() {
-    awk -v k="$1" '
+    awk -v b="$1" '
     BEGIN {
-        b = k * 1000
         if (b == 0)              printf "0KiB/s"
         else if (b < 1048576)    printf "%.1fKiB/s", b/1024
         else if (b < 1073741824) printf "%.1fMiB/s", b/1048576
@@ -13,7 +12,6 @@ human_rate() {
     }'
 }
 
-# Wi-Fi icon according to signal strength
 get_wireless_icon() {
     local signal=$1
     if [ "$signal" -le 20 ]; then
@@ -29,26 +27,22 @@ get_wireless_icon() {
     fi
 }
 
-# Find the active Wi-Fi interface
-iface=$(nmcli -t -f DEVICE,TYPE dev | awk -F: '$2=="wifi"{print $1; exit}')
-
-# Snapshot bytes before
-read -r rx1 tx1 < <(awk '{print $1,$2}' "/sys/class/net/$iface/statistics/rx_bytes" "/sys/class/net/$iface/statistics/tx_bytes")
-sleep 1
-# Snapshot bytes after
-read -r rx2 tx2 < <(awk '{print $1,$2}' "/sys/class/net/$iface/statistics/rx_bytes" "/sys/class/net/$iface/statistics/tx_bytes")
-
-# Compute speed (byte -> kB)
-rx_kB=$(((rx2 - rx1) / 1024))
-tx_kB=$(((tx2 - tx1) / 1024))
-
-# Human-readable format
-rx_str=$(human_rate "$rx_kB")
-tx_str=$(human_rate "$tx_kB")
-
-# Original SSID / signal logic
 ssid=$(nmcli -t -f ACTIVE,SSID dev wifi | grep '^yes' | cut -d: -f2)
 if [ -n "$ssid" ]; then
+    # Find the active Wi-Fi interface
+    iface=$(nmcli -t -f DEVICE,TYPE dev | awk -F: '$2=="wifi"{print $1; exit}')
+
+    # Get upload and download speed
+    rx1=$(cat "/sys/class/net/$iface/statistics/rx_bytes")
+    tx1=$(cat "/sys/class/net/$iface/statistics/tx_bytes")
+    sleep 1
+    rx2=$(cat "/sys/class/net/$iface/statistics/rx_bytes")
+    tx2=$(cat "/sys/class/net/$iface/statistics/tx_bytes")
+
+    # Human-readable format
+    rx_str=$(human_rate $((rx2 - rx1)))
+    tx_str=$(human_rate $((tx2 - tx1)))
+
     signal=$(nmcli -t -f ACTIVE,SIGNAL dev wifi | grep '^yes' | cut -d: -f2 | tail -n1)
     icon=$(get_wireless_icon "$signal")
     # full text on first line, short text on second (i3blocks)
@@ -62,6 +56,6 @@ fi
 [[ "$BLOCK_BUTTON" == 1 || "$BLOCK_BUTTON" == 3 ]] && LANGUAGE=zh_CN nm-connection-editor
 
 # Exit 33 tells i3blocks to use urgent color when signal is weak
-[ "${signal:-0}" -le 20 ] && exit 33
+[ "${signal}" -le 20 ] && exit 33
 
 exit 0
