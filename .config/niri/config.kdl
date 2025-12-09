@@ -420,10 +420,10 @@ binds {
         spawn-sh "~/.local/bin/brightnessctl-wob 10%-"; 
     }
     Super+Right hotkey-overlay-title="Brightness +" allow-when-locked=true { 
-        spawn-sh "~/.local/bin/brightnessctl-wob +1%"; 
+        spawn-sh "~/.local/bin/brightnessctl-wob +5%"; 
     }
     Super+Left hotkey-overlay-title="Brightness -" allow-when-locked=true { 
-        spawn-sh "~/.local/bin/brightnessctl-wob 1%-"; 
+        spawn-sh "~/.local/bin/brightnessctl-wob 5%-"; 
     }
 
 
