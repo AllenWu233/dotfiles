@@ -54,10 +54,6 @@ interval=3601
 
 
 
-[hardware]
-
-
-
 [separator]
 full_text="["
 
@@ -75,6 +71,18 @@ interval=1
 # [wired-network]
 # command=scripts/wired-network
 # interval=1
+
+[separator]
+full_text="] "
+
+
+
+[separator]
+full_text="["
+
+[hardware]
+command=scripts/hardware
+interval=1
 
 [separator]
 full_text="] "

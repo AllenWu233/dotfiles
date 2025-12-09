@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+# hardware-block  --  CPU load, CPU temp (with icon), memory usage for i3blocks
+# Read all values with cat only.
+# Dependencies: awk, /proc/stat, /proc/meminfo, /sys/class/thermal or /sys/class/hwmon
+
+THERMAL_DIRS="/sys/class/thermal /sys/class/hwmon"
+
+# -----------  Nerd-Font temp icon  -----------
+get_temp_icon() {
+    local t=$1 # °C
+    if [ "$t" -le 10 ]; then
+        echo ""
+    elif [ "$t" -le 10 ]; then
+        echo ""
+    elif [ "$t" -le 10 ]; then
+        echo ""
+    elif [ "$t" -le 10 ]; then
+        echo ""
+    else
+        echo ""
+    fi
+}
+
+# ---------------------------------------------
+
+# ---- CPU load ----
+cpu_load=$(awk -v l1="$(awk 'NR==1{print}' /proc/stat)" \
+    -v l2="$(
+        sleep 1
+        awk 'NR==1{print}' /proc/stat
+    )" '
+BEGIN{
+  # ----- first snapshot -----
+  split(l1,f1);
+  user1=f1[2]; nice1=f1[3]; sys1=f1[4]; idle1=f1[5]; iowait1=f1[6];
+  irq1=f1[7]; sirq1=f1[8]; steal1=f1[9]; guest1=f1[10]; nguest1=f1[11];
+  used1 = user1+nice1+sys1+irq1+sirq1+steal1+guest1+nguest1;
+  total1 = used1 + idle1 + iowait1;
+
+  # ----- second snapshot -----
+  split(l2,f2);
+  user2=f2[2]; nice2=f2[3]; sys2=f2[4]; idle2=f2[5]; iowait2=f2[6];
+  irq2=f2[7]; sirq2=f2[8]; steal2=f2[9]; guest2=f2[10]; nguest2=f2[11];
+  used2 = user2+nice2+sys2+irq2+sirq2+steal2+guest2+nguest2;
+  total2 = used2 + idle2 + iowait2;
+
+  # ----- usage -----
+  diff_used  = used2  - used1;
+  diff_total = total2 - total1;
+  if (diff_total == 0) printf "0";
+  else                 printf "%.0f", 100 * diff_used / diff_total;
+}')
+
+# ---- CPU temperature ----
+temp_file=""
+for base in $THERMAL_DIRS; do
+    for zone in "$base"/thermal_zone*/temp; do
+        [ -r "$zone" ] || continue
+        case $(cat "${zone%/*}/type" 2>/dev/null) in
+        *cpu* | *CPU* | *x86_pkg*)
+            temp_file=$zone
+            break 2
+            ;;
+        esac
+    done
+    for tmp in "$base"/hwmon*/temp*_input; do
+        [ -r "$tmp" ] || continue
+        case $(cat "${tmp%_*}_label" 2>/dev/null) in
+        *CPU* | *cpu* | *Package*)
+            temp_file=$tmp
+            break 2
+            ;;
+        esac
+    done
+done
+
+if [ -r "$temp_file" ]; then
+    cpu_temp=$(awk -v t="$(cat "$temp_file")" 'BEGIN{printf "%.1f", t/1000}')
+    temp_icon=$(get_temp_icon "${cpu_temp%.*}")
+else
+    cpu_temp="N/A"
+    temp_icon=""
+fi
+
+# ---- Memory usage ----
+mem_total=$(cat /proc/meminfo | awk '/MemTotal/  {print $2}')
+mem_avail=$(cat /proc/meminfo | awk '/MemAvailable/{print $2}')
+mem_used=$((mem_total - mem_avail))
+mem_perc=$((mem_used * 100 / mem_total))
+
+# ---- output ----
+echo " ${cpu_load}% $temp_icon${cpu_temp}°C  ${mem_perc}%"
+
+exit 0
