@@ -61,9 +61,10 @@ if [ -n "$wired_iface" ] &&
 
     rx_str=$(human_rate $((rx2 - rx1)))
     tx_str=$(human_rate $((tx2 - tx1)))
-    ip=$(ip addr show "$wired_iface" | grep -oP 'inet \K[\d.]+' | head -n1)
+    # ip=$(ip addr show "$wired_iface" | grep -oP 'inet \K[\d.]+' | head -n1)
 
-    echo "󰲝 ($ip) $rx_str↓ $tx_str↑"
+    # echo "󰲝 ($ip) $rx_str↓ $tx_str↑"
+    echo "󰲝  $rx_str↓ $tx_str↑"
     echo "󰲝 "
     exit 0
 fi
@@ -86,6 +87,7 @@ if [ -n "$ssid" ]; then
     icon=$(get_wireless_icon "$signal")
 
     echo "$icon $ssid($signal%) $rx_str↓ $tx_str↑"
+    # echo "$icon $rx_str↓ $tx_str↑"
     echo "$icon"
     [ "${signal}" -le 20 ] && exit 33
     exit 0
