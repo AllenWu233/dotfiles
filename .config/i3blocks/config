@@ -41,6 +41,8 @@ interval=3601
 
 
 [weather]
+command=echo "[$(scripts/weather)] "
+interval=3600
 
 
 

@@ -95,3 +95,4 @@ fi
 
 # ---- neither wired nor Wi-Fi: show both disconnect icons ----
 echo "󰤮  󰲛 "
+exit 0
