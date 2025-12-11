@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 # @author Allen
 # @since 2025
 #
@@ -10,8 +10,8 @@
 . "$HOME/private/wttr-city"
 
 CACHE_FILE="$HOME/.cache/i3blocks-scripts/wttr-weather"
-CACHE_TTL=1800 # 30min
-TIMEOUT=30     # s
+CACHE_TTL=1800   # 30min
+CURL_TIMESOUT=30 # s
 
 # One-line Output Format
 # https://github.com/chubin/wttr.in?tab=readme-ov-file#one-line-output
@@ -49,14 +49,16 @@ mkdir -p "$(dirname "$CACHE_FILE")"
 # Updating weather by clicking button or using '--force'
 # Auto updating every $TIMEOUT seconds
 if [[ ! -n "$BLOCK_BUTTON" &&
-    "$1" != "--force" && -f "$CACHE_FILE" &&
+    "$1" != "--force" &&
+    -f "$CACHE_FILE" &&
     $(($(date +%s) - $(stat -c %Y "$CACHE_FILE"))) -lt $CACHE_TTL ]]; then
+
     cat "$CACHE_FILE"
     exit 0
 fi
 
-weather_raw=$(curl -s --max-time "$TIMEOUT" "wttr.in/$city?format=$FORMAT_STRING" |
-    # Remove spaces in the begin
+weather_raw=$(curl -s --max-time "$CURL_TIMESOUT" "wttr.in/$city?format=$FORMAT_STRING" |
+    # Remove spaces after the weather emoji
     # then Convert '+12°C(+15°C)' to '12(15)°C', or '2°C(-1°C)' to '2(-1)°C'
     awk '{
         sub(/ +/,"");
