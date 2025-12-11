@@ -11,6 +11,32 @@ CACHE_FILE="$HOME/.cache/i3blocks-scripts/wttr-weather"
 CACHE_TTL=1800 # 30min
 TIMEOUT=30     # s
 
+# One-line output
+FORMAT_STRING="%c%t(%f)+💧%h+🌬️%w+%m\n"
+#     c    Weather condition,
+#     C    Weather condition textual name,
+#     x    Weather condition, plain-text symbol,
+#     h    Humidity,
+#     t    Temperature (Actual),
+#     f    Temperature (Feels Like),
+#     w    Wind,
+#     l    Location,
+#     m    Moon phase 🌑🌒🌓🌔🌕🌖🌗🌘,
+#     M    Moon day,
+#     p    Precipitation (mm/3 hours),
+#     P    Pressure (hPa),
+#     u    UV index (1-12),
+#
+#     D    Dawn*,
+#     S    Sunrise*,
+#     z    Zenith*,
+#     s    Sunset*,
+#     d    Dusk*,
+#     T    Current time*,
+#     Z    Local timezone.
+#
+# (*times are shown in the local timezone)
+
 mkdir -p "$(dirname "$CACHE_FILE")"
 
 # Updating weather by clicking button or using '--force'
@@ -22,7 +48,15 @@ if [[ ! -n "$BLOCK_BUTTON" &&
     exit 0
 fi
 
-weather_raw=$(curl -s --max-time "$TIMEOUT" "wttr.in/$city?format=1" | sed 's/ //g')
+weather_raw=$(curl -s --max-time "$TIMEOUT" "wttr.in/$city?format=$FORMAT_STRING" |
+    # Remove first space
+    sed 's/ //' |
+    # Convert '+23°C(+25°C)' to '23(25°C)'
+    awk '{gsub(/\+/,"");
+        sub(/°C\(/,"(");
+        sub(/\)°C/,")°C")
+    }1')
+
 if [ -n "$weather_raw" ]; then
     echo "$weather_raw" >"$CACHE_FILE"
     echo "$weather_raw"
