@@ -2,8 +2,8 @@
 # i3blocks: pending updates (official + AUR)
 # deps: checkupdates, paru
 
-CACHE="$HOME/.cache/paru-updates.cnt"
-FLAG="$HOME/.cache/paru-updates.err"
+CACHE="$HOME/.cache/i3blocks-scripts/paru-updates-cnt"
+FLAG="$HOME/.cache/i3blocks-scripts/paru-updates-err"
 AGE=3600
 
 force=0

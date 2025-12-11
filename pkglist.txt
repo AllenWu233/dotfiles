@@ -187,6 +187,7 @@ tumbler
 tumbler-folder-thumbnailer
 udiskie
 unarchiver
+unrar
 v2raya
 vim
 vintagestory
