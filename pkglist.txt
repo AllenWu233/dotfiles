@@ -22,6 +22,7 @@ btop
 btrbk
 cava
 chromium
+clashtui
 cups
 cups-pdf
 daed
@@ -97,6 +98,7 @@ luarocks
 ly
 mako
 man-db
+mihomo
 minder
 mpc
 mpd
