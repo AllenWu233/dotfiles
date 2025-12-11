@@ -1,7 +1,9 @@
 #!/bin/env bash
 # @author Allen
 # @since 2025
+#
 # 'Curl' weather report from wttr.in
+# https://github.com/chubin/wttr.in
 # Usage: $0 [--force]
 
 # Import $city from dotfiles/private/wttr-city
@@ -11,8 +13,13 @@ CACHE_FILE="$HOME/.cache/i3blocks-scripts/wttr-weather"
 CACHE_TTL=1800 # 30min
 TIMEOUT=30     # s
 
-# One-line output
+# One-line Output Format
+# https://github.com/chubin/wttr.in?tab=readme-ov-file#one-line-output
+#
+# FORMAT_STRING="1"
+# FORMAT_STRING="%c%t(%f)+%m\n"
 FORMAT_STRING="%c%t(%f)+💧%h+🌬️%w+%m\n"
+#
 #     c    Weather condition,
 #     C    Weather condition textual name,
 #     x    Weather condition, plain-text symbol,
@@ -49,12 +56,13 @@ if [[ ! -n "$BLOCK_BUTTON" &&
 fi
 
 weather_raw=$(curl -s --max-time "$TIMEOUT" "wttr.in/$city?format=$FORMAT_STRING" |
-    # Remove first space
-    sed 's/ //' |
-    # Convert '+23°C(+25°C)' to '23(25°C)'
-    awk '{gsub(/\+/,"");
+    # Remove spaces in the begin
+    # then Convert '+12°C(+15°C)' to '12(15)°C', or '2°C(-1°C)' to '2(-1)°C'
+    awk '{
+        sub(/ +/,"");
+        gsub(/\+/,"");
         sub(/°C\(/,"(");
-        sub(/\)°C/,")°C")
+        sub(/°C\)/,")°C")
     }1')
 
 if [ -n "$weather_raw" ]; then
