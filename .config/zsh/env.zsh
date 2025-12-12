@@ -10,8 +10,13 @@ export EDITOR="nvim"
 export DOTFILES="$HOME/dotfiles"
 export DCONF="$HOME/dotfiles/.config"
 
+# VPN
+#
 # Clash-verge
 # export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897
+#
+# hongmo.speed
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 
 
 typeset -U path PATH
