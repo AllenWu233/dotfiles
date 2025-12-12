@@ -26,6 +26,7 @@ clashtui
 cups
 cups-pdf
 daed
+debtap
 digikam
 discord
 dnsmasq
@@ -67,6 +68,7 @@ gutenprint
 gvfs-gphoto2
 gvfs-mtp
 heroic-games-launcher-bin
+hongmo.seppd
 htop
 hugo
 hyphen-en
