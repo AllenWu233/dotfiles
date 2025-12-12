@@ -10,14 +10,14 @@ set -eu
 save_paths=(
     # "$HOME/.config/VintagestoryData/Saves/robinson crusoe.vcdbs"
     # "$HOME/.config/VintagestoryData/Saves/outerwilds.vcdbs"
-    "$HOME/Games/射命丸文的寂静的故乡/G2Depart_v1.0.1/G2_depart/Saved/SaveGames"
+    "$HOME/Games/射命丸文的寂静的故乡/G2Depart_v1.0.2/G2_depart/Saved/SaveGames"
 )
 
 # Target to storage backups
 backup_paths=(
     # "$HOME/Games/VintageStory/saves/robinson-crusoe"
     # "$HOME/Games/VintageStory/saves/OuterWilds"
-    "$HOME/Games/射命丸文的寂静的故乡/G2Depart_v1.0.1/G2_depart/Saved/SaveGames-backup"
+    "$HOME/Games/射命丸文的寂静的故乡/G2Depart_v1.0.2/G2_depart/Saved/SaveGames-backup"
 )
 
 [ ${#save_paths[@]} -eq ${#backup_paths[@]} ] || {
