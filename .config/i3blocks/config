@@ -36,13 +36,13 @@ separator_block_width=0
 
 [paru]
 command=echo "["$(scripts/paru-check-updates)"] "
-interval=3000
+interval=600
 
 
 
 [weather]
 command=echo "[$(scripts/weather)] "
-interval=1200
+interval=600
 
 
 
