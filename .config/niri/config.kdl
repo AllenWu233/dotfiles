@@ -376,6 +376,7 @@ binds {
     Super+Tab hotkey-overlay-title="Swicth Window" { spawn "~/.config/niri/scripts/niri-window-switcher"; }
 
     Super+Shift+V { spawn "~/.local/bin/vim-everywhere"; }
+    Super+Shift+N { spawn "~/.local/bin/fuzzel-emoji"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
