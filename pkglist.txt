@@ -201,6 +201,7 @@ virtio-win
 waybar
 waylyrics
 wechat-bin
+wemeet-bin
 wget
 wl-clipboard
 wl-color-picker
