@@ -57,3 +57,10 @@ else
     VOLUME_PERCENT=$(echo "$STATUS" | awk -F: '{print $2}' | awk '{print int($1 * 100)}')
     echo "$VOLUME_PERCENT" >"$WOB_PIPE"
 fi
+
+# Use for i3blocks to update
+case "$1" in
+volume) pkill -SIGRTMIN+1 i3blocks ;;
+mic) pkill -SIGRTMIN+2 i3blocks ;;
+*) ;;
+esac

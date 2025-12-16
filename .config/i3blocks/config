@@ -97,21 +97,24 @@ full_text="["
 
 [light]
 command=scripts/brightness-control
-interval=1
+interval=once
+signal=3
 
 [space]
 full_text=" "
 
 [volume]
 command=scripts/volume-control
-interval=1
+interval=once
+signal=1
 
 [space]
 full_text=" "
 
 [mic]
 command=scripts/mic-control
-interval=1
+interval=once
+signal=2
 
 [separator]
 full_text="] "

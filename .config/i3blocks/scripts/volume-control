@@ -51,8 +51,12 @@ fi
 
 if [ "$sink_volume" == "MUTE" ]; then
     echo "$sink_icon "
+    echo
+    echo "#777777"
 else
     echo "$sink_icon $sink_volume%"
 fi
+
+pkill -SIGRTMIN+1 i3blocks
 
 exit 0

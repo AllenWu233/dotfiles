@@ -43,4 +43,6 @@ fi
 
 echo "$brightness_icon $brightness_percent%"
 
+pkill -SIGRTMIN+3 i3blocks
+
 exit 0

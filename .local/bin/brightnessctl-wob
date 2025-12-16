@@ -27,3 +27,6 @@ BRIGHTNESS_PERCENT=$(brightnessctl -m | awk -F, '{print $4}')
 
 # Remove '%' sign and send to pipe
 echo "${BRIGHTNESS_PERCENT%\%}" >"$WOB_PIPE"
+
+# Use for i3blocks to update
+pkill -SIGRTMIN+3 i3blocks
