@@ -32,6 +32,9 @@ separator_block_width=0
 # color=#FFFFFF
 
 
+[tomato]
+command=echo "[$(scripts/tomato_clock)] "
+interval=1
 
 
 [paru]
