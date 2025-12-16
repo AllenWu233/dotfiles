@@ -15,12 +15,12 @@
     preview_label_style: (fg: "yellow"),
     preview_metadata_group_style: (fg: "yellow", modifiers: "Bold"),
     tab_bar: (
-        active_style: (fg: "black", bg: "blue", modifiers: "Bold"),
+        active_style: (fg: "black", bg: "magenta", modifiers: "Bold"),
         inactive_style: (),
     ),
     highlighted_item_style: (fg: "green", modifiers: "Bold"),
     current_item_style: (fg: "black", bg: "blue", modifiers: "Bold"),
-    borders_style: (fg: "blue"),
+    borders_style: (fg: "magenta"),
     highlight_border_style: (fg: "blue"),
     symbols: (
         song: "󰝚",
