@@ -257,7 +257,7 @@ spawn-at-startup "swayidle" "-w" "timeout" "300" "niri msg action power-off-moni
 // spawn-at-startup "keepassxc"
 // spawn-at-startup "thunderbird"
 // spawn-at-startup "clash-verge"
-spawn-at-startup "hongmo.seppd"
+// spawn-at-startup "hongmo.seppd"
 
 // Extensions
 // spawn-at-startup "niri-float-sticky"
