@@ -404,16 +404,16 @@ binds {
 
 
     Super+Up hotkey-overlay-title="Volume +" allow-when-locked=true { 
-        spawn-sh "~/.local/bin/volume-wob up"; 
+        spawn-sh "~/.local/bin/volume-mic-wob volume up"; 
     }
     Super+Down hotkey-overlay-title="Volume -" allow-when-locked=true { 
-        spawn-sh "~/.local/bin/volume-wob down"; 
+        spawn-sh "~/.local/bin/volume-mic-wob volume down"; 
     }
     Super+M hotkey-overlay-title="Volume Mute" allow-when-locked=true { 
-        spawn-sh "~/.local/bin/volume-wob toggle"; 
+        spawn-sh "~/.local/bin/volume-mic-wob volume toggle"; 
     }
     Super+Shift+M hotkey-overlay-title="Microphone Mute" allow-when-locked=true { 
-        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; 
+        spawn-sh "~/.local/bin/volume-mic-wob mic toggle"; 
     }
 
     XF86MonBrightnessUp allow-when-locked=true { 

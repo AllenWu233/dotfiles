@@ -84,7 +84,6 @@ jq
 kdeconnect
 keepassxc
 lazygit
-lenovolegionlinux-dkms-git
 libappindicator
 libnotify
 libreoffice-still-zh-cn
