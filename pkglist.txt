@@ -22,6 +22,7 @@ btop
 btrbk
 cava
 chromium
+clash-verge-rev
 clashtui
 cups
 cups-pdf
@@ -68,7 +69,6 @@ gutenprint
 gvfs-gphoto2
 gvfs-mtp
 heroic-games-launcher-bin
-hongmo.seppd
 htop
 hugo
 hyphen-en
