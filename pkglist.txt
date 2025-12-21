@@ -51,6 +51,7 @@ filelight
 firefox
 firefox-i18n-zh-cn
 flameshot
+flclash-bin
 foomatic-db-gutenprint-ppds
 foot
 fuzzel
