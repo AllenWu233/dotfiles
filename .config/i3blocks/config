@@ -43,9 +43,9 @@ interval=600
 
 
 
-[weather]
-command=echo "[$(scripts/weather)] "
-interval=600
+# [weather]
+# command=echo "[$(scripts/weather)] "
+# interval=600
 
 
 

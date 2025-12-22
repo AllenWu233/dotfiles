@@ -5,7 +5,7 @@
 # Dependencies: iproute2, nmcli, awk
 
 # ----------- user config -----------
-WIRED_PREFIXES=(enp eth) # preferred wired prefixes
+WIRED_PREFIXES=(enp eth ppp) # preferred wired prefixes
 # -----------------------------------
 
 # Left / right click opens connection editor
