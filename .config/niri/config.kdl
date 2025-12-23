@@ -707,6 +707,7 @@ window-rule {
 window-rule {
     match app-id="^mpv$"
     match app-id="^imv$"
+    match app-id="^wps$"
 
     open-floating true
 }
@@ -721,6 +722,7 @@ window-rule {
     match app-id="digikam"
     match app-id="zathura"
     match app-id="virt-manager"
+    match app-id="^wps"
 
     opacity 1.0
 }
