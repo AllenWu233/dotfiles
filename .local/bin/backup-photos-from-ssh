@@ -14,12 +14,12 @@ SOURCE_PATHS=(
     "Pictures/Twitter"
     "Pictures/WeiXin"
     "Pictures/漫画"
-    "Pictures/海虎武神"
+    # "Pictures/海虎武神"
     "Pictures/pixez_old"
     "Pictures/NSFW-pixiv"
     "Pictures/Screenshots"
     "DCIM/Screenshots"
-    "Pictures/搓"
+    # "Pictures/搓"
     "Pictures/烹饪"
     "Pictures/meme"
     "DCIM/Camera"
@@ -29,8 +29,9 @@ SOURCE_PATHS=(
 
 # SSH configuration for Termux
 SSH_USER="root"
-SSH_HOST="192.168.1.11" # Replace with Android IP
-SSH_PORT="8022"         # Default Termux SSH port
+# SSH_HOST="192.168.1.11" # Replace with Android IP
+SSH_HOST="10.40.87.52" # Replace with Android IP
+SSH_PORT="8022"        # Default Termux SSH port
 SSH_REMOTE_BASE="/data/data/com.termux/files/home/storage/shared"
 
 # Local backup destination
