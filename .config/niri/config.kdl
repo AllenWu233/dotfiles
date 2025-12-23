@@ -268,6 +268,7 @@ spawn-at-startup "swayidle" "-w" "timeout" "300" "niri msg action power-off-moni
 
 spawn-sh-at-startup "foot --server"
 spawn-sh-at-startup "fcitx5 -d"
+spawn-sh-at-startup "DISPLAY=:0 xrdb -load <<< 'Xft.dpi: 144'"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.

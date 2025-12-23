@@ -207,6 +207,8 @@ wl-clipboard
 wl-color-picker
 wlr-randr
 wob
+wps-office
+wps-office-mui-zh-cn
 xdg-desktop-portal-gnome
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
