@@ -26,7 +26,6 @@ clash-verge-rev
 clashtui
 cups
 cups-pdf
-daed
 debtap
 digikam
 discord
