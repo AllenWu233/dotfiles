@@ -55,6 +55,7 @@ foomatic-db-gutenprint-ppds
 foot
 fuzzel
 fzf
+gamemode
 gamescope
 gfeeds
 gimp
@@ -90,6 +91,7 @@ libreoffice-still-zh-cn
 libvirt
 linux-firmware
 linux-lts
+linux-lts-headers
 linux-zen
 linux-zen-headers
 linuxqq
@@ -120,7 +122,7 @@ noto-fonts-cjk
 noto-fonts-emoji
 npm
 nss-mdns
-nvidia-open-dkms
+nvidia-open-lts
 nvidia-prime
 nvtop
 nwg-look
