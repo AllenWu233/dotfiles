@@ -92,8 +92,6 @@ libvirt
 linux-firmware
 linux-lts
 linux-lts-headers
-linux-zen
-linux-zen-headers
 linuxqq
 lsd
 lua51
