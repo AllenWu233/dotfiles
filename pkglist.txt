@@ -8,6 +8,7 @@ arch-wiki-docs-zh-cn
 archlinux-artwork
 archlinuxcn-keyring
 aria2
+ascii
 atuin
 baidunetdisk-bin
 base
