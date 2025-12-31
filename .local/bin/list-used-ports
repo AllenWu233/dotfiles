@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+ss -lntu | awk '{print $5}' | grep -oE '[0-9]+$' | sort -n | uniq
