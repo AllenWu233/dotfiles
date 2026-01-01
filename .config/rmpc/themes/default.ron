@@ -19,7 +19,7 @@
         inactive_style: (),
     ),
     highlighted_item_style: (fg: "green", modifiers: "Bold"),
-    current_item_style: (fg: "black", bg: "blue", modifiers: "Bold"),
+    current_item_style: (fg: "black", bg: "magenta", modifiers: "Bold"),
     borders_style: (fg: "magenta"),
     highlight_border_style: (fg: "blue"),
     symbols: (

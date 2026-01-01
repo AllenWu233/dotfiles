@@ -1,7 +1,7 @@
 [[plugin.deps]]
 use = "h-hg/yamb"
-rev = "22af003"
-hash = "7cc42012a7c2099f80064d228feb8d44"
+rev = "5f2e22e"
+hash = "699fe07e0d2d1b4af8dafb84168eeb04"
 
 [[plugin.deps]]
 use = "ndtoan96/ouch"
@@ -21,12 +21,12 @@ hash = "5337bf545993d8c4dec2c229031f49d"
 [[plugin.deps]]
 use = "kirasok/torrent-preview"
 rev = "f465282"
-hash = "b89b46a15035a51d010a254858ba9741"
+hash = "d849ad596b8a77902e62a42403aeba40"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "eaf6920"
-hash = "5b2eb0cc2050cec1e4de83cfa51a5b90"
+rev = "398796d"
+hash = "8da0b15a97b5dfd13941d1ecc617ac7c"
 
 [flavor]
 deps = []
