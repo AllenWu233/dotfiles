@@ -135,6 +135,7 @@ osu-lazer-bin
 ouch
 owmods-gui-bin
 pacman-contrib
+pandoc-cli
 paru
 pavucontrol
 pipewire-pulse
