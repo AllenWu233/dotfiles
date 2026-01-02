@@ -58,6 +58,7 @@ fuzzel
 fzf
 gamemode
 gamescope
+gammastep
 gfeeds
 gimp
 gimp-help-zh_cn
