@@ -724,6 +724,7 @@ window-rule {
     match app-id="zathura"
     match app-id="virt-manager"
     match app-id="^wps"
+    match app-id="^foot"
 
     opacity 1.0
 }
