@@ -14,7 +14,8 @@ export DCONF="$HOME/dotfiles/.config"
 
 typeset -U path PATH
 path=(
-    ~/.local/bin
+    $HOME/.local/bin
+    $HOME/claude-model/bin
     $path
 )
 export PATH
