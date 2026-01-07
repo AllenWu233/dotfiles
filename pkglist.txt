@@ -6,6 +6,7 @@ android-tools
 arch-wiki-docs
 arch-wiki-docs-zh-cn
 archlinux-artwork
+archlinux-wallpaper
 archlinuxcn-keyring
 aria2
 ascii

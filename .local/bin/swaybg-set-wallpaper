@@ -4,6 +4,7 @@
 # Set single background image with swaybg
 
 arch1="$HOME/Pictures/Archlinux/uwp36741.png"
+arch_split="$HOME/Pictures/Archlinux/wallpaper/split.png"
 gruvbox1="/usr/share/backgrounds/gruvbox/gruvbox-dark-archlinux2-scalable.svg"
 gruvbox2="$HOME/Pictures/Wallpapers/gruvbox-wallpaper.jpg"
 sunset="$HOME/Pictures/backgrounds/archlinux/sunset.jpg"
@@ -20,7 +21,8 @@ renko_and_mary1="$HOME/Pictures/Touhou/679939(10674)_蓮台野_p0.jpg"
 shou="$HOME/Pictures/Touhou/60684150(1508165)_東方星蓮船まとめ_p3.jpg"
 clownpiece="$HOME/Pictures/Touhou/60684541(1508165)_東方紺珠伝まとめ_p3.jpg"
 
-IMAGE="$clownpiece"
+# IMAGE="$clownpiece"
+IMAGE="$arch_split"
 
 if [[ -f "$IMAGE" ]]; then
     killall swaybg
