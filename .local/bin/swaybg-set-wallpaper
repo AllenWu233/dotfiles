@@ -21,8 +21,7 @@ renko_and_mary1="$HOME/Pictures/Touhou/679939(10674)_蓮台野_p0.jpg"
 shou="$HOME/Pictures/Touhou/60684150(1508165)_東方星蓮船まとめ_p3.jpg"
 clownpiece="$HOME/Pictures/Touhou/60684541(1508165)_東方紺珠伝まとめ_p3.jpg"
 
-# IMAGE="$clownpiece"
-IMAGE="$arch_split"
+IMAGE="$clownpiece"
 
 if [[ -f "$IMAGE" ]]; then
     killall swaybg
