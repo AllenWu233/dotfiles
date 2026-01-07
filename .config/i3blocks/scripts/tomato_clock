@@ -7,6 +7,11 @@ BREAK_DURATION=$((5 * 60))       # 5 minutes
 LONG_BREAK_DURATION=$((15 * 60)) # 15 minutes
 CYCLES_BEFORE_LONG_BREAK=4       # Number of cycles before a long break
 
+WORK_ICON=" "
+REST_ICON="󰶞 "
+# WORK_ICON="🍅"
+# REST_ICON="☕"
+
 # Paths to sound effects (update these paths to match your system)
 CLICK_SOUND="$HOME/.config/i3blocks/scripts/sound/click_stereo.ogg"
 BREAK_SOUND="$HOME/.config/i3blocks/scripts/sound/levelup.ogg"
@@ -160,25 +165,25 @@ echo "is_long_break=$is_long_break" >>$STATE_FILE
 
 # Format plain text for i3status
 if [[ $state == "not_started" ]]; then
-    echo "🍅"
+    echo "$REST_ICON"
 elif [[ $state == "stopped" ]]; then
     if [[ $mode == "work" ]]; then
-        printf "🍅(%d)%02d:%02d\n" "$work_cycles" "$((remaining / 60))" "$((remaining % 60))"
+        printf "$WORK_ICON(%d)%02d:%02d\n" "$work_cycles" "$((remaining / 60))" "$((remaining % 60))"
     elif [[ $is_long_break == "true" ]]; then
-        printf "☕%02d:%02d\n" "$((remaining / 60))" "$((remaining % 60))"
+        printf "$REST_ICON%02d:%02d\n" "$((remaining / 60))" "$((remaining % 60))"
     else
-        printf "☕(%d)%02d:%02d\n" "$work_cycles" "$((remaining / 60))" "$((remaining % 60))"
+        printf "$REST_ICON(%d)%02d:%02d\n" "$work_cycles" "$((remaining / 60))" "$((remaining % 60))"
     fi
 elif [[ $state == "running" ]]; then
     if [[ $mode == "work" ]]; then
-        printf "🍅(%d)%02d:%02d\n" "$work_cycles" "$((remaining / 60))" "$((remaining % 60))"
+        printf "$WORK_ICON(%d)%02d:%02d\n" "$work_cycles" "$((remaining / 60))" "$((remaining % 60))"
     elif [[ $is_long_break == "true" ]]; then
-        printf "☕%02d:%02d\n" "$((remaining / 60))" "$((remaining % 60))"
+        printf "$REST_ICON%02d:%02d\n" "$((remaining / 60))" "$((remaining % 60))"
     else
-        printf "☕(%d)%02d:%02d\n" "$work_cycles" "$((remaining / 60))" "$((remaining % 60))"
+        printf "$REST_ICON(%d)%02d:%02d\n" "$work_cycles" "$((remaining / 60))" "$((remaining % 60))"
     fi
 else
-    echo "🍅"
+    echo "$REST_ICON"
 fi
 
 exit 0
