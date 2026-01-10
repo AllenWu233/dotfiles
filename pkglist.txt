@@ -214,6 +214,7 @@ wl-color-picker
 wlr-randr
 wob
 wps-office-cn
+wps-office-mime-cn
 wps-office-mui-zh-cn
 xdg-desktop-portal-gnome
 xdg-desktop-portal-gtk
