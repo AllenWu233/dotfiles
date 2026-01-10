@@ -3,8 +3,6 @@
 # Backup photos from Android via Termux SSH
 # Dependencies: rsync (Both PC and Termux)
 
-. "$HOME/.local/bin/color_utils"
-
 # ==================== CONFIGURATION ====================
 # Source paths on Android (relative to Termux home)
 SOURCE_PATHS=(
@@ -29,13 +27,15 @@ SOURCE_PATHS=(
 
 # SSH configuration for Termux
 SSH_USER="root"
-# SSH_HOST="192.168.1.11" # Replace with Android IP
-SSH_HOST="10.40.87.52" # Replace with Android IP
-SSH_PORT="8022"        # Default Termux SSH port
+SSH_HOST="192.168.1.9" # Replace with Android IP
+# SSH_HOST="10.40.87.52" # Replace with Android IP
+SSH_PORT="8022" # Default Termux SSH port
 SSH_REMOTE_BASE="/data/data/com.termux/files/home/storage/shared"
 
 # Local backup destination
 DEST_DIR="$HOME/Pictures"
+
+. "$HOME/.local/bin/color_utils"
 
 # ==================== GLOBAL COUNTERS (for statistics) ====================
 total_dirs=${#SOURCE_PATHS[@]} # Total number of directories
