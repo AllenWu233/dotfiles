@@ -131,6 +131,7 @@ nwg-look
 obs-studio
 obsidian
 ollama
+ollama-cuda
 olympus
 onefetch
 openbsd-netcat
