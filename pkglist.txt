@@ -130,6 +130,7 @@ nvtop
 nwg-look
 obs-studio
 obsidian
+ollama
 olympus
 onefetch
 openbsd-netcat
