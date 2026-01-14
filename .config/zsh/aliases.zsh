@@ -49,8 +49,9 @@ alias czsh='nvim ~/.config/zsh/ ~/.zshenv'
 alias cniri='nvim ~/.config/niri/config.kdl'
 alias csway='nvim ~/.config/sway'
 
-# Clash-verge
-alias proxy='https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897'
+# Proxy
+alias proxy_clash='https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897'
+alias proxy_v2ray='https_proxy=http://127.0.0.1:20172 http_proxy=http://127.0.0.1:20172 all_proxy=socks5://127.0.0.1:20172'
 
 # SSH
 alias ssh-termux='ssh -p 8022 root@termux'

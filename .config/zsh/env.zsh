@@ -20,4 +20,4 @@ path=(
 )
 export PATH
 
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
