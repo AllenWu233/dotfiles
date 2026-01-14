@@ -166,6 +166,7 @@ ripgrep
 rmpc
 rsync
 screengrab
+skanlite
 splayer
 steam
 stow
