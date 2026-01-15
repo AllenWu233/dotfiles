@@ -16,6 +16,7 @@ typeset -U path PATH
 path=(
     $HOME/.local/bin
     $HOME/claude-model/bin
+    $HOME/.cargo/bin
     $path
 )
 export PATH
