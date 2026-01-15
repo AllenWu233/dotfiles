@@ -1,0 +1,144 @@
+#!/usr/bin/env bash
+# @author Allen
+# Unified photo backup: SSH phone <-> Local <-> Disk
+
+# ====================================================================
+# CONFIGURATION
+# ====================================================================
+
+# List of source paths to backup
+SOURCE_PATHS=(
+    "bili"
+    "OuterWilds"
+    "QQ"
+    "Twitter"
+    "WeiXin"
+    "漫画"
+    "海虎武神"
+    "pixez_old"
+    "NSFW-pixiv"
+    "meme"
+    "Screenshots"
+    "搓"
+    "烹饪"
+    "Camera"
+    "NSFW-Touhou"
+    "Touhou"
+)
+
+# Local directory (intermediate storage)
+LOCAL_DIR="$HOME/Pictures"
+
+# Disk backup destination
+DISK_DIR="/run/media/Allen/井鼃语海/Pictures"
+
+# SSH configuration (for phone backup)
+SSH_USER="root"
+SSH_HOST="192.168.1.9"
+SSH_PORT="8022"
+SSH_BASE="/data/data/com.termux/files/home/storage/shared"
+
+# ====================================================================
+# FUNCTIONS
+# ====================================================================
+
+check_dependencies() {
+    local mode="$1"
+    local deps=("rsync")
+
+    case "$mode" in
+        ssh)  deps+=("ssh") ;;
+        disk) deps+=("udiskie-info") ;;
+    esac
+
+    for cmd in "${deps[@]}"; do
+        if ! command -v "$cmd" &>/dev/null; then
+            echo "Error: $cmd is not installed."
+            exit 1
+        fi
+    done
+}
+
+# Pull: Backup FROM phone TO local (phone ---> PC)
+backup_ssh_to_local() {
+    echo "--- PULL: phone (SSH) ---> Local ---"
+
+    for rel_path in "${SOURCE_PATHS[@]}"; do
+        remote_path="${SSH_BASE}/${rel_path}"
+        ssh_remote="${SSH_USER}@${SSH_HOST}:${remote_path}"
+        dst_path="${LOCAL_DIR}/${rel_path}"
+
+        echo "-> Checking: $rel_path"
+
+        # Skip if remote path doesn't exist
+        if ! ssh -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" "[ -d '$remote_path' ]" 2>/dev/null; then
+            echo "   Skip: Remote path not found"
+            continue
+        fi
+
+        echo "-> Syncing: $rel_path"
+        rsync -av --progress --ignore-existing -e "ssh -p $SSH_PORT" "$ssh_remote" "$dst_path"
+
+        if [ $? -eq 0 ]; then
+            echo "   OK: $rel_path"
+        else
+            echo "   ERROR: $rel_path"
+        fi
+    done
+
+    echo "--- PULL completed ---"
+}
+
+# Push: Backup FROM local TO disk (local ---> disk)
+backup_local_to_disk() {
+    echo "--- PUSH: Local ---> Disk ---"
+
+    mkdir -p "$DISK_DIR"
+
+    for rel_path in "${SOURCE_PATHS[@]}"; do
+        src_path="${LOCAL_DIR}/${rel_path}"
+        dst_path="${DISK_DIR}/${rel_path}"
+
+        # Skip if source directory doesn't exist
+        if [ ! -d "$src_path" ]; then
+            echo "-> Skip: $rel_path (not found)"
+            continue
+        fi
+
+        echo "-> Syncing: $rel_path"
+        rsync -av --progress --ignore-existing "$src_path" "$dst_path"
+
+        if [ $? -eq 0 ]; then
+            echo "   OK: $rel_path"
+        else
+            echo "   ERROR: $rel_path"
+        fi
+    done
+
+    echo "--- PUSH completed ---"
+}
+
+# ====================================================================
+# MAIN
+# ====================================================================
+
+usage() {
+    echo "Usage: $(basename "$0") <pull|push>"
+    echo "  pull - Phone (SSH) ---> Local"
+    echo "  push - Local ---> Disk"
+    exit 1
+}
+
+case "$1" in
+    pull)
+        check_dependencies ssh
+        backup_ssh_to_local
+        ;;
+    push)
+        check_dependencies disk
+        backup_local_to_disk
+        ;;
+    *)
+        usage
+        ;;
+esac
