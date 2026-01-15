@@ -109,7 +109,6 @@ mpc
 mpd
 mpd-mpris
 mpv
-mpv-handler
 ncmpcpp
 neomutt
 neovim
@@ -231,7 +230,6 @@ xray
 xwayland-satellite
 yazi
 ydotool
-yt-dlp
 zathura
 zathura-pdf-mupdf
 zellij
