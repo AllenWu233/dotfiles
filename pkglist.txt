@@ -36,6 +36,7 @@ downgrade
 drawio-desktop-bin
 efibootmgr
 electron-netease-cloud-music
+emacs-nox
 engrampa
 fastfetch
 fcitx5
