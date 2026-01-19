@@ -248,7 +248,7 @@ spawn-at-startup "i3bar-river"
 spawn-at-startup "~/.local/bin/swaybg-set-wallpaper" // Set $IMAGE variable in the script to change background 
 spawn-at-startup "mako"
 spawn-at-startup "udiskie"
-spawn-at-startup "gammastep"
+// spawn-at-startup "gammastep"
 spawn-at-startup "~/.config/wob/wobpipe"
 // spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
