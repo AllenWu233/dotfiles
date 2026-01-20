@@ -181,8 +181,6 @@ system-config-printer
 taskwarrior-tui
 telegram-desktop
 texlive-bin
-texlive-langchinese
-texlive-latexextra
 thunar
 thunar-archive-plugin
 thunar-volman
