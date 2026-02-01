@@ -383,6 +383,8 @@ binds {
     Super+Shift+N { spawn "~/.local/bin/fuzzel-emoji"; }
     Super+Shift+C { spawn "~/.local/bin/quick-menu"; }
 
+    Super+Z { spawn "~/.local/bin/ime-bridge"; }
+
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
     // Using spawn-sh allows to pass multiple arguments together with the command.
@@ -739,6 +741,11 @@ window-rule {
 //     match app-id="KeepassXC"
 //     open-on-workspace "1"
 // }
+
+window-rule {
+    match app-id="^yad"
+    open-floating true
+}
 
 window-rule {
     match app-id="waylyrics"

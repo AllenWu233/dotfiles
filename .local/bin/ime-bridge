@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# --- DESCRIPTION ---
+# A universal IME bridge for Wayland/X11.
+# Captures text via a YAD dialog and pastes it into the previously active window.
+# Useful for apps with broken IME support (Games, Blender, Wine, etc.)
+# -------------------
+
+# 1. Wait for the trigger hotkey to be released
+sleep 0.2
+
+# 2. Identify Environment and Tools
+if [ -n "$WAYLAND_DISPLAY" ]; then
+    # Wayland Tools
+    COPY_FUNC="wl-copy -n"
+    GET_CLIP="wl-paste -n"
+    # Preference: wtype > ydotool (wtype is more reliable for simple pasting)
+    if command -v wtype >/dev/null; then
+        PASTE_CMD="wtype -M ctrl v -m ctrl"
+    else
+        PASTE_CMD="ydotool key 29:1 47:1 47:0 29:0"
+    fi
+else
+    # X11 Tools
+    COPY_FUNC="xclip -selection clipboard -r"
+    GET_CLIP="xclip -selection clipboard -o"
+    PASTE_CMD="xdotool key ctrl+v"
+fi
+
+# 3. Get Clipboard Content (to allow quick editing)
+CURRENT_VAL=$($GET_CLIP 2>/dev/null || echo "")
+
+# 4. Open YAD Dialog
+# Added --center to make it more accessible for general apps
+INPUT_TEXT=$(yad --entry \
+    --title="Universal Input Bridge" \
+    --text="Type text to paste:" \
+    --entry-text="$CURRENT_VAL" \
+    --width=500 \
+    --center \
+    --on-top \
+    --close-on-unfocus \
+    --button="Confirm and Paste:0")
+
+# 5. Execution Logic
+if [ $? -eq 0 ] && [ -n "$INPUT_TEXT" ]; then
+    # Update Clipboard
+    echo -n "$INPUT_TEXT" | $COPY_FUNC
+
+    # IMPORTANT: Wait for YAD to close and the original window to regain focus
+    # Increase this value if pasting still fails
+    sleep 0.4
+
+    # Execute Paste command
+    $PASTE_CMD
+fi

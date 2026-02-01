@@ -232,6 +232,7 @@ xorg-xrdb
 xorg-xwininfo
 xray
 xwayland-satellite
+yad
 yazi
 ydotool
 zathura
