@@ -55,6 +55,7 @@ set $ws10   "10"
 #
 include /etc/sway/config.d/*
 include ~/.config/sway/appearence.conf
+include ~/.config/sway/output.conf
 include ~/.config/sway/input.conf
 include ~/.config/sway/keybindings.conf
 include ~/.config/sway/window_rules.conf

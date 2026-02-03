@@ -6,6 +6,15 @@
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 
+output "eDP-1" {
+    scale 1.5
+    position x=0 y=0
+}
+output "HDMI-A-1" {
+    position x=1706 y=0
+}
+
+
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
@@ -472,6 +481,14 @@ binds {
     Super+End  { focus-column-last; }
     Super+Shift+Home { move-column-to-first; }
     Super+Shift+End  { move-column-to-last; }
+
+
+    Super+Comma  { focus-monitor-left; }
+    Super+Period { focus-monitor-right; }
+    Super+Shift+Comma  { move-column-to-monitor-left; }
+    Super+Shift+Period { move-column-to-monitor-right; }
+    Super+Alt+Comma    { move-workspace-to-monitor-left; }
+    Super+Alt+Period   { move-workspace-to-monitor-right; }
 
     // Super+Shift+Left  { focus-monitor-left; }
     // Super+Shift+Down  { focus-monitor-down; }
