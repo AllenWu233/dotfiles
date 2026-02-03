@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# 1. 定义硬件名称（根据你的 niri msg outputs 结果调整）
+EXT_MONITOR="HDMI-A-1" # 或者是 "DP-1"
+BACKLIGHT_DEV="intel_backlight"
+
+# 2. 获取状态
+# 检查外接显示器是否连接 (sysfs 路径最快)
+EXTERNAL_CONNECTED=$(cat /sys/class/drm/card*-${EXT_MONITOR}/status 2>/dev/null)
+# 获取笔记本亮度
+CURRENT_BRIGHTNESS=$(brightnessctl -d $BACKLIGHT_DEV get)
+
+# 3. 处理点击事件 (点击图标切换副屏开关)
+if [[ -n "$BLOCK_BUTTON" ]]; then
+    if [ "$CURRENT_BRIGHTNESS" -gt 0 ]; then
+        echo "$CURRENT_BRIGHTNESS" >/tmp/last_laptop_brightness
+        brightnessctl -d $BACKLIGHT_DEV set 0
+    else
+        LAST=$(cat /tmp/last_laptop_brightness 2>/dev/null || echo 500)
+        brightnessctl -d $BACKLIGHT_DEV set "$LAST"
+    fi
+    CURRENT_BRIGHTNESS=$(brightnessctl -d $BACKLIGHT_DEV get)
+fi
+
+# 4. 判断三种状态并输出 Nerd Fonts 图标
+if [[ "$EXTERNAL_CONNECTED" != "connected" ]]; then
+    # 状态 1: 无外接显示器 (单机移动模式)
+    echo "󰤄 Solo"
+    echo "󰤄"
+    echo "#a6adc8" # 灰色
+elif [ "$CURRENT_BRIGHTNESS" -gt 0 ]; then
+    # 状态 2: 双屏齐开 (高效办公模式)
+    echo "󰍹 󱂬 Dual"
+    echo "󰍹"
+    echo "#bb99ff" # 你的主题紫色
+else
+    # 状态 3: 仅外接屏亮 (沉浸游戏模式)
+    echo "󰓓 󰶐 Gaming"
+    echo "󰓓"
+    echo "#f38ba8" # 红色，代表性能/游戏
+fi

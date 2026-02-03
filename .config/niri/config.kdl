@@ -614,9 +614,9 @@ binds {
     Super+BracketRight { consume-or-expel-window-right; }
 
     // Consume one window from the right to the bottom of the focused column.
-    Super+Comma  { consume-window-into-column; }
+    // Super+Comma  { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
-    Super+Period { expel-window-from-column; }
+    // Super+Period { expel-window-from-column; }
 
     Super+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
