@@ -26,6 +26,7 @@ alias rofi="rofi -dpi 1"
 # alias py="pdm run python"
 alias hibernate="systemctl hibernate"
 alias yutto="yutto --config ~/private/.config/yutto/yutto.toml"
+alias chx="sudo chmod +x"
 
 # lsd
 alias ls='lsd'

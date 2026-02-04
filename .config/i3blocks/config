@@ -10,141 +10,68 @@
 
 # Global properties
 separator=false
-separator_block_width=0
+separator_block_width=5
 
-# Print click data
-# [clickme]
-# align=center
-# full_text=[Click me!]
-# min_width=Button=? x=? y=?
-# command=echo "[Button=$button x=$x y=$y] "
-
-# [Test]
-# command=echo "Urgent" && exit 33
-# full_text="[Click me!] "
-# command=echo "Urgent" && exit 33
-# command=echo "Urgent" && echo "#FF8000"
-
-# [simple]
-# full_text=This is a looong white on red text
-# short_text=Short white on red text
-# background=#FF0000
-# color=#FFFFFF
 
 
 [tomato]
-command=echo "[$(scripts/tomato_clock)] "
+command=scripts/tomato_clock
 interval=1
 
-
 [paru]
-command=echo "["$(scripts/paru-check-updates)"] "
+command=scripts/paru-check-updates
 interval=600
-
-
 
 # [weather]
 # command=echo "[$(scripts/weather)] "
 # interval=600
 
-
-
 [notice]
-
 
 
 [filesystem]
 
 
-
-[separator]
-full_text="["
-
 [network]
 command=scripts/network
 interval=1
-
-# [wireless-network]
-# command=scripts/wireless-network
-# interval=1
-#
-# [space]
-# full_text=" "
-#
-# [wired-network]
-# command=scripts/wired-network
-# interval=1
-
-[separator]
-full_text="] "
-
-
-
-[separator]
-full_text="["
 
 [hardware]
 command=scripts/hardware
 interval=10
 
-[separator]
-full_text="] "
+[monitor]
+command=scripts/monitor
+interval=once
+signal=4
 
-
-
-[separator]
-full_text="["
 
 [light]
 command=scripts/brightness-control
 interval=once
 signal=3
 
-[space]
-full_text=" "
-
 [volume]
 command=scripts/volume-control
 interval=once
 signal=1
-
-[space]
-full_text=" "
 
 [mic]
 command=scripts/mic-control
 interval=once
 signal=2
 
-[separator]
-full_text="] "
-
-
-
-[separator]
-full_text="["
-
 [battery]
 command=scripts/battery
 interval=10
 
-[space]
-full_text=" "
-
-[bluetooth]
-command=scripts/bluetooth
-interval=10
-
-[separator]
-full_text="] "
-
-
+# [bluetooth]
+# command=scripts/bluetooth
+# interval=10
 
 [time]
-command=echo "[󰥔 $(LC_TIME=C date '+%Y-%m-%d %a %H:%M')] "
+command=scripts/clock
 interval=1
-
-
 
 [hibernate]
 full_text="⏻  "

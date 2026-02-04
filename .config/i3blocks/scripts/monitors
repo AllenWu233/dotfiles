@@ -4,8 +4,8 @@
 INTERNAL_DISPLAY="eDP-1"
 
 # Nerd Font Icons (Edit these based on your font)
-ICON_ON="󰍹"  # Monitor Icon
-ICON_OFF="󰶐" # Monitor Off Icon
+ICON_ON="󰍹"   # Monitor Icon
+ICON_OFF="󰶐"  # Monitor Off Icon
 
 # --- Status Check ---
 if wlr-randr | grep -A 10 "$INTERNAL_DISPLAY" | grep -q "Enabled: yes"; then

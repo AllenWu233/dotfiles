@@ -168,22 +168,22 @@ if [[ $state == "not_started" ]]; then
     echo "$REST_ICON"
 elif [[ $state == "stopped" ]]; then
     if [[ $mode == "work" ]]; then
-        printf "$WORK_ICON(%d)%02d:%02d\n" "$work_cycles" "$((remaining / 60))" "$((remaining % 60))"
+        printf "[$WORK_ICON(%d)%02d:%02d\n" "$work_cycles" "$((remaining / 60))" "$((remaining % 60))]"
     elif [[ $is_long_break == "true" ]]; then
-        printf "$REST_ICON%02d:%02d\n" "$((remaining / 60))" "$((remaining % 60))"
+        printf "[$REST_ICON%02d:%02d\n" "$((remaining / 60))" "$((remaining % 60))]"
     else
-        printf "$REST_ICON(%d)%02d:%02d\n" "$work_cycles" "$((remaining / 60))" "$((remaining % 60))"
+        printf "[$REST_ICON(%d)%02d:%02d\n" "$work_cycles" "$((remaining / 60))" "$((remaining % 60))]"
     fi
 elif [[ $state == "running" ]]; then
     if [[ $mode == "work" ]]; then
-        printf "$WORK_ICON(%d)%02d:%02d\n" "$work_cycles" "$((remaining / 60))" "$((remaining % 60))"
+        printf "[$WORK_ICON(%d)%02d:%02d\n" "$work_cycles" "$((remaining / 60))" "$((remaining % 60))]"
     elif [[ $is_long_break == "true" ]]; then
-        printf "$REST_ICON%02d:%02d\n" "$((remaining / 60))" "$((remaining % 60))"
+        printf "[$REST_ICON%02d:%02d\n" "$((remaining / 60))" "$((remaining % 60))"
     else
-        printf "$REST_ICON(%d)%02d:%02d\n" "$work_cycles" "$((remaining / 60))" "$((remaining % 60))"
+        printf "[$REST_ICON(%d)%02d:%02d\n" "$work_cycles" "$((remaining / 60))" "$((remaining % 60))]"
     fi
 else
-    echo "$REST_ICON"
+    echo "[$REST_ICON]"
 fi
 
 exit 0

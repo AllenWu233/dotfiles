@@ -103,7 +103,7 @@ layout {
     // - "always", the focused column will always be centered.
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
-    center-focused-column "on-overflow"
+    center-focused-column "always"
     always-center-single-column
     // empty-workspace-above-first
 
@@ -283,7 +283,7 @@ spawn-at-startup "swayidle" "-w" "timeout" "300" "niri msg action power-off-moni
 
 spawn-sh-at-startup "foot --server"
 spawn-sh-at-startup "fcitx5 -d"
-spawn-sh-at-startup "DISPLAY=:0 xrdb -load <<< 'Xft.dpi: 144'"
+// spawn-sh-at-startup "DISPLAY=:0 xrdb -load <<< 'Xft.dpi: 144'"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -722,10 +722,17 @@ cursor {
 // Global window rules
 window-rule {
     // Set open-maximized to true for all windows.
-    open-maximized true
-    draw-border-with-background false
+    // open-maximized true
+    // draw-border-with-background false
 
     opacity 0.9
+}
+
+window-rule {
+    match app-id="firefox"
+    match app-id="steam"
+
+    open-maximized true
 }
 
 // Floating windows
@@ -753,17 +760,6 @@ window-rule {
     opacity 1.0
 }
 
-// window-rule {
-//     match app-id="foot"
-//     // Then, for foot, set open-maximized back to false.
-//     open-maximized false
-// }
-
-// window-rule {
-//     match app-id="KeepassXC"
-//     open-on-workspace "1"
-// }
-
 window-rule {
     match app-id="^yad"
     open-floating true
@@ -775,18 +771,3 @@ window-rule {
     open-focused false
     default-floating-position x=420 y=0 relative-to="bottom-left"
 }
-
-// window-rule {
-//     match app-id="steam"
-//     open-on-workspace "3"
-// }
-
-// workspace "1"
-// workspace "2"
-// workspace "3"
-// workspace "4"
-// workspace "5"
-// workspace "6"
-// workspace "7"
-// workspace "8"
-// workspace "9"

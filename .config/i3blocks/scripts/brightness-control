@@ -38,10 +38,10 @@ brightness_icon=$(get_light_icon "$brightness_percent")
 
 # wob
 if [ -n "$BLOCK_BUTTON" ]; then
-    echo "${brightness_percent%\%}" >"$WOB_PIPE"
+    echo "[${brightness_percent%\%}" >"$WOB_PIPE]"
 fi
 
-echo "$brightness_icon $brightness_percent%"
+echo "[$brightness_icon $brightness_percent%]"
 
 pkill -SIGRTMIN+3 i3blocks
 

@@ -38,11 +38,11 @@ if [ "$BLOCK_BUTTON" == 3 ] || [ "$BLOCK_BUTTON" == 4 ]; then
 fi
 
 if [ "$source_volume" == "MUTE" ]; then
-    echo "$source_icon"
+    echo "[$source_icon]"
     echo
     echo "#777777"
 else
-    echo "$source_icon$source_volume%"
+    echo "[$source_icon$source_volume%]"
 fi
 
 pkill -SIGRTMIN+2 i3blocks

@@ -50,11 +50,11 @@ if [ "$BLOCK_BUTTON" == 3 ] || [ "$BLOCK_BUTTON" == 4 ]; then
 fi
 
 if [ "$sink_volume" == "MUTE" ]; then
-    echo "$sink_icon "
+    echo "[$sink_icon ]"
     echo
     echo "#777777"
 else
-    echo "$sink_icon $sink_volume%"
+    echo "[$sink_icon $sink_volume%]"
 fi
 
 pkill -SIGRTMIN+1 i3blocks

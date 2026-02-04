@@ -64,8 +64,8 @@ if [ -n "$wired_iface" ] &&
     # ip=$(ip addr show "$wired_iface" | grep -oP 'inet \K[\d.]+' | head -n1)
 
     # echo "󰲝 ($ip) $rx_str↓ $tx_str↑"
-    echo "󰲝  $rx_str↓ $tx_str↑"
-    echo "󰲝 "
+    echo "[󰲝  $rx_str↓ $tx_str↑]"
+    echo "[󰲝 ]"
     exit 0
 fi
 
@@ -86,9 +86,9 @@ if [ -n "$ssid" ]; then
     signal=$(nmcli -t -f ACTIVE,SIGNAL dev wifi | grep '^yes' | cut -d: -f2 | tail -n1)
     icon=$(get_wireless_icon "$signal")
 
-    echo "$icon $ssid($signal%) $rx_str↓ $tx_str↑"
-    # echo "$icon $rx_str↓ $tx_str↑"
-    echo "$icon"
+    echo "[$icon $ssid($signal%) $rx_str↓ $tx_str↑]"
+    # echo "[$icon $rx_str↓ $tx_str↑]"
+    echo "[$icon]"
     [ "${signal}" -le 20 ] && exit 33
     exit 0
 fi
