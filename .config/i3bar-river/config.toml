@@ -18,8 +18,8 @@ tag_inactive_bg = "#11111bff"
 
 
 # The font and various sizes
-font = "Iosevka Nerd Font 13"
-height = 30
+font = "Iosevka Nerd Font 10"
+height = 25
 margin_top = 0
 margin_bottom = 0
 margin_left = 0

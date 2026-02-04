@@ -7,10 +7,15 @@
 // https://yalter.github.io/niri/Configuration:-Introduction
 
 output "DP-3" {
+    mode "1920x1080@260"
+    variable-refresh-rate
     position x=0 y=0
+    focus-at-startup
 }
 output "eDP-1" {
-    // scale 1.5
+    scale 2
+    mode "2560x1600@165"
+    variable-refresh-rate
     position x=1920 y=0
 }
 
