@@ -10,12 +10,10 @@ ICON_OFF="󰶐" # Monitor Off Icon
 # --- Status Check ---
 if wlr-randr | grep -A 10 "$INTERNAL_DISPLAY" | grep -q "Enabled: yes"; then
     # Output for i3blocks (Full Text)
-    echo "$ICON_ON ON"
-    # Color (Optional: Green for active)
-    echo "#98c379"
+    echo "[$ICON_ON ]"
 else
     # Output for i3blocks (Full Text)
-    echo "$ICON_OFF OFF"
-    # Color (Optional: Gray for inactive)
-    echo "#5c6370"
+    echo "[$ICON_OFF ]"
+    echo ""
+    echo "#777777"
 fi

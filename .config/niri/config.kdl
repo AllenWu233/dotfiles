@@ -259,7 +259,7 @@ layout {
 
 // spawn-at-startup "waybar"
 spawn-at-startup "i3bar-river"
-spawn-at-startup "~/.local/bin/swaybg-set-wallpaper" // Set $IMAGE variable in the script to change background 
+spawn-at-startup "~/.local/bin/wallpaper-swaybg" // Set $IMAGE variable in the script to change background 
 spawn-at-startup "mako"
 spawn-at-startup "udiskie"
 // spawn-at-startup "gammastep"
