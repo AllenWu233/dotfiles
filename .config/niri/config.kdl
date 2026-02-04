@@ -6,12 +6,12 @@
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 
-output "eDP-1" {
-    scale 1.5
+output "DP-3" {
     position x=0 y=0
 }
-output "HDMI-A-1" {
-    position x=1706 y=0
+output "eDP-1" {
+    // scale 1.5
+    position x=1920 y=0
 }
 
 
