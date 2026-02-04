@@ -11,7 +11,7 @@ POS_Y=0
 if wlr-randr | grep -A 10 "$INTERNAL_DISPLAY" | grep -q "Enabled: yes"; then
     wlr-randr --output "$INTERNAL_DISPLAY" --off
 else
-    wlr-randr --output "$INTERNAL_DISPLAY" --on --pos "$POS_X","$POS_Y"
+    wlr-randr --output "$INTERNAL_DISPLAY" --on --pos "$POS_X","$POS_Y" --scale 2
 fi
 
 pkill -SIGRTMIN+4 i3blocks
