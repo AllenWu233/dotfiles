@@ -3,15 +3,16 @@
 # --- Configuration ---
 # Change this to your actual display name from `wlr-randr`
 INTERNAL_DISPLAY="eDP-1"
-POS_X=1920
-POS_Y=0
+DEFAULT_SCALE=1.75
+DEFAULT_POS_X=1920
+DEFAULT_POS_Y=0
 
 # --- Logic ---
 # Check if the display is currently enabled
 if wlr-randr | grep -A 10 "$INTERNAL_DISPLAY" | grep -q "Enabled: yes"; then
     wlr-randr --output "$INTERNAL_DISPLAY" --off
 else
-    wlr-randr --output "$INTERNAL_DISPLAY" --on --pos "$POS_X","$POS_Y" --scale 2
+    wlr-randr --output "$INTERNAL_DISPLAY" --on --pos "$DEFAULT_POS_X","$DEFAULT_POS_Y" --scale "$DEFAULT_SCALE"
 fi
 
-pkill -SIGRTMIN+4 i3blocks
+pgrep i3blocks && pkill -SIGRTMIN+4 i3blocks

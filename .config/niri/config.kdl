@@ -13,7 +13,8 @@ output "DP-3" {
     focus-at-startup
 }
 output "eDP-1" {
-    scale 2
+    off
+    scale 1.75
     mode "2560x1600@165"
     variable-refresh-rate
     position x=1920 y=0
