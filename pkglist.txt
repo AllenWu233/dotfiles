@@ -170,6 +170,7 @@ rsync
 screengrab
 skanlite
 skanpage
+smartmontools
 splayer
 steam
 steamcmd
