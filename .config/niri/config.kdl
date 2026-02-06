@@ -311,7 +311,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d %H-%M-%S.png"
 // https://yalter.github.io/niri/Configuration:-Animations
 animations {
     // Uncomment to turn off all animations.
-    off
+    // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     // slowdown 3.0
@@ -399,6 +399,7 @@ binds {
     Super+Shift+C { spawn "~/.local/bin/quick-menu"; }
 
     Super+Z { spawn "~/.local/bin/ime-bridge"; }
+    Super+C { spawn "~/.local/bin/toggle-monitor-display"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
@@ -636,7 +637,7 @@ binds {
     // Makes the column "fill the rest of the space".
     Super+Ctrl+F { expand-column-to-available-width; }
 
-    Super+C { center-column; }
+    Super+Alt+C { center-column; }
 
     // Center all fully visible columns on screen.
     Super+Ctrl+C { center-visible-columns; }
