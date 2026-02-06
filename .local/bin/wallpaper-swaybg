@@ -25,7 +25,7 @@ myouren_temple="$HOME/Pictures/Wallpapers/56330400_p0.jpg"
 image1="$murasa"
 image2="$myouren_temple"
 monitor_laptop=eDP-1
-monitor_external=DP-3
+monitor_external=DP-1
 
 if [[ ! -f "$image1" ]]; then
     echo "Image not found: $image1"
