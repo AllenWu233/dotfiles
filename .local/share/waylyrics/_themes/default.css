@@ -26,12 +26,12 @@ label#below {
 }
 
 label#above {
-  font-size: 28px;
+  font-size: 24px;
   font-family: "LXGW Wenkai GB Screen";
 }
 
 label#below {
   margin: 5px 0;
-  font-size: 28px;
+  font-size: 24px;
   font-family: "LXGW Wenkai Screen";
 }

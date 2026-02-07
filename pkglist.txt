@@ -16,6 +16,7 @@ base
 base-devel
 bat
 bc
+beets
 breeze
 breeze-gtk
 bridge-utils
@@ -52,7 +53,6 @@ ffmpegthumbnailer
 filelight
 firefox
 firefox-i18n-zh-cn
-flacon
 flameshot
 flclash-bin
 foomatic-db-gutenprint-ppds
