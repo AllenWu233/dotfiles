@@ -52,6 +52,7 @@ ffmpegthumbnailer
 filelight
 firefox
 firefox-i18n-zh-cn
+flacon
 flameshot
 flclash-bin
 foomatic-db-gutenprint-ppds
@@ -143,6 +144,7 @@ pacman-contrib
 pandoc-cli
 paru
 pavucontrol
+picard
 pipewire-pulse
 polkit-gnome
 pot-translation
@@ -218,6 +220,7 @@ waylyrics
 wechat-bin
 wemeet-bin
 wget
+whipper
 wl-clipboard
 wl-color-picker
 wlr-randr
