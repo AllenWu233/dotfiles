@@ -1,0 +1,56 @@
+#!/bin/bash
+# @Author: Allen
+# @Description: Embed album art into audio files using ffmpeg
+# @Dependencies: ffmpeg
+
+# --- Global Configurations ---
+DEFAULT_COVER="folder.jpg"
+DEFAULT_EXT="flac"
+
+# --- Help Message ---
+show_help() {
+    echo "Usage: $(basename "$0") [cover_file] [extension]"
+    echo ""
+    echo "Arguments:"
+    echo "  cover_file    The image to embed (default: $DEFAULT_COVER)"
+    echo "  extension     The audio format to process (default: $DEFAULT_EXT)"
+    echo ""
+    echo "Options:"
+    echo "  -h, --help    Show this help message"
+    exit 0
+}
+
+# --- Argument Handling ---
+# Check for help flags
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    show_help
+fi
+
+cover_image="${1:-$DEFAULT_COVER}"
+extension="${2:-$DEFAULT_EXT}"
+
+# --- Logic ---
+shopt -s nullglob
+files=(*."$extension")
+
+if [ ${#files[@]} -eq 0 ]; then
+    echo "No .$extension files found in $(pwd)."
+    exit 0
+fi
+
+for file in "${files[@]}"; do
+    if [[ -f "$cover_image" ]]; then
+        echo "Embedding $cover_image into $file..."
+
+        # -f "$extension" ensures ffmpeg recognizes the container during stream copy
+        ffmpeg -hide_banner -loglevel error -i "$file" -i "$cover_image" \
+            -map 0:a -map 1:0 -c copy \
+            -disposition:v:0 attached_pic \
+            -f "$extension" "${file}.tmp" && mv "${file}.tmp" "$file"
+    else
+        echo "Error: Cover file '$cover_image' not found!"
+        exit 1
+    fi
+done
+
+echo "Done."
