@@ -131,6 +131,7 @@ nvidia-prime
 nvtop
 nwg-look
 obs-studio
+obs-vkcapture
 obsidian
 ollama
 ollama-cuda
