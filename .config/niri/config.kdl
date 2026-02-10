@@ -281,7 +281,7 @@ spawn-at-startup "swayidle" "-w" \
 // spawn-at-startup "keepassxc"
 // spawn-at-startup "thunderbird"
 // spawn-at-startup "clash-verge"
-spawn-at-startup "flclash"
+// spawn-at-startup "flclash"
 
 // Extensions
 // spawn-at-startup "niri-float-sticky"
