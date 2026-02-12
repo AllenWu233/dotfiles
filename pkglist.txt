@@ -229,6 +229,7 @@ wob
 wps-office-cn
 wps-office-mime-cn
 wps-office-mui-zh-cn
+xclip
 xdg-desktop-portal-gnome
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
@@ -236,6 +237,7 @@ xorg-xlsclients
 xorg-xrdb
 xorg-xwininfo
 xray
+xsel
 xwayland-satellite
 yad
 yazi
