@@ -33,6 +33,7 @@ CURRENT_VAL=$($GET_CLIP 2>/dev/null || echo "")
 # 4. Open YAD Dialog
 # Added --center to make it more accessible for general apps
 INPUT_TEXT=$(yad --entry \
+    --fixed \
     --title="Universal Input Bridge" \
     --text="Type text to paste:" \
     --entry-text="$CURRENT_VAL" \

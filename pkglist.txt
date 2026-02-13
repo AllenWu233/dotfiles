@@ -34,6 +34,7 @@ discord
 dnsmasq
 downgrade
 drawio-desktop-bin
+dunst
 efibootmgr
 electron-netease-cloud-music
 emacs-nox
@@ -127,12 +128,12 @@ noto-fonts-cjk
 noto-fonts-emoji
 npm
 nss-mdns
+numlockx
 nvidia-open-lts
 nvidia-prime
 nvtop
 nwg-look
 obs-studio
-obs-vkcapture
 obsidian
 ollama
 ollama-cuda
@@ -236,12 +237,13 @@ xclip
 xdg-desktop-portal-gnome
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
+xob
+xorg-server
 xorg-xinit
 xorg-xlsclients
 xorg-xrdb
 xorg-xwininfo
 xray
-xsel
 xwallpaper
 xwayland-satellite
 yad

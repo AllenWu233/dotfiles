@@ -6,12 +6,13 @@
 # Temporary file (with PID suffix to avoid conflicts)
 TMP_FILE="/tmp/vim_everywhere_$(date +%s)_$$.txt"
 APP_ID="vim-everywhere"
-TERMINAL="footclient" # Fallback to 'foot' if footclient isn't available
+# TERMINAL="footclient" # Fallback to 'foot' if footclient isn't available
+TERMINAL="alacritty" # Fallback to 'foot' if footclient isn't available
 
 # Check if terminal exists, fallback to foot
-if ! command -v "$TERMINAL" &>/dev/null; then
-    TERMINAL="foot"
-fi
+# if ! command -v "$TERMINAL" &>/dev/null; then
+#     TERMINAL="foot"
+# fi
 
 # Launch nvim window (set title for Sway window matching)
 "$TERMINAL" -a "$APP_ID" -e nvim "$TMP_FILE"

@@ -48,7 +48,7 @@ if [[ "$XDG_SESSION_TYPE" == "wayland" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
     swaybg --mode fill --output "$monitor_external" --image "$image2" &
 elif [[ "$XDG_SESSION_TYPE" == "x11" ]] || [[ -n "$DISPLAY" ]]; then
     # Xorg: Use xwallpaper
-    xwallpaper --output "$monitor_laptop" --fill "$image1" --output "$monitor_external" --fill "$image2"
+    xwallpaper --output "$monitor_laptop" --zoom "$image1" --output "$monitor_external" --zoom "$image2"
 else
     echo "Error: Could not detect session type."
     exit 1

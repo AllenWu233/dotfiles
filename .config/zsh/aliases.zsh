@@ -46,9 +46,10 @@ alias ffont="fc-list | fzf"
 
 # config
 # alias ci3='nvim ~/.config/i3/'
-alias czsh='nvim ~/.config/zsh/ ~/.zshenv'
-alias cniri='nvim ~/.config/niri/config.kdl'
-alias csway='nvim ~/.config/sway'
+alias czsh='$EDITOR ~/.config/zsh/ ~/.zshenv'
+alias cniri='$EDITOR ~/.config/niri/config.kdl'
+alias csway='$EDITOR ~/.config/sway'
+alias ci3='$EDITOR ~/.config/i3'
 
 # Proxy
 alias proxy-clash='https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897'

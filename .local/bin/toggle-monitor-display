@@ -1,18 +1,34 @@
 #!/bin/bash
 
 # --- Configuration ---
-# Change this to your actual display name from `wlr-randr`
 INTERNAL_DISPLAY="eDP-1"
 DEFAULT_SCALE=1.75
-DEFAULT_POS_X=1920
-DEFAULT_POS_Y=0
+POS_X=1920
+POS_Y=0
 
 # --- Logic ---
-# Check if the display is currently enabled
-if wlr-randr | grep -A 10 "$INTERNAL_DISPLAY" | grep -q "Enabled: yes"; then
-    wlr-randr --output "$INTERNAL_DISPLAY" --off
+
+if [[ -n "$WAYLAND_DISPLAY" ]]; then
+    # Wayland: Use comma for position
+    if wlr-randr | grep -A 10 "$INTERNAL_DISPLAY" | grep -q "Enabled: yes"; then
+        wlr-randr --output "$INTERNAL_DISPLAY" --off
+    else
+        wlr-randr --output "$INTERNAL_DISPLAY" --on \
+            --pos "$POS_X","$POS_Y" --scale "$DEFAULT_SCALE"
+    fi
+
+elif [[ -n "$DISPLAY" ]]; then
+    # Xorg: Use 'x' for position
+    if xrandr --query | grep "^$INTERNAL_DISPLAY connected" | grep -q "[0-9]\+x[0-9]\+"; then
+        xrandr --output "$INTERNAL_DISPLAY" --off
+    else
+        xrandr --output "$INTERNAL_DISPLAY" --auto \
+            --pos "${POS_X}x${POS_Y}" --rotate normal
+        ~/.local/bin/wallpaper
+    fi
 else
-    wlr-randr --output "$INTERNAL_DISPLAY" --on --pos "$DEFAULT_POS_X","$DEFAULT_POS_Y" --scale "$DEFAULT_SCALE"
+    echo "Error: No display server detected."
+    exit 1
 fi
 
 pgrep i3blocks && pkill -SIGRTMIN+4 i3blocks
