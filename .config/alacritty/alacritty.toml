@@ -7,7 +7,7 @@ general.import = [
 ]
 
 [font]
-size = 15.5
+size = 13
 
 # [font.bold]
 # family = "JetBrainsMono NF"

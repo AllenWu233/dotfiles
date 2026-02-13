@@ -34,7 +34,22 @@ if [[ ! -f "$image2" ]]; then
     echo "Image not found: $image2"
 fi
 
-killall -q swaybg
-sleep 0.1
-swaybg --mode fill --output "$monitor_laptop" --image "$image1" &
-swaybg --mode fill --output "$monitor_external" --image "$image2" &
+# killall -q swaybg
+# sleep 0.1
+# swaybg --mode fill --output "$monitor_laptop" --image "$image1" &
+# swaybg --mode fill --output "$monitor_external" --image "$image2" &
+
+# Detect session type and set wallpaper
+if [[ "$XDG_SESSION_TYPE" == "wayland" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
+    # Wayland: Use swaybg
+    killall -q swaybg
+    sleep 0.1
+    swaybg --mode fill --output "$monitor_laptop" --image "$image1" &
+    swaybg --mode fill --output "$monitor_external" --image "$image2" &
+elif [[ "$XDG_SESSION_TYPE" == "x11" ]] || [[ -n "$DISPLAY" ]]; then
+    # Xorg: Use xwallpaper
+    xwallpaper --output "$monitor_laptop" --fill "$image1" --output "$monitor_external" --fill "$image2"
+else
+    echo "Error: Could not detect session type."
+    exit 1
+fi

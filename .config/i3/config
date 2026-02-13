@@ -1,0 +1,62 @@
+# @author Allen
+# @since 2025.11
+#
+# i3 configuration
+# Read `man 5 i3` for a complete reference.
+
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt, Mod4 for Super
+set $mod Mod4
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Default applications
+#
+# systemctl --user enable foot-server.service
+set $terminal alacritty
+set $menu rofi
+set $browser firefox
+set $file-manager thunar
+set $cloud-music /opt/SPlayer/SPlayer
+
+## define names for workspaces
+#
+set $ws1    "1"
+set $ws2    "2" 
+set $ws3    "3"
+set $ws4    "4" 
+set $ws5    "5"
+set $ws6    "6"
+set $ws7    "7"
+set $ws8    "8"
+set $ws9    "9"
+set $ws10   "10"
+#
+# set $ws1    "1: "
+# set $ws2    "2: " 
+# set $ws3    "3:󰝚 "
+# set $ws4    "4:󰓓 " 
+# set $ws5    "5:󰍳 "
+# set $ws6    "6: "
+# set $ws7    "7:󱓩 "
+# set $ws8    "8: "
+# set $ws9    "9:󰭹 "
+# set $ws10   "10: "
+
+
+
+### Including
+#
+# include /etc/i3/config.d/*
+include ~/.config/i3/appearence.conf
+include ~/.config/i3/output.conf
+include ~/.config/i3/input.conf
+include ~/.config/i3/keybindings.conf
+include ~/.config/i3/window_rules.conf
+include ~/.config/i3/startup.conf

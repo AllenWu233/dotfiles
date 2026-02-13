@@ -2,6 +2,7 @@
 acpi
 adobe-source-han-sans-cn-fonts
 adobe-source-han-serif-cn-fonts
+alacritty
 android-tools
 arch-wiki-docs
 arch-wiki-docs-zh-cn
@@ -25,8 +26,6 @@ btop
 btrbk
 cava
 chromium
-clash-verge-rev
-clashtui
 cups
 cups-pdf
 debtap
@@ -49,6 +48,7 @@ fcitx5-qt
 fcitx5-rime
 fcron
 fd
+feh
 ffmpegthumbnailer
 filelight
 firefox
@@ -78,8 +78,10 @@ heroic-games-launcher-bin
 htop
 hugo
 hyphen-en
+i3-wm
 i3bar-river
 i3blocks
+i3lock
 i3status-rust
 imv
 intel-ucode
@@ -105,7 +107,6 @@ lutris
 ly
 mako
 man-db
-mihomo
 minder
 mpc
 mpd
@@ -146,6 +147,7 @@ pandoc-cli
 paru
 pavucontrol
 picard
+picom
 pipewire-pulse
 polkit-gnome
 pot-translation
@@ -169,7 +171,9 @@ rime-pinyin-zhwiki
 rimsort-bin
 ripgrep
 rmpc
+rofi
 rsync
+rustup
 screengrab
 skanlite
 skanpage
@@ -194,7 +198,6 @@ thunderbird
 thunderbird-i18n-zh-cn
 tldr
 tlp
-transmission-cli
 trash-cli
 tree-sitter-cli
 ttf-fira-mono
@@ -233,11 +236,13 @@ xclip
 xdg-desktop-portal-gnome
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
+xorg-xinit
 xorg-xlsclients
 xorg-xrdb
 xorg-xwininfo
 xray
 xsel
+xwallpaper
 xwayland-satellite
 yad
 yazi
