@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# Usage: trim-video <input_file> <start_time> <end_time>
+# Example: trim-video movie.mkv 00:28:23 00:28:55
+
+INPUT="$1"
+START="$2"
+END="$3"
+
+# Exit if arguments are missing
+if [ -z "$3" ]; then
+    echo "Usage: trim-video <file> <start_time> <end_time>"
+    exit 1
+fi
+
+# 1. Slice the first segment (0 to START)
+ffmpeg -i "$INPUT" -to "$START" -c copy -map 0 "p1_tmp.mkv" -y -loglevel error
+
+# 2. Slice the second segment (END to EOF)
+ffmpeg -ss "$END" -i "$INPUT" -c copy -map 0 "p2_tmp.mkv" -y -loglevel error
+
+# 3. Create a temporary list for concatenation
+printf "file 'p1_tmp.mkv'\nfile 'p2_tmp.mkv'" >list.txt
+
+# 4. Join segments
+ffmpeg -f concat -safe 0 -i list.txt -c copy -map 0 "trimmed_$INPUT" -y
+
+# 5. Clean up
+rm p1_tmp.mkv p2_tmp.mkv list.txt
+
+echo "-----------------------------------"
+echo "Trim-video complete: trimmed_$INPUT"
