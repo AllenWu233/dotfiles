@@ -58,7 +58,7 @@ export LANGUAGE=en_US
 #
 # Custom files
 [ -f "$ZDOTDIR/aliases.zsh" ] && . "$ZDOTDIR/aliases.zsh"
-[ -f "$ZDOTDIR/functions.zsh" ] && . "$ZDOTDIR/functions.zsh"
+[ -f "$ZDOTDIR/func.zsh" ] && . "$ZDOTDIR/func.zsh"
 
 # Plugins
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
