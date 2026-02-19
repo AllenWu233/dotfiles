@@ -244,6 +244,7 @@ xorg-xlsclients
 xorg-xrdb
 xorg-xwininfo
 xray
+xss-lock
 xwallpaper
 xwayland-satellite
 yad
