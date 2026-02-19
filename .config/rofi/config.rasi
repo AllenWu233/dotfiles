@@ -11,16 +11,17 @@
 
 
 configuration {
-    font: "Noto Sans Mono CJK SC:style=Bold 12";
-    display-ssh:    " ";
-    display-run:    " ";
-    display-drun:   " ";
-    display-window: " ";
-    display-combi:  " ";
+    // font: "Noto Sans Mono CJK SC:style=Bold 12";
+    font: "monospace 13";
+    display-ssh:       " ";
+    display-run:       " ";
+    display-drun:      " ";
+    display-window:    " ";
+    display-combi:     " ";
     display-clipboard: " ";
-    display-calc: " ";
-    display-p: "⏻ ";
-    show-icons:     true;
+    display-calc:      " ";
+    display-p:         "⏻ ";
+    show-icons:        true;
 }
 
 // @theme "gruvbox-material.rasi"
