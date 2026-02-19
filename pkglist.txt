@@ -83,6 +83,7 @@ i3-wm
 i3bar-river
 i3blocks
 i3lock
+i3lock-fancy-git
 i3status-rust
 imv
 intel-ucode
