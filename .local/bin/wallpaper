@@ -22,8 +22,11 @@ clownpiece="$HOME/Pictures/Touhou/60684541(1508165)_東方紺珠伝まとめ_p3.
 murasa="$HOME/Pictures/Touhou/60684150(1508165)_東方星蓮船まとめ_p2.jpg"
 myouren_temple="$HOME/Pictures/Wallpapers/56330400_p0.jpg"
 
+test="$HOME/Pictures/creeper.jpg"
+
 image1="$murasa"
 image2="$myouren_temple"
+# image2="$test"
 monitor_laptop=eDP-1
 monitor_external=DP-1
 
@@ -43,12 +46,14 @@ fi
 if [[ "$XDG_SESSION_TYPE" == "wayland" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
     # Wayland: Use swaybg
     killall -q swaybg
-    sleep 0.1
-    swaybg --mode fill --output "$monitor_laptop" --image "$image1" &
-    swaybg --mode fill --output "$monitor_external" --image "$image2" &
+    while pgrep -u $USER -x swaybg >/dev/null; do sleep 0.1; done
+    # sleep 0.1
+    # swaybg --mode fill --output "$monitor_laptop" --image "$image1" &
+    # swaybg --mode fill --output "$monitor_external" --image "$image2" &
+    swaybg -m fill -o "$monitor_laptop" -i "$image1" -o "$monitor_external" -i "$image2" &
 elif [[ "$XDG_SESSION_TYPE" == "x11" ]] || [[ -n "$DISPLAY" ]]; then
     # Xorg: Use xwallpaper
-    xwallpaper --output "$monitor_laptop" --zoom "$image1" --output "$monitor_external" --zoom "$image2"
+    xwallpaper --output "$monitor_laptop" --zoom "$image1" --output "$monitor_external" --zoom "$image2" &
 else
     echo "Error: Could not detect session type."
     exit 1
