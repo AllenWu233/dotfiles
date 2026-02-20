@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+# @author Allen
+# @since 2025
+# Handle PipeWire volume and microphone change and update wob bar.
+
+ACTION=$2
+SINK=@DEFAULT_SINK@
+SOURCE=@DEFAULT_SOURCE@
+STEP=0.05
+XOB_PIPE=/tmp/xobpipe
+
+if [[ -z "$1" || -z "$2" ||
+    "$1" == "-h" || "$1" == "--help" ||
+    "$2" == "-h" || "$2" == "--help" ]]; then
+    echo "Usage: $(basename "$0") <volume|mic> <ACTION>"
+    echo ""
+    echo "Changes volume using 'wpctl' and updates the 'wob' overlay bar."
+    echo ""
+    echo "Actions:"
+    echo "  up      # Increase volume by 5% and show level."
+    echo "  down    # Decrease volume by 5% and show level."
+    echo "  toggle  # Toggle mute status and show 0 (muted) or volume (unmuted)."
+    exit 0
+fi
+
+case "$1" in
+volume)
+    TARGET="$SINK"
+    ;;
+mic)
+    TARGET="$SOURCE"
+    ;;
+*) ;;
+esac
+
+case "$ACTION" in
+up)
+    wpctl set-volume "$TARGET" "$STEP"+
+    ;;
+down)
+    wpctl set-volume "$TARGET" "$STEP"-
+    ;;
+toggle)
+    wpctl set-mute "$TARGET" toggle
+    ;;
+*) ;;
+esac
+
+# Check mute status and get volume value
+STATUS=$(wpctl get-volume "$TARGET")
+echo "$STATUS"
+
+if echo "$STATUS" | grep -q 'MUTED'; then
+    echo 0 >"$XOB_PIPE"
+else
+    # Extract volume percentage and send
+    VOLUME_PERCENT=$(echo "$STATUS" | awk -F: '{print $2}' | awk '{print int($1 * 100)}')
+    echo "$VOLUME_PERCENT" >"$XOB_PIPE"
+fi
+
+# Use for i3blocks to update
+case "$1" in
+volume) pkill -SIGRTMIN+1 i3blocks ;;
+mic) pkill -SIGRTMIN+2 i3blocks ;;
+*) ;;
+esac

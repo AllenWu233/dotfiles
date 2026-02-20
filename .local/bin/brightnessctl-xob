@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# @author Allen
+# @since 2025
+# Handle brightness change and update wob bar.
+# Usage: brightness-wob +10%, brightness-wob 1%-
+
+VALUE=$1
+XOB_PIPE=/tmp/xobpipe
+BACKLIGHT_CLASS=backlight
+
+# Show help message if -z "$VALUE", -h, or --help is passed
+if [[ -z "$VALUE" || "$VALUE" == "-h" || "$VALUE" == "--help" ]]; then
+    echo "Usage: $(basename "$0") <PERCENT_VALUE>"
+    echo ""
+    echo "Changes screen brightness using 'brightnessctl' and updates the 'wob' overlay bar."
+    echo "The value must be a relative change command for brightnessctl."
+    echo ""
+    echo "Examples:"
+    echo "  $SCRIPT_NAME +5%      # Increase brightness by 5%"
+    echo "  $SCRIPT_NAME 5%-      # Decrease brightness by 5%"
+    echo "  $SCRIPT_NAME 100%     # Set brightness to 100%"
+    exit 0
+fi
+
+brightnessctl --class="$BACKLIGHT_CLASS" set "$VALUE"
+BRIGHTNESS_PERCENT=$(brightnessctl -m | awk -F, '{print $4}')
+
+# Remove '%' sign and send to pipe
+echo "${BRIGHTNESS_PERCENT%\%}" >"$XOB_PIPE"
+
+# Use for i3blocks to update
+pkill -SIGRTMIN+3 i3blocks
