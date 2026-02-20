@@ -180,6 +180,7 @@ screengrab
 skanlite
 skanpage
 smartmontools
+spectacle
 splayer
 steam
 steamcmd

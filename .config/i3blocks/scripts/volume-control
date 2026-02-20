@@ -5,6 +5,7 @@
 # WARN: Dependencies: wpctl, bc
 
 WOB_PIPE=/tmp/wobpipe
+XOB_PIPE=/tmp/xobpipe
 SINK=@DEFAULT_SINK@
 sink_status=$(wpctl get-volume "$SINK")
 STEP=0.01
@@ -42,10 +43,18 @@ fi
 # wob
 # if [ -n "$BLOCK_BUTTON" ]; then
 if [ "$BLOCK_BUTTON" == 3 ] || [ "$BLOCK_BUTTON" == 4 ]; then
-    if [ "$sink_volume" == "MUTE" ]; then
-        echo "0" >"$WOB_PIPE"
-    else
-        echo "$sink_volume" >"$WOB_PIPE"
+    # if [ "$sink_volume" == "MUTE" ]; then
+    #     echo "0" >"$WOB_PIPE"
+    # else
+    #     echo "$sink_volume" >"$WOB_PIPE"
+    # fi
+
+    val=$([ "$sink_volume" == "MUTE" ] && echo "0" || echo "$sink_volume")
+    # Detect session type and redirect to the corresponding pipe
+    if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
+        [ -p "$WOB_PIPE" ] && echo "$val" >"$WOB_PIPE"
+    elif [ "$XDG_SESSION_TYPE" == "x11" ]; then
+        [ -p "$XOB_PIPE" ] && echo "$val" >"$XOB_PIPE"
     fi
 fi
 
