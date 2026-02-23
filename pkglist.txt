@@ -215,6 +215,7 @@ ttf-roboto
 tumbler
 tumbler-folder-thumbnailer
 udiskie
+ueberzug
 unarchiver
 v2raya
 vim
