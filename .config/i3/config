@@ -56,7 +56,7 @@ set $ws10   "10"
 # include /etc/i3/config.d/*
 include ~/.config/i3/appearence.conf
 include ~/.config/i3/output.conf
-# include ~/.config/i3/input.conf
+include ~/.config/i3/input.conf
 include ~/.config/i3/keybindings.conf
 include ~/.config/i3/window_rules.conf
 include ~/.config/i3/startup.conf
