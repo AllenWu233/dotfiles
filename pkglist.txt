@@ -223,7 +223,6 @@ vintagestory
 virt-install
 virt-manager
 virtio-win
-waybar
 waylyrics
 wechat-bin
 wemeet-bin
