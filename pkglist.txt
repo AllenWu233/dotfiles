@@ -255,6 +255,7 @@ ydotool
 zathura
 zathura-pdf-mupdf
 zellij
+zotero
 zoxide
 zsh
 zsh-autosuggestions
