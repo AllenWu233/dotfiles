@@ -65,7 +65,7 @@ run = "plugin searchjump"
 desc = "searchjump mode"
 
 # chmod.yazi
-[[mgr.prepend_keymap]]
-on = ["c", "m"]
-run = "plugin chmod"
-desc = "Chmod on selected files"
+# [[mgr.prepend_keymap]]
+# on = ["c", "m"]
+# run = "plugin chmod"
+# desc = "Chmod on selected files"

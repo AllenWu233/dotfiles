@@ -18,5 +18,7 @@ use = "DreamMaoMao/searchjump"
 rev = "7fafec3"
 hash = "5337bf545993d8c4dec2c229031f49d"
 
-[flavor]
-deps = []
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-mocha"
+rev = "349d27f"
+hash = "8eabb4e88096f10905a6df62cfaadbf4"

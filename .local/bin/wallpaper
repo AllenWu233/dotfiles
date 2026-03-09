@@ -23,7 +23,7 @@ murasa="$HOME/Pictures/Touhou/60684150(1508165)_東方星蓮船まとめ_p2.jpg"
 myouren_temple="$HOME/Pictures/Wallpapers/56330400_p0.jpg"
 
 image1="$murasa"
-image2="$myouren_temple"
+image2="$renko_and_mary1"
 monitor_laptop="eDP-1"
 monitor_external="DP-1"
 
