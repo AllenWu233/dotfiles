@@ -91,6 +91,7 @@ inter-font
 jdk21-openjdk
 jmtpfs
 jq
+kcolorchooser
 kdeconnect
 keepassxc
 lazygit
