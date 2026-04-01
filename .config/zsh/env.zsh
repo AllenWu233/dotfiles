@@ -17,6 +17,7 @@ path=(
     $HOME/.local/bin
     $HOME/claude-model/bin
     $HOME/.cargo/bin
+    $HOME/.config/emacs/bin
     $path
 )
 export PATH

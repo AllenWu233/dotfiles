@@ -111,6 +111,7 @@ ly
 mako
 man-db
 minder
+mindustry
 mpc
 mpd
 mpd-mpris
@@ -176,8 +177,10 @@ ripgrep
 rmpc
 rofi
 rsync
+rust-analyzer
 rustup
 screengrab
+shellcheck
 skanlite
 skanpage
 smartmontools
