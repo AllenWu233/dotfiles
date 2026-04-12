@@ -53,7 +53,7 @@ Supported formats:
   esac
 }
 #
-d() {
+function d() {
   local usage="Usage: d <compressed-file>
 Auto-supported formats: tar.gz/tar.bz2/tar.xz, zip, 7z, rar"
 

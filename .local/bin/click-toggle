@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Target process name for the clicker loop
+NAME="xdotool_loop"
+
+if pgrep -f "$NAME" > /dev/null; then
+    # Kill the process if running
+    pkill -f "$NAME"
+    notify-send "Clicker" "OFF" -t 800
+else
+    # Start clicking loop in background
+    (
+        # Set name for easy pgrep/pkill
+        exec -a "$NAME" bash -c 'while :; do xdotool click 1; done'
+    ) &
+    notify-send "Clicker" "ON (Max Speed)" -t 800
+fi
