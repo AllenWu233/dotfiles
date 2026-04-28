@@ -1,4 +1,4 @@
-#dunstify -h int:value:60 "当前进度" "正在下载文件..." See dunst(5) for all configuration options
+# See dunst(5) for all configuration options
 
 [global]
     ### Display ###

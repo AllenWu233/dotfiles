@@ -4,21 +4,11 @@ rev = "5f2e22e"
 hash = "699fe07e0d2d1b4af8dafb84168eeb04"
 
 [[plugin.deps]]
-use = "ndtoan96/ouch"
-rev = "cfb9140"
-hash = "b5067143415bd2d46c0dfa57319ddcef"
-
-[[plugin.deps]]
-use = "orhnk/system-clipboard"
-rev = "888026c"
-hash = "9f82a544335a53d79e87ea315746caaa"
-
-[[plugin.deps]]
 use = "DreamMaoMao/searchjump"
-rev = "7fafec3"
-hash = "5337bf545993d8c4dec2c229031f49d"
+rev = "cab627c"
+hash = "4df5f3783cbbfed60466f1aa9bc45b5e"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "349d27f"
-hash = "8eabb4e88096f10905a6df62cfaadbf4"
+rev = "0670801"
+hash = "7dfe41c9c3d9be76da8a844263d0bbed"

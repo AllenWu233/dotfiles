@@ -19,5 +19,5 @@ size = 15
 [keyboard]
 bindings = [
     { key = "Return", mods = "Super|Shift", action = "SpawnNewInstance" }, # Spawn new instance in same directory
-    { key = "B", mods = "Control|Shift", action = "None" },
+    # { key = "B", mods = "Control|Shift", action = "None" },
 ]

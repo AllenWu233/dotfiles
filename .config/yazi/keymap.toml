@@ -1,5 +1,20 @@
+# vim:foldmethod=marker
+
+[[mgr.prepend_keymap]]
+on = "<C-S-Enter>"
+run = "shell --orphan alacritty"
+desc = "Open Alacritty here"
+
 # Plugins
-# yamb.yazi
+
+# serachjump.yazi
+[[mgr.prepend_keymap]]
+on = ["i"]
+run = "plugin searchjump"
+# run = "plugin searchjump -- autocd"
+desc = "searchjump mode"
+
+# yamb.yazi {{{
 [[mgr.prepend_keymap]]
 on = ["u", "a"]
 run = "plugin yamb save"
@@ -39,33 +54,4 @@ desc = "Rename bookmark by key"
 on = ["u", "R"]
 run = "plugin yamb rename_by_fzf"
 desc = "Rename bookmark by fzf"
-
-[[mgr.prepend_keymap]]
-on = "<C-S-Enter>"
-run = "shell --orphan alacritty"
-desc = "Open Alacritty here"
-
-# ouch.yazi
-[[mgr.prepend_keymap]]
-on = ["C"]
-run = "plugin ouch tar.gz"
-desc = "Compress with ouch"
-
-# system-clipboard.yazi
-[[mgr.prepend_keymap]]
-on = "<C-y>"
-run = "plugin system-clipboard"
-desc = "Copy to system clipboard"
-
-# serachjump.yazi
-[[mgr.prepend_keymap]]
-on = ["i"]
-run = "plugin searchjump"
-# run = "plugin searchjump -- autocd"
-desc = "searchjump mode"
-
-# chmod.yazi
-# [[mgr.prepend_keymap]]
-# on = ["c", "m"]
-# run = "plugin chmod"
-# desc = "Chmod on selected files"
+# }}}

@@ -1,0 +1,4 @@
+#!/bin/bash
+PIPE=/tmp/xobpipe
+[[ ! -p $PIPE ]] && mkfifo $PIPE
+tail -f $PIPE | xob -t 3000 &

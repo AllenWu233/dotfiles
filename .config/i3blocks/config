@@ -40,10 +40,10 @@ interval=1
 command=scripts/hardware
 interval=10
 
-[monitor]
-command=scripts/monitor
-interval=once
-signal=4
+# [monitor]
+# command=scripts/monitor
+# interval=once
+# signal=4
 
 
 [light]
@@ -73,6 +73,6 @@ interval=10
 command=scripts/clock
 interval=1
 
-[hibernate]
-full_text="⏻  "
-command=systemctl hibernate
+# [hibernate]
+# full_text="⏻  "
+# command=systemctl hibernate

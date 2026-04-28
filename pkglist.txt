@@ -60,7 +60,6 @@ firefox-i18n-zh-cn
 flameshot
 flclash-bin
 foomatic-db-gutenprint-ppds
-foot
 fzf
 gammastep
 gfeeds
@@ -223,6 +222,7 @@ wps-office-cn
 wps-office-mime-cn
 wps-office-mui-zh-cn
 xdg-desktop-portal-gtk
+xdotool
 xob
 xorg-server
 xorg-xinit

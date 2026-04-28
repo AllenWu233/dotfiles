@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+# @author Allen
+# Description: Unified mouse utility for Xorg/Wayland (Global Toggle & Mutual Exclusion)
+# Usage: mouse-tool <hold|loop> <left|right> [interval]
+
+# Parameters
+MODE=$1
+BUTTON=$2
+INTERVAL=${3:-0.01}
+
+# Validate parameters first
+if [[ ! "$MODE" =~ ^(hold|loop)$ ]] || [[ ! "$BUTTON" =~ ^(left|right)$ ]]; then
+    echo "Usage: $0 <hold|loop> <left|right> [interval]"
+    exit 1
+fi
+
+# State management - Use global files to ensure mutual exclusion
+STATE_DIR="${XDG_RUNTIME_DIR:-/tmp}/mouse-tool"
+mkdir -p "$STATE_DIR"
+STATE_FILE="$STATE_DIR/mouse_tool_pid"
+INFO_FILE="$STATE_DIR/mouse_tool_info"
+
+IS_WAYLAND=false
+if [[ "$XDG_SESSION_TYPE" == "wayland" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
+    IS_WAYLAND=true
+fi
+
+# Mouse action wrapper
+click_cmd() {
+    local action=$1
+    local btn=$2
+    
+    if [ "$IS_WAYLAND" = true ]; then
+        # ydotool codes
+        case "$btn" in
+            left)  [[ "$action" == "down" ]] && code="0x40" || code="0x80" ;;
+            right) [[ "$action" == "down" ]] && code="0x41" || code="0x81" ;;
+        esac
+        # Execute via ydotool
+        if [[ "$action" == "click" ]]; then
+            ydotool click 0x40 0x80
+        else
+            ydotool click "$code"
+        fi
+    else
+        # xdotool codes
+        case "$btn" in
+            left)  code="1" ;;
+            right) code="3" ;;
+        esac
+        # Execute via xdotool
+        [[ "$action" == "down" ]] && xdotool mousedown "$code"
+        [[ "$action" == "up" ]] && xdotool mouseup "$code"
+        [[ "$action" == "click" ]] && xdotool click "$code"
+    fi
+}
+
+# Kill existing process and cleanup
+stop_existing() {
+    if [[ -f "$STATE_FILE" ]]; then
+        local pid old_info
+        pid=$(cat "$STATE_FILE")
+        old_info=$(cat "$INFO_FILE" 2>/dev/null)
+        
+        # Kill any running instance from this script
+        kill "$pid" 2>/dev/null
+        rm "$STATE_FILE" "$INFO_FILE" 2>/dev/null
+        
+        # Release both buttons to ensure no keys are stuck during transition
+        click_cmd "up" "left"
+        click_cmd "up" "right"
+        
+        # Toggle: if the same command is re-run, just stop and exit
+        if [[ "$old_info" == "$MODE $BUTTON" ]]; then
+            notify-send "mouse-tool" "OFF: $old_info"
+            exit 0
+        fi
+    fi
+}
+
+# Main execution flow
+stop_existing
+
+# Start new instance
+notify-send "mouse-tool" "ON: $MODE $BUTTON"
+echo "$$" > "$STATE_FILE"
+echo "$MODE $BUTTON" > "$INFO_FILE"
+
+case "$MODE" in
+    hold)
+        click_cmd "down" "$BUTTON"
+        # Keep alive to maintain the hold state
+        while true; do sleep 1; done
+        ;;
+    loop)
+        # Continuous clicking
+        while true; do
+            click_cmd "click" "$BUTTON"
+            sleep "$INTERVAL"
+        done
+        ;;
+esac
