@@ -6,23 +6,27 @@
 # Temporary file (with PID suffix to avoid conflicts)
 TMP_FILE="/tmp/vim_everywhere_$(date +%s)_$$.txt"
 APP_ID="vim-everywhere"
-# TERMINAL="footclient" # Fallback to 'foot' if footclient isn't available
-TERMINAL="alacritty" # Fallback to 'foot' if footclient isn't available
 
-# Check if terminal exists, fallback to foot
-# if ! command -v "$TERMINAL" &>/dev/null; then
-#     TERMINAL="foot"
-# fi
 
-# Launch nvim window (set title for Sway window matching)
-"$TERMINAL" -a "$APP_ID" -e nvim "$TMP_FILE"
+
+if [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
+    alacritty -T "$APP_ID" -e nvim "$TMP_FILE"
+elif [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+    foot -a "$APP_ID" -e nvim "$TMP_FILE"
+fi
+
 
 # Copy content to clipboard only if file is not empty
 if [ -s "$TMP_FILE" ]; then
-    wl-copy <"$TMP_FILE"
-    notify-send "✅ Content copied to clipboard" "File: $(basename "$TMP_FILE")"
+
+    if [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
+        xsel -bi <"$TMP_FILE"
+    elif [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+        wl-copy <"$TMP_FILE"
+    fi
+    notify-send "Content copied to clipboard" "File: $(basename "$TMP_FILE")"
 elif [ -f "$TMP_FILE" ]; then
-    notify-send "ℹ️ Temporary file is empty" "No content copied"
+    notify-send "Temporary file is empty" "No content copied"
 fi
 
 # Auto-cleanup temporary file (comment to preserve files)

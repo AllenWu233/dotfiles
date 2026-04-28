@@ -57,7 +57,6 @@ ffmpegthumbnailer
 filelight
 firefox
 firefox-i18n-zh-cn
-flameshot
 flclash-bin
 foomatic-db-gutenprint-ppds
 fzf
@@ -169,7 +168,6 @@ rofi
 rsync
 rust-analyzer
 rustup
-screengrab
 shellcheck
 skanlite
 skanpage
@@ -237,7 +235,6 @@ yad
 yazi
 zathura
 zathura-pdf-mupdf
-zellij
 zotero
 zoxide
 zsh
