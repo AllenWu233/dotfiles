@@ -118,3 +118,14 @@ Auto-supported formats: tar.gz/tar.bz2/tar.xz, zip, 7z, rar"
     return 1
   fi
 }
+
+
+
+# Use oil.nvim as file explorer
+oil() {
+    if [ -z "$1" ]; then
+        OIL_FM=1 nvim -c "Oil"
+    else
+        OIL_FM=1 nvim -c "Oil $1"
+    fi
+}

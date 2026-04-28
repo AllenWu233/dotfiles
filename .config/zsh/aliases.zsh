@@ -5,6 +5,7 @@
 alias cd='z'
 alias wine='env LANG=zh_CN.UTF-8 LANG=zh_CN.UTF-8 wine'
 alias vim='nvim'
+alias lvim='NVIM_APPNAME=lazyvim nvim'
 alias nc='ncmpcpp'
 alias farsee='curl -F "c=@-" "https://fars.ee/"'
 alias se='sudoedit'
@@ -20,6 +21,10 @@ alias rofi="rofi -dpi 1"
 alias hibernate="systemctl hibernate"
 alias yutto="yutto --config ~/private/.config/yutto/yutto.toml"
 alias chx="sudo chmod +x"
+# alias xcopy="xsel -bi"
+alias xcopy="tr -d '\n' | xsel -bi"
+alias xpaste="xsel -bo"
+alias e="emacsclient -t -a ''"
 
 # lsd
 alias ls='lsd'
@@ -39,8 +44,8 @@ alias ffont="fc-list | fzf"
 
 # config
 alias czsh='$EDITOR ~/.config/zsh/ ~/.zshenv'
-alias cniri='$EDITOR ~/.config/niri/config.kdl'
-alias csway='$EDITOR ~/.config/sway'
+# alias cniri='$EDITOR ~/.config/niri/config.kdl'
+# alias csway='$EDITOR ~/.config/sway'
 alias ci3='$EDITOR ~/.config/i3'
 
 # Proxy

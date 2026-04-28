@@ -1,0 +1,34 @@
+# Colors (Monet Masterpiece Mix)
+# Inspired by: Sunrise, Parasol, Flowers, & Saint-Adresse
+
+# Default colors
+[colors.primary]
+background = '#2c3235'   # Deep sea shadow (Sunrise)
+foreground = '#d9d4d6'   # Misted daylight (Parasol)
+
+# Cursor colors
+[colors.cursor]
+text = '#2c3235'
+cursor = '#d9d4d6'
+
+# Normal colors
+[colors.normal]
+black   = '#181d26'   # Industrial silhouette
+red     = '#d7725d'   # Reflected sunrise sun
+green   = '#4c591c'   # Shadowed grass (Parasol)
+yellow  = '#c29e3b'   # Golden blossom
+blue    = '#4a6d8c'   # Deep water blue (Saint-Adresse)
+magenta = '#8831c0'   # Wild iris violet
+cyan    = '#256e6e'   # Teal water ripples
+white   = '#b8b69d'   # Aged paper / Clouds
+
+# Bright colors
+[colors.bright]
+black   = '#5d5b5b'   # Coastal fog gray
+red     = '#d95043'   # Flag red from Saint-Adresse
+green   = '#667302'   # Sunlit meadow green
+yellow  = '#f2c438'   # Brilliant summer sunlight
+blue    = '#78a4bf'   # Airy sky blue (Parasol)
+magenta = '#a66ec7'   # Soft petal purple
+cyan    = '#548c8a'   # Sea glass aqua
+white   = '#c6c9ba'   # Bright mist

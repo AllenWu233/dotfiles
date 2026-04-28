@@ -27,11 +27,11 @@ esac
 if [[ -f $STATE_FILE ]]; then
     ydotool click "$up"
     rm "$STATE_FILE"
-    notify-send "Sway" "Left button click hold OFF"
+    notify-send "ydotool" "Left button click hold OFF"
 else
     ydotool click "$down"
     touch "$STATE_FILE"
-    notify-send "Sway" "Right button click hold ON"
+    notify-send "ydotool" "Right button click hold ON"
     while [[ -f $STATE_FILE ]]; do sleep 0.1; done
     ydotool click "$up"
 fi

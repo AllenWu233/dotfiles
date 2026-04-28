@@ -11,8 +11,7 @@
 
 
 configuration {
-    // font: "Noto Sans Mono CJK SC:style=Bold 12";
-    font: "monospace 13";
+    font: "monospace 12";
     display-ssh:       " ";
     display-run:       " ";
     display-drun:      " ";

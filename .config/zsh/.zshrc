@@ -19,9 +19,13 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case insensitive
 # prompt suse
 
 # Custom prompt
-PROMPT='[%F{green}%n%f@%F{magenta}%m%f %F{yellow}%B%~%b%f][%F{cyan}%*%f][%F{yellow}%?%f]
-$ '
+#
+# PROMPT='[%F{green}%n%f@%F{magenta}%m%f %F{yellow}%B%~%b%f][%F{cyan}%*%f][%F{yellow}%?%f]
+# $ '
 # RPROMPT='[%F{yellow}%?%f]'
+
+PROMPT='[%F{green}%n%f@%F{magenta}%m%f %F{yellow}%B%~%b%f]
+$ '
 
 
 # Keybindings #########################
@@ -29,8 +33,8 @@ $ '
 bindkey -e
 # export KEYTIMEOUT=5 # delay 0.05s
 
-bindkey '^P' up-line-or-history
-bindkey '^N' down-line-or-history
+# bindkey '^P' up-line-or-history
+# bindkey '^N' down-line-or-history
 
 
 # History searching
@@ -48,7 +52,7 @@ bindkey -M emacs '^v' edit-command-line
 
 
 # Set terminal language to English
-# This is not system locale. Refer to '~/.xprofile'
+# This is not system locale. Refer to '/etc/environment'
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US
 
@@ -59,6 +63,8 @@ export LANGUAGE=en_US
 # Custom files
 [ -f "$ZDOTDIR/aliases.zsh" ] && . "$ZDOTDIR/aliases.zsh"
 [ -f "$ZDOTDIR/func.zsh" ] && . "$ZDOTDIR/func.zsh"
+[ -d "$ZDOTDIR/completions" ] && \
+    for completion in $ZDOTDIR/completions/*; do . "$completion"; done
 
 # Plugins
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
