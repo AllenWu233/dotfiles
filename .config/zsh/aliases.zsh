@@ -17,7 +17,6 @@ alias cmd-wrapped='cmd-wrapped -s atuin'
 alias mf='musicfox'
 alias nb="newsboat -r"
 alias rw="random-wallpaper.sh"
-alias rofi="rofi -dpi 1"
 alias hibernate="systemctl hibernate"
 alias yutto="yutto --config ~/private/.config/yutto/yutto.toml"
 alias chx="sudo chmod +x"

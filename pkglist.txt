@@ -32,7 +32,6 @@ cups-pdf
 debtap
 digikam
 discord
-dmenu
 dnsmasq
 downgrade
 drawio-desktop-bin
@@ -165,6 +164,7 @@ rimsort-bin
 ripgrep
 rmpc
 rofi
+rofi-emoji
 rsync
 rust-analyzer
 rustup

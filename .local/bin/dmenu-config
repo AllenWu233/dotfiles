@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# DMENU="rofi -dmenu -i -p ' Config:'"
+EDITOR="nvim"
+TERMINAL="alacritty"
+
+rofi_cmd() {
+    rofi -dmenu -i -p " Config:"
+}
+
+# Use it in the pipeline
+selected=$(find "${targets[@]}" -maxdepth 1 -type f 2>/dev/null | sed "s|$HOME/||" | rofi_cmd)
+
+targets=(
+    "$HOME/.config/i3"
+    "$HOME/.config/alacritty"
+    "$HOME/.config/nvim"
+    "$HOME/.config/zsh"
+    "$HOME/.config/picom"
+    "$HOME/.config/rofi"
+    "$HOME/.config/emacs"
+    "$HOME/.zshenv"
+    "$HOME/.Xresources"
+    "$HOME/.vimrc"
+)
+
+# selected=$(find "${targets[@]}" -maxdepth 1 -type f 2>/dev/null | sed "s|$HOME/||" | rofi_cmd)
+selected=$(find "${targets[@]}" | rofi_cmd)
+
+if [ -n "$selected" ]; then
+    # $TERMINAL -e $EDITOR "$HOME/$selected"
+    $TERMINAL -e $EDITOR "$selected"
+fi

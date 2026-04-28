@@ -1,35 +1,17 @@
-/** Basic config file **/
-// @since: 2025
-//
-// configuration {
-//   show-icons: true;
-//   font: "JetBrainsMono Nerd Font Mono 20";
-//   modi: "window,drun,ssh,run,filebrowser";
-// }
-// 
-// @theme "nord"
-
-
 configuration {
-    font: "monospace 12";
+    dpi: 144;
+    font: "monospace 15.5";
+    modi: "drun,run,window,ssh,emoji";
     display-ssh:       " ";
     display-run:       " ";
     display-drun:      " ";
     display-window:    " ";
-    display-combi:     " ";
-    display-clipboard: " ";
-    display-calc:      " ";
-    display-p:         "⏻ ";
+    display-emoji:     " ";
+    // display-combi:     " ";
+    // display-clipboard: " ";
+    // display-calc:      " ";
+    // display-p:         "⏻ ";
     show-icons:        true;
 }
 
-// @theme "gruvbox-material.rasi"
-// @theme "catppuccin-mocha.rasi"
 @import "catppuccin-mocha"
-
-//@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
-// @theme "/usr/share/rofi/themes/DarkBlue.rasi"
-
-// element-icon {
-//     size: 1.85ch;
-// }

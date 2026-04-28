@@ -59,7 +59,7 @@
 
 }
 element {
-    padding: 1px ;
+    padding: 3px ;
     cursor:  pointer;
     spacing: 5px ;
     border:  0;

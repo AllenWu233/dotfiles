@@ -1,3 +1,4 @@
+// Use with rofi emoji mode
 @import "config"
 
 textbox {
@@ -6,8 +7,8 @@ textbox {
 }
 
 listview {
-  columns:       15;
-  lines:         6;
+  columns:       9;
+  lines:         7;
   cycle:         true;
   dynamic:       true;
   layout:        vertical;
@@ -24,5 +25,5 @@ element {
 element-text {
   vertical-align:   0.5;
   horizontal-align: 0.5;
-  // font:            "FiraCode Nerd Font 24";
+  font: "Symbols Nerd Font 20";
 }
