@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# @author Allen
+# @since 2026
+# Offline Arch Wiki search
+
+# Check if command exists
+exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+    exists fuzzel && dmenu="fuzzel -d"
+else
+    exists rofi && dmenu="rofi -dmenu" || dmenu="dmenu"
+fi
+
+if [[ -z $dmenu ]]; then
+    echo "Error: install rofi, dmenu, or fuzzel."
+    exit 1
+fi
+
+if [[ "$1" == "zh" ]]; then
+    WIKI_PATH=/usr/share/doc/arch-wiki-zh-cn/html/zh-cn
+    WIKI_SEARCH=$(du -a $WIKI_PATH | cut -f2 | cut -d/ -f8 | sed 's/.html//g' | $dmenu -i -p "ArchWiki-zh_CN")
+else
+    WIKI_PATH=/usr/share/doc/arch-wiki/html/en
+    WIKI_SEARCH=$(du -a $WIKI_PATH | cut -f2 | cut -d/ -f8 | sed 's/.html//g' | $dmenu -i -p "ArchWiki")
+fi
+
+
+opener=xdg-open
+exists xdg-open || opener=surf
+
+
+WIKI="$WIKI_PATH/$WIKI_SEARCH.html"
+
+if [ -n "$WIKI_SEARCH" ]; then
+    $opener $WIKI
+fi

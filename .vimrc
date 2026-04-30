@@ -44,10 +44,11 @@ set noerrorbells
 " set visualbell
 set history=1000
 set autoread
+set virtualedit=block
 
 " Show extra tabs or spaces in the end of a line
-set listchars=tab:»■,trail:■
-set list
+" set listchars=tab:»■,trail:■
+" set list
 
 " Completion for command
 set wildmenu

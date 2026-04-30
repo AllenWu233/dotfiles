@@ -22,8 +22,8 @@ if [ -n "$WAYLAND_DISPLAY" ]; then
     fi
 else
     # X11 Tools
-    COPY_FUNC="xclip -selection clipboard -r"
-    GET_CLIP="xclip -selection clipboard -o"
+    COPY_FUNC="xsel -bi"
+    GET_CLIP="xsel -bo"
     PASTE_CMD="xdotool key ctrl+v"
 fi
 

@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Set paths and commands
+DOTFILES="${HOME}/.local/bin/dmenu-dotfiles"
+WIKI="${HOME}/.local/bin/dmenu-arch-wiki"
+EMOJI="rofi -show emoji"
+
+# Define items one per line for better readability
+items="[d] Dotfiles
+[e] Emoji
+[w] Arch Wiki (en)
+[z] Arch Wiki (zh-CN)
+"
+
+# Launch rofi
+choice=$(printf "%s" "$items" | rofi -dmenu -i -p " " \
+    -p "Selection" \
+    -kb-custom-1 "d" \
+    -kb-custom-2 "e" \
+    -kb-custom-3 "w" \
+    -kb-custom-4 "z" \
+)
+
+# Capture exit status
+code=$?
+
+# Determine target based on code or selection
+case $code in
+    10) target="D" ;;
+    11) target="E" ;;
+    12) target="W" ;;
+    13) target="Z" ;;
+    0)  target="$choice" ;;
+    *)  exit 0 ;;
+esac
+
+# Execute final command
+case "$target" in
+    *[D]*) exec "$DOTFILES" ;;
+    *[E]*) exec $EMOJI ;;
+    *[W]*) exec "$WIKI" ;;
+    *[Z]*) exec "$WIKI" zh ;;
+esac

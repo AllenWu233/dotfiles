@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-config="$(fd . "$XDG_CONFIG_HOME" --max-depth 1 | fuzzel --dmenu)"
-nvim "$config"

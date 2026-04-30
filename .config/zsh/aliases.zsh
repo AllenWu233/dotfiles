@@ -23,7 +23,7 @@ alias chx="sudo chmod +x"
 # alias xcopy="xsel -bi"
 alias xcopy="tr -d '\n' | xsel -bi"
 alias xpaste="xsel -bo"
-alias e="emacsclient -t -a ''"
+alias e="emacsclient -t -a '' 2>/dev/null"
 
 # lsd
 alias ls='lsd'

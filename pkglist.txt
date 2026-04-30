@@ -40,6 +40,7 @@ efibootmgr
 electron-netease-cloud-music
 emacs-nox
 engrampa
+exfatprogs
 expac
 fastfetch
 fcitx5
@@ -51,7 +52,6 @@ fcitx5-qt
 fcitx5-rime
 fcron
 fd
-feh
 ffmpegthumbnailer
 filelight
 firefox
@@ -220,7 +220,7 @@ wps-office-cn
 wps-office-mime-cn
 wps-office-mui-zh-cn
 xdg-desktop-portal-gtk
-xdotool
+xdo
 xob
 xorg-server
 xorg-xinit

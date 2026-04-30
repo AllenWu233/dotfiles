@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+# @author Allen
+# @since 2026
+# Search and edit dotfiles tracked by git in a dynamic menu
+
+DOTFILES="${HOME}/dotfiles/"
+
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    term="footclient"
+    menu="fuzzel --dmenu"
+elif [ -n "$XAUTHORITY" ]; then
+    term="alacritty"
+    menu="rofi -dmenu -i -p  "
+fi
+
+list_tracked_files() {
+    git --git-dir="$DOTFILES"/.git --work-tree="$DOTFILES" \
+        ls-tree -r HEAD --name-only \
+        | grep -ve ^old/ \
+        -ve .png$ \
+        -ve ^LICENSE$ \
+        -ve .md$ \
+        | sort
+}
+
+
+selected_file="$(list_tracked_files | $menu)"
+
+[ -n "$selected_file" ] && "$term" -e "$EDITOR" "$selected_file"

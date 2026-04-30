@@ -10,9 +10,10 @@ desc = "Open Alacritty here"
 # serachjump.yazi
 [[mgr.prepend_keymap]]
 on = ["i"]
-run = "plugin searchjump"
-# run = "plugin searchjump -- autocd"
+# run = "plugin searchjump"
+run = "plugin searchjump -- autocd"
 desc = "searchjump mode"
+
 
 # yamb.yazi {{{
 [[mgr.prepend_keymap]]

@@ -1,18 +1,13 @@
 #!/usr/bin/env bash
 # @author Allen
 # Description: Unified mouse utility for Xorg/Wayland (Global Toggle & Mutual Exclusion)
-# Usage: mouse-tool <hold|loop> <left|right> [interval]
+# Usage: mouse-tool <hold|loop> <left|right> [interval]; mouse-tool <stop>
+# Dependencies: xdo/ydotool
 
 # Parameters
 MODE=$1
 BUTTON=$2
 INTERVAL=${3:-0.01}
-
-# Validate parameters first
-if [[ ! "$MODE" =~ ^(hold|loop)$ ]] || [[ ! "$BUTTON" =~ ^(left|right)$ ]]; then
-    echo "Usage: $0 <hold|loop> <left|right> [interval]"
-    exit 1
-fi
 
 # State management - Use global files to ensure mutual exclusion
 STATE_DIR="${XDG_RUNTIME_DIR:-/tmp}/mouse-tool"
@@ -29,7 +24,7 @@ fi
 click_cmd() {
     local action=$1
     local btn=$2
-    
+
     if [ "$IS_WAYLAND" = true ]; then
         # ydotool codes
         case "$btn" in
@@ -43,17 +38,36 @@ click_cmd() {
             ydotool click "$code"
         fi
     else
-        # xdotool codes
+        # xdo button codes (using keycode/button codes)
         case "$btn" in
             left)  code="1" ;;
             right) code="3" ;;
         esac
-        # Execute via xdotool
-        [[ "$action" == "down" ]] && xdotool mousedown "$code"
-        [[ "$action" == "up" ]] && xdotool mouseup "$code"
-        [[ "$action" == "click" ]] && xdotool click "$code"
+        # Execute via xdo
+        [[ "$action" == "down" ]] && xdo button_press -k "$code"
+        [[ "$action" == "up" ]] && xdo button_release -k "$code"
+        [[ "$action" == "click" ]] && { xdo button_press -k "$code"; xdo button_release -k "$code"; }
     fi
 }
+
+if [[ "$MODE" == "stop" && -f "$STATE_FILE" ]]; then
+    # Release buttons to prevent stuck state
+    click_cmd "up" "left"
+    click_cmd "up" "right"
+
+    PID=$(cat "$STATE_FILE")
+    kill "$PID" 2>/dev/null
+    pgrep -f "$(basename "$0")" | grep -v "$$" | xargs kill 2>/dev/null
+    rm -f "$STATE_FILE" "$INFO_FILE"
+    notify-send "mouse-tool" "All stopped."
+    exit 0
+fi
+
+# Validate parameters for other modes
+if [[ ! "$MODE" =~ ^(hold|loop)$ ]] || [[ ! "$BUTTON" =~ ^(left|right)$ ]]; then
+    echo "Usage: $0 <hold|loop> <left|right> [interval]; $0 <stop>"
+    exit 1
+fi
 
 # Kill existing process and cleanup
 stop_existing() {
@@ -61,15 +75,15 @@ stop_existing() {
         local pid old_info
         pid=$(cat "$STATE_FILE")
         old_info=$(cat "$INFO_FILE" 2>/dev/null)
-        
+
         # Kill any running instance from this script
         kill "$pid" 2>/dev/null
         rm "$STATE_FILE" "$INFO_FILE" 2>/dev/null
-        
+
         # Release both buttons to ensure no keys are stuck during transition
         click_cmd "up" "left"
         click_cmd "up" "right"
-        
+
         # Toggle: if the same command is re-run, just stop and exit
         if [[ "$old_info" == "$MODE $BUTTON" ]]; then
             notify-send "mouse-tool" "OFF: $old_info"

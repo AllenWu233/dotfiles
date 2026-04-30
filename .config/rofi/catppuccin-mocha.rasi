@@ -63,6 +63,7 @@ element {
     cursor:  pointer;
     spacing: 5px ;
     border:  0;
+    border-radius: 6px;
 }
 element normal.normal {
     background-color: @normal-background;
@@ -114,9 +115,10 @@ element-icon {
     text-color:       inherit;
 }
 window {
-    padding:          5;
+    padding:          10;
     background-color: @background;
-    border:           1;
+    border:           2;
+    border-radius:    20px;
 }
 mainbox {
     padding: 0;

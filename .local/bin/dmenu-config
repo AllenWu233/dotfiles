@@ -1,33 +1,55 @@
 #!/bin/bash
 
-# DMENU="rofi -dmenu -i -p ' Config:'"
-EDITOR="nvim"
-TERMINAL="alacritty"
+# EDITOR="nvim"
+term="alacritty"
+menu="rofi -dmenu -i -p  "
 
-rofi_cmd() {
-    rofi -dmenu -i -p " Config:"
-}
-
-# Use it in the pipeline
-selected=$(find "${targets[@]}" -maxdepth 1 -type f 2>/dev/null | sed "s|$HOME/||" | rofi_cmd)
-
-targets=(
+dirs=(
     "$HOME/.config/i3"
     "$HOME/.config/alacritty"
     "$HOME/.config/nvim"
+    "$HOME/.config/lazyvim"
     "$HOME/.config/zsh"
     "$HOME/.config/picom"
     "$HOME/.config/rofi"
-    "$HOME/.config/emacs"
+    "$HOME/.config/doom"
+
+)
+
+files=(
     "$HOME/.zshenv"
     "$HOME/.Xresources"
     "$HOME/.vimrc"
 )
 
-# selected=$(find "${targets[@]}" -maxdepth 1 -type f 2>/dev/null | sed "s|$HOME/||" | rofi_cmd)
-selected=$(find "${targets[@]}" | rofi_cmd)
+# Define patterns or directories to skip
+excludes=(
+    ".git"
+    "cache"
+    "docs"
+
+    "*.png" "*.jpg" "*.jpeg" "*.gif" "*.svg" "*.ico" "*.bmp"
+    "*.pdf" "*.zip" "*.tar.gz" "*.7z" "*.exe" "*.dll" "*.so" "*.o" "*.pyc" "*.elc"
+)
+
+get_files() {
+    {
+        # Output explicit files first
+        printf "%s\n" "${files[@]}"
+
+        # Build fd exclude arguments
+        local fd_opts=()
+        for x in "${excludes[@]}"; do
+            fd_opts+=("--exclude" "$x")
+        done
+        fd -H -t f "${fd_opts[@]}" . "${dirs[@]}"
+    } | sed "s|$HOME|~|" | sort
+}
+
+selected=$(get_files | $menu)
 
 if [ -n "$selected" ]; then
-    # $TERMINAL -e $EDITOR "$HOME/$selected"
-    $TERMINAL -e $EDITOR "$selected"
+    # Expand ~ back to full path
+    real_path="${selected/#\~/$HOME}"
+    "$term" -e "$EDITOR" "$real_path"
 fi
