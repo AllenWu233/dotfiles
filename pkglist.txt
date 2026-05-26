@@ -38,7 +38,7 @@ drawio-desktop-bin
 dunst
 efibootmgr
 electron-netease-cloud-music
-emacs-nox
+emacs
 engrampa
 exfatprogs
 expac
@@ -134,7 +134,7 @@ obsidian
 olympus
 onefetch
 openbsd-netcat
-osu-lazer-bin
+otf-symbola
 ouch
 owmods-gui-bin
 pacman-contrib
@@ -182,7 +182,6 @@ swaybg
 swayidle
 swaylock
 system-config-printer
-taskwarrior-tui
 texlive-bin
 thunar
 thunar-archive-plugin
@@ -192,6 +191,7 @@ thunderbird-i18n-zh-cn
 time
 tldr
 tlp
+tmux
 trash-cli
 tree-sitter-cli
 ttf-fira-mono

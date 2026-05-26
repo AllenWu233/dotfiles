@@ -10,7 +10,8 @@ if ! command -v rankmirrors &>/dev/null; then
     exit 1
 fi
 
-if ! sudo mv -i /etc/pacman.d/mirrorlist{,.bak}; then
+# if ! sudo mv -i /etc/pacman.d/mirrorlist{,.bak}; then
+if ! sudo mv /etc/pacman.d/mirrorlist{,.bak}; then
     echo "Error: Failed to backup mirrorlist."
     exit 1
 fi

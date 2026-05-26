@@ -13,19 +13,19 @@ export HISTFILE="$ZDOTDIR/.zsh_history"
 export EDITOR="nvim"
 
 # Qt Theme
-export QT_QPA_PLATFORMTHEME="qt6ct"
+# export QT_QPA_PLATFORMTHEME="qt6ct"
 
 
 # Fcitx 5
-export QT_IM_MODULE=fcitx
-if [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
-    export GTK_IM_MODULE=fcitx
-    export XMODIFIERS=@im=fcitx
-    export SDL_IM_MODULE=fcitx
-    export GLFW_IM_MODULE=ibus
-elif [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
-    export QT_IM_MODULES=wayland;fcitx
-fi
+# export QT_IM_MODULE=fcitx
+# if [[ "$XDG_SESSION_TYPE" != "wayland" ]]; then
+#     export GTK_IM_MODULE=fcitx
+#     export XMODIFIERS=@im=fcitx
+#     export SDL_IM_MODULE=fcitx
+#     export GLFW_IM_MODULE=ibus
+# else
+#     export QT_IM_MODULES=wayland;fcitx
+# fi
 
 
 

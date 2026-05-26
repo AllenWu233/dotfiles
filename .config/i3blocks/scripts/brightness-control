@@ -5,7 +5,7 @@
 # WARN: Dependencies: brightnessctl, wob
 
 WOB_PIPE=/tmp/wobpipe
-STEP=1
+STEP=5
 # BACKLIGHT_CLASS=backlight
 
 # Catching i3blocks click

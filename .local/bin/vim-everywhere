@@ -7,21 +7,18 @@
 TMP_FILE="/tmp/vim_everywhere_$(date +%s)_$$.txt"
 APP_ID="vim-everywhere"
 
-
-
-if [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
+if [[ "$XDG_SESSION_TYPE" != "wayland" ]]; then
     alacritty -T "$APP_ID" -e nvim "$TMP_FILE"
-elif [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+else
     foot -a "$APP_ID" -e nvim "$TMP_FILE"
 fi
-
 
 # Copy content to clipboard only if file is not empty
 if [ -s "$TMP_FILE" ]; then
 
-    if [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
+    if [[ "$XDG_SESSION_TYPE" != "wayland" ]]; then
         xsel -bi <"$TMP_FILE"
-    elif [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+    else
         wl-copy <"$TMP_FILE"
     fi
     notify-send "Content copied to clipboard" "File: $(basename "$TMP_FILE")"

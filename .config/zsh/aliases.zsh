@@ -20,10 +20,12 @@ alias rw="random-wallpaper.sh"
 alias hibernate="systemctl hibernate"
 alias yutto="yutto --config ~/private/.config/yutto/yutto.toml"
 alias chx="sudo chmod +x"
-# alias xcopy="xsel -bi"
-alias xcopy="tr -d '\n' | xsel -bi"
+alias xcopy="xsel -bi"
+# alias xcopy="tr -d '\n' | xsel -bi"
 alias xpaste="xsel -bo"
-alias e="emacsclient -t -a '' 2>/dev/null"
+alias et="emacsclient -t -a '' 2>/dev/null" # TUI
+alias ec="emacsclient -c -a '' 2>/dev/null" # GUI
+alias shutdown="echo Use \'poweroff\'!"
 
 # lsd
 alias ls='lsd'

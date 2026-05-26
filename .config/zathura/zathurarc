@@ -31,5 +31,6 @@ set recolor false
 # Swaps Foreground for Background to get a light version if you prefers
 # To switch between backgrounds, use <C-r>
 #
+include themes/tokyonight-night.conf
 # include themes/tokyonight-storm.conf
-include themes/kanagawa-wave.conf
+# include themes/kanagawa-wave.conf
