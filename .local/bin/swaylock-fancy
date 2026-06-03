@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # @author Allen, Gemini 2.5 Flash
-# @sice 2025
+# @since 2025
 # Capture the screen, blur it using ImageMagick, and lock the screen with swaylock.
 # Inspired by i3lock-fancy-git
 

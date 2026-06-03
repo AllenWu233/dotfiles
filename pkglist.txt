@@ -25,6 +25,7 @@ brightnessctl
 btop
 btrbk
 cava
+cdrtools
 chromium
 code
 cups
@@ -36,6 +37,7 @@ dnsmasq
 downgrade
 drawio-desktop-bin
 dunst
+dvd+rw-tools
 efibootmgr
 electron-netease-cloud-music
 emacs
@@ -56,7 +58,6 @@ ffmpegthumbnailer
 filelight
 firefox
 firefox-i18n-zh-cn
-flclash-bin
 foomatic-db-gutenprint-ppds
 fzf
 gammastep
@@ -67,6 +68,7 @@ git
 git-crypt
 github-cli
 glfw
+greenclip
 grub
 grub-btrfs
 gutenprint
@@ -86,6 +88,7 @@ inter-font
 jdk21-openjdk
 jmtpfs
 jq
+k3b
 kcolorchooser
 kdeconnect
 keepassxc
@@ -151,7 +154,8 @@ protontricks
 protonup-qt
 psensor
 qbittorrent-enhanced-git
-qemu-full
+qemu-base
+qemu-desktop
 qt5ct
 qt6ct
 rar

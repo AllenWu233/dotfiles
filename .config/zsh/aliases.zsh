@@ -1,6 +1,6 @@
 # ~/.config/zsh/aliases.zsh
-# @author Allen Wu
-# @since 2025
+# @author: Allen Wu
+# @date: 2025
 
 alias cd='z'
 alias wine='env LANG=zh_CN.UTF-8 LANG=zh_CN.UTF-8 wine'
@@ -16,7 +16,6 @@ alias pac="sudo pacman -Syu"
 alias cmd-wrapped='cmd-wrapped -s atuin'
 alias mf='musicfox'
 alias nb="newsboat -r"
-alias rw="random-wallpaper.sh"
 alias hibernate="systemctl hibernate"
 alias yutto="yutto --config ~/private/.config/yutto/yutto.toml"
 alias chx="sudo chmod +x"
@@ -25,13 +24,13 @@ alias xcopy="xsel -bi"
 alias xpaste="xsel -bo"
 alias et="emacsclient -t -a '' 2>/dev/null" # TUI
 alias ec="emacsclient -c -a '' 2>/dev/null" # GUI
-alias shutdown="echo Use \'poweroff\'!"
 
 # lsd
 alias ls='lsd'
 alias tree='lsd --tree'
 alias tree1='lsd --tree --depth 1'
 alias tree2='lsd --tree --depth 2'
+alias tree3='lsd --tree --depth 3'
 
 # bat
 # alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'

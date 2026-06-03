@@ -1,30 +1,40 @@
 #!/usr/bin/env bash
-# @author Allen
-# @since 2025.10
-# Set single background image with swaybg
+# @title: wallpaper
+# @desc: Set single background image
+# @usage: wallpaper
+# @deps: swaybg/xwallpaper
+# @date: 2025
+# @auth: Allen
 
+# shellcheck disable=SC2034
+
+# Arch Linux
 arch1="$HOME/Pictures/Archlinux/uwp36741.png"
 arch_split="$HOME/Pictures/Archlinux/wallpaper/split.png"
 gruvbox1="/usr/share/backgrounds/gruvbox/gruvbox-dark-archlinux2-scalable.svg"
 gruvbox2="$HOME/Pictures/Wallpapers/gruvbox-wallpaper.jpg"
 sunset="$HOME/Pictures/backgrounds/archlinux/sunset.jpg"
+
 # Touhou
 mystia="$HOME/Pictures/Touhou/111219584_p0.png"
 rumia="$HOME/Pictures/Touhou/108077785_p0.png"
-rumia2="$HOME/Pictures/Wallpapers/45393944_p0_dark_high.png"
 mokou="$HOME/Pictures/Touhou/86548110_p0.jpg"
 tatara_kogasa="$HOME/Pictures/Touhou/47516247_p0_pro.jpg"
 aya="$HOME/Pictures/Touhou/65893742(6342480)_無題_p0.jpg"
 flandre_space="$HOME/Pictures/Touhou/120065984_p1.jpg"
 renko_and_mary1="$HOME/Pictures/Touhou/679939(10674)_蓮台野_p0.jpg"
 shou="$HOME/Pictures/Touhou/60684150(1508165)_東方星蓮船まとめ_p3.jpg"
-clownpiece="$HOME/Pictures/Touhou/60684541(1508165)_東方紺珠伝まとめ_p3.jpg"
+clownpiece_moon="$HOME/Pictures/Touhou/60684541(1508165)_東方紺珠伝まとめ_p3.jpg"
 murasa="$HOME/Pictures/Touhou/60684150(1508165)_東方星蓮船まとめ_p2.jpg"
+
+rumia2="$HOME/Pictures/Wallpapers/45393944_p0_dark_high.png"
 myouren_temple="$HOME/Pictures/Wallpapers/56330400_p0.jpg"
+big_remilia="$HOME/Pictures/Wallpapers/11314789(1444392)_亡き王女の为の宴会_p0.jpg"
 
 #image1="$murasa"
-image1="$renko_and_mary1"
+image1="$clownpiece_moon"
 image2="$renko_and_mary1"
+
 monitor_laptop="eDP-1"
 monitor_external="DP-1"
 
@@ -35,20 +45,11 @@ if [[ ! -f "$image2" ]]; then
     echo "Image not found: $image2"
 fi
 
-# killall -q swaybg
-# sleep 0.1
-# swaybg --mode fill --output "$monitor_laptop" --image "$image1" &
-# swaybg --mode fill --output "$monitor_external" --image "$image2" &
-
 # Detect session type and set wallpaper
 if [[ "$XDG_SESSION_TYPE" == "wayland" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
-    # Wayland: Use swaybg
-    # killall -q swaybg
-    sleep 0.1
     swaybg -o "$monitor_laptop" -i "$image1" -m fill \
         -o "$monitor_external" -i "$image2" -m fill &
 elif [[ "$XDG_SESSION_TYPE" == "x11" ]] || [[ -n "$DISPLAY" ]]; then
-    # Xorg: Use xwallpaper
     xwallpaper --output "$monitor_laptop" --zoom "$image1" \
         --output "$monitor_external" --zoom "$image2" &
 else

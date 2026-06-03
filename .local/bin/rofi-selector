@@ -1,43 +1,67 @@
-#!/bin/bash
+#!/usr/bin/env python3
+"""
+@title: rofi-selector
+@desc: Control heart for some rofi scripts
+@usage: rofi-selector
+@deps: rofi, greenclip, dmenu-arch-wiki
+@date: 2026
+@auth: Allen
+"""
 
-# Set paths and commands
-DOTFILES="${HOME}/.local/bin/dmenu-dotfiles"
-WIKI="${HOME}/.local/bin/dmenu-arch-wiki"
-EMOJI="rofi -show emoji"
+import os
+import subprocess
 
-# Define items one per line for better readability
-items="[d] Dotfiles
-[e] Emoji
-[w] Arch Wiki (en)
-[z] Arch Wiki (zh-CN)
-"
+
+# Define data structure for menu items
+class Item:
+    def __init__(self, key, label, cmd):
+        self.key = key
+        self.label = label
+        self.cmd = cmd
+
+
+HOME = os.getenv("HOME")
+
+# Configuration list using Item objects
+MENU_ITEMS = [
+    Item(
+        "c",
+        "Clipboard",
+        "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'",
+    ),
+    Item("d", "Dotfiles", f"{HOME}/.local/bin/dmenu-dotfiles"),
+    Item("e", "Emoji", "rofi -show emoji"),
+    Item("w", "Arch Wiki (en)", f"{HOME}/.local/bin/dmenu-arch-wiki"),
+    Item(
+        "z",
+        "Arch Wiki (zh-CN)",
+        f"{HOME}/.local/bin/dmenu-arch-wiki zh",
+    ),
+]
+
+# Build rofi menu text and arguments
+items = "".join(f"[{item.key}] {item.label}\n" for item in MENU_ITEMS)
+rofi_cmd = ["rofi", "-dmenu", "-i", "-p", " Selection"]
+
+for i, item in enumerate(MENU_ITEMS, start=1):
+    rofi_cmd.extend([f"-kb-custom-{i}", item.key])
 
 # Launch rofi
-choice=$(printf "%s" "$items" | rofi -dmenu -i -p " " \
-    -p "Selection" \
-    -kb-custom-1 "d" \
-    -kb-custom-2 "e" \
-    -kb-custom-3 "w" \
-    -kb-custom-4 "z" \
-)
+process = subprocess.run(rofi_cmd, input=items, text=True, capture_output=True)
 
-# Capture exit status
-code=$?
+code = process.returncode
+choice = process.stdout.strip()
 
-# Determine target based on code or selection
-case $code in
-    10) target="D" ;;
-    11) target="E" ;;
-    12) target="W" ;;
-    13) target="Z" ;;
-    0)  target="$choice" ;;
-    *)  exit 0 ;;
-esac
+# Resolve target item
+target_item = None
+if 10 <= code <= 9 + len(MENU_ITEMS):
+    target_item = MENU_ITEMS[code - 10]
+elif code == 0 and choice:
+    for item in MENU_ITEMS:
+        if f"[{item.key}]" in choice:
+            target_item = item
+            break
 
-# Execute final command
-case "$target" in
-    *[D]*) exec "$DOTFILES" ;;
-    *[E]*) exec $EMOJI ;;
-    *[W]*) exec "$WIKI" ;;
-    *[Z]*) exec "$WIKI" zh ;;
-esac
+# Execute matched command
+if target_item:
+    subprocess.run(target_item.cmd, shell=True)

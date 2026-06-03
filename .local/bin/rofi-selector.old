@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Ensure associative arrays are supported
+if ((BASH_VERSINFO[0] < 4)); then
+    echo "Error: Bash 4.0+ required." >&2
+    exit 1
+fi
+
+# Configuration: [key]="label|command"
+declare -A MENU_CONFIG=(
+    [c]="Clipboard|rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
+    [d]="Dotfiles|${HOME}/.local/bin/dmenu-dotfiles"
+    [e]="Emoji|rofi -show emoji"
+    [w]="Arch Wiki (en)|${HOME}/.local/bin/dmenu-arch-wiki"
+    [z]="Arch Wiki (zh-CN)|${HOME}/.local/bin/dmenu-arch-wiki zh"
+)
+
+# Generate menu items and rofi arguments dynamically
+items=""
+rofi_args=(-dmenu -i -p " Selection")
+kb_index=1
+
+for key in $(echo "${!MENU_CONFIG[@]}" | tr ' ' '\n' | sort); do
+    IFS='|' read -r label cmd <<<"${MENU_CONFIG[$key]}"
+    items+=$"[$key] $label\n"
+    rofi_args+=("-kb-custom-$kb_index" "$key")
+    ((kb_index++))
+done
+
+# Launch rofi
+choice=$(printf "%b" "$items" | rofi "${rofi_args[@]}")
+code=$?
+
+# Execute based on custom hotkey
+if ((code >= 10 && code <= 9 + ${#MENU_CONFIG[@]})); then
+    target_index=$((code - 10))
+    sorted_keys=($(echo "${!MENU_CONFIG[@]}" | tr ' ' '\n' | sort))
+    active_key="${sorted_keys[$target_index]}"
+    IFS='|' read -r label cmd <<<"${MENU_CONFIG[$active_key]}"
+    eval exec "$cmd"
+fi
+
+# Execute based on selection (Enter key)
+if ((code == 0)) && [ -n "$choice" ]; then
+    for key in "${!MENU_CONFIG[@]}"; do
+        if [[ "$choice" == *"[$key]"* ]]; then
+            IFS='|' read -r label cmd <<<"${MENU_CONFIG[$key]}"
+            eval exec "$cmd"
+        fi
+    done
+fi
