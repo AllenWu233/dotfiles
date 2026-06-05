@@ -12,6 +12,7 @@ export XDG_STATE_HOME=${XDG_STATE_HOME:-$HOME/.local/state}
 export HISTFILE="$ZDOTDIR/.zsh_history"
 export EDITOR="nvim"
 
+
 # Qt Theme
 # export QT_QPA_PLATFORMTHEME="qt6ct"
 

@@ -1,0 +1,3 @@
+QMenuBar::item {
+    color: #cdd6f4 !important;
+}

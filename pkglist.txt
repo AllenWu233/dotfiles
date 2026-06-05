@@ -4,6 +4,7 @@ adobe-source-han-sans-cn-fonts
 adobe-source-han-serif-cn-fonts
 alacritty
 android-tools
+ani2xcursor
 arch-wiki-docs
 arch-wiki-docs-zh-cn
 archlinux-artwork
@@ -20,10 +21,12 @@ bc
 beets
 breeze
 breeze-gtk
+breeze5
 bridge-utils
 brightnessctl
 btop
 btrbk
+catppuccin-gtk-theme-mocha
 cava
 cdrtools
 chromium
@@ -60,7 +63,6 @@ firefox
 firefox-i18n-zh-cn
 foomatic-db-gutenprint-ppds
 fzf
-gammastep
 gfeeds
 gimp
 gimp-help-zh_cn
@@ -92,6 +94,8 @@ k3b
 kcolorchooser
 kdeconnect
 keepassxc
+kvantum
+kvantum-qt5
 lazygit
 libappindicator
 libnotify
@@ -101,6 +105,7 @@ linux-firmware
 linux-lts
 linux-lts-headers
 linuxqq
+lolcat
 lsd
 lua51
 luarocks
@@ -172,6 +177,7 @@ rofi-emoji
 rsync
 rust-analyzer
 rustup
+ryujinx
 shellcheck
 skanlite
 skanpage
@@ -225,6 +231,7 @@ wps-office-mime-cn
 wps-office-mui-zh-cn
 xdg-desktop-portal-gtk
 xdo
+xfburn
 xob
 xorg-server
 xorg-xinit

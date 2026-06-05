@@ -26,13 +26,13 @@ renko_and_mary1="$HOME/Pictures/Touhou/679939(10674)_蓮台野_p0.jpg"
 shou="$HOME/Pictures/Touhou/60684150(1508165)_東方星蓮船まとめ_p3.jpg"
 clownpiece_moon="$HOME/Pictures/Touhou/60684541(1508165)_東方紺珠伝まとめ_p3.jpg"
 murasa="$HOME/Pictures/Touhou/60684150(1508165)_東方星蓮船まとめ_p2.jpg"
+sanae="$HOME/Pictures/Touhou/142032265(56006676)_sn_p0.jpg"
 
 rumia2="$HOME/Pictures/Wallpapers/45393944_p0_dark_high.png"
 myouren_temple="$HOME/Pictures/Wallpapers/56330400_p0.jpg"
 big_remilia="$HOME/Pictures/Wallpapers/11314789(1444392)_亡き王女の为の宴会_p0.jpg"
 
-#image1="$murasa"
-image1="$clownpiece_moon"
+image1="$sanae"
 image2="$renko_and_mary1"
 
 monitor_laptop="eDP-1"
