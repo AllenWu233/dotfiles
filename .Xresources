@@ -1,6 +1,7 @@
 Xft.dpi: 144
 
-! Xcursor.theme: volantes_cursor
-! Xcursor.theme: deltarune_ralsei
+! Xcursor.theme: volantes_cursors
+! Xcursor.size: 32
+
 Xcursor.theme: Bibata-Modern-Classic
-Xcursor.size: 32
+Xcursor.size: 40

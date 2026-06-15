@@ -4,7 +4,6 @@ adobe-source-han-sans-cn-fonts
 adobe-source-han-serif-cn-fonts
 alacritty
 android-tools
-ani2xcursor
 arch-wiki-docs
 arch-wiki-docs-zh-cn
 archlinux-artwork
@@ -22,7 +21,6 @@ beets
 breeze
 breeze-gtk
 breeze5
-bridge-utils
 brightnessctl
 btop
 btrbk
@@ -30,15 +28,13 @@ catppuccin-gtk-theme-mocha
 cava
 cdrtools
 chromium
-code
 cups
 cups-pdf
-debtap
 digikam
 discord
 dnsmasq
+docker
 downgrade
-drawio-desktop-bin
 dunst
 dvd+rw-tools
 efibootmgr
@@ -93,6 +89,7 @@ jq
 k3b
 kcolorchooser
 kdeconnect
+kdenlive
 keepassxc
 kvantum
 kvantum-qt5
@@ -104,6 +101,8 @@ libvirt
 linux-firmware
 linux-lts
 linux-lts-headers
+linux-zen
+linux-zen-headers
 linuxqq
 lolcat
 lsd
@@ -133,16 +132,14 @@ noto-fonts-emoji
 npm
 nss-mdns
 numlockx
-nvidia-open-lts
+nvidia-open-dkms
 nvidia-prime
 nvtop
 nwg-look
 obs-studio
 obsidian
-olympus
 onefetch
 openbsd-netcat
-otf-symbola
 ouch
 owmods-gui-bin
 pacman-contrib
@@ -181,6 +178,7 @@ ryujinx
 shellcheck
 skanlite
 skanpage
+skopeo
 smartmontools
 spectacle
 splayer
@@ -211,6 +209,7 @@ ttf-lxgw-wenkai-gb
 ttf-lxgw-wenkai-mono
 ttf-lxgw-wenkai-screen
 ttf-roboto
+ttf-unifont
 tumbler
 tumbler-folder-thumbnailer
 udiskie

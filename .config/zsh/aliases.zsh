@@ -37,10 +37,43 @@ alias tree3='lsd --tree --depth 3'
 # alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
 # fzf
-alias fpcache="pacman -Qq | fzf --preview 'ls /var/cache/pacman/pkg/{}-[0-9]*.pkg.tar.zst'"
-alias fpact="pacman -Qq | fzf --preview 'pactree -d1 {}'"
-alias fpactr="pacman -Qq | fzf --preview 'pactree -rd1 {}'"
-alias ffont="fc-list | fzf"
+# alias fpcache="pacman -Qq | fzf --preview 'ls /var/cache/pacman/pkg/{}-[0-9]*.pkg.tar.zst'"
+# alias fpact="pacman -Qq | fzf --preview 'pactree -d1 {}'"
+# alias fpactr="pacman -Qq | fzf --preview 'pactree -rd1 {}'"
+
+alias fpac="pacman -Qq | fzf \
+    --ansi \
+    --header='[Ctrl-d] Dep Tree | [Ctrl-r] Rev Dep | [Ctrl-s] Cache Size' \
+    --preview-label='[ Dependency Tree ]' \
+    --preview 'pactree -c -d1 {}' \
+    --bind 'ctrl-d:change-preview-label([ Dependency Tree ])+change-preview(pactree -c -d1 {})' \
+    --bind 'ctrl-r:change-preview-label([ Reverse Dependency ])+change-preview(pactree -cr -d1 {})' \
+    --bind 'ctrl-s:change-preview-label([ Cache Size ])+change-preview(lsd --color=always -lh /var/cache/pacman/pkg/{}* 2>/dev/null)' \
+    --preview-window='wrap'"
+
+# Monitor logs and open with $EDITOR on ENTER
+alias flog="fd -t f -e log . /var/log 2>/dev/null | fzf \
+  --ansi \
+  --header='[ENTER] Edit Log | [Ctrl-r] Refresh' \
+  --preview-label='[ Error Monitor ]' \
+  --preview 'tail -f -n 30 {} | rg --heading --line-number --color=always -i \"error|warn|fail|critical|\$\"' \
+  --bind 'ctrl-r:reload(fd -t f -e log . /var/log)' \
+  --bind 'enter:execute(\${EDITOR:-vim} {})' \
+  --preview-window='follow:wrap'"
+
+# Monitor global systemd services and view system journal logs (requires sudo)
+alias fsyslog="sudo -v; sudo systemctl list-units --type=service --no-legend | rg -v "●" | awk '{print \$1}' |  fzf \
+  --ansi \
+  --header='[ENTER] View Full Journal | [Ctrl-r] Refresh Units' \
+  --preview-label='[ Real-time System-wide Journal ]' \
+  --preview 'sudo journalctl -u {} -n 50 --no-pager' \
+  --bind 'ctrl-r:reload(sudo systemctl list-units --type=service --no-legend | awk \"{print \$1}\")' \
+  --bind 'enter:execute(sudo journalctl -u {} | less +G)' \
+  --preview-window='follow:wrap'"
+
+
+alias update-fonts="fc-cache -fv"
+alias ffont="fc-list | fzf -d ':' --with-nth=2.. --preview 'echo {}' --preview-window=bottom:1:wrap"
 
 # config
 alias czsh='$EDITOR ~/.config/zsh/ ~/.zshenv'

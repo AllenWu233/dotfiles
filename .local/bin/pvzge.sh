@@ -1,0 +1,1 @@
+/home/Allen/Games/pvz/pvzge/pvzge.sh

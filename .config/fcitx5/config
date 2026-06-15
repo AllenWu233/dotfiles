@@ -13,8 +13,7 @@ EnumerateSkipFirst=False
 ModifierOnlyKeyTimeout=1000
 
 [Hotkey/TriggerKeys]
-0=Alt+Shift+Alt_L
-1=Alt+Shift+Shift_L
+0=Alt+Shift+Shift_L
 
 [Hotkey/AltTriggerKeys]
 0=Shift_L
