@@ -28,6 +28,7 @@ catppuccin-gtk-theme-mocha
 cava
 cdrtools
 chromium
+clipcat
 cups
 cups-pdf
 digikam
@@ -66,7 +67,6 @@ git
 git-crypt
 github-cli
 glfw
-greenclip
 grub
 grub-btrfs
 gutenprint

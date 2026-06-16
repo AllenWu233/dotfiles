@@ -27,7 +27,7 @@ MENU_ITEMS = [
     Item(
         "c",
         "Clipboard",
-        "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'",
+        "clipcat-menu",
     ),
     Item("d", "Dotfiles", f"{HOME}/.local/bin/dmenu-dotfiles"),
     Item("e", "Emoji", "rofi -show emoji"),
