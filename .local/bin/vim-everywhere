@@ -4,7 +4,7 @@
 # Simple nvim window for temporary notes
 
 # Temporary file (with PID suffix to avoid conflicts)
-TMP_FILE="/tmp/vim_everywhere_$(date +%s)_$$.txt"
+TMP_FILE="/tmp/vim_everywhere_$(date +%s)_$$.md"
 APP_ID="vim-everywhere"
 
 if [[ "$XDG_SESSION_TYPE" != "wayland" ]]; then

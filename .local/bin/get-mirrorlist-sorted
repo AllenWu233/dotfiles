@@ -26,7 +26,7 @@ sudo cp "$tmp_mirror" /etc/pacman.d/mirrorlist
 sudo chmod 644 /etc/pacman.d/mirrorlist
 
 echo "New mirrorlist content:"
-if command -v bat; then
+if command -v bat &>/dev/null; then
     bat /etc/pacman.d/mirrorlist
 else
     cat /etc/pacman.d/mirrorlist

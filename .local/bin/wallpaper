@@ -32,11 +32,11 @@ rumia2="$HOME/Pictures/Wallpapers/45393944_p0_dark_high.png"
 myouren_temple="$HOME/Pictures/Wallpapers/56330400_p0.jpg"
 big_remilia="$HOME/Pictures/Wallpapers/11314789(1444392)_亡き王女の为の宴会_p0.jpg"
 
-image1="$arch_split"
-image2="$arch_split"
+image1="$sanae"
+image2="$sanae"
 
 monitor_laptop="eDP-1"
-monitor_external="DP-1"
+monitor_external="DP-4"
 
 if [[ ! -f "$image1" ]]; then
     echo "Image not found: $image1"

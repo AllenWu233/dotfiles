@@ -1,6 +1,7 @@
 configuration {
     dpi: 144;
-    font: "monospace 15.5";
+    font: "monospace 15";
+    // font: "monospace 13";
     modi: "drun,run,window,ssh,emoji";
     display-ssh:       " ";
     display-run:       " ";

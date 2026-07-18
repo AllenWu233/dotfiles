@@ -17,13 +17,16 @@ alias cmd-wrapped='cmd-wrapped -s atuin'
 alias mf='musicfox'
 alias nb="newsboat -r"
 alias hibernate="systemctl hibernate"
-alias yutto="yutto --config ~/private/.config/yutto/yutto.toml"
+# alias yutto="yutto --config ~/private/.config/yutto/yutto.toml"
 alias chx="sudo chmod +x"
 alias xcopy="xsel -bi"
 # alias xcopy="tr -d '\n' | xsel -bi"
 alias xpaste="xsel -bo"
+
+# Emacs Doom
 alias et="emacsclient -t -a '' 2>/dev/null" # TUI
 alias ec="emacsclient -c -a '' 2>/dev/null" # GUI
+alias er='emacsclient -e "(doom/reload)"'
 
 # lsd
 alias ls='lsd'
