@@ -12,6 +12,7 @@ archlinuxcn-keyring
 aria2
 ascii
 atuin
+autorandr
 baidunetdisk-bin
 base
 base-devel
@@ -224,6 +225,9 @@ waylyrics
 wechat-bin
 wget
 whipper
+wps-office-cn
+wps-office-mime-cn
+wps-office-mui-zh-cn
 xdg-desktop-portal-gtk
 xdo
 xdotool

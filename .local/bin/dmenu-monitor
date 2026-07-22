@@ -1,0 +1,27 @@
+#!/usr/bin/bash
+# @author Allen
+# @since 2026
+# Dynamic menu to switch monitor profiles managed by autorandr
+
+# Extract the current active profile name
+current_profile=$(autorandr | rg '\(current\)' | awk '{print $1}')
+
+# Set menu options using arrays to prevent parsing issues
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    menu=(fuzzel --dmenu --mesg="Current: ${current_profile}")
+elif [ -n "$XAUTHORITY" ]; then
+    menu=(rofi -dmenu -i -p "󰍹 " -mesg "Current: ${current_profile}")
+fi
+
+# Parse available profiles excluding the active one
+list_profiles() {
+    autorandr | rg -v '\(current\)' | awk '{print $1}' | sort
+}
+
+# Prompt user selection using safely expanded array
+selected_display="$(list_profiles | "${menu[@]}")"
+
+# Apply chosen profile
+if [ -n "$selected_display" ]; then
+    autorandr --load "$selected_display"
+fi

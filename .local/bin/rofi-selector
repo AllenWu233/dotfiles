@@ -3,7 +3,7 @@
 @title: rofi-selector
 @desc: Control heart for some rofi scripts
 @usage: rofi-selector
-@deps: rofi, greenclip, dmenu-arch-wiki
+@deps: rofi, greenclip, dmenu-arch-wiki, autorandr
 @date: 2026
 @auth: Allen
 """
@@ -37,6 +37,7 @@ MENU_ITEMS = [
         "Arch Wiki (zh-CN)",
         f"{HOME}/.local/bin/dmenu-arch-wiki zh",
     ),
+    Item("m", "Monitor", f"{HOME}/.local/bin/dmenu-monitor"),
 ]
 
 # Build rofi menu text and arguments

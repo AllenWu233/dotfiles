@@ -1,0 +1,7 @@
+#!/bin/bash
+
+WALLPAPER="$HOME/.local/bin/wallpaper"
+
+if [ -x "$WALLPAPER" ]; then
+    "$WALLPAPER" &
+fi

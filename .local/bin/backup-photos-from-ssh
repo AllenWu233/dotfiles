@@ -14,6 +14,7 @@ SOURCE_PATHS=(
     "Pictures/pixez-old"
     "Pictures/NSFW-pixiv"
     "Pictures/Screenshots"
+    "Pictures/Deltarune"
     "DCIM/Screenshots"
     # "Pictures/搓"
     # "Pictures/烹饪"
@@ -25,8 +26,8 @@ SOURCE_PATHS=(
 
 # SSH configuration for Termux
 SSH_USER="root"
-# SSH_HOST="192.168.1.11"
-SSH_HOST="10.40.84.123"
+SSH_HOST="192.168.1.5"
+# SSH_HOST="10.40.84.123"
 SSH_PORT="8022"
 SSH_REMOTE_BASE="/data/data/com.termux/files/home/storage/shared"
 
