@@ -118,6 +118,7 @@ mpc
 mpd
 mpd-mpris
 mpv
+myman
 ncmpcpp
 neomutt
 neovim
