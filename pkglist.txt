@@ -19,6 +19,7 @@ base-devel
 bat
 bc
 beets
+bind
 breeze
 breeze-gtk
 breeze5
@@ -149,6 +150,7 @@ pandoc-bin
 paru
 pavucontrol
 picard
+picgo-appimage
 picom
 pipewire-pulse
 polkit-gnome
