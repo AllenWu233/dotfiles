@@ -1,8 +1,8 @@
 ! Xft.dpi: 144
+! Xcursor.size: 40
 Xcursor.size: 24
+
+Xcursor.theme: Bibata-Modern-Classic
 
 ! Xcursor.theme: volantes_cursors
 ! Xcursor.size: 32
-
-Xcursor.theme: Bibata-Modern-Classic
-! Xcursor.size: 40

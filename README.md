@@ -6,6 +6,9 @@ My Arch Linux dotfiles.
 
 There is a list of the packages I have installed: ![pkglist.txt](pkglist.txt)
 
+![Background](screenshots/bg.png)
+
+![Fastfetch](screenshots/fastfetch.png)
 
 ## Usage
 

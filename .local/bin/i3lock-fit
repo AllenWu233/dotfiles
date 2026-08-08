@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# IMAGE="$HOME/Pictures/Wallpapers/i3lock/arch.png"
+# IMAGE="$HOME/Pictures/Wallpapers/84678771_p0.jpg"
+IMAGE="$HOME/Pictures/Wallpapers/65751999_p0.png"
+
+CACHE_DIR="$HOME/.cache/i3lock"
+CACHE_BG="$CACHE_DIR/screen_lock.png"
+META_FILE="$CACHE_DIR/state.meta"
+
+mkdir -p "$CACHE_DIR"
+
+# Get resolution and image hash
+RES=$(xdpyinfo | grep dimensions | awk '{print $2}')
+IMG_HASH=$(md5sum "$IMAGE" 2>/dev/null | awk '{print $1}')
+CURRENT_STATE="${IMG_HASH}_${RES}"
+
+SAVED_STATE=""
+[ -f "$META_FILE" ] && SAVED_STATE=$(cat "$META_FILE")
+
+# Generate cache if state changed or missing
+if [ "$CURRENT_STATE" != "$SAVED_STATE" ] || [ ! -f "$CACHE_BG" ]; then
+    magick "$IMAGE" -resize "${RES}^" -gravity center -extent "$RES" "$CACHE_BG"
+    echo "$CURRENT_STATE" >"$META_FILE"
+fi
+
+i3lock -n -e -i "$CACHE_BG"

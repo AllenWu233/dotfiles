@@ -90,3 +90,6 @@ alias proxy-v2ray='https_proxy=http://127.0.0.1:20172 http_proxy=http://127.0.0.
 
 # SSH
 alias ssh-termux='ssh -p 8022 root@termux'
+
+# git
+alias gi='git init && git branch -m main'

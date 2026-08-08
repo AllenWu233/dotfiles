@@ -1,29 +1,38 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # @author Allen
 # @since 2026
 # Search and edit dotfiles tracked by git in a dynamic menu
 
-DOTFILES="${HOME}/dotfiles/"
+set -euo pipefail
 
-if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+DOTFILES="${HOME}/dotfiles"
+EDITOR="${EDITOR:-nvim}"
+
+# Environment detection for Wayland / X11
+if [ "${XDG_SESSION_TYPE:-}" = "wayland" ]; then
     term="footclient"
-    menu="fuzzel --dmenu"
-elif [ -n "$XAUTHORITY" ]; then
+    menu=(fuzzel --dmenu)
+elif [ -n "${XAUTHORITY:-}" ]; then
     term="alacritty"
-    menu="rofi -dmenu -i -p  "
+    menu=(rofi -dmenu -i -p " ")
+else
+    echo "Error: Neither Wayland nor X11 session detected." >&2
+    exit 1
 fi
 
+# Fast listing using git ls-files and rg filter (fallback to grep)
 list_tracked_files() {
-    git --git-dir="$DOTFILES"/.git --work-tree="$DOTFILES" \
-        ls-tree -r HEAD --name-only \
-        | grep -ve ^old/ \
-        -ve .png$ \
-        -ve ^LICENSE$ \
-        -ve .md$ \
-        | sort
+    local exclude_pattern='^(old/|LICENSE$)|(\.(png|md)$)'
+
+    if command -v rg >/dev/null 2>&1; then
+        git -C "$DOTFILES" ls-files | rg -v "$exclude_pattern"
+    else
+        git -C "$DOTFILES" ls-files | grep -vE "$exclude_pattern"
+    fi
 }
 
+selected_file="$(list_tracked_files | "${menu[@]}")"
 
-selected_file="$(list_tracked_files | $menu)"
-
-[ -n "$selected_file" ] && "$term" -e "$EDITOR" "$selected_file"
+if [ -n "$selected_file" ]; then
+    exec "$term" --working-directory="$DOTFILES" -e "$EDITOR" "$selected_file"
+fi

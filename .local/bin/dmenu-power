@@ -1,0 +1,30 @@
+#!/bin/bash
+# @author Allen
+# @since 2026
+# dmenu-power: A minimal power menu script
+
+menu="[l] Lock\n[e] Logout\n[o] Hibernate\n[r] Reboot\n[p] Poweroff"
+rofi_cmd=(rofi -dmenu -i -p " Power" -kb-custom-1 l -kb-custom-2 o -kb-custom-3 h -kb-custom-4 r -kb-custom-5 p)
+
+choice=$(echo -e "$menu" | "${rofi_cmd[@]}")
+code=$?
+
+case "$code" in
+10) cmd="loginctl lock-session" ;;
+11) cmd="i3-msg exit" ;;
+12) cmd="systemctl hibernate" ;;
+13) cmd="systemctl reboot" ;;
+14) cmd="systemctl poweroff" ;;
+esac
+
+if [ "$code" -eq 0 ]; then
+    case "$choice" in
+    *"Lock"*) cmd="loginctl lock-session" ;;
+    *"Logout"*) cmd="i3-msg exit" ;;
+    *"Hibernate"*) cmd="systemctl hibernate" ;;
+    *"Reboot"*) cmd="systemctl reboot" ;;
+    *"Poweroff"*) cmd="systemctl poweroff" ;;
+    esac
+fi
+
+[ -n "$cmd" ] && eval "$cmd"
