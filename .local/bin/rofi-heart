@@ -15,6 +15,7 @@ import subprocess
 import os
 
 
+# Immutable, memory-optimized data container for menu items.
 @dataclass(slots=True, frozen=True)
 class Item:
     key: str
@@ -46,7 +47,6 @@ def get_selected_item(menu_items: list[Item]) -> Item | None:
 
     # Launch rofi and capture execution result
     res = subprocess.run(rofi_cmd, input=items_text, text=True, capture_output=True)
-
     code = res.returncode
     choice = res.stdout.strip()
 
@@ -65,6 +65,7 @@ def get_selected_item(menu_items: list[Item]) -> Item | None:
 
 def main():
     if target := get_selected_item(MENU_ITEMS):
+        # Replace Python process with Bash to execute the target command (POSIX execve)
         os.execlp("bash", "bash", "-c", target.cmd)
 
 

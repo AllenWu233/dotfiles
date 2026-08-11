@@ -1,27 +1,25 @@
-#!/usr/bin/bash
-# @author Allen
-# @since 2026
-# Dynamic menu to switch monitor profiles managed by autorandr
+#!/usr/bin/env bash
+# @title: dmenu-monitor
+# @desc: Dynamic menu to switch monitor profiles managed by autorandr
+# @usage: dmenu-monitor
+# @deps: autorandr
+# @date: 2026
+# @auth: Allen
 
-# Extract the current active profile name
-current_profile=$(autorandr | rg '\(current\)' | awk '{print $1}')
+profiles="$(autorandr)"
+current_profile=$(echo "$profiles" | awk '/\(current\)/ {print $1}')
 
-# Set menu options using arrays to prevent parsing issues
+# Select GUI menu backend based on session type
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-    menu=(fuzzel --dmenu --mesg="Current: ${current_profile}")
-elif [ -n "$XAUTHORITY" ]; then
-    menu=(rofi -dmenu -i -p "󰍹 " -mesg "Current: ${current_profile}")
+    menu=(fuzzel --dmenu --mesg="Current: ${current_profile:-none}")
+else
+    menu=(rofi -dmenu -i -p "󰍹 " -mesg "Current: ${current_profile:-none}")
 fi
 
-# Parse available profiles excluding the active one
-list_profiles() {
-    autorandr | rg -v '\(current\)' | awk '{print $1}' | sort
-}
+# Filter out current profile and prompt for selection
+selected_display=$(echo "$profiles" | awk '!/\(current\)/ && NF {print $1}' | sort | "${menu[@]}")
 
-# Prompt user selection using safely expanded array
-selected_display="$(list_profiles | "${menu[@]}")"
-
-# Apply chosen profile
+# Replace shell process to load selected profile
 if [ -n "$selected_display" ]; then
-    autorandr --load "$selected_display"
+    exec autorandr --load "$selected_display"
 fi

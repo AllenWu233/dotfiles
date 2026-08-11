@@ -13,7 +13,6 @@ if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
 else
     exists rofi && dmenu="rofi -dmenu" || dmenu="dmenu"
 fi
-
 if [[ -z $dmenu ]]; then
     echo "Error: install rofi, dmenu, or fuzzel."
     exit 1
@@ -27,13 +26,11 @@ else
     WIKI_SEARCH=$(du -a $WIKI_PATH | cut -f2 | cut -d/ -f8 | sed 's/.html//g' | $dmenu -i -p "ArchWiki")
 fi
 
-
 opener=xdg-open
 exists xdg-open || opener=surf
-
 
 WIKI="$WIKI_PATH/$WIKI_SEARCH.html"
 
 if [ -n "$WIKI_SEARCH" ]; then
-    $opener $WIKI
+    $opener "$WIKI"
 fi
