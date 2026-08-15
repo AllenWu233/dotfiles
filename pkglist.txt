@@ -153,6 +153,7 @@ picard
 picgo-appimage
 picom
 pipewire-pulse
+pnpm
 polkit-gnome
 ppp
 prismlauncher
