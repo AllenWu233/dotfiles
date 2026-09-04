@@ -17,3 +17,5 @@
 .config/mpd/playlists/
 
 private/
+
+.local/lib/d2/

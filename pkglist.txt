@@ -18,6 +18,8 @@ base
 base-devel
 bat
 bc
+beancount
+beanquery
 beets
 bind
 breeze
@@ -31,8 +33,10 @@ cava
 cdrtools
 chromium
 clipcat
+codewhale-bin
 cups
 cups-pdf
+deepseek-harness-bin
 digikam
 discord
 dnsmasq
@@ -47,6 +51,7 @@ engrampa
 exfatprogs
 expac
 fastfetch
+fava
 fcitx5
 fcitx5-configtool
 fcitx5-gtk
@@ -81,7 +86,6 @@ hyphen-en
 i3-wm
 i3blocks
 i3lock
-i3lock-fancy-git
 imv
 intel-ucode
 inter-font
@@ -160,6 +164,7 @@ prismlauncher
 protontricks
 protonup-qt
 psensor
+python-fonttools
 qbittorrent-enhanced-git
 qemu-base
 qemu-desktop

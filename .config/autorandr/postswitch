@@ -1,7 +1,52 @@
 #!/bin/bash
 
 WALLPAPER="$HOME/.local/bin/wallpaper"
-
 if [ -x "$WALLPAPER" ]; then
     "$WALLPAPER" &
+fi
+
+monitor_laptop=eDP-1
+
+PROFILE=$(autorandr --current)
+
+case "$PROFILE" in
+"10-ext")
+    DPI=96
+    CURSOR_SIZE=24
+    ;;
+"20-lap")
+    DPI=144
+    CURSOR_SIZE=40
+    ;;
+"30-dual")
+    DPI=96
+    CURSOR_SIZE=24
+    # Scale laptop screen (144/96 = 1.5) to match external display UI size
+    # xrandr --output $monitor_laptop --scale 1.5x1.5
+    ;;
+*)
+    DPI=96
+    CURSOR_SIZE=24
+    ;;
+esac
+
+# Reset scale when leaving dual mode
+if [ "$PROFILE" != "30-dual" ]; then
+    xrandr --output eDP-1 --scale 1x1 2>/dev/null
+fi
+
+sed -i "s/^\(! \?\)\?Xft.dpi:.*/Xft.dpi: $DPI/" ~/.Xresources
+sed -i "s/^\(! \?\)\?Xcursor.size:.*/Xcursor.size: $CURSOR_SIZE/" ~/.Xresources
+xrdb -merge ~/.Xresources
+
+# Replace from 'dpi:' to the end of the line
+sed -i "s/dpi:.*/dpi: $DPI;/" ~/.config/rofi/config.rasi
+
+if [ -f "$HOME/.config/gtk-3.0/settings.ini" ]; then
+    sed -i "s/gtk-cursor-theme-size=.*/gtk-cursor-theme-size=$CURSOR_SIZE/" ~/.config/gtk-3.0/settings.ini
+fi
+
+if pgrep -x "xsettingsd" >/dev/null; then
+    echo "Gtk/CursorThemeSize $CURSOR_SIZE" >~/.xsettingsd
+    killall -HUP xsettingsd
 fi

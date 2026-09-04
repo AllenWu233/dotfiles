@@ -1,6 +1,7 @@
 # ~/.config/zsh/aliases.zsh
 # @author: Allen Wu
 # @date: 2025
+# vim: foldmethod=marker
 
 alias cd='z'
 alias wine='env LANG=zh_CN.UTF-8 LANG=zh_CN.UTF-8 wine'
@@ -26,7 +27,6 @@ alias xpaste="xsel -bo"
 # Emacs Doom
 alias et="emacsclient -t -a '' 2>/dev/null" # TUI
 alias ec="emacsclient -c -a '' 2>/dev/null" # GUI
-alias er='emacsclient -e "(doom/reload)"'
 
 # lsd
 alias ls='lsd'
@@ -39,7 +39,8 @@ alias tree3='lsd --tree --depth 3'
 # alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 # alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
-# fzf
+
+# [fzf] {{{
 # alias fpcache="pacman -Qq | fzf --preview 'ls /var/cache/pacman/pkg/{}-[0-9]*.pkg.tar.zst'"
 # alias fpact="pacman -Qq | fzf --preview 'pactree -d1 {}'"
 # alias fpactr="pacman -Qq | fzf --preview 'pactree -rd1 {}'"
@@ -73,6 +74,7 @@ alias fsyslog="sudo -v; sudo systemctl list-units --type=service --no-legend | r
   --bind 'ctrl-r:reload(sudo systemctl list-units --type=service --no-legend | awk \"{print \$1}\")' \
   --bind 'enter:execute(sudo journalctl -u {} | less +G)' \
   --preview-window='follow:wrap'"
+# }}}
 
 
 alias update-fonts="fc-cache -fv"
@@ -93,3 +95,9 @@ alias ssh-termux='ssh -p 8022 root@termux'
 
 # git
 alias gi='git init && git branch -m main'
+
+# Beancount
+alias bf='fd -e bean -X bean-format -i {}'  # Recursively format all .bean files
+alias bck='bean-check'
+alias bd='bean-doctor'
+alias bq='bean-query'
