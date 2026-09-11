@@ -65,6 +65,13 @@ color-scheme = "auto"
 # Whether to use <name>-dark.css when system is in dark mode
 theme-dark-switch = false
 
+# Whether to treat empty lyric lines as gaps
+# When enabled, if the original lyric line is empty (i.e., a gap), the corresponding
+# translated lyric line will not be displayed. This prevents the translated lyric
+# from showing the previous line while the original lyric is displaying a blank gap,
+# ensuring that both lyrics maintain a consistent visual rhythm.
+respect-empty-line-as-gap = false
+
 [triggers]
 # shortcuts when focusing on waylyrics
 # for global ones, please install the `.desktop` file
